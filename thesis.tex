@@ -1,0 +1,60 @@
+\documentclass[a4paper]{scrbook}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amsfonts,amssymb} % Mathepakete
+\usepackage{fancyhdr}
+\usepackage{units}
+\usepackage{graphicx}
+\usepackage{overcite}
+\usepackage{caption}
+\usepackage{bibgerm}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{dsfont}
+\usepackage[figuresright]{rotating}
+%\usepackage[erelpos=over,ediffsize=tiny,edifffam=rm,ediffshape=up,unit=kJ]{schemepst}
+\usepackage{braket} % setzt Bra-Ket-Schreibweise richtig
+\usepackage{lmodern,dsfont}
+\usepackage{booktabs}
+\usepackage{setspace}
+%\usepackage{slashbox} % erm?glicht diagonale Linien in Tabellen
+\usepackage{lscape}
+
+%Formatierung der Tabellen- und Bildunterschriften
+\captionsetup[figure]{format=plain, justification=raggedright, singlelinecheck=false}
+\captionsetup[table]{position=top, format=plain, justification=raggedright, singlelinecheck=false}
+
+
+%Seitenformatierung
+%\renewcommand{\baselinestretch}{1.5}
+\setstretch{1.5}
+%\setlength{\extrarowheight}{2pt}
+\parindent = 0mm
+\pagestyle{fancy}
+\rhead[\leftmark]{\thepage}
+\lhead[\thepage]{\rightmark}
+\chead{}
+\rfoot{}
+\lfoot{}
+\cfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+
+%%meine Farben
+%\newrgbcolor{diplom1}{0.0 0.4 1.0}
+%\newrgbcolor{diplom2}{0.0 0.0 0.6}
+
+\begin{document}
+ 
+\include{intro}
+\include{theory}
+\include{methodology}
+\include{programmes}
+\include{results}
+\include{summary}
+\include{outlook}
+
+%\bibliographystyle{jcpsty_deutsch}
+%\bibliography{theolit}
+
+\end{document}
