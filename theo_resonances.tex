@@ -1,0 +1,127 @@
+\section{Resonances}
+
+\begin{equation}
+  H \Psi = E \Psi \label{schroedinger}
+\end{equation}
+
+\begin{equation}
+  H (P+Q) \Psi = E \Psi
+\end{equation}
+
+\begin{align}
+  (E - H_{PP}) P \Psi & = H_{PQ} Q \Psi\\
+  (E - H_{QQ}) Q \Psi & = H_{QP} P \Psi
+\end{align}
+
+\begin{align}
+  H_{PP} & \equiv PHP & \quad\quad H_{PQ} & \equiv PHQ\\
+  H_{QP} & \equiv QHP & \quad\quad H_{QQ} & \equiv QHQ
+\end{align}
+
+\begin{equation}
+  Q \Psi = \frac{1}{E^{(+)}-H_{QQ}} H_{QP} P \Psi
+\end{equation}
+
+\begin{equation}
+  \mathscr{H} \,P \Psi = E \,P \Psi
+\end{equation}
+
+\begin{equation}
+  \mathscr{H} = H_{PP} + H_{PQ} \frac{1}{E^{(+)}-H_{QQ}} H_{QP}
+\end{equation}
+
+\begin{equation}
+  (\varepsilon_s - H_{QQ}) \Phi_s = 0
+\end{equation}
+
+\begin{align}
+  \braket{\Phi_n|\Phi_n} = 1 \quad  & \quad \braket{\Phi_n|\Phi(\alpha,E)} = 0\\
+  \braket{\Phi(\alpha,E)|\Phi(\alpha',E')} & = \delta(\alpha-\alpha') \delta(E-E')
+\end{align}
+
+\begin{equation}
+  1 = \sum\limits_n \ket{\Phi_n}\bra{\Phi_n} + \int \mathrm{d}\alpha \int \mathrm{d}E
+      \ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}
+\end{equation}
+
+\begin{equation}
+  \mathscr{H} = H_{PP}\, + \,
+  \sum\limits_n H_{PQ} \,\frac{\ket{\Phi_n}\bra{\Phi_n}}{E^{(+)}-\varepsilon_n}\, H_{QP} \,+\,
+  \int \mathrm{d}\alpha \int\mathrm{d}E \,H_{PQ} \,
+  \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E^{(+)}-\varepsilon} \, H_{QP}
+\end{equation}
+
+\begin{equation}
+  \mathscr{H} = \mathscr{H}' + H_{PQ} \,\frac{\ket{\Phi_s}\bra{\Phi_s}}{E^{(+)}-\varepsilon_s}\, H_{QP}
+\end{equation}
+
+\begin{equation}
+  \mathscr{H}' = H_{PP}\, + \,
+  \sum\limits_{n\ne s} H_{PQ} \,\frac{\ket{\Phi_n}\bra{\Phi_n}}{E^{(+)}-\varepsilon_n}
+  \, H_{QP} \,+\,
+  \int \mathrm{d}\alpha \int\mathrm{d}E \,H_{PQ} \,
+  \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E^{(+)}-\varepsilon} \, H_{QP}
+\end{equation}
+
+\begin{equation}
+  (E - \mathscr{H}')\, P \Psi =
+   H_{PQ} \,\frac{\ket{\Phi_s}\bra{\Phi_s}}{E^{(+)}-\varepsilon_s}\, H_{QP} P \Psi
+\end{equation}
+
+\begin{equation}
+  (E-\mathscr{H}') = \psi_f^{(+)} = 0
+\end{equation}
+
+\begin{equation}
+  P \Psi = \psi_f^{(+)} + x
+\end{equation}
+
+\begin{equation}
+  P \Psi = \psi_f^{(+)} + \frac{1}{E^{(+)} - \mathscr{H}'}
+           \frac{H_{PQ}\ket{\Phi_s} \braket{\Phi_s|H_{QP}|P\Psi}}{E^{(+)} - \varepsilon_s}
+\end{equation}
+
+\begin{equation}
+  \braket{\Phi_s|H_{QP}|P\Psi} = \braket{\Phi_s|H_{QP}|\Psi_f^{(+)}} +
+  \frac{1}{E^{(+)} - \mathscr{H}'}
+  \frac{\braket{\Phi_s|H_{QP}H_{PQ}|\Phi_s} \braket{\Phi_s|H_{QP}|P\Psi}}
+       {E^{(+)} - \varepsilon_s}
+\end {equation}
+
+\begin{equation}
+  W_{QQ} = H_{QP}\frac{1}{E^{(+)} - \mathscr{H}'}H_{PQ}
+\end{equation}
+
+\begin{equation}
+  \braket{\Phi_s|H_{QP}|P\Psi} = \frac{\braket{\Phi_s|H_{QP}|\Psi_f^{(+)}}(E-\varepsilon_s)}
+{E - \varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}}
+\end{equation}
+
+\begin{align}
+  \braket{\Phi_s|W_{QQ}|\Phi_s} & = \Delta_s(E) - i \frac{\Gamma_s(E)}{2}\\
+                                & = \braket{\Phi_s|H_{QP}
+                                    \frac{1}{E^{(+)}  - \mathscr{H}'}H_{PQ}|\Phi_s}\\
+                                & = \braket{\Phi_s|H_{QP}
+                                    \frac{\mathcal{P}}{E^{(+)} - \mathscr{H}'}|\Phi_s}
+                                    - i\pi \braket{\Phi_s|H_{QP}\delta(E-\mathscr{H}')H_{PQ}
+                                    |\Phi_s}
+\end{align}
+
+PPsi fehlt noch
+
+\begin{equation}
+  (E - \mathscr{H}') \psi_i^{(-)} = 0
+\end{equation}
+
+\begin{equation}
+  \mathscr{T}_{if} = \mathscr{T}_{if}^{(P)} + 
+                     \frac{\braket{\psi_i^{(-)}|H_{PQ}|\Phi_s}
+                           \braket{\Phi_s|H_{QP}|\Psi_f^{(+)}}}
+                          {E-\varepsilon_s - \Delta_s + i \frac{\Gamma}{2}}
+\end{equation}
+
+\begin{align}
+  \Gamma_s & = 2 \pi \braket{\Phi_s|H_{QP}\delta(E-\mathscr{H}'H_{PQ}|\Phi_s}\\
+           & = 2 \pi \sum\limits_r \left | \braket{\Phi_s|H_QP|\psi_r^{(+)}} \right|^2\\
+           & = \sum\limits_r \Gamma_{sr}(E)
+\end{align}
