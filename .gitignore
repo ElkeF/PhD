@@ -3,6 +3,8 @@
 *.log
 *.bbl
 *.blg
+*.gz
+*.toc
 
 
 thesis.pdf
