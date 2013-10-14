@@ -1,48 +1,110 @@
 \section{Resonances}
 
+Classically, a resonance is the maximum coupling of two or more
+oscillating systems, in which energy is either transferred from 
+one system to another or converted into a different kind of energy.
+In quantum mechanics the coupling of a state to another state or to
+a continuum of states is referred to as a resonance. Sometimes this
+interaction is mediated via an external field.
+
+Its time evolution and optionally the corresponding decay width has historically
+been investigated using either perturbation \cite{} or scattering
+theory \cite{} until it became part of Feshbach's unified theory of
+nuclear reactions \cite{Feshbach58,Feshbach62}. This completely general theory
+is based on projection operators partitioning the Hilbert space into subspaces of
+initial and final states.
+In contrast to earlier approaches, it holds for all coupling schemes as well as
+all quantum numbers. They will be taken care of in the definition of the
+projection operators.
+Shortly after,
+Fano amplified the latter ansatz to describe excitation spectra, which
+are inverse processes to Feshbach's nuclear reactions.\cite{Fano61}
+
+Feshbach's derivation starts from the Schroedinger equation of the total
+system under investigation
+
 \begin{equation}
   H \Psi = E \Psi \label{schroedinger}
 \end{equation}
+
+and projection operators $P$ and $Q$. $P$ projects the final state out
+of the total wavefunction $\Psi$ and is defined with respect to eigenstates
+of the system in the asymptotic time limit, which means long after the process
+itself finished. $Q$ is analogously defined with respect to the rest of the
+system as $Q = 1 - P$. Therefore after insertion to eq. \ref{schroedinger}
 
 \begin{equation}
   H (P+Q) \Psi = E \Psi
 \end{equation}
 
 \begin{align}
-  (E - H_{PP}) P \Psi & = H_{PQ} Q \Psi\\
-  (E - H_{QQ}) Q \Psi & = H_{QP} P \Psi
+  (E - H_{PP}) P \Psi & = H_{PQ} Q \Psi \label{se_PP}\\
+  (E - H_{QQ}) Q \Psi & = H_{QP} P \Psi \label{se_QQ}
 \end{align}
 
-\begin{align}
+can easily be derived with
+
+\begin{align*}
   H_{PP} & \equiv PHP & \quad\quad H_{PQ} & \equiv PHQ\\
-  H_{QP} & \equiv QHP & \quad\quad H_{QQ} & \equiv QHQ
-\end{align}
+  H_{QP} & \equiv QHP & \quad\quad H_{QQ} & \equiv QHQ .
+\end{align*}
+
+From equation \ref{se_QQ} a straigth-forward solution for the system excluding
+the selected final states can be found.
 
 \begin{equation}
-  Q \Psi = \frac{1}{E^{(+)}-H_{QQ}} H_{QP} P \Psi
+  Q \Psi = \frac{1}{E^{(+)}-H_{QQ}} H_{QP} P \Psi \label{feshbach_qpsi}
 \end{equation}
+
+The latter expression holds in case of selectively chosen open channels, which
+do not represent all open channels. In case of all open channels being selected,
+$E^{(+)}$ is to be substituted by $E$.
+
+After insertion of eq. \ref{feshbach_qpsi} into eq. \ref{se_PP} one arrives at
 
 \begin{equation}
-  \mathscr{H} \,P \Psi = E \,P \Psi
+  \mathscr{H} \,P \Psi = E \,P \Psi \label{se_ppsi}
 \end{equation}
 
+with $\mathscr{H}$ being the effective Hamiltonian of the final states.
 \begin{equation}
   \mathscr{H} = H_{PP} + H_{PQ} \frac{1}{E^{(+)}-H_{QQ}} H_{QP}
 \end{equation}
 
+In order to solve these expressions we define $\{\Phi_n\}$ to be the solutions
+of the Hamiltonian excluding the final state solutions or the closed channels
+solutions in case of all open channels being defined as final states.
+They are assumed to be bound and to fulfill the
+Schroedinger equation
+
 \begin{equation}
-  (\varepsilon_s - H_{QQ}) \Phi_s = 0
+  (\varepsilon_n - H_{QQ}) \Phi_n = 0 .
 \end{equation}
+
+This approach is not exact, because the states being bound implicate
+their lifetimes to be infinite, which they are intrinsically
+to the problem not supposed to be. However, for states having a long lifetime,
+this approximation is reasonable. -> How long is long?
+
+Together with a set of continuum wavefunctions $\{\Phi(\alpha,E)\}$, they are
+defined to fulfill the following orthogonality relations
 
 \begin{align}
   \braket{\Phi_n|\Phi_n} = 1 \quad  & \quad \braket{\Phi_n|\Phi(\alpha,E)} = 0\\
   \braket{\Phi(\alpha,E)|\Phi(\alpha',E')} & = \delta(\alpha-\alpha') \delta(E-E')
 \end{align}
 
+and to form an orthonormal basis. These continuums wavefunctions are characterized
+by their energy $E$ and their quantum numbers, which are at this stage embraced
+to the variable $\alpha$.
+
 \begin{equation}
   1 = \sum\limits_n \ket{\Phi_n}\bra{\Phi_n} + \int \mathrm{d}\alpha \int \mathrm{d}E
-      \ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}
+      \ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)} \label{feshbach_1}
 \end{equation}
+
+Expanding eq. \ref{se_ppsi} into this complete set yields an effective Hamiltonian
+of
 
 \begin{equation}
   \mathscr{H} = H_{PP}\, + \,
@@ -51,64 +113,75 @@
   \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E^{(+)}-\varepsilon} \, H_{QP}
 \end{equation}
 
+which is useful to split into two parts. One describing the Hamiltonian of the
+initial state being in resonance with the continuum $\Phi_s$ with its energy
+$\varepsilon_s$ varying strongly close to the resonance energy and the rest
+$\mathscr{H}'$
+
 \begin{equation}
   \mathscr{H} = \mathscr{H}' + H_{PQ} \,\frac{\ket{\Phi_s}\bra{\Phi_s}}{E^{(+)}-\varepsilon_s}\, H_{QP}
 \end{equation}
 
+with
 \begin{equation}
   \mathscr{H}' = H_{PP}\, + \,
   \sum\limits_{n\ne s} H_{PQ} \,\frac{\ket{\Phi_n}\bra{\Phi_n}}{E^{(+)}-\varepsilon_n}
   \, H_{QP} \,+\,
   \int \mathrm{d}\alpha \int\mathrm{d}E \,H_{PQ} \,
-  \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E^{(+)}-\varepsilon} \, H_{QP}
+  \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E^{(+)}-\varepsilon} \, H_{QP} .
 \end{equation}
 
+This reformulation leads to the following version of eq. \ref{se_ppsi}
 \begin{equation}
   (E - \mathscr{H}')\, P \Psi =
-   H_{PQ} \,\frac{\ket{\Phi_s}\bra{\Phi_s}}{E^{(+)}-\varepsilon_s}\, H_{QP} P \Psi
+   H_{PQ} \,\frac{\ket{\Phi_s}\bra{\Phi_s}}{E^{(+)}-\varepsilon_s}\, H_{QP} P \Psi .
 \end{equation}
+
+The eigenfunctions of $\mathscr{H}'$ have to fulfill outgoing boundary conditions,
+which is labelled by the superscript $(+)$
 
 \begin{equation}
-  (E-\mathscr{H}') = \psi_f^{(+)} = 0
+  (E-\mathscr{H}') = \psi_f^{(+)} = 0 \label{sol_outg}
 \end{equation}
 
+and will be used for an ansatz of the open channel wavefunction, where x has to
+be determined
 \begin{equation}
   P \Psi = \psi_f^{(+)} + x
 \end{equation}
 
-\begin{equation}
+which formally gives the solution
+\begin{equation}\label{sol_ppsi}
   P \Psi = \psi_f^{(+)} + \frac{1}{E^{(+)} - \mathscr{H}'}
-           \frac{H_{PQ}\ket{\Phi_s} \braket{\Phi_s|H_{QP}|P\Psi}}{E^{(+)} - \varepsilon_s}
+           \frac{H_{PQ}\ket{\Phi_s}
+           \braket{\Phi_s|H_{QP}|P\Psi}}{E^{(+)} - \varepsilon_s} .
 \end{equation}
 
+Hier scattering theory und Uebergangswahrscheinlichkeitsamplitude.
+
+This expression needs to be analyzed a bit further and therefore eq. \ref{solppsi}
+is multiplied from the left with $\bra{\Phi_s|H_{QP}}$.
 \begin{equation}
   \braket{\Phi_s|H_{QP}|P\Psi} = \braket{\Phi_s|H_{QP}|\Psi_f^{(+)}} +
   \frac{1}{E^{(+)} - \mathscr{H}'}
   \frac{\braket{\Phi_s|H_{QP}H_{PQ}|\Phi_s} \braket{\Phi_s|H_{QP}|P\Psi}}
-       {E^{(+)} - \varepsilon_s}
+       {E^{(+)} - \varepsilon_s}  \label{s_ppsi}
 \end {equation}
+
+Defining the quantity
 
 \begin{equation}
   W_{QQ} = H_{QP}\frac{1}{E^{(+)} - \mathscr{H}'}H_{PQ}
 \end{equation}
+
+and solving eq. \ref{s_ppsi} for
 
 \begin{equation}
   \braket{\Phi_s|H_{QP}|P\Psi} = \frac{\braket{\Phi_s|H_{QP}|\Psi_f^{(+)}}(E-\varepsilon_s)}
 {E - \varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}}
 \end{equation}
 
-\begin{align}
-  \braket{\Phi_s|W_{QQ}|\Phi_s} & = \Delta_s(E) - i \frac{\Gamma_s(E)}{2}\\
-                                & = \braket{\Phi_s|H_{QP}
-                                    \frac{1}{E^{(+)}  - \mathscr{H}'}H_{PQ}|\Phi_s}\\
-                                & = \braket{\Phi_s|H_{QP}
-                                    \frac{\mathcal{P}}{E^{(+)} - \mathscr{H}'}|\Phi_s}
-                                    - i\pi \braket{\Phi_s|H_{QP}\delta(E-\mathscr{H}')H_{PQ}
-                                    |\Phi_s}
-\end{align}
-
-PPsi fehlt noch
-
+yields an easier expression for Txy.
 \begin{equation}
   (E - \mathscr{H}') \psi_i^{(-)} = 0
 \end{equation}
@@ -120,8 +193,30 @@ PPsi fehlt noch
                           {E-\varepsilon_s - \Delta_s + i \frac{\Gamma}{2}}
 \end{equation}
 
+The complex matrix element $\braket{\Phi_s|W_{QQ}|\Phi_s}$ wears the influence
+of the coupling on the rest of the system. Its real part can be identified as
+an energy shift $\Delta_s(E)$ to the "unperturbed" resonance energy whereas its
+complex part is connected to the decay width $\Gamma_s(E)$.
+
+Introducing a delta function (see Appendix \ref{delta_function}) the splitting into the real and complex part can be accomplished.
+
 \begin{align}
-  \Gamma_s & = 2 \pi \braket{\Phi_s|H_{QP}\delta(E-\mathscr{H}'H_{PQ}|\Phi_s}\\
-           & = 2 \pi \sum\limits_r \left | \braket{\Phi_s|H_QP|\psi_r^{(+)}} \right|^2\\
+  \braket{\Phi_s|W_{QQ}|\Phi_s} & = \Delta_s(E) - i \frac{\Gamma_s(E)}{2}\\
+                                & = \braket{\Phi_s|H_{QP}
+                                    \frac{1}{E^{(+)}  - \mathscr{H}'}H_{PQ}|\Phi_s}\\
+                                & = \braket{\Phi_s|H_{QP}
+                                    \frac{\mathcal{P}}{E^{(+)} - \mathscr{H}'}|\Phi_s}
+                                    - i\pi \braket{\Phi_s|H_{QP}\delta(E-\mathscr{H}')H_{PQ}
+                                    |\Phi_s}
+\end{align}
+
+
+
+From the latter the decay width can easily be concluded. Inserting a complete set
+of eigenfunctions as defined in eq. \ref{sol_outg} the decay width can be described
+as a sum over the different open channel solutions for a given resonant state.
+\begin{align}
+  \Gamma_s & = 2 \pi \braket{\Phi_s|H_{QP}\delta(E-\mathscr{H}')H_{PQ}|\Phi_s}\\
+           & = 2 \pi \sum\limits_r \left | \braket{\Phi_s|H_{QP}|\psi_r^{(+)}} \right|^2\\
            & = \sum\limits_r \Gamma_{sr}(E)
 \end{align}
