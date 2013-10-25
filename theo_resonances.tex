@@ -20,6 +20,65 @@ Shortly after,
 Fano amplified the latter ansatz to describe excitation spectra, which
 are inverse processes to Feshbach's nuclear reactions.\cite{Fano61}
 
+
+\begin{equation}
+  i \frac{\mathrm{d}}{\mathrm{d}t} \Psi(t) = (K + V) \Psi(t)
+\end{equation}
+
+\begin{equation}
+  i \frac{\mathrm{d}}{\mathrm{d}t} \Phi(t) = K \Phi(t)
+\end{equation}
+
+\begin{equation}
+  \Psi_i(t) = \frac 1\tau \int\limits_{-\tau}^0 \mathrm{d}T \,
+              e^{-iH(t-T)} \, \Phi_i(T)
+\end{equation}
+
+\begin{equation}
+  \Psi_i(t) = \varepsilon \int\limits_{-\infty}^0 \mathrm{d}T \,
+              e^{\varepsilon T} e^{-iH(t-T)} \Phi_i(T)
+\end{equation}
+
+\begin{align}
+  w_{fi}(t) &= \frac 1{N_i} |f_{fi}|^2 \\
+  f_{fi}(t) &= \braket{\Phi_f(t)|\Psi_i(t)}\\
+  N_i       &= \braket{\Psi_i(t)|\Psi_i(t)}
+\end{align}
+
+\begin{align}
+   \Psi_i(t) &= \varepsilon \, e^{-iHt} \int\limits_{-\infty}^0 \mathrm{d}T \,
+                e^{i(H-E_i)T} \phi_i\\
+             &= e^{-iHt} \frac{\varepsilon}{\varepsilon+i(H-E_j)} \phi_i
+\end{align}
+
+\begin{equation}
+  (H-E_i) \phi_i = V \phi_i
+\end{equation}
+
+\begin{align}
+  \Psi_i(0) &= \phi_i + \frac{1}{E_i-H+i\varepsilon} V \phi_i \\
+            &= \phi_j + \frac{1}{E_i-K+i\varepsilon} V \Psi_i(0)
+\end{align}
+
+\begin{equation}
+  f_{fi}(0) = \delta_{fi} + \frac{1}{E_i-E_f+i\varepsilon} R_{fi}(\varepsilon)
+\end{equation}
+
+\begin{equation}
+  R_{fi}(\varepsilon) = \braket{\phi_f|V|\Psi_i(0)}
+\end{equation}
+
+\begin{equation}
+  f_{fi}(t) = \braket{\phi_f| e^{i(E_f-H)t} |\Psi_i(0)}
+\end{equation}
+
+\begin{equation}
+  \left . \frac{\mathrm{d}}{\mathrm{d}t} |f_{fi}|^2 \right |_{t=0}
+  = 2\delta_{fi} \operatorname{Im}R_{ii}(\varepsilon) 
+    + \frac{2\varepsilon}{(E_i-E_f)^2+\varepsilon^2} |R_{fi}(\varepsilon)|^2
+\end{equation}
+
+
 Feshbach's derivation starts from the Schroedinger equation of the total
 system under investigation
 
