@@ -103,7 +103,7 @@ Using the Schroedinger equation
 of the whole system, one easily arrives at an expression for the initial state
 at time $t=0$.
 \begin{align}
-  \Psi_i(0) &= \frac{\varepsilon + i(H-E_i) - i(H-E_i)}{\varepsilon + i(H-E-i)} \phi_i\\
+  \Psi_i(0) &= \frac{\varepsilon + i(H-E_i) - i(H-E_i)}{\varepsilon + i(H-E_i)} \phi_i\\
             &= \phi_i + \frac{1}{E_i-H+i\varepsilon} V \phi_i \label{equation:in_state_0}\\
             &\approx \phi_i + \frac{1}{E_i-K+i\varepsilon} V \Psi_i(0) \label{equation:in_state_0_approx}
 \end{align}
@@ -144,8 +144,14 @@ in the final state $\phi_f$ and its time derivative at $t=0$ yields
 It consists of two parts, the first is propotional to the probability to stay
 in the initial state and the second one describes the transition into the
 final state. The latter has the typical Lorentzian shape with the full-width-half-maximum
-(FWHM) $\varepsilon$ which from now on will be called the decay width $\Gamma$.
+(FWHM) 2$\varepsilon$ which from now on will be called the decay width $\Gamma$.
 The larger the width is, the faster is the transition into the final state.
+
+
+
+
+
+\subsection{Resonances in systems with more than two states}
 
 Feshbach's derivation starts from the Schroedinger equation of the total
 system under investigation
@@ -261,38 +267,33 @@ with
 This reformulation leads to the following version of eq. \ref{se_ppsi}
 \begin{equation}
   (E - \mathscr{H}')\, P \Psi =
-   H_{PQ} \,\frac{\ket{\Phi_s}\bra{\Phi_s}}{E^{(+)}-\varepsilon_s}\, H_{QP} P \Psi .
+   H_{PQ} \,\frac{\ket{\Phi_s}\bra{\Phi_s}}{E^{(+)}-\varepsilon_s}\, H_{QP} P \Psi = \mathscr{V} P \Psi.
 \end{equation}
 
 The eigenfunctions of $\mathscr{H}'$ have to fulfill outgoing boundary conditions,
 which is labelled by the superscript $(+)$
 
 \begin{equation}
-  (E-\mathscr{H}') = \psi_f^{(+)} = 0 \label{sol_outg}
+  (E-\mathscr{H}') \psi_f^{(+)} = 0 \label{sol_outg} .
 \end{equation}
 
-and will be used for an ansatz of the open channel wavefunction, where x has to
-be determined
-\begin{equation}
-  P \Psi = \psi_f^{(+)} + x
-\end{equation}
+This relation can the be utilized to find a solution for $\ket{p \Psi}$ analogous
+to the approach in equation (\ref{equation:in_state_0_approx}):
 
-which formally gives the solution
 \begin{equation}\label{sol_ppsi}
   P \Psi = \psi_f^{(+)} + \frac{1}{E^{(+)} - \mathscr{H}'}
            \frac{H_{PQ}\ket{\Phi_s}
            \braket{\Phi_s|H_{QP}|P\Psi}}{E^{(+)} - \varepsilon_s} .
 \end{equation}
 
-Hier scattering theory und Uebergangswahrscheinlichkeitsamplitude.
-
-This expression needs to be analyzed a bit further and therefore eq. \ref{solppsi}
-is multiplied from the left with $\bra{\Phi_s|H_{QP}}$.
+$\ket{P \Psi}$ still depends on itself. Therefore 
+eq. \ref{solppsi}
+is multiplied from the left with $\bra{\Phi_s|H_{QP}}$ to give:
 \begin{equation}
   \braket{\Phi_s|H_{QP}|P\Psi} = \braket{\Phi_s|H_{QP}|\Psi_f^{(+)}} +
   \frac{1}{E^{(+)} - \mathscr{H}'}
   \frac{\braket{\Phi_s|H_{QP}H_{PQ}|\Phi_s} \braket{\Phi_s|H_{QP}|P\Psi}}
-       {E^{(+)} - \varepsilon_s}  \label{s_ppsi}
+       {E^{(+)} - \varepsilon_s}  \label{s_ppsi} .
 \end {equation}
 
 Defining the quantity
@@ -308,24 +309,51 @@ and solving eq. \ref{s_ppsi} for
 {E - \varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}}
 \end{equation}
 
-yields an easier expression for Txy.
-\begin{equation}
-  (E - \mathscr{H}') \psi_i^{(-)} = 0
+yields the following expression:
+\begin{equation}\label{}
+  P \Psi = \psi_f^{(+)} + \frac{1}{E^{(+)} - \mathscr{H}'}
+           \frac{H_{PQ}\ket{\Phi_s}
+           \braket{\Phi_s|H_{QP}|\psi_f^{(+)}}}
+           {E^{(+)} - \varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}} .
 \end{equation}
+
+It can be shown, that it is not necessary to calculate $f_{fi}$, but that the
+so-called transition matrix
+
+\begin{equation}
+  \mathscr{T}_{fi} = \braket{\psi_i^{(-)}|V|\phi_f},
+\end{equation}
+
+carries all the necessary information about the properties of interest as
+decay widths and cross sections.
+Here $\phi_f$ denotes the final states in our represented by $\ket{P \Psi}$ and
+$\psi_i^{(-)}$ are incoming states with appropriate boundary conditions fulfilling
+
+\begin{equation}
+  (E - \mathscr{H}') \psi_i^{(-)} = 0 .
+\end{equation}
+
+This leads us to the following expression for the transition matrix
 
 \begin{equation}
   \mathscr{T}_{if} = \mathscr{T}_{if}^{(P)} + 
                      \frac{\braket{\psi_i^{(-)}|H_{PQ}|\Phi_s}
                            \braket{\Phi_s|H_{QP}|\Psi_f^{(+)}}}
-                          {E-\varepsilon_s - \Delta_s + i \frac{\Gamma}{2}}
+                          {E-\varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}}
 \end{equation}
 
-The complex matrix element $\braket{\Phi_s|W_{QQ}|\Phi_s}$ wears the influence
-of the coupling on the rest of the system. Its real part can be identified as
-an energy shift $\Delta_s(E)$ to the "unperturbed" resonance energy whereas its
-complex part is connected to the decay width $\Gamma_s(E)$.
+where $\mathscr{T}_{if}^{(P)}$ describes the transitions without any interaction
+between the initial and final states taken into account. Therefore, in the case
+of thoroughly partitioning of contributions into initial and final states,
+this part is supposed to be zero. The second part describes the transition
+from the initial into the final states mediated by the interaction between them.
 
-Introducing a delta function (see Appendix \ref{delta_function}) the splitting into the real and complex part can be accomplished.
+The transition matrix is from here on handled analogously to $f_{ij}$ in the preceding subsection.
+An explicit time-dependency is introduced, the absolute square is differenciated
+with respect to the time and evaluated for $t=0$.
+The derived expression shows again a Lorentzian shape with a width proportional to
+the imaginary part of $\braket{\Phi_s|W_{QQ}|\Phi_s}$. We therefore split it into
+its real and imaginary part by introducing a delta function
 
 \begin{align}
   \braket{\Phi_s|W_{QQ}|\Phi_s} & = \Delta_s(E) - i \frac{\Gamma_s(E)}{2}\\
@@ -334,12 +362,33 @@ Introducing a delta function (see Appendix \ref{delta_function}) the splitting i
                                 & = \braket{\Phi_s|H_{QP}
                                     \frac{\mathcal{P}}{E^{(+)} - \mathscr{H}'}|\Phi_s}
                                     - i\pi \braket{\Phi_s|H_{QP}\delta(E-\mathscr{H}')H_{PQ}
-                                    |\Phi_s}
+                                    |\Phi_s} .
 \end{align}
 
+Inserting it into the transition matrix yields
+
+\begin{equation}
+  \mathscr{T}_{if} = \mathscr{T}_{if}^{(P)} + 
+                     \frac{\braket{\psi_i^{(-)}|H_{PQ}|\Phi_s}
+                           \braket{\Phi_s|H_{QP}|\Psi_f^{(+)}}}
+                          {E-\varepsilon_s - \Delta_s + i \frac{\Gamma}{2}}
+\end{equation}
+
+from which now the real part of $\braket{\Phi_s|W_{QQ}|\Phi_s}$ can be interpreted 
+as an energy shift $\Delta_s(E)$ of the resonance introduced by the interaction of the initial
+with the final states and its imaginary part to carry the information about the
+decay width $\Gamma_s(E)$ and hence the lifetime.
+
+%The complex matrix element $\braket{\Phi_s|W_{QQ}|\Phi_s}$ wears the influence
+%of the coupling on the rest of the system. Its real part can be identified as
+%an energy shift $\Delta_s(E)$ to the "unperturbed" resonance energy whereas its
+%complex part is connected to the decay width $\Gamma_s(E)$.
 
 
-From the latter the decay width can easily be concluded. Inserting a complete set
+
+
+
+From the imaginary part of $\braket{\Phi_s|W_{QQ}|\Phi_s}$ the decay width can easily be concluded. Inserting a complete set
 of eigenfunctions as defined in eq. \ref{sol_outg} the decay width can be described
 as a sum over the different open channel solutions for a given resonant state.
 \begin{align}
