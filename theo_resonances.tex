@@ -8,14 +8,14 @@ state to either
 another state or to
 a continuum of states is referred to as a resonance. Hereby this
 interaction can be mediated via an external field.
-In consequence of the coupling the system over time evolves from
+In consequence of the coupling the system evolves over time from
 the initial state into at least one other state. Depending on the investigated
 process, this change is either reversible like in Rabi oscillations \cite{Rabi}
 or irreversible like in our case of autoionization processes.
 
 The time evolution of a resonance process can be characterized by
 the averaged lifetime $\tau$ of the initial state or its counterpart
-in the time domain,
+in the energy domain,
 the averaged decay width $\Gamma = \frac{\hbar}{\tau}$.
 
 Historically the underlying theory was developed by numerous scienctists
@@ -42,63 +42,110 @@ theory as summarized by Gell-Mann \cite{Gell-Mann53}.
 %are inverse processes to Feshbach's nuclear reactions.\cite{Fano61}
 
 
+We start from the time dependent Schroedinger equation
+
 \begin{equation}
-  i \frac{\mathrm{d}}{\mathrm{d}t} \Psi(t) = (K + V) \Psi(t)
+  i \frac{\mathrm{d}}{\mathrm{d}t} \Psi(t) = (K + V) \Psi(t) ,
 \end{equation}
+where $K$ denotes the Hamilton operator of non-interacting colliding
+particles, or in our case initial and final states. Its solution
+$\Phi_i(t) = \phi_i e^{-iE_it}$ are stationary states of the system.
 
 \begin{equation}
   i \frac{\mathrm{d}}{\mathrm{d}t} \Phi(t) = K \Phi(t)
 \end{equation}
 
+Out purpose it the description of the transition rates from an initial state
+$\Phi_i(t)$ to a final state $\Phi_f(t)$ mediated by the interaction $V$ between
+them. We are going to achieve this by taking the time derivative of the system's
+probability $\omega_{fi}(t)$ to be in a certain final state at time t.
+
+\begin{align}
+  w_{fi}(t) &= \frac 1{N_i} |f_{fi}|^2 \\
+  f_{fi}(t) &= \braket{\Phi_f(t)|\Psi_i(t)} \label{equation:scattering_overlap}\\
+  N_i       &= \braket{\Psi_i(t)|\Psi_i(t)}
+\end{align}
+
+In eq. (\ref{equation:scattering_overlap}) not the stationary state $\Phi_i$
+has been chosen to represent the initial state but $\Psi_i$. Since our knowledge
+about the initial state wave function is limited to its behaviour without the
+interaction $V$, being turned on at $t=0$, we have to describe the initial state
+wave function at some time in the distant past $T<0$ and propagate it until $t=0$.
+Therefore the question arises, which time $T$ should be selected for this purpose.
+Since no time is better than any other and the result might depend on the decision,
+one averages over propagations starting at different times $T$.
+
 \begin{equation}
   \Psi_i(t) = \frac 1\tau \int\limits_{-\tau}^0 \mathrm{d}T \,
               e^{-iH(t-T)} \, \Phi_i(T)
 \end{equation}
+Here $\tau$ is allowed to approach $+\infty$ at the end of the calculation.
 
+A more convenient way to include this ansatz in the further derivation
+is its Fourier transformation
 \begin{equation}
   \Psi_i(t) = \varepsilon \int\limits_{-\infty}^0 \mathrm{d}T \,
               e^{\varepsilon T} e^{-iH(t-T)} \Phi_i(T)
 \end{equation}
 
-\begin{align}
-  w_{fi}(t) &= \frac 1{N_i} |f_{fi}|^2 \\
-  f_{fi}(t) &= \braket{\Phi_f(t)|\Psi_i(t)}\\
-  N_i       &= \braket{\Psi_i(t)|\Psi_i(t)}
-\end{align}
-
+with $\varepsilon = \tau^{-1}$. Evaluating the integral, this leads to:
 \begin{align}
    \Psi_i(t) &= \varepsilon \, e^{-iHt} \int\limits_{-\infty}^0 \mathrm{d}T \,
-                e^{i(H-E_i)T} \phi_i\\
-             &= e^{-iHt} \frac{\varepsilon}{\varepsilon+i(H-E_j)} \phi_i
+                e^{\varepsilon T} e^{i(H-E_i)T} \phi_i\\
+             &= e^{-iHt} \frac{\varepsilon}{\varepsilon+i(H-E_j)} \phi_i .
 \end{align}
 
+Using the Schroedinger equation
 \begin{equation}
   (H-E_i) \phi_i = V \phi_i
 \end{equation}
 
+of the whole system, one easily arrives at an expression for the initial state
+at time $t=0$.
 \begin{align}
-  \Psi_i(0) &= \phi_i + \frac{1}{E_i-H+i\varepsilon} V \phi_i \\
-            &= \phi_j + \frac{1}{E_i-K+i\varepsilon} V \Psi_i(0)
+  \Psi_i(0) &= \frac{\varepsilon + i(H-E_i) - i(H-E_i)}{\varepsilon + i(H-E-i)} \phi_i\\
+            &= \phi_i + \frac{1}{E_i-H+i\varepsilon} V \phi_i \label{equation:in_state_0}\\
+            &\approx \phi_i + \frac{1}{E_i-K+i\varepsilon} V \Psi_i(0) \label{equation:in_state_0_approx}
 \end{align}
 
+The latter equation holds for a small perturbation $V$ as can be seen by comparing
+the power expansions of equations (\ref{equation:in_state_0}) and
+(\ref{equation:in_state_0_approx}).\\
+Since the norm $N_{fi}$ is time-independent, we now have
+everything we need for the determination of the decay rate.
+Inserting equation (\ref{equation:in_state_0_approx}) into equation
+(\ref{equation:scattering_overlap}) we evaluate the overlap between the initial
+and the final state.
 \begin{equation}
   f_{fi}(0) = \delta_{fi} + \frac{1}{E_i-E_f+i\varepsilon} R_{fi}(\varepsilon)
 \end{equation}
 
+Here, 
 \begin{equation}
   R_{fi}(\varepsilon) = \braket{\phi_f|V|\Psi_i(0)}
 \end{equation}
+denotes the coupling of the initial with the final state via the interaction
+operator $V$.
 
+The time dependence of coupling between the two time-independent states is now
+introduced to give:
 \begin{equation}
-  f_{fi}(t) = \braket{\phi_f| e^{i(E_f-H)t} |\Psi_i(0)}
+  f_{fi}(t) = \braket{\phi_f| e^{i(E_f-H)t} |\Psi_i(0)} .
 \end{equation}
 
+Its absolute square is proportional to the probability of the system to be
+in the final state $\phi_f$ and its time derivative at $t=0$ yields
 \begin{equation}
   \left . \frac{\mathrm{d}}{\mathrm{d}t} |f_{fi}|^2 \right |_{t=0}
   = 2\delta_{fi} \operatorname{Im}R_{ii}(\varepsilon) 
-    + \frac{2\varepsilon}{(E_i-E_f)^2+\varepsilon^2} |R_{fi}(\varepsilon)|^2
+    + \frac{2\varepsilon}{(E_i-E_f)^2+\varepsilon^2} |R_{fi}(\varepsilon)|^2 .
 \end{equation}
 
+It consists of two parts, the first is propotional to the probability to stay
+in the initial state and the second one describes the transition into the
+final state. The latter has the typical Lorentzian shape with the full-width-half-maximum
+(FWHM) $\varepsilon$ which from now on will be called the decay width $\Gamma$.
+The larger the width is, the faster is the transition into the final state.
 
 Feshbach's derivation starts from the Schroedinger equation of the total
 system under investigation
