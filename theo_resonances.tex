@@ -163,14 +163,30 @@ The larger the width is, the faster is the transition into the final state.
 
 \subsection{Resonances in systems with more than two states}
 
-Feshbach's derivation starts from the Schroedinger equation of the total
-system under investigation
+In the case of a multistate system, the calculation of the decay width is more
+complex than in a system with only two states.
+This difficulty is overcome by partitioning the Hilbert space into initial and final
+state subspaces and using the approriate eigenfunctions of these subspaces for the
+calculation of the decay widths. 
+Several theories had been used for the description of different nuclear reactions
+before they were first unified by Feshbach in 1958 \cite{Feshbach58,Feshbach62,Feshbach_book}.
+In contrast to earlier approaches, it holds for all coupling schemes as well as
+all quantum numbers. They will be taken care of in the definition of the
+projection operators.
+Shortly after,
+Fano amplified the latter ansatz to describe excitation spectra, which
+are inverse processes to Feshbach's nuclear reactions.\cite{Fano61}
+
+It has to be noted, that the applied criteria for the seletion of
+these subspaces affect the final results.
+
+Starting from the Schroedinger equation of the total system under investigation
 
 \begin{equation}
   H \Psi = E \Psi \label{schroedinger}
 \end{equation}
 
-and projection operators $P$ and $Q$. $P$ projects the final state out
+the projection operators $P$ and $Q$ are defined. $P$ projects the final state out
 of the total wavefunction $\Psi$ and is defined with respect to eigenstates
 of the system in the asymptotic time limit, which means long after the process
 itself finished. $Q$ is analogously defined with respect to the rest of the
@@ -363,19 +379,22 @@ An explicit time-dependency is introduced, the absolute square is differenciated
 with respect to the time and evaluated for $t=0$.
 The derived expression shows again a Lorentzian shape with a width proportional to
 the imaginary part of $\braket{\Phi_s|W_{QQ}|\Phi_s}$. We therefore split it into
-its real and imaginary part by introducing a delta function
+its real and imaginary part by introducing a delta function using 
+$\lim\limits_{\varepsilon \to 0_+} \frac{1}{x+i\varepsilon} = \mathscr{P} \frac 1x \mp i\pi\delta(x)$,
+where $\mathscr{P}$ is the principal part and $\delta(x)$ denotes the
+Dirac delta function. \cite{Cohen_Tannoudji_3_2}
 
 \begin{align}
   \braket{\Phi_s|W_{QQ}|\Phi_s} & = \Delta_s(E) - i \frac{\Gamma_s(E)}{2}\\
                                 & = \braket{\Phi_s|H_{QP}
                                     \frac{1}{E^{(+)}  - \mathscr{H}'}H_{PQ}|\Phi_s}\\
                                 & = \braket{\Phi_s|H_{QP}
-                                    \frac{\mathcal{P}}{E^{(+)} - \mathscr{H}'}|\Phi_s}
+                                    \frac{\mathcal{P}}{E - \mathscr{H}'}H_{PQ}|\Phi_s}
                                     - i\pi \braket{\Phi_s|H_{QP}\delta(E-\mathscr{H}')H_{PQ}
-                                    |\Phi_s} .
+                                    |\Phi_s} 
 \end{align}
 
-Inserting it into the transition matrix yields
+Inserting the latter expression into the transition matrix yields
 
 \begin{equation}
   \mathscr{T}_{if} = \mathscr{T}_{if}^{(P)} + 
