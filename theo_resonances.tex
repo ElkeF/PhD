@@ -190,19 +190,16 @@ the projection operators $P$ and $Q$ are defined. $P$ projects the final state o
 of the total wavefunction $\Psi$ and is defined with respect to eigenstates
 of the system in the asymptotic time limit, which means long after the process
 itself finished. $Q$ is analogously defined with respect to the rest of the
-system as $Q = 1 - P$. Therefore after insertion to eq. \ref{schroedinger}
-
+system as $Q = 1 - P$. Therefore after insertion to eq. (\ref{schroedinger})
 \begin{equation}
   H (P+Q) \Psi = E \Psi
 \end{equation}
-
 \begin{align}
   (E - H_{PP}) P \Psi & = H_{PQ} Q \Psi \label{se_PP}\\
   (E - H_{QQ}) Q \Psi & = H_{QP} P \Psi \label{se_QQ}
 \end{align}
 
 can easily be derived with
-
 \begin{align*}
   H_{PP} & \equiv PHP & \quad\quad H_{PQ} & \equiv PHQ\\
   H_{QP} & \equiv QHP & \quad\quad H_{QQ} & \equiv QHQ .
@@ -212,12 +209,14 @@ From equation \ref{se_QQ} a straigth-forward solution for the system excluding
 the selected final states can be found.
 
 \begin{equation}
-  Q \Psi = \frac{1}{E^{(+)}-H_{QQ}} H_{QP} P \Psi \label{feshbach_qpsi}
+  Q \Psi = \frac{1}{E-H_{QQ}} H_{QP} P \Psi \label{feshbach_qpsi}
 \end{equation}
 
-The latter expression holds in case of selectively chosen open channels, which
-do not represent all open channels. In case of all open channels being selected,
-$E^{(+)}$ is to be substituted by $E$.
+The latter expression holds in case of all open channels being included
+in the final state description.
+In case of selectively chosen open channels, which do not resemble the total
+space of open channels,
+$E$ is to be substituted by $E^{(+)}=E + i\varepsilon$.
 
 After insertion of eq. \ref{feshbach_qpsi} into eq. \ref{se_PP} one arrives at
 
@@ -227,7 +226,7 @@ After insertion of eq. \ref{feshbach_qpsi} into eq. \ref{se_PP} one arrives at
 
 with $\mathscr{H}$ being the effective Hamiltonian of the final states.
 \begin{equation}
-  \mathscr{H} = H_{PP} + H_{PQ} \frac{1}{E^{(+)}-H_{QQ}} H_{QP}
+  \mathscr{H} = H_{PP} + H_{PQ} \frac{1}{E-H_{QQ}} H_{QP}
 \end{equation}
 
 In order to solve these expressions we define $\{\Phi_n\}$ to be the solutions
@@ -267,9 +266,9 @@ of
 
 \begin{equation}
   \mathscr{H} = H_{PP}\, + \,
-  \sum\limits_n H_{PQ} \,\frac{\ket{\Phi_n}\bra{\Phi_n}}{E^{(+)}-\varepsilon_n}\, H_{QP} \,+\,
+  \sum\limits_n H_{PQ} \,\frac{\ket{\Phi_n}\bra{\Phi_n}}{E-\varepsilon_n}\, H_{QP} \,+\,
   \int \mathrm{d}\alpha \int\mathrm{d}E \,H_{PQ} \,
-  \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E^{(+)}-\varepsilon} \, H_{QP}
+  \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E-\varepsilon} \, H_{QP}
 \end{equation}
 
 which is useful to split into two parts. One describing the Hamiltonian of the
@@ -278,7 +277,7 @@ $\varepsilon_s$ varying strongly close to the resonance energy and the rest
 $\mathscr{H}'$
 
 \begin{equation}
-  \mathscr{H} = \mathscr{H}' + H_{PQ} \,\frac{\ket{\Phi_s}\bra{\Phi_s}}{E^{(+)}-\varepsilon_s}\, H_{QP}
+  \mathscr{H} = \mathscr{H}' + H_{PQ} \,\frac{\ket{\Phi_s}\bra{\Phi_s}}{E-\varepsilon_s}\, H_{QP}
 \end{equation}
 
 with
@@ -303,17 +302,17 @@ which is labelled by the superscript $(+)$
   (E-\mathscr{H}') \psi_f^{(+)} = 0 \label{sol_outg} .
 \end{equation}
 
-This relation can the be utilized to find a solution for $\ket{p \Psi}$ analogous
+This relation can the be utilized to find a solution for $\ket{P \Psi}$ analogous
 to the approach in equation (\ref{equation:in_state_0_approx}):
 
 \begin{equation}\label{sol_ppsi}
   P \Psi = \psi_f^{(+)} + \frac{1}{E^{(+)} - \mathscr{H}'}
            \frac{H_{PQ}\ket{\Phi_s}
-           \braket{\Phi_s|H_{QP}|P\Psi}}{E^{(+)} - \varepsilon_s} .
+           \braket{\Phi_s|H_{QP}|P\Psi}}{E - \varepsilon_s} .
 \end{equation}
 
 $\ket{P \Psi}$ still depends on itself. Therefore 
-eq. \ref{solppsi}
+eq. \ref{sol_ppsi}
 is multiplied from the left with $\bra{\Phi_s|H_{QP}}$ to give:
 \begin{equation}
   \braket{\Phi_s|H_{QP}|P\Psi} = \braket{\Phi_s|H_{QP}|\Psi_f^{(+)}} +
@@ -335,12 +334,12 @@ and solving eq. \ref{s_ppsi} for
 {E - \varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}}
 \end{equation}
 
-yields the following expression:
+yields the final state description
 \begin{equation}\label{}
   P \Psi = \psi_f^{(+)} + \frac{1}{E^{(+)} - \mathscr{H}'}
            \frac{H_{PQ}\ket{\Phi_s}
            \braket{\Phi_s|H_{QP}|\psi_f^{(+)}}}
-           {E^{(+)} - \varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}} .
+           {E - \varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}} .
 \end{equation}
 
 It can be shown, that it is not necessary to calculate $f_{fi}$, but that the
@@ -351,7 +350,7 @@ so-called transition matrix
 \end{equation}
 
 carries all the necessary information about the properties of interest as
-decay widths and cross sections.
+decay widths and cross sections. \cite{Gell-Mann53}
 Here $\phi_f$ denotes the final states in our represented by $\ket{P \Psi}$ and
 $\psi_i^{(-)}$ are incoming states with appropriate boundary conditions fulfilling
 
@@ -417,9 +416,10 @@ decay width $\Gamma_s(E)$ and hence the lifetime.
 
 
 
-From the imaginary part of $\braket{\Phi_s|W_{QQ}|\Phi_s}$ the decay width can easily be concluded. Inserting a complete set
+From the imaginary part of $\braket{\Phi_s|W_{QQ}|\Phi_s}$ the decay width can
+easily be concluded. Inserting a complete set
 of eigenfunctions as defined in eq. \ref{sol_outg} the decay width can be described
-as a sum over the different open channel solutions for a given resonant state.
+as a sum over the different open channel solutions for a given resonant initial state.
 \begin{align}
   \Gamma_s & = 2 \pi \braket{\Phi_s|H_{QP}\delta(E-\mathscr{H}')H_{PQ}|\Phi_s}\\
            & = 2 \pi \sum\limits_r \left | \braket{\Phi_s|H_{QP}|\psi_r^{(+)}} \right|^2\\
