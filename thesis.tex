@@ -6,6 +6,7 @@
 \usepackage{fancyhdr}
 \usepackage{units}
 \usepackage{graphicx}
+\usepackage{tikz,pgfplots}
 \usepackage{overcite}
 \usepackage{caption}
 \usepackage{bibgerm}
@@ -21,6 +22,7 @@
 \usepackage{setspace}
 %\usepackage{slashbox} % erm?glicht diagonale Linien in Tabellen
 \usepackage{lscape}
+\usepackage[toc,page]{appendix}
 
 %Formatierung der Tabellen- und Bildunterschriften
 \captionsetup[figure]{format=plain, justification=raggedright, singlelinecheck=false}
@@ -44,6 +46,15 @@
 %%meine Farben
 %\newrgbcolor{diplom1}{0.0 0.4 1.0}
 %\newrgbcolor{diplom2}{0.0 0.0 0.6}
+\definecolor{diplom1}{rgb}{0.0 0.4 1.0}
+\definecolor{diplom2}{rgb}{0.0 0.0 0.6}
+\definecolor{diplom3}{RGB}{153,0,0} %unirot
+\definecolor{diplom4}{RGB}{232,215,23}
+\definecolor{diplom5}{RGB}{51,37,60}
+
+\definecolor{unirot}{RGB}{153,0,0}
+\definecolor{unirot_hell}{RGB}{255,228,225}
+\definecolor{lightblue}{RGB}{242.2,249.88,255}
 
 \begin{document}
 
@@ -58,6 +69,8 @@
 \include{results}
 \include{summary}
 \include{outlook}
+
+\include{appendix}
 
 \bibliographystyle{jcpsty_deutsch}
 \bibliography{theolit}
