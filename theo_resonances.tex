@@ -145,20 +145,28 @@ It consists of two parts, the first is propotional to the probability to stay
 in the initial state and the second one describes the transition into the
 final state. The latter has the typical Lorentzian shape with the full width
 half maximum
-(FWHM) $2 \varepsilon$ (further information can be found in the appendix
+(FWHM) $2 \varepsilon$ as illustrated in Figure \ref{figure:general_resonance}
+(further information can be found in the appendix
 \ref{section:app_cauchy}). From now on
 the full width half maximum ${2\varepsilon}$ will be called the
 decay width $\Gamma$.
-The larger the width is, the faster is the transition into the final state.
 
-%\begin{figure}[h]
-%  \centering
-%  %\input{pics/cauchy_pgf.tex}
-%%  \caption{}
-%  %\label{figure:cauchy-dist}
-%\end{figure}
+\begin{figure}[h]
+  \centering
+  \input{pics/resonance_pgf}
+  \caption{Probability density function of a Cauchy distribution with a
+           maximum at $x_0$ with a height of $A=\frac{1}{\pi\gamma}$.}
+  \label{figure:general_resonance}
+\end{figure}
 
-
+In short terms, the decay width $\Gamma$ is defined as the FWHM of the
+the time derivative of the probability distribution to find the system in
+the final state at time $t=0$. Hence it is proportional to the reaction rate
+constant, which entails its mathematical treatment. Furthermore it is
+connected to the lifetime $\tau$ of the
+system via $\Gamma=\frac \hbar \tau$.
+This means that, the larger the width is, the faster is the transition
+into the final state.
 
 
 \subsection{Resonances in systems with more than two states}

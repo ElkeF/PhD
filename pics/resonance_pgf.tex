@@ -1,0 +1,22 @@
+ \begin{tikzpicture}[
+          scale=0.5,>=stealth,domain=0.5:10,samples=100,
+          declare function={
+          gamma = 1.0;
+          factor = 16.0;
+          halfmax = factor * 0.15915;
+          x_0 = 5.0;
+          distrib(\x) = factor/3.14159 * gamma / ((\x-x_0)^2 + gamma^2);
+        }]
+%     \tiny
+%  \draw[very thin,color=gray] (-0.1,-0.1) grid (4.9,4.9);
+  \draw[->,thick] (-0.2,0) -- (10.2,0) node[right] {$E$};
+  \draw[->,thick] (0,-0.2) -- (0,6.2) node[anchor=north east] {$\left. \frac{\mathrm{d}}{\mathrm{d}t}
+                                                   |f_{fi}|^2 \right|_{t=0}$};
+  % add ticks
+  \draw [thick] (5,0) -- (5,-5pt) node [anchor=north] {$E_f$};
+
+  \draw [color=black,domain=0:10,smooth,very thick]    plot
+         (\x,{distrib(\x)});% node [anchor=south] {Cauchy distribution};
+  \draw [-,very thick,diplom1] (4.0,halfmax) -- (6,halfmax)
+         node [anchor=south west] {$\Gamma$};
+ \end{tikzpicture}
