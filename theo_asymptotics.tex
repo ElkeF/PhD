@@ -128,7 +128,7 @@ Both requirements are fulfilled for the ICD and ETMD processes discussed in this
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.7]{pics/taylor_pspic.eps}
+\includegraphics[scale=1.0]{pics/taylor_pspic.eps}
 %\input{taylor_pspic}
 \caption{The total system is split into subsystems $\mathbf{S_1}$ and $\mathbf{S_2}$.
 The $\mathbf{R}_i$ ($i=1,2$)  point to the corresponding  centers of mass (COMs)
@@ -190,7 +190,7 @@ as discussed in the following subsections.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.23]{pics/ICD_subsystems.eps}
+\includegraphics[scale=0.30]{pics/ICD_subsystems.eps}
 \caption{ICD process in subsystems $\mathbf{S_1}$ and $\mathbf{S_2}$. After
          creating an inner valence vacancy in $\mathbf{S_1}$  the hole is filled
          by an outer-valance electron of $\mathbf{S_1}$. The excess energy is
@@ -307,7 +307,7 @@ ICD rates.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.18]{pics/ETMD_subsystems.eps}
+\includegraphics[scale=0.30]{pics/ETMD_subsystems.eps}
 \caption{ETMD3 process in subsystems $\mathbf{S_1}$ and $\mathbf{S_2}$ where
          the two atoms A and B participate in the electron transfer and are
          combined to $\mathbf{S_1}$. After inner valence ionization of A,
@@ -329,10 +329,27 @@ properties of the $AB$ comprising subsystem $\mathbf{S_1}$ are described in
 its local $(\tilde{x}_1, \tilde{y}_1,  \tilde{z}_1)$ coordinate system which
 is later backtransformed.
 
+Analog to eq. (\ref{last_matrixelement}) we arrive at
+
+\begin{align}\label{last_matrixelement_etmd}
+ \braket{\chi_{\beta,\varepsilon}|\hat{V}_{S_1,S_2}|\Phi} 
+=& \frac{1}{R^3} \sum\limits_{ov_1,ov_2,\varepsilon}  \left[
+  \braket{\phi_{ov_1}^{(S_1)}|  \begin{pmatrix}
+         -\frac{1}{\sqrt{2}}(\tilde{x}_1\cos\alpha- \tilde{z}_1\sin\alpha +i\tilde{y}_1)\\
+         \frac{1}{\sqrt{2}}(\tilde{x}_1\cos\alpha- \tilde{z}_1\sin\alpha -i\tilde{y}_1)\\
+         -2 (\tilde{x}_1\sin\alpha + \tilde{z}_1\cos\alpha )\\
+         \end{pmatrix} |\phi_{iv}^{(S_1)}} \right. \nonumber \\
+  & \cdot \left. \braket{\phi_{0}^{(S_2)}| \begin{pmatrix}
+                            r_{2+}\\
+                            r_{2-}\\
+                            r_0\\
+                            \end{pmatrix} |\chi_{ov_2,\varepsilon}^{(S_2)}} \right] .
+\end{align}
+
 \begin{figure}[ht]
 \centering
 %\input{coord_etmd_pspic}
-\includegraphics[scale=0.77]{pics/coord_etmd_pspic.eps}
+\includegraphics[scale=1.00]{pics/coord_etmd_pspic.eps}
 \caption{Jacobi coordinates used for the geometric description of the trimer.
         $Q$ is the distance between $A$ and $B$, $R$ the distance from the
         center of mass of $AB$ to $C$ and $\alpha$ the angle between the
