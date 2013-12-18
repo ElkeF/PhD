@@ -1,0 +1,186 @@
+\section{\textsc{icoclus}}
+
+Icoclus is a selection of python scripts creating xyz-coordinate
+files for idealized heteronuclear clusters with a basic
+icosahedral structure.
+All structures contain an icosahedral core of one atom type
+surrounded by atoms of the second atom type in different ways.
+Hereby it has to be mentioned, that these cluster structures are not
+energetically optimized but build using the scientific guess
+that the atomic distances of each pair of atoms in the clusters
+can be described as the sum of the van der Waals
+radii.
+
+\subsection{Construction of the Core Icosahedral Cluster}
+The vertex coordinates of a regular icosahedron are given by
+
+\begin{equation}
+ ,
+\end{equation}
+where $a$ describes both the distance from the center to each vertex
+and the length of an edge and $\phi =$.
+
+Icosahedral clusters are build of different shells, each of them
+characterized by the number of atoms per edge $c$. Starting from a
+central atom, a shell with $c=2$ is added, afterwards one with $c=3$
+and so on, until the desired cluster size is achieved.
+
+Here one needs to consider, that in these packed icosahedral shells
+the distance between the closest atoms within one shell is
+larger than the closest distance of two atoms of neighbouring shells.
+In order to achieve the overall minimum distance between two atoms
+to be the sum of their van der Waals radii, we scale our vertex
+distance $a$ such, that the distance between the surfaces is given by
+the sum of the v.d. Waals radii.
+
+\begin{equation}
+ a' =
+\end{equation}
+
+\subsection{Complete Shells}
+Around the icosahedral core cluster more complete shells consisting
+of the second atom type are constructed. Hereby the distance between
+the central atom and the vertices is calculated as the sum over the
+contributing v. d. Waals radii. and scaled as in the case of the core
+vertices.
+
+\subsubsection{Manual of \lstinline|icoclus.py|}
+In the header of the script \lstinline|icoclus.py| the following
+controlling variables are defined.
+
+\begin{lstlisting}
+##################Input Variables ##################################
+   atcore  = 'Ar' # atomtype of the core atoms
+   atouter = 'Ne' # atomtype of the outer shells
+   
+   rcore =  1.88  # radius of core atoms
+   router = 1.54  # radius of outer shell atoms
+   
+   n_core = 1     # number of atoms in the longest edge
+   #n_outer = raw_input('How many layers of atoms do you want to have? ')
+   #n_outer = int(n_outer)
+   n_outer = 1    # number of additional shells
+\end{lstlisting}
+
+These are to be adjusted according to the desired structure.
+Afterwards the script is run from the terminal.
+The two commented lines are convenient if several cluster structures
+of the same type but with different numbers of second atom type shells.
+In this case the two commented lines need to be uncommented and the last
+line to be commented out.
+
+\subsection{Incomplete Shells}
+It is also possible to generate incomplete shells around a core and
+eventually complete shells of the second atom type.
+
+\subsubsection{Manual of \lstinline|incompl_shells.py|}
+In the header of \lstinline|incompl_shells.py| the following section
+with the
+input variables is to be found.
+
+\begin{lstlisting}
+##################Input Variables ##################################
+   atcore  = 'Ar' # atomtype of the core atoms
+   atouter = 'Ne' # atomtype of the outer shells
+   
+   rcore   = 1.88 # radius of core atoms
+   router  = 1.54 # radius of outer shell atoms
+   
+   n_core  = 1    # number of atoms for the longest edge
+   n_sec   = 2    # number of complete layers of the second atom type
+   n_outer = 1    # do not change
+   
+   #no_surfaces = 3 + 1
+   no_surfaces = raw_input('How many surfaces do you want to be covered? ')
+   no_surfaces = int(no_surfaces)
+\end{lstlisting}
+Here \lstinline|n_outer| declares the number of shells being
+partially filled. Changing it results in a different cluster class.
+A nicer way to accomplish structures of this other class is to use the
+script \lstinline|area_ico.py|.\\
+It is important to notice, that the script is going to fail,
+if the number of covered triangular surfaces is 0. In the case of
+no additional incomplete shells covered being the desired structure,
+one should consider using icoclus.py.
+
+
+\subsection{Triangular Surfaces Covered by Layers of Atoms}
+One might consider triangular surfaces covered by several layers of
+atoms of the second atom type, hereby creating subsets of complete
+shells as shown in figure \ref{}.
+
+\subsubsection{Manual of \lstinline|area_ico.py|}
+In the header of \lstinline|area_ico.py| the following control section
+is found with the variables to be adjusted.
+
+\begin{lstlisting}
+##################Input Variables ##################################
+   atcore  = 'Ar' # atomtype of the core atoms
+   atouter = 'Ne' # atomtype of the outer shells
+   
+   rcore   =  1.88  # radius of core atoms
+   router  = 1.54  # radius of outer shell atoms
+   
+   n_core  = 3     #number of atoms for the longest edge
+   n_outer = raw_input('How many layers of atoms do you want to have? ')
+   n_outer = int(n_outer)
+   #n_outer = 1   # number of layers on top of the selected surfaces
+   
+   no_surfaces = 5 + 1 # number of triangular surfaces covered
+\end{lstlisting}
+
+
+\subsection{Caps}
+\subsubsection{Manual of \lstinline|scatter_cap_ico.py|}
+
+\begin{lstlisting}
+##################Input Variables ##################################
+   atcore  = 'Ar' # atomtype of the core atoms
+   atouter = 'Ne' # atomtype of the outer shells
+   
+   rcore   = 1.88 # radius of core atoms
+   router  = 1.54 # radius of outer shell atoms
+   
+   n_core  = 4    #number of atoms for the longest edge
+   #n_core = raw_input('How many core layers do you want to have? ')
+   #n_core = int(n_core)
+   n_outer = n_core - 1 # do not change
+   
+   caps   = [1,5]
+   n_caps = len(caps)
+\end{lstlisting}
+
+\subsubsection{Manual of \lstinline|stat_caps.py|}
+\begin{lstlisting}
+##################Input Variables ##################################
+   atcore  = 'Ar' # atomtype of the core atoms
+   atouter = 'Ne' # atomtype of the outer shells
+   
+   rcore   = 1.88 # radius of core atoms
+   router  = 1.54 # radius of outer shell atoms
+   
+   n_core  = 2    #number of atoms for the longest edge
+   n_outer = n_core - 1 # do not change
+   
+   n_caps  = 2    # number of caps
+\end{lstlisting}
+
+
+
+\subsection{Randomly Arranged Atoms Around Complete Shells}
+\subsubsection{Manual of \lstinline|random_ico.py|}
+\begin{lstlisting}
+##################Input Variables ##################################
+   atcore  = 'Ar'   # atomtype of the core atoms
+   atouter = 'O'    # atomtype of the outer shells
+   
+   rcore   = 1.88   # radius of core atoms
+   router  = 1.54   # radius of outer shell atoms
+   
+   n_core  = 5      #number of atoms for the longest edge
+   n_sec   = 0      # number of complete shells of second atom type
+   ratio   = 3.8868 #nc_atoms/no_atoms
+   
+   n_outer = 1      # do not change
+\end{lstlisting}
+

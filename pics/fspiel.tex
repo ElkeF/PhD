@@ -41,7 +41,7 @@
 \end{tikzpicture}
 
  \begin{tikzpicture}[
-          scale=1.0,>=stealth,domain=0.5:10,samples=100,
+          scale=0.5,>=stealth,domain=0.5:10,samples=100,
           declare function={
           gamma = 1.0;
           factor = 16.0;
@@ -51,15 +51,16 @@
         }]
 %     \tiny
 %  \draw[very thin,color=gray] (-0.1,-0.1) grid (4.9,4.9);
-  \draw[->,thick] (-0.2,0) -- (10.2,0) node[right] {$x$};
-  \draw[->,thick] (0,-0.2) -- (0,7.2) node[above] {$f(x,x_0,\gamma)$};
+  \draw[->,thick] (-0.2,0) -- (10.2,0) node[right] {$E$};
+  \draw[->,thick] (0,-0.2) -- (0,6.2) node[anchor=north east] {$\left. \frac{\mathrm{d}}{\mathrm{d}t}
+                                                   |f_{fi}|^2 \right|_{t=0}$};
   % add ticks
-  \draw [thick] (5,0) -- (5,-5pt) node [anchor=north] {$x_0$};
+  \draw [thick] (5,0) -- (5,-5pt) node [anchor=north] {$E_f$};
 
   \draw [color=black,domain=0:10,smooth,very thick]    plot
          (\x,{distrib(\x)});% node [anchor=south] {Cauchy distribution};
   \draw [-,very thick,diplom1] (4.0,halfmax) -- (6,halfmax)
-         node [anchor=south west] {$2\gamma$};
+         node [anchor=south west] {$\Gamma$};
  \end{tikzpicture}
 
 

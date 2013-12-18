@@ -23,6 +23,12 @@
 %\usepackage{slashbox} % erm?glicht diagonale Linien in Tabellen
 \usepackage{lscape}
 \usepackage[toc,page]{appendix}
+\usepackage{verbatim}
+\usepackage{listings}
+\lstset{numbers=left, numberstyle=\tiny, numbersep=5pt, basicstyle=\footnotesize }
+\makeatletter
+\lst@AddToHook{TextStyle}{\let\lst@basicstyle\normalsize}
+\makeatother
 
 %Formatierung der Tabellen- und Bildunterschriften
 \captionsetup[figure]{format=plain, justification=raggedright, singlelinecheck=false}
@@ -31,7 +37,7 @@
 
 %Seitenformatierung
 %\renewcommand{\baselinestretch}{1.5}
-\setstretch{1.5}
+\setstretch{1.2}
 %\setlength{\extrarowheight}{2pt}
 \parindent = 0mm
 \pagestyle{fancy}
