@@ -14,16 +14,19 @@ radii.
 \subsection{Construction of the Core Icosahedral Cluster}
 The vertex coordinates of a regular icosahedron are given by
 
-\begin{equation}
- ,
-\end{equation}
+\begin{align}
+  \left(  0 , \pm \frac a2 ,  \pm\frac a2 \varphi \right) \nonumber\\
+  \left(  \pm\frac a2 , \pm \frac a2 \varphi ,  0 \right) \nonumber\\
+  \left(  \pm \frac a2 \varphi , 0 ,  \pm\frac a2 \right)
+\end{align}
 where $a$ describes both the distance from the center to each vertex
-and the length of an edge and $\phi =$.
+and the length of an edge and $\varphi = \frac 12 (1+\sqrt{5})$.
 
 Icosahedral clusters are build of different shells, each of them
 characterized by the number of atoms per edge $c$. Starting from a
 central atom, a shell with $c=2$ is added, afterwards one with $c=3$
 and so on, until the desired cluster size is achieved.
+$a$ is determined by the approriate sum over v. d. Waals radii.
 
 Here one needs to consider, that in these packed icosahedral shells
 the distance between the closest atoms within one shell is
@@ -31,11 +34,15 @@ larger than the closest distance of two atoms of neighbouring shells.
 In order to achieve the overall minimum distance between two atoms
 to be the sum of their van der Waals radii, we scale our vertex
 distance $a$ such, that the distance between the surfaces is given by
-the sum of the v.d. Waals radii.
+the sum of the v. d. Waals radii.
 
 \begin{equation}
- a' =
+ a' = a \frac{2}{\sqrt{1+\varphi^2}}
 \end{equation}
+
+In each shell first the vertex atoms are created and then corresponding
+to the size of the shell atoms in the edges and in the end the atoms
+lying in the surfaces.
 
 \subsection{Complete Shells}
 Around the icosahedral core cluster more complete shells consisting
@@ -131,24 +138,20 @@ is found with the variables to be adjusted.
 
 
 \subsection{Caps}
-\subsubsection{Manual of \lstinline|scatter_cap_ico.py|}
+One might think of a structure as shown in figure \ref{}, where the
+surfaces of the core cluster are covered with caps.
 
-\begin{lstlisting}
-##################Input Variables ##################################
-   atcore  = 'Ar' # atomtype of the core atoms
-   atouter = 'Ne' # atomtype of the outer shells
-   
-   rcore   = 1.88 # radius of core atoms
-   router  = 1.54 # radius of outer shell atoms
-   
-   n_core  = 4    #number of atoms for the longest edge
-   #n_core = raw_input('How many core layers do you want to have? ')
-   #n_core = int(n_core)
-   n_outer = n_core - 1 # do not change
-   
-   caps   = [1,5]
-   n_caps = len(caps)
-\end{lstlisting}
+In contrast to the incomplete shells here one might consider both different
+numbers of caps as well as multiple arrangements of the caps on the surfaces.
+Within the script the 20 surfaces are numbered and hence a manifold of
+combination of structures for a given number of caps is possible.
+Since the calculation of all different combinations is tedious
+it is beneficial to be able to know which of these combinations are symmetry
+equivalent. This information can be obtained with the help of the script
+\lstinline|stat_caps.py|. For a given number of caps it prints for each
+symmetry equivalent structures of one combination of capped surfaces
+and the number of possible realizations of it. Afterwards the structures
+can be constructed with \lstinline|scatter_cap_ico.py|.
 
 \subsubsection{Manual of \lstinline|stat_caps.py|}
 \begin{lstlisting}
@@ -166,8 +169,41 @@ is found with the variables to be adjusted.
 \end{lstlisting}
 
 
+\subsubsection{Manual of \lstinline|scatter_cap_ico.py|}
+\begin{lstlisting}
+##################Input Variables ##################################
+   atcore  = 'Ar' # atomtype of the core atoms
+   atouter = 'Ne' # atomtype of the outer shells
+   
+   rcore   = 1.88 # radius of core atoms
+   router  = 1.54 # radius of outer shell atoms
+   
+   n_core  = 4    #number of atoms for the longest edge
+   #n_core = raw_input('How many core layers do you want to have? ')
+   #n_core = int(n_core)
+   n_outer = n_core - 1 # do not change
+   
+   caps   = [1,5]
+   n_caps = len(caps)
+\end{lstlisting}
+\lstinline|caps| is a python list and here the combination of surface
+numbers obtained from \lstinline|stat_caps.py| is to be entered.
+
+
 
 \subsection{Randomly Arranged Atoms Around Complete Shells}
+For a given ratio between the number of core and the number of surrounding
+atoms one can create structures with a fixed icosahedral cluster of closed
+shells and atoms
+of the second type randomly arranged in the next shell until the desired
+ratio is obtained.
+In the script \lstinline|random_ico.py| the structures are not created
+by adding atoms randomly to the outermost shell but by constructing the
+shell, shuffling the order of atoms in this shell using python's random
+functionality based on the Mersenne Twister method \cite{python_random,Matsumoto98}
+and then deleting as many
+atoms as necessary to achieve the desired ratio. 
+
 \subsubsection{Manual of \lstinline|random_ico.py|}
 \begin{lstlisting}
 ##################Input Variables ##################################
@@ -177,9 +213,9 @@ is found with the variables to be adjusted.
    rcore   = 1.88   # radius of core atoms
    router  = 1.54   # radius of outer shell atoms
    
-   n_core  = 5      #number of atoms for the longest edge
+   n_core  = 5      # number of atoms for the longest edge
    n_sec   = 0      # number of complete shells of second atom type
-   ratio   = 3.8868 #nc_atoms/no_atoms
+   ratio   = 3.8868 # nc_atoms/no_atoms
    
    n_outer = 1      # do not change
 \end{lstlisting}
