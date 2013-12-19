@@ -23,7 +23,7 @@
 %\usepackage{slashbox} % erm?glicht diagonale Linien in Tabellen
 \usepackage{lscape}
 \usepackage[toc,page]{appendix}
-\usepackage{verbatim}
+\usepackage[printonlyused,withpage]{acronym}
 \usepackage{listings}
 \lstset{numbers=left, numberstyle=\tiny, numbersep=5pt, basicstyle=\footnotesize }
 \makeatletter
@@ -67,6 +67,8 @@
 \setcounter{page}{1}
 \thispagestyle{empty}
 \tableofcontents
+
+\include{acronyms}
  
 \include{intro}
 \include{theory}
