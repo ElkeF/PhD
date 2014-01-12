@@ -1,14 +1,14 @@
-\begin{tikzpicture}[scale=1.5]
+\begin{tikzpicture}[scale=1.0]
 
 \begin{loglogaxis}[%scale=1.5,
              domain=2:30,
-             %y domain=1E-8:10,
+             y domain=1E-8:10,
              restrict expr to domain={y}{1E-8:15},
              xlabel={R in \AA},
              xtick={2,4,...,10,15,...,25},
              xticklabels={2,4,6,8,10,15,20,25},
-             ylabel={$\Gamma(R) in \unit{eV}},
-             title={Parameter Fitting of NeNe and NeAr Decay Widths}
+             ylabel={$\Gamma(R)$ in \unit{eV}},
+             %title={Parameter Fitting of NeNe and NeAr Decay Widths}
              ]
 
 \addplot[only marks,
@@ -20,7 +20,7 @@
         x expr = \thisrowno{0},
         y expr = \thisrowno{1}
         ]
-        {../data/NeAr.dat};
+        {data/NeAr.dat};
         \addlegendentry{NeAr data};
 	
 \addplot[
@@ -40,7 +40,7 @@
         x expr = \thisrowno{0},
         y expr = \thisrowno{1}
         ]
-        {../data/Ne2.dat};
+        {data/Ne2.dat};
         \addlegendentry{Ne$_2$ data};
 	
 \addplot[
