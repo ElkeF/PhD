@@ -1,0 +1,55 @@
+\begin{tikzpicture}[scale=1.5]
+
+\begin{loglogaxis}[%scale=1.5,
+             domain=2:30,
+             %y domain=1E-8:10,
+             restrict expr to domain={y}{1E-8:15},
+             xlabel={Beschriftung x},
+             xtick={2,4,...,10,15,...,25},
+             xticklabels={2,4,6,8,10,15,20,25},
+             ylabel={Beschriftung y},
+             title={Titel}
+             ]
+
+\addplot[only marks,
+         mark=x,
+         thick,
+         diplom4
+        ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = \thisrowno{1}
+        ]
+        {../data/NeAr.dat};
+        \addlegendentry{NeAr data};
+	
+\addplot[
+        very thick,
+        diplom3,
+        samples=200
+	]
+	{1211057096516.005371 * exp(-11.074016*x) + 23.797274/x^6};
+        \addlegendentry{NeAr fit};
+
+\addplot[only marks,
+         mark=x,
+         thick,
+         diplom2
+        ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = \thisrowno{1}
+        ]
+        {../data/Ne2.dat};
+        \addlegendentry{Ne$_2$ data};
+	
+\addplot[
+        very thick,
+        diplom1
+	]
+	{19.643762 * exp(-2.789916*x) + 6.204031/x^6};
+        \addlegendentry{Ne$_2$ fit};
+
+		
+\end{loglogaxis}
+\end{tikzpicture}
