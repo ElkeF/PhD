@@ -13,11 +13,35 @@ Wie zu erwarten war, hängt die Zerfallsbreite aufgrund der Energieübertragung 
 
 
 \subsection{Angle Dependencies of ETMD Decay Rates}
-Consider the distances $R$ and $Q$ as definded in figure \ref{etmd_geom_pspic}
+The angular part of equation (\ref{}) can be reformulated using
+the equivalence of transitions in $\tilde{x}$ and $\tilde{y}$ direction to
+yield
+
+\begin{equation}
+  \Gamma_i \propto 2 \left( |<\tilde{D}_{z}>|^2 (1+\cos^2\alpha)
+                           + |<\tilde{D}_x>|^2 (2+ \sin^2\alpha) \right)
+\end{equation}
+
+which are shown in figure \ref{figure:etmd_angle_dir}, supposing
+$|<\tilde{D}_{z}>|^2 = |<\tilde{D}_x>|^2 = 1$.
+Obviously the two different transition types add up to give the full
+angular dependence of a given trimer. It has to be remembered, that
+$|<\tilde{D}_{z}>|^2$ is about an order of magnitude larger than
+$|<\tilde{D}_{x}>|^2$.
+
+\begin{figure}[h]
+ \centering
+ \input{pics/etmd_angle_dir}
+ \caption{Angle dependence of the decay width for different values of $q$.}
+ \label{figure:etmd_angle_dir}
+\end{figure}
+
+For a more realistic picture
+consider the distances $R$ and $Q$ as definded in figure \ref{etmd_geom_pspic}
 to be constant and the ratio between the transition dipole moments
 in the $\tilde{z}$ and the $\tilde{x}$ direction
 $q=\frac{|<\tilde{D}_x>|^2}{|<\tilde{D}_z>|^2}$ to be fixed to some number.
-In this case the decay width for each $M_AB'$ has the angular dependence
+In this case the decay width for each $M_{AB}'$ has the angular dependence
 
 \begin{align}
  \Gamma_i &\propto \left( 2q |<\tilde{D}_{z}>|^2 +
