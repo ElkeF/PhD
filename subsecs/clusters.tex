@@ -1,7 +1,8 @@
 \section{Clusters}
 
-Clusters are conglomerats of atoms or molecules connected via non-covalent
-bonds such as van der Waals forces or metallic bonding. They are an interesting
+Clusters are aggregations of atoms or molecules connected via non-covalent
+bonds such as van der Waals forces, hydrogen bonds or metallic bonding.
+They are an interesting
 matter because their properties lie in between the properties of on the one hand
 atoms and molecules and solid state matter on the other hand.
 
@@ -62,6 +63,134 @@ e.g. metals.
 
 
 \subsection{Noble Gas Clusters}
+Noble gas clusters contain noble gases of either one or several types of
+noble gas atoms. The several atoms can be classified based on
+their position within a cluster. Atoms in the bulk are surrounded by
+neighbours, whereas atoms in the surface region miss interaction
+partners on at least on side as displayed in figure \ref{} showing
+a cut through a cuboctahedral cluster.
 
-\subsection{Experimental Creation of Noble Gas Clusters}
+\begin{figure}
+ \caption{}
+ \centering
+ \input{pics/cluster_cut}
+ \label{}
+\end{figure}
+
+Within a shell each atom either is a vertex atom, an atom in an edge
+or in plane as shown in figure \ref{}.
+
+The noble clusters are held together by the London dispersion force
+stemming from the interaction of induced dipole moments in the polarizable
+noble gas atoms, which is a special case of the van der Waals forces.
+The interaction potential between two atoms is therefore reasonably
+well described by the so called
+Lennard-Jones potential
+
+\begin{equation}
+  V_{LJ}(R) = 4 \varepsilon \left( \left(\frac{\sigma}{R}\right) ^{12}
+              - \left(\frac{\sigma}{R}\right) ^{6} \right)
+\end{equation}
+where R denotes the internuclear distance, $\sigma$ the distance where
+the potential has its minimum and $\varepsilon$ is the depth of the
+potential.
+It contains a repulsiv part, taking care of the description of the
+Pauli repulsion due to overlapping orbitals at short distances. The
+$R^{-12}$ dependency is not theoretically justified but convenient
+for an analytic description. The attractive $R^{-6}$ part describes
+the London dispersion interaction.
+For the different noble gases the Lennard-Jones parameters are given in
+table \ref{} and the potentials are shown in figure \ref{}.
+
+\begin{table}
+ \caption{}
+ \label{}
+\end{table}
+
+Homonuclear noble gas clusters from the distance look like a sphere
+because for minimizing
+the energy of the cluster the interaction between them needs to be
+maximized. Atoms at the surface of a cluster have less interaction
+partners than atoms in the bulk and the three dimensional structure
+with the smalles surface to volume
+ratio $\frac{S}{V}$ is the sphere. 
+
+At a closer look the structure is not able to be a perfect sphere
+because of the shape of the constituing atoms. Both theoretical
+calculations and mass spectrometry of rare gas mixtures show, that
+for small clusters, the icosahedral structure, where icosahedral
+shells are nested into each other, is energetically beneficial.
+For a more detailed description on how to construct such an icosahedral
+structure see \ref{}.
+
+The number of atoms can be calculated via
+
+formula
+
+where $x$ denotes the number of shells, where the central atom is
+also counted as a shell. This way, $c$ is identical to the number of atoms
+in the edge of the outermost shell.
+
+
+In contrast to this, larger clusters and the solid show a cuboctahedral
+pattern, which infinitely extended leads to a \ac{fcc} structure.
+In the \ac{fcc} structure every atom is symmetrically surrounded
+by 12 atoms in the same distance, while in icosahedral structures, the
+atomic distance between atoms of different shells are smaller than the
+interatomic distance within a shell. A large number of surface atoms
+will therefore induce an icosahedral structure.
+The larger the clusters are, the smaller is their surface to volume
+ratio $\frac{S}{V}$ and therefore the influence of of the surface
+atoms on the overall structure decreases. From a certain size on the
+preferred structure changes from icosahedral to cuboctahedral. This size
+is not exactly known and a topic of ongoing research. It is well accepted,
+that the transition is supposed to lie somewhere between \unit[800--3000]{atoms}.
+
+The structure of heteronuclear clusters is ...
+
+\subsection{Creation of Noble Gas Clusters}
+In order to create stable clusters, its kinetic energy $k_BT$ needs to be lower
+than the sum over the cohesive enrgies in the cluster.
+In the experiment, noble gas clusters are formed via expansion through
+a supersonic jet. The gas flows through the jet, driven by the lower pressure
+on the other end of the chamber. If the mean free path of an atom or molecule
+$\lambda$ is large compared to the diameter $d$ of the nozzle, then the flow is
+molecular. In case of $\lambda$ being much smaller than $d$, the atoms inside
+the nozzle collide and thereby unify their velocity to the group velocity
+in direction of the stream. Consequently the width of the lateral velocity
+distribution is decreased and due to energy conservation the temperature
+in expansion direction is decreased, which allows the formation of clusters.
+In the case of the group velocity being larger than the speed of sound,
+one calls this a supersonic jet.
+
+Cluster growth starts with the creation of a dimer. Due to energy conservation
+a three-particle collision is required. Two particles form a dimer and the
+third particle removes kinetic energy. For all further additions of particles
+a two particle collision is sufficient. The kinetic energy of the additional
+atom is then used to excite vibrations within the cluster.
+
+The likelihood for three-particle collisions is proportional to the pressure
+in the nozzle squared. By increasing the pressure, therefore the creation
+of Kristallisationskeime is supported. On the other hand the apparatus
+is limited to the efficiency of the vacuum pump.
+
+\subsubsection{Creation of Heteronuclear Noble Gas Clusters}
+Heteronuclear noble gas clusters can either be created in two different ways:
+the \emph{pick-up} method or co-expansion of the two different gases.
+For the pick-up method the jet of homonuclear clusters is directed through
+a volume with a high concentration of the other species. The clusters
+collide with the second species which consequently is attached to the surface
+of the parent cluster. Depending on the types of the species
+and the experimental conditions only few atoms
+of the second species stay on the surface of the parent cluster,
+several atoms form a shell around the parent cluster or the second species
+diffuses into the bulk of the parent cluster.
+
+In the co-expansion method two gases are mixed before the expansion and
+then led into the nozzle together. The species with the higher cohesive
+energy is more likely to form dimers which then serve as Kristallkeim of
+the cluster growth.
+
+
+
 \subsection{Experimental Analysis Tools}
