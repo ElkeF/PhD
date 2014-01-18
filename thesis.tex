@@ -35,6 +35,33 @@
 \captionsetup[figure]{format=plain, justification=raggedright, singlelinecheck=false}
 \captionsetup[table]{position=top, format=plain, justification=raggedright, singlelinecheck=false}
 
+%pgf Bibliotheken
+\usetikzlibrary{patterns}
+% pgfplots Legenden außerhalb von Plots
+\newenvironment{customlegend}[1][]{%
+    \begingroup
+    \csname pgfplots@init@cleared@structures\endcsname
+    \pgfplotsset{#1}%
+}{%
+    \csname pgfplots@createlegend\endcsname
+    \endgroup
+}%
+\def\addlegendimage{\csname pgfplots@addlegendimage\endcsname}
+
+\newcommand{\addlegendimageintext}[1]{%
+    \tikz {
+        \begin{customlegend}[
+            legend entries={\empty},
+            legend cell align=left,
+            legend style={
+                draw=none,
+                inner sep=0pt,
+                column sep=0pt,
+                nodes={inner sep=0pt}}]
+        \addlegendimage{#1}
+        \end{customlegend}
+    }%
+}
 
 %Seitenformatierung
 %\renewcommand{\baselinestretch}{1.5}
