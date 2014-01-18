@@ -1,0 +1,27 @@
+\begin{minipage}[htb]{0.4\textwidth}
+   \centering
+   \begin{tikzpicture}[scale=1.0,>=stealth]
+       %\tiny
+       %\draw [help lines] (-3,-3) grid (5,5);
+       \draw [diplom1,pattern color=diplom1,pattern=north east lines,thick]
+             (0:0) circle (0.5);
+       \foreach \alpha in {0,60,...,300}
+         \draw [diplom1,pattern color=diplom1,pattern=north east lines,thick]
+               (\alpha : 1.0) circle (0.5);
+       \foreach \alpha in {0,60,...,300}
+         \draw [diplom2,pattern color=diplom2,pattern=north east lines,thick]
+               (\alpha : 2.0) circle (0.5);
+       \foreach \alpha in {30,90,...,330}
+         \draw [diplom2,pattern color=diplom2,pattern=crosshatch,thick]
+               (\alpha : 1.7321) circle (0.5);
+   \end{tikzpicture}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[htb]{0.4\textwidth}
+%Legende
+\addlegendimageintext{pattern=north east lines, pattern color=diplom1, area legend} core atom
+
+\addlegendimageintext{pattern=north east lines, pattern color=diplom2, area legend} surface atom -- vertex
+
+\addlegendimageintext{pattern=crosshatch, pattern color=diplom2, area legend} surface atom -- edge
+\end{minipage}
