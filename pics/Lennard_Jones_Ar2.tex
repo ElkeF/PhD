@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+    \begin{axis}[domain=3.2:9.0,
+                 samples = 200,
+                 xtick={3,5,...,9},
+                 %xticklabels={$-\pi$,$-\frac \pi 2$,0,$\frac \pi 2$,$\pi$},
+                 extra x ticks={3.82086},
+                 extra x tick labels={$\sqrt[6]{2} \sigma$},
+                 cycle list name = exotic,
+%                 legend style={anchor= north west},
+                 xlabel = {R [\AA]},
+                 ylabel = {V [meV]}
+                 ]
+    \addplot+[mark = none,
+             thick,
+             diplom1
+             ]
+             {4*12.4 * ( (3.404/x)^(12) -  (3.404/x)^(6) )}; 
+    \addlegendentry{Ar-Ar}
+    \addplot+[mark = none,
+             dashed,
+             gray
+             ]
+             {0.0}; 
+    \addplot+[mark = none,
+             dashed,
+             gray
+             ]
+             {-12.4}; 
+    \draw [thick,<->] (axis cs:8.0,-12.4) --
+          node [right=2pt] {$\varepsilon$} (axis cs:8.0,0.0);
+    
+    \end{axis}
+\end{tikzpicture}
