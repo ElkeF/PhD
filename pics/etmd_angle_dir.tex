@@ -18,11 +18,13 @@
                 thick
                ]
                {2*(1+cos(deg(x))^2)};
+      \addlegendentry{$\tilde{z}$ direction};
       \addplot+[
                 mark = none,
                 thick
                ]
                {2*(2+sin(deg(x))^2)};
+      \addlegendentry{$\tilde{x}$ direction};
       \draw[] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},2) -- (axis cs:\pgfkeysvalueof{/pgfplots/xmax},2);
     \end{axis}
 \end{tikzpicture}
