@@ -3,16 +3,64 @@
 \subsection{Distance Dependencies of ICD Decay Rates}
 
 
+\subsection{Influence of the Geometry on ETMD3 processes}
+Atomic triples are characterized by three coordinates which we for
+our discussion choose the Jacobi coordinates $R$, $Q$ and $\theta$ as illustrated
+in figure \ref{}. Here $R$ and $\theta$ are chosen differently as in
+figure \ref{}. The choice of appropriate coordinates is not unambiguous,
+since it is unknown, which way the energy travels during its transfer
+between the subsystems. A more detailed discussion is to be found in 
+section \ref{}.
 
-\subsection{Distance Dependencies of ETMD Decay Rates}
-\textbf{Der Abstand zwischen den Atomen $A$ und $B$ $R_1$}:\\
-$R_1$ erscheint nicht explizit in dem hergeleiteten asymtotischen Ausdruck für die Zerfallsbreiten, sondern implizit im Übergangsdipolmoment. Dieses nimmt exponentiell mit dem Abstand zwischen den Atomen ab.\\
+The \ac{ETMD}3 is influenced both in the investigation of energetics
+as well as the efficiency of the decay.
 
-\textbf{Der Abstand zwischen den Untereinheiten $AB$ und $C$ $R_2$}:\\
-Wie zu erwarten war, hängt die Zerfallsbreite aufgrund der Energieübertragung durch eine Dipol-Dipol-Wechselwirkung mit $\frac{1}{R_2^6}$ vom Abstand der beiden Untereinheiten ab.\\
+Energetically the geometry is crucial for the determination of open channels.
+Already in the first approximation of the final state energy of equation (\ref{})
+the final state energy $E_fin$ strongly depends on the distance between the
+two atoms $X_1$ and $X_2$ ionized in the final state. This dependence is explicitely to be
+formulated as
+
+\begin{equation}
+  E_{fin} = SIP(X_1) + SIP(X_2) + \frac{1}{\sqrt{Q^2 - 2QR\cos\theta + R^2}} .
+\end{equation}
+
+When this final state energy is higher than the intial state, the particular
+channel is closed. For the case of the ArXe$_2$ this relation is illustrated
+in figure \ref{figure:ArXe2_geom_energy} for the
+ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channel.
+
+\begin{figure}[h]
+ \centering
+ \includegraphics[]{pics/ArXeXe12_12_surf.pdf}
+ \caption{Energy hyper surface of the doubly ionized
+          ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ (light blue) and the ionization
+          potential of the Ar3s$^{-1}$ initial state with \unit[29.2]{eV}
+          (dark blue). $Q$ is constant, whereas $R$ and the angle $\theta$
+          (see figure \ref{}) are varied. This ETMD3 channel is open for
+          structures where
+          the final state energy is lower than the initial state energy.}
+ \label{figure:ArXe2_geom_energy}
+\end{figure}
+
+At a hypothetical very small angle $\theta$ and $R\approx Q$, the channel closes.
+In this example those geometries are mostly unrealistic, because the two xenon
+atoms would be closer than in a neutral Xe dimer, but in other systems the
+channel closing due to the geometry are to be expected.
 
 
-\subsection{Angle Dependencies of ETMD Decay Rates}
+%\subsubsection{Distance Dependencies of ETMD Decay Rates}
+The decay rate also crucially depends on the geometry of the triple.
+From eq. (\ref{}) the $R$ dependency is easily interpreted of being
+$\Gamma \propto R^{-6}$ corresponding to the energy transfer mainly being
+caused by a dipole-dipole interaction. The dependency of $Q$ is implicitely
+formulated in the transition dipole moments. These depend on the overlap
+between the two atoms of the electron transfer, which decreases exponentially
+with $Q$.
+
+
+
+%\subsubsection{Angle Dependencies of ETMD Decay Rates}
 The angular part of equation (\ref{}) can be reformulated using
 the equivalence of transitions in $\tilde{x}$ and $\tilde{y}$ direction to
 yield
@@ -74,7 +122,50 @@ Therefore, for typical numbers of $q$ the energy transfer
 to an atom on the same axis ($\alpha = 0,\pi$), corresponding
 to a linear arrangement, is preferred.
 
+Combining both the view on the energetic accessibility of the decay
+channels and the decay widths results in the pictures in
+figure \ref{figure:ArXe2_etmd_geom_gamma}
+for the case of the four ArXe$_2$ channels obtained by \ac{HARDRoC} using the
+asymptotic formula \ref{} with redefined $R$ and $\theta$. Here $Q$ is chosen constant
+to the internuclear distance of the neutral ArXe dimer and $R$ and $\theta$
+are varied. The plots exhibit the channel closing for very small Xe-Xe distances
+and the $R^{-6}$ behaviour as well as the expected angle dependence explicitely
+shown in figure \ref{figure_etmd_angle}.
 
+\begin{figure}[h]
+ \centering
+ \input{pics/ArXe2_etmd_gamma33}
+ \input{pics/ArXe2_etmd_gamma31}\\
+ \input{pics/ArXe2_etmd_gamma13}
+ \input{pics/ArXe2_etmd_gamma11}
+ \caption{}
+ \label{figure:ArXe2_etmd_geom_gamma}
+\end{figure}
+
+The decay widths of the four different decay channels shown in
+figure \ref{figure:ArXe2_etmd_geom_gamma} can be summed up to yield
+the total decay width of the ArXe$_2$ trimer as illustrated in figure
+\ref{figure:ArXe2_etmd_geom_gamma_total}.
+
+\begin{figure}[h]
+ \centering
+ \input{pics/ArXe2_etmd_gamma_total}
+ \caption{}
+ \label{figure:ArXe2_etmd_geom_gamma_total}
+\end{figure}
+
+Also here the $R^{-6}$ dependence is observed but the dependency
+of the angle $\theta$ looks spiky. These changes are due to the channel
+closing. For a large angle $\theta$ all channels are open. Imagine a linear
+trimer, which now starts bending. The closer
+the two xenon atoms get, the more the two positive charges in the final
+state repell each other. At one point the atoms are so close, that the
+ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channel being highest in energy
+is no longer energetically accessible. Bending further first the
+ArXe5p$_{3/2}^{-1}$Xe5p$_{1/2}^{-1}$ and the
+ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channels, being equal in energy,
+close and finally also the ArXe5p$_{3/2}^{-1}$Xe5p$_{3/2}^{-1}$
+channel.
 
 \subsection{Influence of the Coordinate System Choice}
 In section \ref{} a coordinate system was chosen to describe the
