@@ -37,6 +37,7 @@
 
 %pgf Bibliotheken
 \usetikzlibrary{patterns}
+
 % pgfplots Legenden außerhalb von Plots
 \newenvironment{customlegend}[1][]{%
     \begingroup
@@ -89,6 +90,11 @@
 \definecolor{unirot}{RGB}{153,0,0}
 \definecolor{unirot_hell}{RGB}{255,228,225}
 \definecolor{lightblue}{RGB}{242.2,249.88,255}
+
+\pgfplotsset{colormap={diplom2s}{
+       color(0cm)=(white);
+       color(1cm)=(diplom1);
+       color(2cm)=(diplom2)}}
 
 \pgfplotsset{compat=1.8}
 
