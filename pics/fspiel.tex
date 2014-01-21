@@ -1,13 +1,12 @@
 \documentclass{article}
 \usepackage{tikz,pgfplots}
-%\pgfplotsset{colormap={name}{
+%\pgfplotsset{colormap={mix}{
 %	color(0cm)=(blue);
 %	color(1cm)=(green);
 %	color(2cm)=(yellow)
 %	color(3cm)=(red)}}
-\pgfplotsset{colormap={blues}{
-       color(0cm)=(white);
-       color(1cm)=(blue)}}
+
+\usetikzlibrary{patterns}
 
 \definecolor{diplom1}{rgb}{0.0 0.4 1.0}
 \definecolor{diplom2}{rgb}{0.0 0.0 0.6}
@@ -19,40 +18,93 @@
 \definecolor{unirot_hell}{RGB}{255,228,225}
 \definecolor{lightblue}{RGB}{242.2,249.88,255}
 
+\pgfplotsset{colormap={diplom1s}{
+       color(0cm)=(white);
+       color(1cm)=(diplom1);
+       color(10cm)=(diplom1)}}
+\pgfplotsset{colormap={diplom2s}{
+       color(0cm)=(white);
+       color(1cm)=(diplom1);
+       color(2cm)=(diplom2)}}
+
+
+\newenvironment{customlegend}[1][]{%
+    \begingroup
+    \csname pgfplots@init@cleared@structures\endcsname
+    \pgfplotsset{#1}%
+}{%
+    \csname pgfplots@createlegend\endcsname
+    \endgroup
+}%
+\def\addlegendimage{\csname pgfplots@addlegendimage\endcsname}
+
+\newcommand{\addlegendimageintext}[1]{%
+    \tikz {
+        \begin{customlegend}[
+            legend entries={\empty},
+            legend cell align=left,
+            legend style={
+                draw=none,
+                inner sep=0pt,
+                column sep=0pt,
+                nodes={inner sep=0pt}}]
+        \addlegendimage{#1}
+        \end{customlegend}
+    }%
+}
+
+
 \begin{document}
 
 
-   \begin{tikzpicture}[scale=1.0,>=stealth]
-%       \draw [help lines] (0,0) grid (10,7);
-       
-       \draw [very thick] (2,4) circle (0.3)
-              node [name=A] {$A$};
-       \draw [very thick] (2,2.5) circle (0.3)
-              node [name=B] {$B$};
-       \draw [very thick] (2,1) circle (0.3)
-              node [name=C] {$C$};
-       \draw [very thick] (A) -- (B);
-       \draw [very thick] (B) -- (C);
-       \path (A) edge [bend left] node [right] {$Q$} (B)
-             (B) edge [bend left] node [right] {$R_B$} (C)	
-             (A) edge [bend right] node [left] {$R_A$} (C);
-
-    \begin{scope}[xshift=5cm]
-       \draw [very thick] (2,4) circle (0.3)
-              node [name=A] {$A$};
-       \draw [very thick] (2,2.5) circle (0.3)
-              node [name=B] {$B$};
-       \draw [very thick] (2,5.5) circle (0.3)
-              node [name=C] {$C$};
-       \draw [very thick] (A) -- (B);
-       \draw [very thick] (A) -- (C);
-       \path (A) edge [bend right] node [left] {$Q$} (B)
-             (B) edge [bend right] node [right] {$R_B$} (C)	
-             (A) edge [bend left] node [left] {$R_A$} (C);
-    \end{scope}
-
-   \end{tikzpicture}
-
+\begin{tikzpicture}
+    \begin{axis}[scale = 0.8,
+                 domain= 20:180,
+                 y domain=4.0:15,
+                 xtick={30,60,...,180},
+                 cycle list name = exotic,
+                 xlabel = {$\theta$},
+                 ylabel = {$Q$ [\AA]},
+                 zlabel = {$\Gamma$ [eV]},
+                 title = {ArXe5p$_{3/2}^{-1}$Xe5p$_{3/2}^{-1}$},
+                 %view={0}{0}
+                 view={230}{10}
+                 ]
+    \addplot3[surf,
+             z buffer=sort
+             ]
+             table[
+             x expr=\thisrowno{1},
+             y expr=\thisrowno{0},
+             z expr=\thisrowno{2}
+             ]
+             {../data/ArXe2_etmd_surf.dat};
+    \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}[scale = 0.8,
+                 domain= 20:180,
+                 y domain=4.0:15,
+                 xtick={30,60,...,180},
+                 cycle list name = exotic,
+                 xlabel = {$\theta$},
+                 ylabel = {$Q$ [\AA]},
+                 zlabel = {$\Gamma$ [eV]},
+                 title = {ArXe5p$_{3/2}^{-1}$Xe5p$_{1/2}^{-1}$},
+                 %view={0}{0}
+                 view={230}{10}
+                 ]
+    \addplot3[surf,
+             z buffer=sort
+             ]
+             table[
+             x expr=\thisrowno{1},
+             y expr=\thisrowno{0},
+             z expr=\thisrowno{3}
+             ]
+             {../data/ArXe2_etmd_surf.dat};
+    \end{axis}
+\end{tikzpicture}
 
 
 \end{document}
