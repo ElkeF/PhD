@@ -17,7 +17,7 @@ as well as the efficiency of the decay.
 
 Energetically the geometry is crucial for the determination of open channels.
 Already in the first approximation of the final state energy of equation (\ref{})
-the final state energy $E_fin$ strongly depends on the distance between the
+the final state energy $E_{fin}$ strongly depends on the distance between the
 two atoms $X_1$ and $X_2$ ionized in the final state. This dependence is explicitely to be
 formulated as
 
@@ -30,7 +30,7 @@ channel is closed. For the case of the ArXe$_2$ this relation is illustrated
 in figure \ref{figure:ArXe2_geom_energy} for the
 ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channel.
 
-\begin{figure}[h]
+\begin{figure}[htb]
  \centering
  \includegraphics[]{pics/ArXeXe12_12_surf.pdf}
  \caption{Energy hyper surface of the doubly ionized
@@ -80,7 +80,9 @@ $|<\tilde{D}_{x}>|^2$.
 \begin{figure}[h]
  \centering
  \input{pics/etmd_angle_dir}
- \caption{Angle dependence of the decay width for different values of $q$.}
+ \caption{Angle dependence of the ETMD3 decay widths for electron transfers
+          along the internuclear axis of subsystem $S_1$ $\tilde{z}$ and perpendicular
+          to the internuclear axis $\tilde{x}$.}
  \label{figure:etmd_angle_dir}
 \end{figure}
 
@@ -104,7 +106,9 @@ and minima at uneven multiples at $\frac \pi 2$ as shown in figure \ref{figure:e
 \begin{figure}[h]
  \centering
  \input{pics/etmd_angle}
- \caption{Angle dependence of the decay width for different values of $q$.}
+ \caption{Angular dependence of the \ac{ETMD}3 decay width for electrons trasnfers
+          both along and perpendicular to the internuclear axis of subsystem $S_1$.
+          Different values of $q=\frac{|<\tilde{D}_x>|^2}{|<\tilde{D}_z>|^2}$.}
  \label{figure:etmd_angle}
 \end{figure}
 
@@ -122,15 +126,14 @@ Therefore, for typical numbers of $q$ the energy transfer
 to an atom on the same axis ($\alpha = 0,\pi$), corresponding
 to a linear arrangement, is preferred.
 
-Combining both the view on the energetic accessibility of the decay
-channels and the decay widths results in the pictures in
-figure \ref{figure:ArXe2_etmd_geom_gamma}
-for the case of the four ArXe$_2$ channels obtained by \ac{HARDRoC} using the
-asymptotic formula \ref{} with redefined $R$ and $\theta$. Here $Q$ is chosen constant
-to the internuclear distance of the neutral ArXe dimer and $R$ and $\theta$
-are varied. The plots exhibit the channel closing for very small Xe-Xe distances
-and the $R^{-6}$ behaviour as well as the expected angle dependence explicitely
-shown in figure \ref{figure_etmd_angle}.
+The previous discussions are based on the decay of one specific atom
+begin the electron donor and another atom being the electron emitter.
+In reality both atoms can be donor als well as emitter while the energy
+of the resulting final state stays the same. For both bond lengths to the
+initially ionized atom being the same, both contribute the same decay rate
+to the total decay rate. With one of the atoms ionized in the final state
+being further apart, its probability in donating the vacancy filling electron
+decreases exponentially and can hence be negliged.
 
 \begin{figure}[h]
  \centering
@@ -138,9 +141,24 @@ shown in figure \ref{figure_etmd_angle}.
  \input{pics/ArXe2_etmd_gamma31}\\
  \input{pics/ArXe2_etmd_gamma13}
  \input{pics/ArXe2_etmd_gamma11}
- \caption{}
+ \caption{\ac{ETMD}3 decay widths $\Gamma$ hyper surfaces for an ArXe$_2$ trimer.
+          The four electronic decay channels are shown separately.}
  \label{figure:ArXe2_etmd_geom_gamma}
 \end{figure}
+
+Combining both the view on the energetic accessibility of the decay
+channels and the decay widths results in the pictures in
+figure \ref{figure:ArXe2_etmd_geom_gamma}.
+Here the geometry dependence of the decay width for the case of the four ArXe$_2$
+channels is shown for all possible geometric combinations.
+The numbers were obtained by \ac{HARDRoC} using the
+asymptotic formula \ref{} with redefined $R$ and $\theta$. Here $Q$ is chosen constant
+to the internuclear distance of the neutral ArXe dimer and $R$ and $\theta$
+are varied. The plots exhibit the channel closing for very small Xe-Xe distances
+and the $R^{-6}$ behaviour as well as the expected angle dependence explicitely
+shown in figure \ref{figure:etmd_angle}. Implicitly the exponential decrease
+of the decay width is shown by one of the two triple combinations in the trimer
+showing a contribution only at small internuclear distances.
 
 The decay widths of the four different decay channels shown in
 figure \ref{figure:ArXe2_etmd_geom_gamma} can be summed up to yield
@@ -166,6 +184,7 @@ ArXe5p$_{3/2}^{-1}$Xe5p$_{1/2}^{-1}$ and the
 ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channels, being equal in energy,
 close and finally also the ArXe5p$_{3/2}^{-1}$Xe5p$_{3/2}^{-1}$
 channel.
+
 
 \subsection{Influence of the Coordinate System Choice}
 In section \ref{} a coordinate system was chosen to describe the
