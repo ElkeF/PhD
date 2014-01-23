@@ -246,13 +246,28 @@ $2\bar{N}$.
 %figure with size distribution
 \end{figure}
 
-Empirically the average cluster size $\bar{N}$ can be estimated with
-the formula of Hagena \cite{Hagena}
+The mean cluster size $\bar{N}$ can be estimated with
+the help of the empirial scaling parameter $\Gamma^*$ of Hagena et al.
+\cite{Hagena} for different experimental conditions.
 
 \begin{equation}
- \Gamma
+ \Gamma^* = \frac{p_0 d_{eq}^q}{T_0^{5/2-q/4}} K_{ch}
 \end{equation}
-where ...
+Here, $p_0$ and $T_0$ are the expansion pressure and the temperature
+of the nozzle and $d_{eq}$ is the equivalent nozzle diameter for conical
+nozzles. $K_{ch}$ is a constant depending on the material and can be
+calculated by the means of \cite{xyz}. The values for the rare gases for
+the experimental setup, which will be compared to in this work are
+$K_ch(Ne)=185$, $K_ch(Ar)=1646$, $K_ch(Kr)=2980$ and $K_ch(Xe)=5554$.
+
+From the scaling parameter the mean cluster size $\bar{N}$ 
+of homonuclear clusters can be
+estimated as
+
+\begin{equation}
+  \bar{N} = 33 \left( \frac{\Gamma^*}{1000} \right) ^{2.35} .
+\end{equation}
+
 
 \subsubsection{Creation of Heteronuclear Noble Gas Clusters}
 Heteronuclear noble gas clusters can either be created in two different ways:
@@ -284,12 +299,14 @@ intensity conclusions about the surroundings about the atoms inside
 the cluster are drawn. These methods are \ac{PES}, especially \ac{XPS}
 and \ac{UPS}, \ac{AES}, \ac{RAS}, \ac{XES}, \ac{NEXAFS} and \ac{XAS}.
 Their different working principles are illustrated in figure
-\ref{figure}.
+\ref{figure:overview_spectroscopies}.
 
-\begin{figure}
+\begin{figure}[h]
   \centering
-  \caption{}
-  \label{}
+  \includegraphics[scale=1.0]{pics/overview_spectroscopies.jpeg}
+  \caption{Elsevier Schematic overview over the physical mechanisms of different
+           spectroscopic methods.}
+  \label{figure:overview_spectroscopies}
 \end{figure}
 
 \ac{XAS}, also known as \ac{NEXAFS} probe the absorption of light
@@ -320,12 +337,16 @@ electron-electron spectra.
 
 \begin{figure}[h]
   \centering
-  \caption{}
-  \label{}
+  \includegraphics[]{pics/exp_setup_overview.pdf}
+  \caption{Schematic view of the experimental setup of a electron-electron
+           coincidence measurement. The synchrotron radiation axis
+           is perpendicular to the plane of the diagram.}
+  \label{figure:exp_setup_overview}
 \end{figure}
 
 The principle experimental setup for both coincidence measurements is very similar.
-As shown in figure \ref{figure:}, the clusters are created using a supersonic jet
+As shown in figure \ref{figure:exp_setup_overview},
+the clusters are created using a supersonic jet
 and lead through the xyz chamber. Here, perpendicular to the expansion direction
 synchrotron radiation enters the reaction chamber with a time of
 \unit[]{} between two pulses.
@@ -344,15 +365,23 @@ and negatively charged particles. In experiments normally only either electrons
 or ions are investigated at a time.
 
 A coincidence of two particles is experimentally defined by two events
-measured in a specific time range after one synchrotron pulse. For the
-electron electron coincidence, this time range is \unit[xyz]{fs}.
+measured in a specific time range after one synchrotron pulse.
+In case of the ion-ion coincidence, this property is called \ac{KER}.
+For the
+electron-electron coincidence, the coincidence time range is \unit[xyz]{fs}.
+Coincidences are very often displayed in a so-called coincidence map,
+where the kinetic energy of one electron is plotted against the
+kinetic energy of the other electron. 
 Two electrons measured in coincidence can stem from several physical
-processes illustrated in figure \ref{figure:}
+processes. In the coincidence map these processes are distiguishable
+from the form of the signal illustrated in
+figure \ref{figure:ee_coincidence_processes}
 
 \begin{figure}[h]
   \centering
+  \includegraphics{pics/ee_coincidence_processes.pdf}
   \caption{}
-  \label{}
+  \label{figure:ee_coincidence_processes}
 \end{figure}
 
 different processes
