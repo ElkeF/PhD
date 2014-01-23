@@ -8,8 +8,15 @@ atoms and molecules and solid state matter on the other hand.
 
 The investigation of clusters touches the basic question, from what point
 on a solid actually is a solid matter and not a very big cluster.
-This question can be answered looking at several property criteria of solids,
-but the criteria not necessarily allow to draw the same conclusion.
+Very often this question is answered by the number of constituents
+of a cluster being
+2 -- 50000, but from an other point of view, the decision for
+a system to be a cluster or a solid can be drawn by looking for
+intrinsic 
+properties of solids in the system under investigation.
+Nevertheless, not all criteria might allow to draw the same conclusion.
+%This question can be answered looking at several property criteria of solids,
+%but the criteria not necessarily allow to draw the same conclusion.
 
 In solids atoms or molecules ideally have a fixed postion with respect to their
 neighbours. These structures can be very ordered like in crystals and metals
@@ -67,18 +74,23 @@ Noble gas clusters contain noble gases of either one or several types of
 noble gas atoms. The several atoms can be classified based on
 their position within a cluster. Atoms in the bulk are surrounded by
 neighbours, whereas atoms in the surface region miss interaction
-partners on at least on side as displayed in figure \ref{} showing
+partners on at least on side as displayed in figure \ref{figure:cluster_cut} showing
 a cut through a cuboctahedral cluster.
 
-\begin{figure}
- \caption{}
+\begin{figure}[h]
  \centering
  \input{pics/cluster_cut}
- \label{}
+ \caption{Cut through a cuboctahedral cluster illustrating the different
+          kinds of atoms within a cluster. The bright blue colored atoms
+          are bulk atoms whereas the dark blue atoms belong to the surface.
+          Within a shell atoms can either be vertices (striped), belong to
+          an edge (crosshatched) or lie within a layer (not depicted in this
+          two dimensional sketch.}
+ \label{figure:cluster_cut}
 \end{figure}
 
 Within a shell each atom either is a vertex atom, an atom in an edge
-or in plane as shown in figure \ref{}.
+or in plane as shown in figure \ref{figure:cluster_cut}.
 
 The noble clusters are held together by the London dispersion force
 stemming from the interaction of induced dipole moments in the polarizable
@@ -91,21 +103,47 @@ Lennard-Jones potential
   V_{LJ}(R) = 4 \varepsilon \left( \left(\frac{\sigma}{R}\right) ^{12}
               - \left(\frac{\sigma}{R}\right) ^{6} \right)
 \end{equation}
-where R denotes the internuclear distance, $\sigma$ the distance where
-the potential has its minimum and $\varepsilon$ is the depth of the
-potential.
+where R denotes the internuclear distance, 
+and $\varepsilon$ is the depth of the
+potential. Due to different conventions of the formulation
+of the Lennard-Jones potential $\sigma=\frac{R_{min}}{\sqrt[6]{2}}$
+with $R_{min}$ being the distance of the potential minimum.
+
+\begin{figure}[h]
+ \centering
+ \input{pics/Lennard_Jones_Ar2}
+ \caption{Lennard-Jones potential of the argon dimer illustrating the
+          Lennard-Jones parameters $\sigma$ and $\varepsilon$.}
+ \label{figure:LJ_Ar2}
+\end{figure}
+
 It contains a repulsiv part, taking care of the description of the
 Pauli repulsion due to overlapping orbitals at short distances. The
 $R^{-12}$ dependency is not theoretically justified but convenient
 for an analytic description. The attractive $R^{-6}$ part describes
 the London dispersion interaction.
 For the different noble gases the Lennard-Jones parameters are given in
-table \ref{} and the potentials are shown in figure \ref{}.
+table \ref{table:LJ_parameter} and the potentials are shown in
+figure \ref{figure:LJ_Ar2}.
 
-\begin{table}
- \caption{}
- \label{}
+\begin{table}[htb]
+ \caption{Lennard-Jones parameters for noble gas dimers used in this
+          thesis.}
+ \centering
+ \begin{tabular}{lcc}
+   \toprule
+   Atom type & $\sigma$ [\unit{\AA}] & $\varepsilon$ [\unit{meV}]\\
+   \midrule
+   Ne-Ne     & &\\
+   Ne-Ar     &&\\
+   Ar-Ar     &                 3.404 & 12.4\\
+   Ar-Xe     &                 3.72  & 14.4\\
+   Xe-Xe     &                 3.961 & 23.1\\
+   \bottomrule
+ \end{tabular}
+ \label{table:LJ_parameter}
 \end{table}
+
 
 Homonuclear noble gas clusters from the distance look like a sphere
 because for minimizing
@@ -113,7 +151,7 @@ the energy of the cluster the interaction between them needs to be
 maximized. Atoms at the surface of a cluster have less interaction
 partners than atoms in the bulk and the three dimensional structure
 with the smalles surface to volume
-ratio $\frac{S}{V}$ is the sphere. 
+ratio $\frac{S}{B}$ is the sphere. 
 
 At a closer look the structure is not able to be a perfect sphere
 because of the shape of the constituing atoms. Both theoretical
@@ -125,10 +163,13 @@ structure see \ref{}.
 
 The number of atoms can be calculated via
 
-formula
+\begin{equation}
+  n_{atoms} = \frac{10}{3} c^3 - 5 c^2 + \frac{11}{3} c -1 .
+\end{equation}
 
 where $x$ denotes the number of shells, where the central atom is
-also counted as a shell. This way, $c$ is identical to the number of atoms
+also counted as a shell. \cite{Martin96} This way, $c$ is
+identical to the number of atoms
 in the edge of the outermost shell.
 
 
@@ -139,14 +180,31 @@ by 12 atoms in the same distance, while in icosahedral structures, the
 atomic distance between atoms of different shells are smaller than the
 interatomic distance within a shell. A large number of surface atoms
 will therefore induce an icosahedral structure.
-The larger the clusters are, the smaller is their surface to volume
-ratio $\frac{S}{V}$ and therefore the influence of of the surface
-atoms on the overall structure decreases. From a certain size on the
+The larger the clusters are, the smaller is their surface to bulk
+ratio $\frac{S}{B}$ and therefore the influence of of the surface
+atoms on the overall structure decreases as illustrated in
+figure \ref{figure:surface_to_bulk}. From a certain size on the
 preferred structure changes from icosahedral to cuboctahedral. This size
 is not exactly known and a topic of ongoing research. It is well accepted,
-that the transition is supposed to lie somewhere between \unit[800--3000]{atoms}.
+that the transition is supposed to lie somewhere between \unit[800--3000]{atoms},
+which corresponds to $c = 7 - 11$.
 
-The structure of heteronuclear clusters is ...
+\begin{figure}[h]
+ \centering
+ \input{pics/surface_to_bulk_pgf}
+ \caption{Surface to bulk ratio for icosahedral structures with $c$ complete
+          shells illustrating the decreasing impact of the surface atoms.}
+ \label{figure:surface_to_bulk}
+\end{figure}
+
+The structure of heteronuclear clusters is expected to be similar to the
+homonuclear rare gas cluster with a core consisting of the more polarizable
+atom type somehow surrounded by atoms of the other atom type, which will be discussed
+in the next section. To my knowledge no more detailed information about
+the structure of heteronuclear rare gas cluster is known in the
+literature. A new method for the investigation of the structure is found
+in this thesis.
+
 
 \subsection{Creation of Noble Gas Clusters}
 In order to create stable clusters, its kinetic energy $k_BT$ needs to be lower
@@ -174,6 +232,28 @@ in the nozzle squared. By increasing the pressure, therefore the creation
 of Kristallisationskeime is supported. On the other hand the apparatus
 is limited to the efficiency of the vacuum pump.
 
+Whenever one speaks of rare gas clusters, one has to keep in mind, that
+with today's experimental knowledge and apparatus single clusters
+inhibiting a defined number of atoms or even structure can not be created.
+In every experiment a whole manifold of clusters with different sizes are
+formed. This manifold is characterized by the average number of atoms
+per cluster $\bar{N}$. This number is not necessarily the most probable
+cluster in the mixture as can easily be seen from figure \ref{figure:}.
+The width of the cluster size distribution is normally estimated to be
+$2\bar{N}$.
+
+\begin{figure}[h]
+%figure with size distribution
+\end{figure}
+
+Empirically the average cluster size $\bar{N}$ can be estimated with
+the formula of Hagena \cite{Hagena}
+
+\begin{equation}
+ \Gamma
+\end{equation}
+where ...
+
 \subsubsection{Creation of Heteronuclear Noble Gas Clusters}
 Heteronuclear noble gas clusters can either be created in two different ways:
 the \emph{pick-up} method or co-expansion of the two different gases.
@@ -194,4 +274,38 @@ the cluster growth.
 
 
 \subsection{Experimental Analysis Tools}
+Noble gas clusters are investigated using mass spectrometry and spectroscopy.
+From the mass spectrometry information about the mean number of atoms
+can be obtained. Within spectrometry two ansatzes are used
+to gain information about clusters. In the first one, measurements of
+atomic properties for atoms in clusters are compared to the results of
+atoms. From the number of peaks, the energy shift and the relative peak
+intensity conclusions about the surroundings about the atoms inside
+the cluster are drawn. These methods are \ac{PES}, especially \ac{XPS}
+and \ac{UPS}, \ac{AES}, \ac{RAS}, \ac{XES}, \ac{NEXAFS} and \ac{XAS}.
+Their different working principles are illustrated in figure
+\ref{figure}.
 
+\begin{figure}
+  \centering
+  \caption{}
+  \label{}
+\end{figure}
+
+\ac{XAS}, also known as \ac{NEXAFS} probe the absorption of light
+from the ground state to a core excited state With \ac{PES} ionization
+energies can be determined. More acurately \ac{UPS} gives information
+about the ionization potentials of valence orbitals and \ac{XPS}
+of core orbitals.
+\ac{AES} measures the kinetic energy of the emitted Auger electron
+resulting in a doubly (mostly valence) ionized final state, while
+\ac{XES} measures the photon emitted during an relaxation from
+a core ionized to valence ionized state.
+
+Using thoses techniques atoms in the bulk can be differenciated from atoms
+in the bulk and even different positions in the
+outermost shell could be resolved. The obtained surface-to-bulk ratios
+can then also be used for an estimation of the mean cluster size.
+
+The second ansatz exploits the interaction between neighbouring atoms
+directly. 

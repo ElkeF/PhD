@@ -1,125 +1,97 @@
-\section{Character of Energy and Electron Transfer Illustrated Using Pairs and Triples of Atoms}
+%\section{Character of Energy and Electron Transfer Illustrated Using Pairs and Triples of Atoms}
+\section{Geometric Influence on ICD and ETMD3  Illustrated Using Pairs and Triples of Atoms}
+Approximating every system into pairs and triples of atoms is a very useful
+first order approximation to both the investigation of energies and
+decay widths of a larger system. Pairs and triples are combinations of
+two and three atoms, respectively.
+These atoms do not necessarily need to form bonds between each other or
+even being close, but they are characterized according to fixed internal
+coordinates. Each pair and triple can be described by its properties and
+is in first order of approximation independent on further, eventually
+present, atoms.
 
-\subsection{Distance Dependencies of ICD Decay Rates}
-
-
-
-\subsection{Distance Dependencies of ETMD Decay Rates}
-\textbf{Der Abstand zwischen den Atomen $A$ und $B$ $R_1$}:\\
-$R_1$ erscheint nicht explizit in dem hergeleiteten asymtotischen Ausdruck für die Zerfallsbreiten, sondern implizit im Übergangsdipolmoment. Dieses nimmt exponentiell mit dem Abstand zwischen den Atomen ab.\\
-
-\textbf{Der Abstand zwischen den Untereinheiten $AB$ und $C$ $R_2$}:\\
-Wie zu erwarten war, hängt die Zerfallsbreite aufgrund der Energieübertragung durch eine Dipol-Dipol-Wechselwirkung mit $\frac{1}{R_2^6}$ vom Abstand der beiden Untereinheiten ab.\\
-
-
-\subsection{Angle Dependencies of ETMD Decay Rates}
-The angular part of equation (\ref{}) can be reformulated using
-the equivalence of transitions in $\tilde{x}$ and $\tilde{y}$ direction to
-yield
-
-\begin{equation}
-  \Gamma_i \propto 2 \left( |<\tilde{D}_{z}>|^2 (1+\cos^2\alpha)
-                           + |<\tilde{D}_x>|^2 (2+ \sin^2\alpha) \right)
-\end{equation}
-
-which are shown in figure \ref{figure:etmd_angle_dir}, supposing
-$|<\tilde{D}_{z}>|^2 = |<\tilde{D}_x>|^2 = 1$.
-Obviously the two different transition types add up to give the full
-angular dependence of a given trimer. It has to be remembered, that
-$|<\tilde{D}_{z}>|^2$ is about an order of magnitude larger than
-$|<\tilde{D}_{x}>|^2$.
-
-\begin{figure}[h]
- \centering
- \input{pics/etmd_angle_dir}
- \caption{Angle dependence of the decay width for different values of $q$.}
- \label{figure:etmd_angle_dir}
-\end{figure}
-
-For a more realistic picture
-consider the distances $R$ and $Q$ as definded in figure \ref{etmd_geom_pspic}
-to be constant and the ratio between the transition dipole moments
-in the $\tilde{z}$ and the $\tilde{x}$ direction
-$q=\frac{|<\tilde{D}_x>|^2}{|<\tilde{D}_z>|^2}$ to be fixed to some number.
-In this case the decay width for each $M_{AB}'$ has the angular dependence
+In case of the electronic decay processes one is interested in the
+energies of the initial $E_{in}$ and the final states $E_{fin}$ of
+the corresponding processes. They can be approximated to be
 
 \begin{align}
- \Gamma_i &\propto \left( 2q |<\tilde{D}_{z}>|^2 +
-                  (4+2q)|<\tilde{D}_{z}>|^2 \cos^2\alpha +
-                  (2+4q)|<\tilde{D}_{z}>|^2 \sin^2\alpha \right) \\
-          &\propto 4q + 2 + 2 \cos^2\alpha + 2q \sin^2\alpha .
+ E_{in}  &= SIP(X{in}^\beta) \label{equation:E_in}\\
+ E_{fin} &= SIP(X_{fin1}^\beta) + SIP(X_{fin2}^\beta) + \frac 1d
+           \label{equation:E_fin}\\
+ E_{sec} &= E_{in} - E_{fin} \label{equation:E_sec}
 \end{align}
+where $X_{in}$ denotes the initially ionized atom and
+$X_{fin1}$ and $X_{fin2}$ describe the two ionized
+atoms in the final state. $/beta$ denotes the decay channel characterized
+by the total angular momenta of the ionized atoms in the pairs
+and triples and $d$ denotes the interatomic distance between the atoms
+$X_{fin1}$ and $X_{fin2}$. The initially ionized atom $X_{in}$ can
+coincide with one or both of
+the final state atoms
+$X_{fin1}$ and $X_{fin2}$. As explained in
+section \ref{xyz}, the distribution of the vacancies over the different
+atoms determine the kind of electronic decay process. Hence, in an
+Auger process all three atoms would coincide, for an ICD $X_{in}$
+would coincide with one of $X_{fin1}$ and $X_{fin2}$ and for an \ac{ETMD}3
+all ionized states are located on different atoms.
 
-It is an oscillating function with maxima at even multiples of $\frac \pi 2$
-and minima at uneven multiples at $\frac \pi 2$ as shown in figure \ref{figure:etmd_angle}.
+In all considered autoionization processes a second electron
+is emitted with the kinetic energy $E_{sec}$. If $E_{sec}<0$, then
+the final state energy is higher than the initial state energy and the
+process is energetically not accessible.
 
-\begin{figure}[h]
- \centering
- \input{pics/etmd_angle}
- \caption{Angle dependence of the decay width for different values of $q$.}
- \label{figure:etmd_angle}
-\end{figure}
-
-In a real system, an energy transfer between
-two dipoles is most efficient, if they are aligned in one direction.
-Wihtin a dimer the most efficient electron transfer results in a
-dipole aligned along the bonding axis and hence $q<1$. A typical
-value of $q$ would be $\frac 1{10}$. In the 
-case of $q$ approaching 0, the angular part of
-the decay width
-approaches a shifted $2\cos^2 \alpha$ with maxima at even multiples of $\frac \pi2$
-and minima at uneven multiples of $\frac \pi2$ with values between
-$4$ and $2$.
-Therefore, for typical numbers of $q$ the energy transfer
-to an atom on the same axis ($\alpha = 0,\pi$), corresponding
-to a linear arrangement, is preferred.
-
-
-
-\subsection{Influence of the Coordinate System Choice}
-In section \ref{} a coordinate system was chosen to describe the
-triatomic system. The distance $Q$ between the two atoms involved
-in the energy transfer is reasonably defined. However, where the
-center of the oscillating dipole moment of subsystem $S_1$ is, can
-not unambigously be defined without further investigation. Most
-probable it is somwhere between the atoms $A$ and $B$. Therefore
-the center of mass was chosen to be the reference point for the
-distance $R$ and associated with it the angle $\alpha$.
-Another thinkable and for automatization of the calculation
-convenient choice would be to anchorage $R$ and $\alpha$ at
-atom $B$.
-For the following discussion we will therefore refer to two sets
-of coordinates of maximum deviation with origins residing in atoms
-$A$ and $B$ with subscripts $A$ and $B$.
-
-We assume that we have two constant distances $R_{A}$ and $R_B$
-where either of these distances is larger than or equal to $Q$.
-In this case the maximum and minimum of the ratio between the two
-corresponding decay rates $\frac{\Gamma_{A}}{\Gamma_B}$ will occur
-in the case of $\alpha = 0,\pi$ and $R_B = \frac 12 R_{A} = Q$
-and $R_B = 2 R_{A} = 2Q$, respectively.
-
-\begin{figure}[h]
- \centering
- \input{pics/etmd_coord_depend}
- \caption{}
- \label{}
-\end{figure}
+The decay widths of the pairs and triples can be estimated with
+different accuracy, but in general, the total decay width $\Gamma$ of
+a system is the sum over the decay widths of all channels $\beta$ for
+all possible pairs or triples $i$.
 
 \begin{equation}
-\text{minimum: } \frac{\Gamma_{A}}{\Gamma_B}= \frac{1}{64} \quad\quad
-\text{maximum: } \frac{\Gamma_{A}}{\Gamma_B}= \frac{64}{1}
+  \Gamma = \sum\limits_{i,\beta}\Gamma_{i,\beta}
 \end{equation}
 
-From this we conclude, that the absolute numbers of calculated ETMD
-decay widths are obviously error-prone. In the worst case the uncertainty
-is given by factors $\frac{1}{64}$ or $\frac{64}{1}$.
-In reality these worst cases will rarely be observed, since it on
-the one hand is very unlikely to find two atoms at exactly the same place
-and on the other hand ETMD preferably occurs at interfaces, which leads
-to preferred angles higher than 0 and below $\pi$.
-Additionally the larger the difference between $Q$ and $R$ become, the
-smaller this effect is going to be.
+
+\subsection{Influence of the Geometry on ICD processes}
+
+\subsubsection{Geometry Dependence of the ICD Energies}
+In case of the \ac{ICD} process, the atoms $X_{in}$ and one of
+the finally ionized atoms $X_1$ and $X_2$ coincide. For the sake of simplicity
+it is now assumed, that this atom is $X_1$.
+
+\begin{figure}[h]
+ \centering
+ \input{pics/ArXe_energy_curves_unshifted}
+ \caption{}
+ \label{figure:ArXe_energy_curves_unshifted}
+\end{figure}
+
+The ArXe dimer is chosen as an example for illustrating the distance
+dependency of the final states compared to the initial state using
+ionization energies of the corresponding atoms.
+In figure \ref{figure:ArXe_energy_curves_unshifted} the energy of
+the Ar3s$^{-1}$ initial
+state is assumed to be constant, independent of any stabilization by the
+neighbour and drawn as a black line. Additionally both the
+curves of the four final states of the relativistic description and
+a hypothetical non-relativistic curve calculated by the means of
+equation (\ref{equation:E_fin}) are shown.
+
+For small distances, all channels are closed. As soon as the final
+state curves cross the energy of the initial state
+the respective channels open. For the four relativistic channels these are
+\unit[10.67]{\AA}, \unit[12.29]{\AA} and \unit[334.1]{\AA}
+for the Ar3p$_{3/2}^{-1}$Xe5p$_{3/2}^{-1}$,
+Ar3p$_{1/2}^{-1}$Xe5p$_{3/2}^{-1}$ and Ar3p$_{3/2}^{-1}$Xe5p$_{1/2}^{-1}$
+channels, respectively.
+The sum of the two ionization potentials of the
+Ar3p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channel are already higher than
+the initial state energy. Therefore this channel never opens.
+In the non-relativistic treatment, this opening distance would be
+\unit[16.84]{\AA}.
+
+Hence, for an ArXe dimer with an equilibrium distance of \unit[4.04]{\AA}
+all ICD channels are closed. As is to be seen in the discussion of mixed
+ArXe clusters, that in case of shifted curves, ICD channels might
+open at realistic atomic distances.
 
 
-\subsection{Relative Decay Rates Depending on the Symmetry of the Final States}
+\subsubsection{Geometry Dependence of the ICD Decay Widths}

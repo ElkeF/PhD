@@ -1,5 +1,6 @@
 \begin{tikzpicture}
-    \begin{axis}[domain=-0.5-pi:0.5+pi,
+    \begin{axis}[%scale=0.8,
+                 domain=-0.5-pi:0.5+pi,
                  samples = 200,
                  xtick={-3.14159,-1.57089,...,3.14159},
                  xticklabels={$-\pi$,$-\frac \pi 2$,0,$\frac \pi 2$,$\pi$},
@@ -18,11 +19,13 @@
                 thick
                ]
                {2*(1+cos(deg(x))^2)};
+      \addlegendentry{$\tilde{z}$ direction};
       \addplot+[
                 mark = none,
                 thick
                ]
                {2*(2+sin(deg(x))^2)};
+      \addlegendentry{$\tilde{x}$ direction};
       \draw[] (axis cs:\pgfkeysvalueof{/pgfplots/xmin},2) -- (axis cs:\pgfkeysvalueof{/pgfplots/xmax},2);
     \end{axis}
 \end{tikzpicture}

@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+    \begin{axis}[scale = 0.8,
+                 domain= 20:180,
+                 y domain=4.0:15,
+                 xtick={30,60,...,180},
+                 cycle list name = exotic,
+                 xlabel = {$\theta$ [$^{\circ}$]},
+                 ylabel = {$R$ [\AA]},
+                 zlabel = {$\Gamma$ [eV]},
+                 title = {ArXe5p$_{3/2}^{-1}$Xe5p$_{1/2}^{-1}$},
+                 %view={0}{0}
+                 view={230}{10}
+                 ]
+    \addplot3[surf,
+             z buffer=sort
+             ]
+             table[
+             x expr=\thisrowno{1},
+             y expr=\thisrowno{0},
+             z expr=\thisrowno{3}
+             ]
+             {data/ArXe2_etmd_surf.dat};
+    \end{axis}
+\end{tikzpicture}
