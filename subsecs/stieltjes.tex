@@ -1,0 +1,222 @@
+\subsection{Moment Problem}
+
+\begin{equation}
+  S(k) = \int\limits_a^b \omega^k dF(\omega) \quad\quad k=0,1,...
+\end{equation}
+
+\begin{equation}
+  f(\omega) = \frac{dF(\omega)}{d\omega}
+\end{equation}
+
+\begin{equation}
+  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,...
+\end{equation}
+
+\begin{equation}
+  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,...,2r-1
+\end{equation}
+
+
+\begin{equation}
+  F^{(n)}(\omega_i - 0) \le F^{(n+1)}(\omega_i - 0) \le F(\omega_i)
+  \le F^{(n+1)}(\omega_i + 0) \le F^{(n)}(\omega_i + 0)
+\end{equation}
+
+
+
+
+\subsection{Gaussian Quadrature}
+\begin{equation}
+a
+\end{equation}
+
+
+
+\subsection{Stieltjes Imaging}
+
+\begin{equation}
+  \int\limits_a^b Q_n(1/\omega) \, Q_m(1/\omega) f(\omega) d\omega = N_n \delta_{nm}
+\end{equation}
+
+\begin{equation}
+  N_n = \int\limits_a^b \left[ Q_n(1/\omega) \right]^2 f(\omega) d\omega
+\end{equation}
+
+\begin{equation}
+  Q_n(1/\omega) = \frac{1}{\omega - a_n} Q_{n-1}(1/\omega) - b_{n-1} Q_{n-2}(1/\omega)
+\end{equation}
+
+\begin{align}
+  a_n     &= \frac{1}{b_0b_1\cdots b_{n-1}}
+             \int (1/\omega)^n Q_{n-1}(1/\omega) f(\omega) d\omega
+             - \sum\limits_{l=1}^{n-1} a_l \\
+  b_{n-1} &= \frac{1}{b_0b_1\cdots b_{n-2}}
+             \int (1/\omega)^{n-1} Q_{n-1}(1/\omega) f(\omega) d\omega
+\end{align}
+
+\begin{align}
+  a_n     &= \frac{1}{b_0b_1\cdots b_{n-1}}
+             \sum\limits_{i=1}^N
+               (1/\bar{\omega}_i)^n Q_{n-1}(1/\bar{\omega_i}) \bar{f}_i
+             - \sum\limits_{l=1}^{n-1} a_l \\
+  b_{n-1} &= \frac{1}{b_0b_1\cdots b_{n-2}}
+             \sum\limits_{i=1}^N
+               (1/\bar{\omega}_i)^{n-1} Q_{n-1}(1/\bar{\omega}_i) \bar{f}_i
+\end{align}
+
+\begin{equation}
+  Q_n(1/\bar{\omega}_i) = \frac{1}{\bar{\omega}_i - a_n} Q_{n-1}(1/\bar{\omega}_i)
+                          - b_{n-1} Q_{n-2}(1/\bar{\omega}_i)
+\end{equation}
+
+\begin{equation}
+  Q_0(1/\bar{\omega}_i) = 1 \quad\quad Q_1(1/\bar{\omega}_i) = (1/\bar{\omega}_i) - a_1
+\end{equation}
+
+
+As discussed above in section \ref{section:}, given the weights, the polynomials
+can be calculated. In the Stieltjes imaging, starting from the polynomials
+defined by the discrete pseudo-spectrum, one wants to achieve the weight function.
+Also here the ideal abscissae are the roots of the highest order polynomial
+for each moment $k$
+
+\begin{equation}
+  Q_n(1/\omega_i) = 0 \quad\quad i = 1,2,\dots ,n
+\end{equation}
+
+
+
+\begin{equation}
+  f_i = \left[ \sum\limits_{m=0}^{n-1} \frac{Q_m^2(1/\omega_i)}{N_m} \right]^{-1}
+\end{equation}
+
+
+\begin{equation}
+  Q_n(1/\omega) = (-1)^n \sqrt{N_n} R_n(1/\omega)
+\end{equation}
+
+\begin{equation}
+  (1/\omega)R_{n-1}(1/\omega) = - \sqrt{b_n}R_n(1/\omega) + a_nR_{n-1}(1/\omega)
+                                - \sqrt{b_{n-1}} R_{n-2}(1/\omega)
+\end{equation}
+
+\begin{equation}
+  (1/\omega)R_0(1/\omega) = - \sqrt{b_1}R_1(1/\omega) + a_1 R_0(1/\omega)
+\end{equation}
+
+\begin{equation}
+ \begin{split}
+ \begin{pmatrix}
+a_1        & -\sqrt{b_1}&            &                &             &          \\
+-\sqrt{b_1}& a_2        & -\sqrt{b_2}&                &             &          \\
+           & -\sqrt{b_2}& a_3        & -\sqrt{b_3}    &             &          \\
+           &            & \ddots     & \ddots         & \ddots      &          \\
+           &            &            & -\sqrt{b_{n-2}}& a_{n-1}     & -\sqrt{b_{n-1}}\\
+           &            &            &                & -\sqrt{b_{n-1}}& a_n   
+ \end{pmatrix}
+ \begin{pmatrix}
+  R_0(1/\omega)\\
+  R_1(1/\omega)\\
+  R_2(1/\omega)\\
+  \vdots\\
+  R_{n-2}(1/\omega)\\
+  R_{n-1}(1/\omega)
+ \end{pmatrix}         \\
+ &= (1/\omega)
+ \begin{pmatrix}
+  R_0(1/\omega)\\
+  R_1(1/\omega)\\
+  R_2(1/\omega)\\
+  \vdots\\
+  R_{n-2}(1/\omega)\\
+  R_{n-1}(1/\omega)
+ \end{pmatrix}
+ -
+ \begin{pmatrix}
+  0\\
+  0\\
+  0\\
+  \vdots\\
+  0\\
+  -\sqrt{b_n} R_{n}(1/\omega)
+ \end{pmatrix}
+ \end{split}
+\end{equation}
+
+
+
+\begin{equation}
+  1 = f_i \sum\limits_{m=0}^{n-1} R_m^2 (1/\omega_i) = \mathbf{u_i} \cdot \mathbf{u_i}
+\end{equation}
+
+\begin{equation}
+  f_i = N_0 u_{0i}^2
+\end{equation}
+
+\begin{equation}
+  S(-k) = \sum\limits_{i=1}^n f_i (1/\omega_i)^k \quad\quad k=0,1,\dots,2n-1
+\end{equation}
+
+\begin{equation}
+  F^{(n)} (\omega) =
+  \begin{cases}
+    0                                & \omega < \omega_1\\
+    \sum\limits_{j=1}^{i} f_j        & \omega_i < \omega < \omega_{i+1}\\
+    \sum\limits_{j=1}^{i} f_j = S(0) & \omega_n < \omega
+  \end{cases}
+\end{equation}
+
+\begin{equation}
+  F^{(n)} (\omega_i) = \frac 12 \left[ F^{(n)} (\omega_i - 0)
+                       + F^{(n)} (\omega_i+0) \right]
+\end{equation}
+
+\begin{equation}
+  f^{(n)} (\omega) =
+  \begin{cases}
+    \frac 12 \frac{f_1}{\omega_1}    & \omega < \omega_1\\
+    \frac 12 \frac{f_{i+1} + f_i}{\omega_{i+1} - \omega_i}
+                                     & \omega_i < \omega < \omega_{i+1}\\
+    0                                & \omega_n < \omega
+  \end{cases}
+\end{equation}
+
+%\begin{equation}
+%
+%\end{equation}
+%
+%\begin{equation}
+%
+%\end{equation}
+%
+%\begin{equation}
+%
+%\end{equation}
+%
+%\begin{equation}
+%
+%\end{equation}
+%
+%\begin{equation}
+%
+%\end{equation}
+%
+%\begin{equation}
+%
+%\end{equation}
+%
+%\begin{equation}
+%
+%\end{equation}
+%
+%\begin{equation}
+%
+%\end{equation}
+%
+%\begin{equation}
+%
+%\end{equation}
+%
+%\begin{equation}
+%
+%\end{equation}
