@@ -1,26 +1,33 @@
 \subsection{Moment Problem}
 
-\begin{equation}
-  S(k) = \int\limits_a^b \omega^k dF(\omega) \quad\quad k=0,1,...
-\end{equation}
+The moments $S(k)$ of a real and continuous function $f(\omega)$ are defined
+as
 
 \begin{equation}
-  f(\omega) = \frac{dF(\omega)}{d\omega}
+  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,\dots  .
 \end{equation}
 
+In case of $f(\omega)$ being a probability density function, it is connected
+to the probability distribution function $F(\omega)$ via
 \begin{equation}
-  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,...
+  F(\omega) = f(\omega){d\omega} .
 \end{equation}
+
+The probability density function is completely determined by the manifold
+of moments. Therefore, when all moments are known, the probability density
+function can be calculated from the moments. In the present case $f(\omega)$
+is the decay width $\Gamma(E)$, but the theory is also applicable and very often
+used for the description of cross sections.
+
+In practice, all moments are never available unless the moments can be
+calculated analytically. Therefore, one has to approximately solve the reduced
+moment problem, since the density function is not completely defined.
+In this case the $2r$ moments are
 
 \begin{equation}
   S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,...,2r-1
 \end{equation}
 
-
-\begin{equation}
-  F^{(n)}(\omega_i - 0) \le F^{(n+1)}(\omega_i - 0) \le F(\omega_i)
-  \le F^{(n+1)}(\omega_i + 0) \le F^{(n)}(\omega_i + 0)
-\end{equation}
 
 
 
@@ -122,7 +129,7 @@ a_1        & -\sqrt{b_1}&            &                &             &          \
   R_{n-2}(1/\omega)\\
   R_{n-1}(1/\omega)
  \end{pmatrix}         \\
- &= (1/\omega)
+ = (1/\omega)
  \begin{pmatrix}
   R_0(1/\omega)\\
   R_1(1/\omega)\\
@@ -155,6 +162,12 @@ a_1        & -\sqrt{b_1}&            &                &             &          \
 
 \begin{equation}
   S(-k) = \sum\limits_{i=1}^n f_i (1/\omega_i)^k \quad\quad k=0,1,\dots,2n-1
+\end{equation}
+
+
+\begin{equation}
+  F^{(n)}(\omega_i - 0) \le F^{(n+1)}(\omega_i - 0) \le F(\omega_i)
+  \le F^{(n+1)}(\omega_i + 0) \le F^{(n)}(\omega_i + 0)
 \end{equation}
 
 \begin{equation}
