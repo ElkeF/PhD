@@ -1,0 +1,76 @@
+\begin{tikzpicture}
+    \begin{axis}[%scale=0.8,
+                 domain=-1.0:1.0,
+                 samples = 200,
+                 %xtick={-3.14159,-1.57089,...,3.14159},
+                 %xticklabels={$-\pi$,$-\frac \pi 2$,0,$\frac \pi 2$,$\pi$},
+                 cycle list name = exotic,
+                 legend style={anchor= north west},
+                 legend cell align = left
+                 ]
+     \addplot+[domain=-1:-0.965925826289+0.135517335117/2,
+              diplom1,
+              mark = none,
+              %forget plot,
+              pattern = north east lines,
+              pattern color = diplom1
+              ]
+              {0.0987789349866} \closedcycle;
+     \addlegendentry{approximation of the integral}
+     \addplot+[domain=-0.965925826289+0.135517335117/2:-0.707106781187+0.370240244847/2,
+              diplom1,
+              mark = none,
+              forget plot,
+              pattern = north east lines,
+              pattern color = diplom1
+              ]
+              {0.646446609407} \closedcycle;
+     \addplot+[domain=-0.707106781187+0.370240244847/2:-0.258819045103+0.505757579964/2,
+              diplom1,
+              mark = none,
+              forget plot,
+              pattern = north east lines,
+              pattern color = diplom1
+              ]
+              {0.982662411472} \closedcycle;
+     \addplot+[domain=-0.258819045103+0.505757579964/2:0.258819045103+0.505757579964/2,
+              diplom1,
+              mark = none,
+              forget plot,
+              pattern = north east lines,
+              pattern color = diplom1
+              ]
+              {1.017337588535} \closedcycle;
+     \addplot+[domain=0.258819045103+0.505757579964/2:0.708718898022+0.370240244847/2,
+              diplom1,
+              mark = none,
+              forget plot,
+              pattern = north east lines,
+              pattern color = diplom1
+              ]
+              {1.353553390592} \closedcycle;
+     \addplot+[domain=0.708718898022+0.370240244847/2:1.0,
+              diplom1,
+              mark = none,
+              forget plot,
+              pattern = north east lines,
+              pattern color = diplom1
+              ]
+              {1.901221065013} \closedcycle;
+     \addplot [diplom2, thick]
+              {x^3 + 1};
+     \addlegendentry{$f(x)= x^3 + 1$}
+     %\addplot [diplom3, thick]
+     %         {x^4/4 + x};
+     \addplot [only marks,mark=o,thick]
+       coordinates {
+                   ( 0.965925826289, 1.901221065013 )
+                   ( 0.707106781187, 1.353553390592 )
+                   ( 0.258819045103, 1.017337588535 )
+                   (-0.258819045103, 0.982662411472 )
+                   (-0.707106781187, 0.646446609407 )
+                   (-0.965925826289, 0.0987789349866)
+                   };
+     \addlegendentry{$f_i(x_i)$}
+    \end{axis}
+\end{tikzpicture}
