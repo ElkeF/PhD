@@ -85,8 +85,8 @@ the interval $[-1,1]$ can be integrated as
   \centering
   \input{pics/gaussian_quadrature}
   \caption{Integration by Gauss-Chebyshev quadrature of the function
-           $f(x)=x^3 + 1$ (dark blue). The integral (light blue) is approximately
-           obtained by summation
+           $f(x)=x^3 + 1$ (dark blue) with $n=6$. The integral (light blue)
+           is approximately obtained by summation
            over all product of optimal abcissae and weights $x_if(x_i)$ (circles).}
   \label{figure:gaussian_quadrature}
 \end{figure}
@@ -163,7 +163,7 @@ pseudo-spectrum.
   a_n     &= \frac{1}{b_0b_1\cdots b_{n-1}}
              \sum\limits_{i=1}^N
                (1/\bar{\omega}_i)^n Q_{n-1}(1/\bar{\omega_i}) \bar{f}_i
-             - \sum\limits_{l=1}^{n-1} a_l \\
+             - \sum\limits_{l=1}^{n-1} a_l \label{equation:an_dist}\\
   b_{n-1} &= \frac{1}{b_0b_1\cdots b_{n-2}}
              \sum\limits_{i=1}^N
                (1/\bar{\omega}_i)^{n-1} Q_{n-1}(1/\bar{\omega}_i) \bar{f}_i
@@ -342,12 +342,36 @@ This distribution function is then numerically differenciated via
 
 to give points of the desired density function $f(\omega)$, which are
 subsequently interpolated. In the routine of Averbukh, a spline interpolation
-is used for this purpose.
+is used for this purpose. Afterwards the interpolated density function is evaluated
+for the energy of interest, which is the resonance energy $E_r$ in case of the
+autoionization processes.
 
 \subsection{Quality and Stability of the Results}
-The abcissae of the ploynomials constructed from different orders
-of moments intersect each other. Therefore, the combination of all abcissae
+The abcissae of the polynomials constructed from different orders
+of moments intersect each other as is schematically shown in
+figure \ref{figure:stieltjes_density}, where each colour of points corresponds
+to one order. Therefore, in an ideal world, where all these points exactly lie
+on the desired desity function, the combination of all abscissae
 and weights for the interpolation is beneficial.
+
+\begin{figure}[h]
+  \centering
+  \input{pics/stieltjes_pgf}
+  \caption{Schematic illustration of the interpolation after the
+           stieltjes calculations to yield the density function $\Gamma(E)$,
+           which is to be evaluated at the resonance energy $E_r$.
+           Suppose the black curve to be the
+           exact result. Then (left panel), for each order of Stieltjes calculation
+           the points lie on this curve, where points from different orders
+           (different colours of the points) intersect each other. The interpolation
+           gives the exact result. In reality (right panel) the
+           interpolations (even of each moment)
+           are likely to show oscillations due to non-orthogonalities of
+           Chebyshev polynomials in the higher orders and inaccurate descriptions
+           due to a large gap between the lower and upper bounds for low
+           orders.}
+  \label{figure:stieltjes_density}
+\end{figure}
 
 As can be seen from the Chebyshev inequalities in
 equation \ref{equation:Chebyshev_inequalities}, the higher the highest
@@ -365,4 +389,13 @@ And the higher the order of the moment is, the bigger
 are these numbers and hence the introduced error. Therefore the number
 of moments to be successfully employed for the approximation of the
 density function is limited by the quality of the orthogonality of
-the corresponding set of constructed polynomials.
+the corresponding set of constructed polynomials. In the final density function
+non-orthogonalities as well as errors from inaccurate descriptions of lower
+orders can be detected by the presence of oscillations as shown in
+figure \ref{figure:stieltjes_density} in the right panel. In case of the density
+function being well behaved in the area of the resonance energy $E_r$, the
+description might still be feasible. In case of strong oscillations, the validity
+of the results are highly questionable. The interpolation can be smoothed
+by taking only stable orders of stieltjes into account or in other words
+reduce the allowed threshold of allowed non-orthogonality or to give points
+stemming from lower orders of stieltjes higher wieghts in the interpolation.
