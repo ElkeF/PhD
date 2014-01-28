@@ -17,7 +17,10 @@ The probability density function is completely determined by the manifold
 of moments. Therefore, when all moments are known, the probability density
 function can be calculated from the moments. In the present case $f(\omega)$
 is the decay width $\Gamma(E)$, but the theory is also applicable and very often
-used for the description of cross sections.
+used for the description of cross sections. Its pseudo-spectrum has the same
+mathematical properties as the pseuso-spectrum of the decay width. Therefore,
+the knowledge obtained in the description of cross sections can be adopted to
+the description for the decay widths.
 
 In practice, all moments are never available unless the moments can be
 calculated analytically. Therefore, one has to approximately solve the reduced
@@ -33,41 +36,125 @@ In this case the $2r$ moments are
 
 
 \subsection{Gaussian Quadrature}
+The gaussian quadrature is a numerical method for integration. By approximating
+the function to be integrated $g(x) = \rho(x) f(x)$ to be a product of a
+positive definite weight
+function $\rho (x)$ and a continuous and bounded function $f(x)$.
+
+The evaluation of the integral is then desired to be obtained as
+
+\begin{equation}
+  \int\limits_a^b \rho(x) f(x) dx \approx \sum\limits_{i=1}^n \omega_i f(x_i)
+\end{equation}
+
+, where the weigths $\omega_i$ and the abcissae $x_i$ are to be determined
+analytically, if possible, or otherwise in an optimal way. This leads the abcissae
+to be unequally spaced unlike in the basic
+integration schemes using the trapezoidal rule.
+
+$f(x)$ can be expressed as a polynomial. For certain weight functions and boundaries
+of integration, the
+polynomials can be determined analytically.
+It can furthermore be shown, that the roots (zeros) of the highest order polynomial
+describing $f(x)$ give the optimal abcissae $x_i$.
+
+In case of
+$\omega(x)= \frac{1}{\sqrt{1-x^2}}$ and the condition
+
+\begin{equation}
+  \int\limits_{-1}^{1} \rho(x) Q_n(x) Q_m(x) = N_n \delta_{nm}
+\end{equation}
+
+, where $N_n$ denotes the normalization factor,
+the solution to the polynomials are the so-called Chebyshev polynomials, with
+
+\begin{equation}
+  x_{i,n} = \cos \left( \frac{2i-1}{2n} \pi \right)
+  \quad\quad \omega_{i,n} = \frac \pi n .
+\end{equation}
+
+This means, that the integration of an arbitrary function $h(x)$ within
+the interval $[-1,1]$ can be integrated as
+
+\begin{equation}
+  \int\limits_{-1}^1 h(x) dx = \int\limits_{-1}^1 \omega(x) \sqrt{1-x^2} h(x) dx
+  \approx \frac \pi n \sum\limits_{i_1}^n h(x_i) \sqrt{1-x_i^2}
+\end{equation}
 
 \begin{figure}[h]
   \centering
   \input{pics/gaussian_quadrature}
   \caption{}
-  \label{}
+  \label{figure:gaussian_quadrature}
 \end{figure}
 
+An example for such an integration is shown in figure \ref{figure:gaussian_quadrature}
+for $h(x) = x^3 + 1$. The dark blue curve shows $h(x)$, the points are the
+calculated $f_i$ at the abcissae $x_i$ and the light blue hatched areas are the
+approximations to the integral for the certain areas.
+
+Vice versa this means, that if $\omega(x) = \frac {1}{\sqrt{1-x^2}}$ reasonably
+well describes a weight function or probability density function of interest,
+the corresponding probability density function can be obtained, if on some basis,
+Chebyshev polynomials
+can be constructed.
+
+
+\subsection{Combination of Moment Theory with Gaussian Quadrature}
+The procedure for the calculation of cross sections combining moment
+theory and gaussian quadrature has been investigated thoroughly. In this section
+we follow the argumentation of Müller-Plathe \cite{}, from which the
+\verb|stieltjes| routine has been written by Averbukh and which is used in
+combination with the FanoADC implemented in Dirac.
+
+For the ionization cross sections it has been shown, that the moment with
+$k>2$ diverge and hence are useless for the evaluation of the probability
+density function $f(\omega)$. Therefore the inverse moment $S(-k)$ are investigated
+instead.
+
 \begin{equation}
-a
+  S(-k) = \int\limits_a^b \left( \frac{1}{\omega} \right) ^k f(\omega) d\omega
 \end{equation}
 
-
-
-\subsection{Stieltjes Imaging}
+Each order of moment can be assigned to a set of Chebyshev polynomials
+$Q_n (1/\omega) = \sum\limits_{i=0}^n Q_n^{i}\left( \frac{1}{\omega} \right)^{i}$,
+of order $0$ -- $r$. They are orthogonal with respect to the weight function
+to be determined $f(\omega)$.
 
 \begin{equation}
   \int\limits_a^b Q_n(1/\omega) \, Q_m(1/\omega) f(\omega) d\omega = N_n \delta_{nm}
 \end{equation}
 
+They are normalized such, that the coefficient of the highest power polynomial
+equals 1.
+
 \begin{equation}
   N_n = \int\limits_a^b \left[ Q_n(1/\omega) \right]^2 f(\omega) d\omega
 \end{equation}
 
+Chebyshev polynomials in general can be constructed from an recursion formula
 \begin{equation}
   Q_n(1/\omega) = \frac{1}{\omega - a_n} Q_{n-1}(1/\omega) - b_{n-1} Q_{n-2}(1/\omega)
 \end{equation}
 
+, so that all polynomials can be constructed if $Q_0$ and $Q_1$ are known.
+From these recursion relations, expressions for the recursion coefficients
+$a_n$ and $b_n$ can be obtained.
+
 \begin{align}
   a_n     &= \frac{1}{b_0b_1\cdots b_{n-1}}
              \int (1/\omega)^n Q_{n-1}(1/\omega) f(\omega) d\omega
-             - \sum\limits_{l=1}^{n-1} a_l \\
+             - \sum\limits_{l=1}^{n-1} a_l  \label{equation:an_cont}\\
   b_{n-1} &= \frac{1}{b_0b_1\cdots b_{n-2}}
-             \int (1/\omega)^{n-1} Q_{n-1}(1/\omega) f(\omega) d\omega
+             \int (1/\omega)^{n-1} Q_{n-1}(1/\omega) f(\omega) d\omega \label{equation:bn_cont}
 \end{align}
+
+By expansion of the integral in equations \ref{equation:an_cont} and
+\ref{equation:bn_cont} into a sum over moments obtained from the pseudo-spectra,
+approximate expressions can be obtained for the recursion coefficients
+depending on the energies $\bar{\omega}_i$, here the inverse abcissae,
+and decay widths or the weights $\bar{f}_i$ of the
+pseudo-spectrum.
 
 \begin{align}
   a_n     &= \frac{1}{b_0b_1\cdots b_{n-1}}
@@ -79,15 +166,17 @@ a
                (1/\bar{\omega}_i)^{n-1} Q_{n-1}(1/\bar{\omega}_i) \bar{f}_i
 \end{align}
 
+Hence the recursion relation now reads as
 \begin{equation}
   Q_n(1/\bar{\omega}_i) = \frac{1}{\bar{\omega}_i - a_n} Q_{n-1}(1/\bar{\omega}_i)
                           - b_{n-1} Q_{n-2}(1/\bar{\omega}_i)
 \end{equation}
 
+with
 \begin{equation}
   Q_0(1/\bar{\omega}_i) = 1 \quad\quad Q_1(1/\bar{\omega}_i) = (1/\bar{\omega}_i) - a_1
 \end{equation}
-
+as starting points of the determination of the polynomials.
 
 As discussed above in section \ref{section:}, given the weights, the polynomials
 can be calculated. In the Stieltjes imaging, starting from the polynomials
@@ -96,28 +185,35 @@ Also here the ideal abscissae are the roots of the highest order polynomial
 for each moment $k$
 
 \begin{equation}
-  Q_n(1/\omega_i) = 0 \quad\quad i = 1,2,\dots ,n
+  Q_n(1/\omega_i) = 0 \quad\quad i = 1,2,\dots ,n .
 \end{equation}
 
-
+The connection between the weights with the polynomials is given by
 
 \begin{equation}
-  f_i = \left[ \sum\limits_{m=0}^{n-1} \frac{Q_m^2(1/\omega_i)}{N_m} \right]^{-1}
+  f_i = \left[ \sum\limits_{m=0}^{n-1} \frac{Q_m^2(1/\omega_i)}{N_m} \right]^{-1} .
 \end{equation}
 
-
+In order to obtain the roots of the highest order polynomial, in principle
+any programm for root detection can be used. However, the problem can
+be reformulated in the means of general polynomials $R_n(1/\omega)$ connected
+to the obtained Chebyshev polynomials
 \begin{equation}
   Q_n(1/\omega) = (-1)^n \sqrt{N_n} R_n(1/\omega)
 \end{equation}
 
+with the recursion formulas
 \begin{equation}
   (1/\omega)R_{n-1}(1/\omega) = - \sqrt{b_n}R_n(1/\omega) + a_nR_{n-1}(1/\omega)
                                 - \sqrt{b_{n-1}} R_{n-2}(1/\omega)
 \end{equation}
-
+and
 \begin{equation}
-  (1/\omega)R_0(1/\omega) = - \sqrt{b_1}R_1(1/\omega) + a_1 R_0(1/\omega)
+  (1/\omega)R_0(1/\omega) = - \sqrt{b_1}R_1(1/\omega) + a_1 R_0(1/\omega) .
 \end{equation}
+
+Now the roots can be determined of the following equation disregarding the
+last vector by solving the eigenvalue problem.
 
 \begin{equation}
  \begin{split}
@@ -158,49 +254,74 @@ a_1        & -\sqrt{b_1}&            &                &             &          \
  \end{split}
 \end{equation}
 
-
+Therefore the solution is simplyfied to a matrix diagonalization
+of the coefficients matrix. Its eigenvalues are the roots of the polynomial
+and hence the wanted abcissae. The eigenfunctions are normalized to 1 and therefore
+have to be renormalized according to
 
 \begin{equation}
   1 = f_i \sum\limits_{m=0}^{n-1} R_m^2 (1/\omega_i) = \mathbf{u_i} \cdot \mathbf{u_i}
 \end{equation}
+from equation \ref{} to give
 
 \begin{equation}
   f_i = N_0 u_{0i}^2
 \end{equation}
+
+for the weights.
 
 \begin{equation}
   S(-k) = \sum\limits_{i=1}^n f_i (1/\omega_i)^k \quad\quad k=0,1,\dots,2n-1
 \end{equation}
 
 
-\begin{equation}
-  F^{(n)}(\omega_i - 0) \le F^{(n+1)}(\omega_i - 0) \le F(\omega_i)
-  \le F^{(n+1)}(\omega_i + 0) \le F^{(n)}(\omega_i + 0)
-\end{equation}
 
 
-\begin{figure}[h]
-  \centering
-  \input{pics/illustrate_stieltjes}
-  \caption{}
-  \label{}
-\end{figure}
 
-
+\subsection{Stieltjes Imaging}
+Having obtained the abcissae and weights, the probability distribution function
+$F(\omega)$ can be approximated. For this purpose the so-called Stieltjes imaging
+employed, where
 
 \begin{equation}
   F^{(n)} (\omega) =
   \begin{cases}
     0                                & \omega < \omega_1\\
     \sum\limits_{j=1}^{i} f_j        & \omega_i < \omega < \omega_{i+1}\\
-    \sum\limits_{j=1}^{i} f_j = S(0) & \omega_n < \omega
+    \sum\limits_{j=1}^{i} f_j = S(0) & \omega_n < \omega 
   \end{cases}
 \end{equation}
+which is illustrated in figure \ref{figure:stieltjes_imaging} for a sixth
+order stieltjes procedure using a pseudo-spectrum for the NeAr ICD in a
+Stieltjes histogram.
+
+
+\begin{figure}[h]
+  \centering
+  \input{pics/illustrate_stieltjes}
+  \caption{}
+  \label{figure:stieltjes_imaging}
+\end{figure}
+
+This procedure is based on the so-called Chebyshev inequalities
+
+\begin{equation} \label{equation:Chebyshev_inequalities}
+  F^{(n)}(\omega_i - 0) \le F^{(n+1)}(\omega_i - 0) \le F(\omega_i)
+  \le F^{(n+1)}(\omega_i + 0) \le F^{(n)}(\omega_i + 0).
+\end{equation}
+
+This means, that the distribution functions obtained from the Chebyshev
+polynomials approaching the abcissae $\omega_i$ from below and above
+give lower and upper bounds to the actual value of the distribution
+function at this particular point $F(\omega_i)$. In fact, the mean of these
+two values normally is a very good approximation to the exact value.
 
 \begin{equation}
   F^{(n)} (\omega_i) = \frac 12 \left[ F^{(n)} (\omega_i - 0)
                        + F^{(n)} (\omega_i+0) \right]
 \end{equation}
+
+This distribution function is then numerically differenciated via
 
 \begin{equation}
   f^{(n)} (\omega) =
@@ -212,42 +333,29 @@ a_1        & -\sqrt{b_1}&            &                &             &          \
   \end{cases}
 \end{equation}
 
-%\begin{equation}
-%
-%\end{equation}
-%
-%\begin{equation}
-%
-%\end{equation}
-%
-%\begin{equation}
-%
-%\end{equation}
-%
-%\begin{equation}
-%
-%\end{equation}
-%
-%\begin{equation}
-%
-%\end{equation}
-%
-%\begin{equation}
-%
-%\end{equation}
-%
-%\begin{equation}
-%
-%\end{equation}
-%
-%\begin{equation}
-%
-%\end{equation}
-%
-%\begin{equation}
-%
-%\end{equation}
-%
-%\begin{equation}
-%
-%\end{equation}
+to give points of the desired density function $f(\omega)$, which are
+subsequently interpolated. In the routine of Averbukh, a spline interpolation
+is used for this purpose.
+
+\subsection{Quality and Stability of the results}
+The abcissae of the ploynomials constructed from different orders
+of moments intersect each other. Therefore, the combination of all abcissae
+and weights for the interpolation is beneficial.
+
+As can be seen from the Chebyshev inequalities in
+equation \ref{equation:Chebyshev_inequalities}, the higher the highest
+power of the polynomials and hence the larger the degrees of freedom are,
+the closer the lower and upper bounds get to the exact result.
+
+Unfortunately, the moment problem is ill-conditioned and by introducing
+the polynomials, the moment problem as such get well-conditioned but instead
+the construction of the polynomials from the pseudo-spectrum is ill-conditioned.
+As can be seen from the Chebyshev inequalities, one would like to go to as
+high orders as possible, to get more accurate results. But in the construction
+of the recursion coefficients \ref{equation:an_disc}, two very large numbers
+are subtracted from each other. This is known to be numerically instable.
+And the higher the order of the moment is, the bigger
+are these numbers and hence the introduced error. Therefore the number
+of moments to be successfully employed for the approximation of the
+density function is limited by the quality of the orthogonality of
+the corresponding set of constructed polynomials.
