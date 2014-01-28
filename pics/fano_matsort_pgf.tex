@@ -1,0 +1,29 @@
+\begin{tikzpicture}[scale=1.0]
+    \footnotesize
+    %\draw [help lines] (-1,0) grid (23,5);
+    \draw [thick] (0,0) rectangle (3,3);
+    \draw [thick] (0,2) rectangle (1,3);
+    \draw [thick] (1,0) rectangle (3,2);
+    \node (1h1) at (0.5,3.5) {1h};
+    \node (1h2) at (-0.5,2.5) {1h};
+    \node (2h1) at (2.0,3.5) {2h1p};
+    \node (2h2) at (-0.5,1.0) {2h1p};
+
+    \draw[->, very thick] (3.5,1.5) -- node[above] {sorting} (5.5,1.5);
+
+  \begin{scope}[xshift=7cm]
+    \draw [thick] (0,0) rectangle (3,3);
+    \draw [thick] (0,2) rectangle (1,3);
+    \draw [thick] (1,0) rectangle (3,2);
+    \node (1h1) at (0.5,3.5) {1h};
+    \node (1h2) at (-0.5,2.5) {1h};
+    \node (2h1) at (2.0,3.5) {2h1p};
+    \node (2h2) at (-0.5,1.0) {2h1p};
+    \filldraw [diplom3,opacity=0.5] (0,1) rectangle (2,3);
+    \filldraw [diplom2,opacity=0.5] (2,0) rectangle (3,1);
+    \node at (1,2) {\textcolor{white}{$\mathbf{M}$}};
+    \node at (2.5,0.5) {\textcolor{white}{$\mathbf{N}$}};
+    \node at (1,0.5) {$\mathbf{W}^T$};
+    \node at (2.5,2.0) {$\mathbf{W}$};
+  \end{scope}  
+\end{tikzpicture}

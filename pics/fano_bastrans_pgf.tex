@@ -1,0 +1,60 @@
+   \begin{tikzpicture}[scale=0.7,>=stealth]
+       \footnotesize
+%       \draw [help lines] (-1,0) grid (23,5);
+       \draw [thick] (0,0) rectangle (3,3);
+       \draw [thick] (0,1) rectangle (2,3);
+       \draw [thick] (2,0) rectangle (3,1);
+       \node at (1,2) {$\mathbf{I}^T$};
+       \node at (2.5,0.5) {$\mathbf{F}^T$};
+       \node at (1,0.5) {$\mathbf{0}$};
+       \node at (2.5,2.0) {$\mathbf{0}$};
+
+     \begin{scope}[xshift=4cm]
+       \draw [thick] (0,0) rectangle (3,3);
+       \draw [thick] (0,2) rectangle (1,3);
+       \draw [thick] (1,0) rectangle (3,2);
+       \node (1h1) at (0.5,3.5) {1h};
+       \node (1h2) at (-0.5,2.5) {1h};
+       \node (2h1) at (2.0,3.5) {2h1p};
+       \node (2h2) at (-0.5,1.0) {2h1p};
+       \filldraw [diplom3,opacity=0.5] (0,1) rectangle (2,3);
+       \filldraw [diplom2,opacity=0.5] (2,0) rectangle (3,1);
+       \node at (1,2) {\textcolor{white}{$\mathbf{M}$}};
+       \node at (2.5,0.5) {\textcolor{white}{$\mathbf{N}$}};
+       \node at (1,0.5) {$\mathbf{W}^T$};
+       \node at (2.5,2.0) {$\mathbf{W}$};
+     \end{scope}  
+     
+     \begin{scope}[xshift=8cm]
+       \draw [thick] (0,0) rectangle (3,3);
+       \draw [thick] (0,1) rectangle (2,3);
+       \draw [thick] (2,0) rectangle (3,1);
+       \node at (1,2) {$\mathbf{I}$};
+       \node at (2.5,0.5) {$\mathbf{F}$};
+       \node at (1,0.5) {$\mathbf{0}$};
+       \node at (2.5,2.0) {$\mathbf{0}$};
+     \end{scope}
+
+       \draw [->,very thick] (11.5,1.5) -- (12.5,1.5);
+
+     \begin{scope}[xshift=13cm]
+       \draw [thick] (0,0) rectangle (3,3);
+       \draw [] (0,1) rectangle (2,3);
+       \draw [] (2,0) rectangle (3,1);
+       \draw [diplom1,opacity=0.5,ultra thick] (2,1.5) -- (3,1.5);
+       \draw [diplom2,opacity=0.5,ultra thick] (2,1) -- (3,0);
+       \node at (1,2) {\textcolor{diplom1}{${\Lambda}$}};
+       \node at (2.5,0.5) {\textcolor{diplom2}{${\Omega}$}};
+       \node at (1,0.5) {$\mathbf{V}^T $};
+       \node at (2.5,2.0) {$\mathbf{V}$};
+
+       \node (moments) at (6.2,1.5) []
+              {$\textcolor{diplom1}{\mathbf{V}_{i,\beta}}=
+              \braket{\phi|\hat{H}|\psi_{\beta,2h1p}}$};
+       \node (energy) at (5.4,0.5) []
+              {$\textcolor{diplom2}{\bar{\omega}_{\beta}} =  E_{2h1p}$};
+       \draw [->,ultra thick,gray] (3.2,1.5) -- (moments);
+       \draw [->,ultra thick,gray] (3.2,0.5) -- (energy);
+     \end{scope}
+
+   \end{tikzpicture}
