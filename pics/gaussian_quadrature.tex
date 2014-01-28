@@ -5,8 +5,10 @@
                  %xtick={-3.14159,-1.57089,...,3.14159},
                  %xticklabels={$-\pi$,$-\frac \pi 2$,0,$\frac \pi 2$,$\pi$},
                  cycle list name = exotic,
-                 legend style={anchor= north west},
-                 legend cell align = left
+                 %legend style={anchor= north west},
+                 legend pos = north west,
+                 legend cell align = left,
+                 reverse legend
                  ]
      \addplot+[domain=-1:-0.965925826289+0.135517335117/2,
               diplom1,
@@ -16,7 +18,7 @@
               pattern color = diplom1
               ]
               {0.0987789349866} \closedcycle;
-     \addlegendentry{approximation of the integral}
+     \addlegendentry{approximation}
      \addplot+[domain=-0.965925826289+0.135517335117/2:-0.707106781187+0.370240244847/2,
               diplom1,
               mark = none,
@@ -57,11 +59,6 @@
               pattern color = diplom1
               ]
               {1.901221065013} \closedcycle;
-     \addplot [diplom2, thick]
-              {x^3 + 1};
-     \addlegendentry{$f(x)= x^3 + 1$}
-     %\addplot [diplom3, thick]
-     %         {x^4/4 + x};
      \addplot [only marks,mark=o,thick]
        coordinates {
                    ( 0.965925826289, 1.901221065013 )
@@ -72,5 +69,8 @@
                    (-0.965925826289, 0.0987789349866)
                    };
      \addlegendentry{$f_i(x_i)$}
+     \addplot [diplom2, thick]
+              {x^3 + 1};
+     \addlegendentry{$f(x)= x^3 + 1$}
     \end{axis}
 \end{tikzpicture}
