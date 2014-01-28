@@ -84,7 +84,10 @@ the interval $[-1,1]$ can be integrated as
 \begin{figure}[h]
   \centering
   \input{pics/gaussian_quadrature}
-  \caption{}
+  \caption{Integration by Gauss-Chebyshev quadrature of the function
+           $f(x)=x^3 + 1$ (dark blue). The integral (light blue) is approximately
+           obtained by summation
+           over all product of optimal abcissae and weights $x_if(x_i)$ (circles).}
   \label{figure:gaussian_quadrature}
 \end{figure}
 
@@ -299,7 +302,11 @@ Stieltjes histogram.
 \begin{figure}[h]
   \centering
   \input{pics/illustrate_stieltjes}
-  \caption{}
+  \caption{Stieltjes histogram of a sixth order integration from
+           an NeAr ICD pseudo-spectrum (light blue). At the abcissae $\omega_i$,
+           the histogram provides lower and upper bounds for the actual
+           values. The mean of these two bounds (dark blue) normally is a good
+           approximation of the distribution function $F(E)$ at this point.}
   \label{figure:stieltjes_imaging}
 \end{figure}
 
@@ -337,7 +344,7 @@ to give points of the desired density function $f(\omega)$, which are
 subsequently interpolated. In the routine of Averbukh, a spline interpolation
 is used for this purpose.
 
-\subsection{Quality and Stability of the results}
+\subsection{Quality and Stability of the Results}
 The abcissae of the ploynomials constructed from different orders
 of moments intersect each other. Therefore, the combination of all abcissae
 and weights for the interpolation is beneficial.
