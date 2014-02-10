@@ -1,31 +1,71 @@
-\section{Resonances}
+\chapter{Resonances}
 
 Classically, a resonance is the maximum coupling of two or more
 oscillating systems, in which energy is either transferred from 
 one system to another or converted into a different kind of energy.
-In quantum mechanics analogously the maximum coupling of an initial 
-state to either 
-another state or to
-a continuum of states is referred to as a resonance. Hereby this
-interaction can be mediated via an external field.
-In consequence of the coupling the system evolves over time from
-the initial state into at least one other state. Depending on the investigated
-process, this change is either reversible like in Rabi oscillations \cite{Rabi}
-or irreversible like in our case of autoionization processes.
+In quantum mechanics analogously the maximum coupling 
+of two states (not necessarily eigenstates of the system) 
+bound or continuum states is referred to as a resonance.
+One has to distinguish between two major manifolds of resonances
+by being reversible or irreversible.
+In reversible resonances
+interaction of the enganged states can be mediated via an external field,
+which causes excitations
+into different electronic, vibrational and rotational states.
+Irreversible resonances on the other hand are observed in the case of
+metastable states decaying over time. We are going to focus on the theory of
+decaying metastable states describing electronic decay processes like the
+Auger process and the zoo of \ac{ICD} like processes. 
 
-The time evolution of a resonance process can be characterized by
-the averaged lifetime $\tau$ of the initial state or its counterpart
-in the energy domain,
-the averaged decay width $\Gamma = \frac{\hbar}{\tau}$.
+Metastable states can be grouped into shape resonances and Feshbach resonances,
+also called Fano resonances. In shape resonances the particle of investigation
+resides in
+a local minimum of the potential and decays via tunneling through some barrier.
+In other words, it escapes from its former residence.
+In contrast to the shape resonances, in Feshbach-Fano resonances
+a bound state decays via coupling to continuum states. Such a situation might
+appear in scattering experiments, where we consider two particles $A$ and $B$.
+For simplicity we choose particle $B$ to be fixed in space and particle $A$
+approaching it. And very large distances the two particles do not interact with
+each other. Each of them is in an eigenstate of both its own local system
+and the total system containing both particles. As $A$ approaches $B$, the two
+particles start feeling and influencing each other which consequently leads
+to changes in the eigenstates of the system and hence neither of the particles
+inhabiting one of them. A metastable state is formed. Inside this
+\emph{interaction region} the system
+rearranges electronically and decays in our case of interest. The decay
+products leave the interaction region an can subsequently be analyzed.
+Likewise the decay of metastable states can be described in processes
+where the reaction partners do not approach each other but the metastable
+state is created inside the interaction region. This means that the initial
+state is never unperturbed by particle $B$. We will see, that a proper
+preparation of the initial state in our case is a pure technicality.
 
-Historically the underlying theory was developed by numerous scienctists
-like Dirac \cite{Dirac27_1,Dirac27_2}, Wentzel \cite{Wentzel27}, 
-Weisskopf and Wigner \cite{Weisskopf30},
-Fermi \cite{Fermi32}, Breit and Wigner \cite{Breit36},
-Kapur and Peierls \cite{Kapur38}, Siegert \cite{Siegert39} and many others.
+In the following sections we will discuss properties of metastable states
+getting inside through the study of electron dynamics inside the interaction
+region
+and the description of their decay into several decay channels from an outside
+view, where what happens in detail inside the interaction region is of no
+concern and solely the initial and final states are taken into account.
 
-In the following we are going to discuss the necessary basics of scattering
-theory as summarized by Gell-Mann \cite{Gell-Mann53}.
+%In consequence of the coupling the system evolves over time from
+%the initial state into at least one other state. Depending on the investigated
+%process, this change is either reversible like in Rabi oscillations \cite{Rabi}
+%or irreversible like in our case of autoionization processes.
+%
+%The time evolution of a resonance process can be characterized by
+%the averaged lifetime $\tau$ of the initial state or its counterpart
+%in the energy domain,
+%the averaged decay width $\Gamma = \frac{\hbar}{\tau}$.
+%
+%Historically the underlying theory was developed by numerous scienctists
+%like Dirac \cite{Dirac27_1,Dirac27_2}, Wentzel \cite{Wentzel27}, 
+%Weisskopf and Wigner \cite{Weisskopf30},
+%Fermi \cite{Fermi32}, Breit and Wigner \cite{Breit36},
+%Kapur and Peierls \cite{Kapur38}, Siegert \cite{Siegert39} and many others.
+%
+%In the following we are going to discuss the necessary basics of scattering
+%theory as summarized by Gell-Mann \cite{Gell-Mann53}.
 
 
 %Its time evolution and optionally the corresponding decay width has historically
@@ -40,6 +80,80 @@ theory as summarized by Gell-Mann \cite{Gell-Mann53}.
 %Shortly after,
 %Fano amplified the latter ansatz to describe excitation spectra, which
 %are inverse processes to Feshbach's nuclear reactions.\cite{Fano61}
+
+
+\section{Properties of Metastable States in the Resonant State Picture}
+
+\begin{equation}
+  \psi(x,t) = e^{-iE_0t} \psi_0(x)
+\end{equation}
+
+\begin{equation}
+  \psi(x,t) = \Lambda(x,t) e^{iS(x,t)}
+\end{equation}
+
+\begin{equation}
+  S(|x|,t>t_0) = \begin{cases}
+                   -\varepsilon t + \phi       & |x| < L \\
+                   k_r |x| -\varepsilon + \phi & |x| > L
+                 \end{cases}
+\end{equation}
+
+
+\begin{equation}
+  N_L(t) = \int\limits_{-L}^L |\psi(x,t)|^2 \mathrm d x
+\end{equation}
+
+\begin{equation}
+  N_L(t>t_0) = e^{-\frac t\tau} N_L(t_0)
+\end{equation}
+
+\begin{equation}
+  \braket{\hat{H}}_L = \frac{\int\limits_{-L}^L \psi^*(x,t) \hat{H} \psi(x,t) \mathrm dx}
+                       {\int\limits_{-L}^L |\psi(x,t)|^2 \mathrm dx}
+\end{equation}
+
+\begin{equation}
+  \hat{H}\psi(x,t) = i \frac{\partial}{\partial t} \psi(x,t)
+\end{equation}
+
+
+\begin{equation}
+  \psi^*(x,t) \hat{H} \psi(x,t) - \psi(x,t) \hat{H} \psi^*(x,t) = 
+      i \frac{\partial}{\partial t} |\psi(x,t)|^2
+\end{equation}
+
+\begin{equation}
+  \frac{\partial}{\partial t} N_L(t) = 2 \Im \left(
+       \int\limits_{-L}^L \psi^*(x,t) \hat{H} \psi(x,t) \right)
+\end{equation}
+
+\begin{equation}
+  \Im \left( \braket{\hat{H}}_L \right) = -\frac{1}{2\tau}
+\end{equation}
+
+
+\begin{equation}
+  \Re \left( \int\limits_{-L}^L \psi^*(x,t) \hat{H} \psi(x,t) \right)
+ = -\Im \left( \int\limits_{-L}^L \psi^*(x,t) \frac{\partial \psi(x,t)}{\partial t} \right)
+\end{equation}
+
+
+\begin{equation}
+  \Re \left( \braket{\hat{H}}_L \right) = -\frac{\partial S(x,t)}{\partial t}
+  = \varepsilon
+\end{equation}
+
+
+\begin{equation}
+  \braket{\hat{H}}_L = \Re \left( \braket{\hat{H}}_L \right)
+  + i \Im \left( \braket{\hat{H}}_L \right) = \varepsilon - \frac{i}{2\tau}
+\end{equation}
+
+
+
+
+\section{Decay Widths Independent of the Size of the Interaction Region}
 
 
 We start from the time dependent Schroedinger equation
@@ -169,7 +283,7 @@ This means that, the larger the width is, the faster is the transition
 into the final state.
 
 
-\subsection{Resonances in systems with more than two states}
+\section{Resonances in systems with more than two states}
 
 In the case of a multistate system, the calculation of the decay width is more
 complex than in a system with only two states.
