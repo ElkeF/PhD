@@ -1,7 +1,8 @@
 \chapter{Resonances}
 
-Classically, a resonance is the maximum coupling of two or more
-oscillating systems, in which energy is either transferred from 
+Classically, a resonance is the maximum response of a system to the vibrations
+of at least one other
+system, in which energy is either transferred from 
 one system to another or converted into a different kind of energy.
 In quantum mechanics analogously the maximum coupling 
 of two states (not necessarily eigenstates of the system) 
@@ -41,8 +42,9 @@ state is created inside the interaction region. This means that the initial
 state is never unperturbed by particle $B$. We will see, that a proper
 preparation of the initial state in our case is a pure technicality.
 
-In the following sections we will discuss properties of metastable states
-getting inside through the study of electron dynamics inside the interaction
+In the following sections we will start with a side remark on the normalization
+of the involved states. Afterwards we discuss properties of metastable states
+getting insight through the study of electron dynamics inside the interaction
 region
 and the description of their decay into several decay channels from an outside
 view, where what happens in detail inside the interaction region is of no
@@ -81,82 +83,249 @@ concern and solely the initial and final states are taken into account.
 %Fano amplified the latter ansatz to describe excitation spectra, which
 %are inverse processes to Feshbach's nuclear reactions.\cite{Fano61}
 
+\begin{figure}[h]
+  \centering
+  \input{pics/overview_resonances}
+  \caption{}
+  \label{}
+\end{figure}
 
-\section{Properties of Metastable States in the Resonant State Picture}
+\section{Normalization of Bound and Continuum States}
+Before we describe the decay of a metastable state, we have to remember,
+that both bound and continuum states are involved in such a process.
+Bound states are very localized and in quantum mechanics
+represented by square integrable
+functions of the $\mathcal{L}^2$ Hilbert space. Their boundary conditions
+lead to a quantized energy spectrum and the functions are normalized
+to represent one particle each. Unperturbed bound states are stationary
+and can therefore conveniently be described using the time-independent
+Schrödinger equation.
+In contrast to the bound states the
+continuum states are very delocalized, are not $\mathcal{L}^2$
+integrable and are hence not accessible for a probabilistic interpretation.
+Their energy spectrum is continuous and the functions are normalized to
+their respective energy.
 
+In decay processes
+where bound and continuum states interact, it is obliged to find a way to
+properly represent bound states in an energy normalization or continuum states
+in an $\mathcal{L}^2$ normalization.
+
+Since quantum chemical programme packages are based on $\mathcal{L}^2$ functions,
+it is most convenient to go for the latter approach.
+
+For simple models it can be shown, that the positive energy eigenstates
+of the Hamiltonian correspond to one continuum eigenstate each. The only
+difference is a factor stemming from the renormalization.
+
+blablub
+
+
+
+
+
+\section{Properties of Decaying Metastable States}
+In this section we strictly follow the argumentation of reference
+\cite{xyz}, where a more detailed discussion can be found.
+Consider a particle residing in a bound state of some potential, which
+can be described as an $\mathcal{L}^2$ normalized eigenstate $\psi_0$
+of the corresponding time-independent
+Schrödinger equation. Its time evolution can be described via
+the solution of the time-dependent Schrödinger equation
 \begin{equation}
-  \psi(x,t) = e^{-iE_0t} \psi_0(x)
+  \psi(x,t) = e^{-iE_0t} \psi_0(x) .
 \end{equation}
 
+Our aim is to describe the decay of a metastable state, for which we employ
+a more general ansatz for the wavefunction.
+Therefore, we choose a more general ansatz
 \begin{equation}
-  \psi(x,t) = \Lambda(x,t) e^{iS(x,t)}
+  \psi(x,t) = \Lambda(x,t) e^{iS(x,t)}   ,
 \end{equation}
+
+where $\Lambda(x,t)$ denotes the amplitude of the wavefunction
+depending on the potential under investigation and
+its phase is described by $S(x,t)$. It can be shown, that the phase function
+should decrease exponentially in time and outside the interaction region,
+the wavefunction is expected to be depleted over space, or in other words the
+describing wavepacket is expected to travel with a constant velocity and 
+momentum $k_r$ away
+from the interaction region, which we here depict to be limited to the
+interval $[-L,L]$. At this point we do not specify $L$ further.
+This leads to the following ansatz of the
+phase function
 
 \begin{equation}
   S(|x|,t>t_0) = \begin{cases}
                    -\varepsilon t + \phi       & |x| < L \\
-                   k_r |x| -\varepsilon + \phi & |x| > L
+                   k_r |x| -\varepsilon + \phi & |x| > L   ,
                  \end{cases}
 \end{equation}
+where $\phi$ is some arbitrary phase.
 
+
+With this knowledge about the wavefunction we now investigate the decay
+of the metastable state. We therefore investigate the probability of a particle
+to be inside the interaction region $[-L,L]$ at different times $t$. This
+probability is described by the integral over the density inside the interaction
+region or the corresponding norm
 
 \begin{equation}
-  N_L(t) = \int\limits_{-L}^L |\psi(x,t)|^2 \mathrm d x
+  N_L(t) = \int\limits_{-L}^L |\psi(x,t)|^2 \mathrm d x .
 \end{equation}
+
+Calculations for the decay of a metastable state described by a superposition
+of continuum eigenstates in a xyz model potential
+show the behaviour of the norm in figure \ref{figure:decay_norm}.
+
+\begin{figure}[h]
+  \centering
+  \caption{}
+  \label{figure:decay_norm}
+\end{figure}
+
+At the beginning of the decay the norm is mostly influenced by fast
+continuum states and after this short time $t_0$ the characteristic
+exponential decay of the metastable state can be observed. From the slope
+of the curve, we arrive an an ansatz for the time dependent norm with
+the lifetime $\tau$ and $N_L(t_0)$ being the norm at the starting time
+$t_0$ of the characteristic resonance behaviour.
 
 \begin{equation}
   N_L(t>t_0) = e^{-\frac t\tau} N_L(t_0)
 \end{equation}
+
+We can now also investigate properties of the particle inside the
+interaction region, like e.g. the expectation value of the energy
 
 \begin{equation}
   \braket{\hat{H}}_L = \frac{\int\limits_{-L}^L \psi^*(x,t) \hat{H} \psi(x,t) \mathrm dx}
                        {\int\limits_{-L}^L |\psi(x,t)|^2 \mathrm dx}
 \end{equation}
 
+where we are interested in the time-dependent Hamiltonian
+given by the time-dependent Schrödinger equation
 \begin{equation}
-  \hat{H}\psi(x,t) = i \frac{\partial}{\partial t} \psi(x,t)
+  \hat{H}\psi(x,t) = i \frac{\partial}{\partial t} \psi(x,t) .
 \end{equation}
 
-
+From the latter we can create a set of two equations. For the first
+the time-dependent Schrödinger equation is multiplied by $\psi^*$ from the
+left and the second equation is the complex conjugate of the first equation.
+Subtracting the second equation from the first we arrive at
 \begin{equation}
   \psi^*(x,t) \hat{H} \psi(x,t) - \psi(x,t) \hat{H} \psi^*(x,t) = 
       i \frac{\partial}{\partial t} |\psi(x,t)|^2
 \end{equation}
 
+After integration over the interaction region we can connect the latter equation
+to the time derivative of the probability of the particle to be inside the
+interaction region
 \begin{equation}
-  \frac{\partial}{\partial t} N_L(t) = 2 \Im \left(
+  \frac{\partial}{\partial t} N_L(t) = 2 \operatorname{Im} \left(
        \int\limits_{-L}^L \psi^*(x,t) \hat{H} \psi(x,t) \right)
 \end{equation}
 
+from which we by comparison have access to the resonance lifetime of the system
 \begin{equation}
-  \Im \left( \braket{\hat{H}}_L \right) = -\frac{1}{2\tau}
+  \Im \left( \braket{\hat{H}}_L \right) = -\frac{1}{2\tau}   .
 \end{equation}
 
+Instead of subtracting the two equations stemming from the time-dependent
+Schrödinger equation adding them yields
 
 \begin{equation}
-  \Re \left( \int\limits_{-L}^L \psi^*(x,t) \hat{H} \psi(x,t) \right)
- = -\Im \left( \int\limits_{-L}^L \psi^*(x,t) \frac{\partial \psi(x,t)}{\partial t} \right)
+  \operatorname{Re} \left( \int\limits_{-L}^L \psi^*(x,t) \hat{H} \psi(x,t) \right)
+ = -\operatorname{Im} \left( \int\limits_{-L}^L \psi^*(x,t)
+    \frac{\partial \psi(x,t)}{\partial t} \right)   ,
 \end{equation}
-
+which with the help of the ansatz of the wavefunction \ref{equation:}
+and the behaviour of the phase function \ref{equation:}
+connects the real part of the energy expectation value inside the interaction
+region with the energy of the resonance state $\varepsilon$.
 
 \begin{equation}
-  \Re \left( \braket{\hat{H}}_L \right) = -\frac{\partial S(x,t)}{\partial t}
+  \operatorname{Re} \left( \braket{\hat{H}}_L \right)
+  = -\frac{\partial S(x,t)}{\partial t}
   = \varepsilon
 \end{equation}
 
-
-\begin{equation}
-  \braket{\hat{H}}_L = \Re \left( \braket{\hat{H}}_L \right)
-  + i \Im \left( \braket{\hat{H}}_L \right) = \varepsilon - \frac{i}{2\tau}
+Hence the energy of the resonance state is complex, where the real part
+describes the energy of the resonance state and the imaginary part gives rise
+to the lifetime of the system.
+\begin{equation} \label{equation:expectation_H_interaction_region}
+  \braket{\hat{H}}_L = \operatorname{Re} \left( \braket{\hat{H}}_L \right)
+  + i \operatorname{Im} \left( \braket{\hat{H}}_L \right) = \varepsilon - \frac{i}{2\tau}
 \end{equation}
 
+To conclude from these general investigations, the wavefunction inside
+the interaction region is bound-like while outside the interaction region,
+we see particles leaving the interaction region. The probability of a
+particle to be inside the interaction region decays exponentially in time
+and the local energy expectation value inside the interaction region is complex,
+where the imaginary part is connected to the lifetime and hence the decay
+rate of the system.
 
 
 
-\section{Decay Widths Independent of the Size of the Interaction Region}
 
 
-We start from the time dependent Schroedinger equation
+\section{Decay Widths from a Scattering Point of View}
+For a very general description the solution of the timde-dependent Schrödinger
+equation inside the interaction region is inpractical. First of all, the
+choice of the size of the interaction region will crucially influence the
+final result. It is therefore beneficial to change from solving the time-dependent
+Schrödinger equation to solving the time-independent Schrödinger equation
+with proper boundary conditions and following the time evolution of the population
+of these time-independent states. In the case of resonances
+this will lead to so-called resonance states
+with a finite lifetime, a complex energy and the correct asymptotic behaviour.
+
+In a full-collision scattering experiment of two particles we choose
+one particle to be fixed in space and the other one to be scattered on it.
+This is a good approximation if the scattered particle's mass is much smaller
+than the target particle. The time of interaction is denoted by $t=0$.
+At times $t<<0$ the moving particle can be well approximated to be behave like
+a free particle and hence a plane wave. As it approaches the target, it is
+perturbed and interacts with the target. Afterwards the particle leaves the target
+but might be inherently changed due to the interaction with the target particle.
+Fpr large distances and times $t>>0$ it approaches the behaviour of a free
+particle again.
+
+The wavefunctions of the initial and final states $\ket{\phi ^{(+)}}$
+and $\ket{\chi ^{(-)}}$
+at the time of the interaction
+$t=0$ are obtained from their asymptotes as
+
+\begin{align}
+  \ket{\phi}  &\rightarrow  \ket{\phi ^{(+)}}\\
+  \ket{\chi}  &\rightarrow  \ket{\chi ^{(-)}}
+\end{align}
+where $+$ denotes outgoing and $-$ denotes incoming boundary conditions.
+This means, that the incoming particle has outgoing boundary conditions and the
+leaving particle has incoming boundary conditions.
+
+The probability of the system to change from the initial state $\ket{\phi}$ to
+the final state $\ket{\chi}$ due to the interaction at times $t\approx 0$ is given
+by the overlap of the scattering states at $t=0$
+
+\begin{align}
+  w(\chi \leftarrow \phi) &= | \braket{\chi^{(-)}|\phi^{(+)}} |^2   \\
+                          &= | \braket{\chi|S|\phi} | ^2
+\end{align}
+where $S$ denotes the scattering operator, which takes care of the preparation
+of the initial and final states from their asymptotes.
+
+In the following, we will show how this probability is related to the transition
+rate and the decay width for the example of an incoming particle, which is scattered
+at the target particle and captured. This means, that there is no outgoing wave.
+This process is the inverse of the decay processes of our interest, but better
+suited for the case of illustration, since we are able to follow the time in positive
+direction, preparing the initial state from the past and then scatter it on the
+target particle.
+
+For the calculation of decay rates we start
+from the time dependent Schroedinger equation
 
 \begin{equation}
   i \frac{\mathrm{d}}{\mathrm{d}t} \Psi(t) = (K + V) \Psi(t) ,
@@ -169,7 +338,7 @@ $\Phi_i(t) = \phi_i e^{-iE_it}$ are stationary states of the system.
   i \frac{\mathrm{d}}{\mathrm{d}t} \Phi(t) = K \Phi(t)
 \end{equation}
 
-Out purpose it the description of the transition rates from an initial state
+Our purpose it the description of the transition rates from an initial state
 $\Phi_i(t)$ to a final state $\Phi_f(t)$ mediated by the interaction $V$ between
 them. We are going to achieve this by taking the time derivative of the system's
 probability $\omega_{fi}(t)$ to be in a certain final state at time t.
@@ -180,14 +349,16 @@ probability $\omega_{fi}(t)$ to be in a certain final state at time t.
   N_i       &= \braket{\Psi_i(t)|\Psi_i(t)}
 \end{align}
 
-In eq. (\ref{equation:scattering_overlap}) not the stationary state $\Phi_i$
-has been chosen to represent the initial state but $\Psi_i$. Since our knowledge
+In eq. (\ref{equation:scattering_overlap}) the solution of the time-dependent 
+Schrödinger equation $\Psi_i$ and not the stationary state $\Phi_i$
+represents the initial state. Since our knowledge
 about the initial state wave function is limited to its behaviour without the
 interaction $V$, being turned on at $t=0$, we have to describe the initial state
 wave function at some time in the distant past $T<0$ and propagate it until $t=0$.
 Therefore the question arises, which time $T$ should be selected for this purpose.
 Since no time is better than any other and the result might depend on the decision,
-one averages over propagations starting at different times $T$.
+one averages over propagations starting at different times $T$. In other words,
+we impose outgoing boundary conditions on our system.
 
 \begin{equation}
   \Psi_i(t) = \frac 1\tau \int\limits_{-\tau}^0 \mathrm{d}T \,
@@ -239,7 +410,14 @@ Here,
   R_{fi}(\varepsilon) = \braket{\phi_f|V|\Psi_i(0)}
 \end{equation}
 denotes the coupling of the initial with the final state via the interaction
-operator $V$.
+operator $V$. In case of the interaction $V$ being zero, the incoming particle
+is scattered at the target particle without changing the formation of a metastable
+state and both particles inherit the same states before and after the collision.
+This is taken care of by the $\delta$ function. Already at this stage it is evident,
+that the function has
+poles in the case of the energies of the initial and final state being equal
+and hence the response of the system of the interaction between the initial and final
+state is maximized at this point.
 
 The time dependence of coupling between the two time-independent states is now
 introduced to give:
@@ -273,12 +451,20 @@ decay width $\Gamma$.
   \label{figure:general_resonance}
 \end{figure}
 
+Very often the scattering matrix is reformulted to the so-called $\mathcal{T}$
+matrix of transition amplitudes, which absolute square carries the same information
+as $f$. It has poles at the resonance energies and the imaginary part of
+the resonance energy is capable of the information about the decay width $\Gamma$.
+For a more thorough definition see \cite{Taylor87} chapters 2,3 and 8.
+
 In short terms, the decay width $\Gamma$ is defined as the FWHM of the
 the time derivative of the probability distribution to find the system in
 the final state at time $t=0$. Hence it is proportional to the reaction rate
-constant, which entails its mathematical treatment. Furthermore it is
-connected to the lifetime $\tau$ of the
-system via $\Gamma=\frac \hbar \tau$.
+constant, which entails its mathematical treatment. 
+From comparison with equation \ref{equation:expectation_H_interaction_region}
+the connection between the decay width $\Gamma$ and the lifetime $\tau$ becomes
+evident to be
+$\Gamma=\frac \hbar \tau$ in SI units.
 This means that, the larger the width is, the faster is the transition
 into the final state.
 
@@ -299,8 +485,6 @@ Shortly after,
 Fano amplified the latter ansatz to describe excitation spectra, which
 are inverse processes to Feshbach's nuclear reactions.\cite{Fano61}
 
-It has to be noted, that the applied criteria for the seletion of
-these subspaces affect the final results.
 
 Starting from the Schroedinger equation of the total system under investigation
 
@@ -308,7 +492,8 @@ Starting from the Schroedinger equation of the total system under investigation
   H \Psi = E \Psi \label{schroedinger}
 \end{equation}
 
-the projection operators $P$ and $Q$ are defined. $P$ projects the final state out
+the projection operators $P$ and $Q$ are defined. $P$ projects the final states
+or the open channels out
 of the total wavefunction $\Psi$ and is defined with respect to eigenstates
 of the system in the asymptotic time limit, which means long after the process
 itself finished. $Q$ is analogously defined with respect to the rest of the
@@ -327,6 +512,9 @@ can easily be derived with
   H_{QP} & \equiv QHP & \quad\quad H_{QQ} & \equiv QHQ .
 \end{align*}
 
+It has to be noted, that the applied criteria for the seletion of
+these subspaces affect the final results. The above selection scheme is the
+most common, but not the only possible partitioning.
 From equation \ref{se_QQ} a straigth-forward solution for the system excluding
 the selected final states can be found.
 
@@ -338,7 +526,7 @@ The latter expression holds in case of all open channels being included
 in the final state description.
 In case of selectively chosen open channels, which do not resemble the total
 space of open channels,
-$E$ is to be substituted by $E^{(+)}=E + i\varepsilon$.
+$E$ is to be substituted by $E^{(-)}=E - i\varepsilon$.
 
 After insertion of eq. \ref{feshbach_qpsi} into eq. \ref{se_PP} one arrives at
 
@@ -364,7 +552,7 @@ Schroedinger equation
 This approach is not exact, because the states being bound implicate
 their lifetimes to be infinite, which they are intrinsically
 to the problem not supposed to be. However, for states having a long lifetime,
-this approximation is reasonable. -> How long is long?
+this approximation is reasonable.
 
 Together with a set of continuum wavefunctions $\{\Phi(\alpha,E)\}$, they are
 defined to fulfill the following orthogonality relations
@@ -393,9 +581,9 @@ of
   \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E-\varepsilon} \, H_{QP}
 \end{equation}
 
-which is useful to split into two parts. One describing the Hamiltonian of the
-initial state being in resonance with the continuum $\Phi_s$ with its energy
-$\varepsilon_s$ varying strongly close to the resonance energy and the rest
+which is useful to split into two parts: One describing the Hamiltonian of the
+initial state $\Phi_s$ with its energy $\varepsilon_s$ being in resonance with
+the continuum and the rest
 $\mathscr{H}'$
 
 \begin{equation}
@@ -405,30 +593,33 @@ $\mathscr{H}'$
 with
 \begin{equation}
   \mathscr{H}' = H_{PP}\, + \,
-  \sum\limits_{n\ne s} H_{PQ} \,\frac{\ket{\Phi_n}\bra{\Phi_n}}{E^{(+)}-\varepsilon_n}
+  \sum\limits_{n\ne s} H_{PQ} \,\frac{\ket{\Phi_n}\bra{\Phi_n}}{E-\varepsilon_n}
   \, H_{QP} \,+\,
   \int \mathrm{d}\alpha \int\mathrm{d}E \,H_{PQ} \,
-  \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E^{(+)}-\varepsilon} \, H_{QP} .
+  \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E-\varepsilon} \, H_{QP} .
 \end{equation}
 
 This reformulation leads to the following version of eq. \ref{se_ppsi}
 \begin{equation}
   (E - \mathscr{H}')\, P \Psi =
-   H_{PQ} \,\frac{\ket{\Phi_s}\bra{\Phi_s}}{E^{(+)}-\varepsilon_s}\, H_{QP} P \Psi = \mathscr{V} P \Psi.
+   H_{PQ} \,\frac{\ket{\Phi_s}\bra{\Phi_s}}{E-\varepsilon_s}\, H_{QP} P \Psi = \mathscr{V} P \Psi.
 \end{equation}
 
-The eigenfunctions of $\mathscr{H}'$ have to fulfill outgoing boundary conditions,
-which is labelled by the superscript $(+)$
+$P \Psi$ has to be described in means of the final states in the asymptotic
+region, which means that the wavefunction has to be described by the means
+of the escaped particle. Therefore
+the eigenfunctions of $\mathscr{H}'$ have to fulfill incoming boundary conditions,
+which is labelled by the superscript $(-)$
 
 \begin{equation}
-  (E-\mathscr{H}') \psi_f^{(+)} = 0 \label{sol_outg} .
+  (E-\mathscr{H}') \psi_f^{(-)} = 0 \label{sol_outg} .
 \end{equation}
 
 This relation can the be utilized to find a solution for $\ket{P \Psi}$ analogous
 to the approach in equation (\ref{equation:in_state_0_approx}):
 
 \begin{equation}\label{sol_ppsi}
-  P \Psi = \psi_f^{(+)} + \frac{1}{E^{(+)} - \mathscr{H}'}
+  P \Psi = \psi_f^{(-)} + \frac{1}{E^{(-)} - \mathscr{H}'}
            \frac{H_{PQ}\ket{\Phi_s}
            \braket{\Phi_s|H_{QP}|P\Psi}}{E - \varepsilon_s} .
 \end{equation}
@@ -437,78 +628,74 @@ $\ket{P \Psi}$ still depends on itself. Therefore
 eq. \ref{sol_ppsi}
 is multiplied from the left with $\bra{\Phi_s|H_{QP}}$ to give:
 \begin{equation}
-  \braket{\Phi_s|H_{QP}|P\Psi} = \braket{\Phi_s|H_{QP}|\Psi_f^{(+)}} +
-  \frac{1}{E^{(+)} - \mathscr{H}'}
+  \braket{\Phi_s|H_{QP}|P\Psi} = \braket{\Phi_s|H_{QP}|\Psi_f^{(-)}} +
+  \frac{1}{E^{(-)} - \mathscr{H}'}
   \frac{\braket{\Phi_s|H_{QP}H_{PQ}|\Phi_s} \braket{\Phi_s|H_{QP}|P\Psi}}
-       {E^{(+)} - \varepsilon_s}  \label{s_ppsi} .
+       {E - \varepsilon_s}  \label{s_ppsi} .
 \end {equation}
 
 Defining the quantity
 
 \begin{equation}
-  W_{QQ} = H_{QP}\frac{1}{E^{(+)} - \mathscr{H}'}H_{PQ}
+  W_{QQ} = H_{QP}\frac{1}{E^{(-)} - \mathscr{H}'}H_{PQ}
 \end{equation}
 
 and solving eq. \ref{s_ppsi} for
 
 \begin{equation}
-  \braket{\Phi_s|H_{QP}|P\Psi} = \frac{\braket{\Phi_s|H_{QP}|\Psi_f^{(+)}}(E-\varepsilon_s)}
+  \braket{\Phi_s|H_{QP}|P\Psi} = \frac{\braket{\Phi_s|H_{QP}|\Psi_f^{(-)}}(E-\varepsilon_s)}
 {E - \varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}}
 \end{equation}
 
 yields the final state description
 \begin{equation}\label{}
-  P \Psi = \psi_f^{(+)} + \frac{1}{E^{(+)} - \mathscr{H}'}
+  P \Psi = \psi_f^{(-)} + \frac{1}{E^{(-)} - \mathscr{H}'}
            \frac{H_{PQ}\ket{\Phi_s}
-           \braket{\Phi_s|H_{QP}|\psi_f^{(+)}}}
+           \braket{\Phi_s|H_{QP}|\psi_f^{(-)}}}
            {E - \varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}} .
 \end{equation}
 
-It can be shown, that it is not necessary to calculate $f_{fi}$, but that the
-so-called transition matrix
 
-\begin{equation}
-  \mathscr{T}_{fi} = \braket{\psi_i^{(-)}|V|\phi_f},
-\end{equation}
 
-carries all the necessary information about the properties of interest as
-decay widths and cross sections. \cite{Gell-Mann53}
-Here $\phi_f$ denotes the final states in our represented by $\ket{P \Psi}$ and
-$\psi_i^{(-)}$ are incoming states with appropriate boundary conditions fulfilling
+The above mentioned matrix of transition amplitudes $\mathcal{T}$
+is in our case given by
 
-\begin{equation}
-  (E - \mathscr{H}') \psi_i^{(-)} = 0 .
-\end{equation}
 
-This leads us to the following expression for the transition matrix
-
-\begin{equation}
-  \mathscr{T}_{if} = \mathscr{T}_{if}^{(P)} + 
+\begin{align}
+  \mathscr{T}_{if} &= \braket{\psi_i^{(+)} | P\Psi} \\
+                   &= \mathscr{T}_{if}^{(P)} + 
                      \frac{\braket{\psi_i^{(-)}|H_{PQ}|\Phi_s}
                            \braket{\Phi_s|H_{QP}|\Psi_f^{(+)}}}
                           {E-\varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}}
+\end{align}
+
+where $\psi_i^{(+)}$ describes the solution of the Schrödinger with outgoing
+boundary conditions
+
+\begin{equation}                                                              
+  (E - \mathscr{H}') \psi_i^{(+)} = 0 .                                       
 \end{equation}
 
 where $\mathscr{T}_{if}^{(P)}$ describes the transitions without any interaction
-between the initial and final states taken into account. Therefore, in the case
-of thoroughly partitioning of contributions into initial and final states,
-this part is supposed to be zero. The second part describes the transition
+between the initial and final states taken into account. Therefore, close to   
+the resonance, this part is expected to be small compared to the second part,which
+describes the transition
 from the initial into the final states mediated by the interaction between them.
 
-The transition matrix is from here on handled analogously to $f_{ij}$ in the preceding subsection.
-An explicit time-dependency is introduced, the absolute square is differenciated
-with respect to the time and evaluated for $t=0$.
-The derived expression shows again a Lorentzian shape with a width proportional to
-the imaginary part of $\braket{\Phi_s|W_{QQ}|\Phi_s}$. We therefore split it into
+From the transition amplitudes we can now gain information about
+the resonance energy from its poles. Therefore we need to examine
+$\braket{\Phi_s|W_{QQ}|\Phi_s}$ further.
+We split it into
 its real and imaginary part by introducing a delta function using 
 $\lim\limits_{\varepsilon \to 0_+} \frac{1}{x+i\varepsilon} = \mathscr{P} \frac 1x \mp i\pi\delta(x)$,
 where $\mathscr{P}$ is the principal part and $\delta(x)$ denotes the
 Dirac delta function. \cite{Cohen_Tannoudji_3_2}
+Hier nochmale schauen!
 
 \begin{align}
   \braket{\Phi_s|W_{QQ}|\Phi_s} & = \Delta_s(E) - i \frac{\Gamma_s(E)}{2}\\
                                 & = \braket{\Phi_s|H_{QP}
-                                    \frac{1}{E^{(+)}  - \mathscr{H}'}H_{PQ}|\Phi_s}\\
+                                    \frac{1}{E^{(-)}  - \mathscr{H}'}H_{PQ}|\Phi_s}\\
                                 & = \braket{\Phi_s|H_{QP}
                                     \frac{\mathcal{P}}{E - \mathscr{H}'}H_{PQ}|\Phi_s}
                                     - i\pi \braket{\Phi_s|H_{QP}\delta(E-\mathscr{H}')H_{PQ}
@@ -519,8 +706,8 @@ Inserting the latter expression into the transition matrix yields
 
 \begin{equation}
   \mathscr{T}_{if} = \mathscr{T}_{if}^{(P)} + 
-                     \frac{\braket{\psi_i^{(-)}|H_{PQ}|\Phi_s}
-                           \braket{\Phi_s|H_{QP}|\Psi_f^{(+)}}}
+                     \frac{\braket{\psi_i^{(+)}|H_{PQ}|\Phi_s}
+                           \braket{\Phi_s|H_{QP}|\Psi_f^{(-)}}}
                           {E-\varepsilon_s - \Delta_s + i \frac{\Gamma}{2}}
 \end{equation}
 
@@ -529,21 +716,14 @@ as an energy shift $\Delta_s(E)$ of the resonance introduced by the interaction 
 with the final states and its imaginary part to carry the information about the
 decay width $\Gamma_s(E)$ and hence the lifetime.
 
-%The complex matrix element $\braket{\Phi_s|W_{QQ}|\Phi_s}$ wears the influence
-%of the coupling on the rest of the system. Its real part can be identified as
-%an energy shift $\Delta_s(E)$ to the "unperturbed" resonance energy whereas its
-%complex part is connected to the decay width $\Gamma_s(E)$.
-
-
-
-
 
 From the imaginary part of $\braket{\Phi_s|W_{QQ}|\Phi_s}$ the decay width can
 easily be concluded. Inserting a complete set
-of eigenfunctions as defined in eq. \ref{sol_outg} the decay width can be described
+of eigenfunctions with incoming boundary conditions as defined in
+eq. \ref{sol_outg} the decay width can be described
 as a sum over the different open channel solutions for a given resonant initial state.
 \begin{align}
   \Gamma_s & = 2 \pi \braket{\Phi_s|H_{QP}\delta(E-\mathscr{H}')H_{PQ}|\Phi_s}\\
-           & = 2 \pi \sum\limits_r \left | \braket{\Phi_s|H_{QP}|\psi_r^{(+)}} \right|^2\\
+           & = 2 \pi \sum\limits_r \left | \braket{\Phi_s|H_{QP}|\psi_r^{(-)}} \right|^2\\
            & = \sum\limits_r \Gamma_{sr}(E)
 \end{align}
