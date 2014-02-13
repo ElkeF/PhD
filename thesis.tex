@@ -7,6 +7,7 @@
 \usepackage{units}
 \usepackage{graphicx}
 \usepackage{tikz,pgfplots}
+\usepackage{tikz-qtree}
 %\usepackage{pst-all}
 \usepackage{overcite}
 \usepackage{caption}
@@ -37,7 +38,7 @@
 \captionsetup[table]{position=top, format=plain, justification=raggedright, singlelinecheck=false}
 
 %pgf Bibliotheken
-\usetikzlibrary{patterns}
+\usetikzlibrary{patterns,shadows,trees}
 
 % pgfplots Legenden außerhalb von Plots
 \newenvironment{customlegend}[1][]{%
@@ -64,6 +65,7 @@
         \end{customlegend}
     }%
 }
+
 
 %Seitenformatierung
 %\renewcommand{\baselinestretch}{1.5}

@@ -1,0 +1,46 @@
+%
+% Tikz tree
+%
+\tikzset{font=\small,
+edge from parent fork down,                                         
+level distance=1.75cm,                                              
+every node/.style=                                                  
+    {top color=white,                                               
+    bottom color=diplom2!25,                                        
+    rectangle,rounded corners,                                      
+    minimum height=8mm,                                             
+    draw=diplom2!75,
+    very thick,                                                     
+    drop shadow,                                                    
+    align=center,                                                   
+    text depth = 0pt                                                
+    },                                                              
+edge from parent/.style=                                            
+    {draw=diplom2!50,                                                             
+    thick                                                                         
+    }}      
+
+\begin{tikzpicture}[scale=1.0]
+
+\Tree [.Resonances
+        [.{reversible\\ processes}
+          [.{{interaction between}\\{bound states}}
+            [.{{electronic, vibrational,}\\{rotational excitations}}
+              [.{{Fermi's}\\{Golden Rule}}
+              ]
+            ]
+          ]
+         ] 
+        [.{irreversible\\processes}
+           [.{{interaction with/of}\\{continuum states}} 
+             [.{shape type}
+              ]
+             [.Feshbach-Fano
+               [.{Fano's\\{Golden Rule}}
+               ]
+              ]
+           ]
+         ]
+]
+
+\end{tikzpicture}
