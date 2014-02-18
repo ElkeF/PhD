@@ -1,38 +1,44 @@
-\subsection{Moment Problem}
-
-The moments $S(k)$ of a real and continuous function $f(\omega)$ are defined
-as
-
-\begin{equation}
-  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,\dots  .
-\end{equation}
-
-In case of $f(\omega)$ being a probability density function, it is connected
-to the probability distribution function $F(\omega)$ via
-\begin{equation}
-  F(\omega) = f(\omega){d\omega} .
-\end{equation}
-
-The probability density function is completely determined by the manifold
-of moments. Therefore, when all moments are known, the probability density
-function can be calculated from the moments. In the present case $f(\omega)$
-is the decay width $\Gamma(E)$, but the theory is also applicable and very often
-used for the description of cross sections. Its pseudo-spectrum has the same
-mathematical properties as the pseuso-spectrum of the decay width. Therefore,
-the knowledge obtained in the description of cross sections can be adopted to
-the description for the decay widths.
-
-In practice, all moments are never available unless the moments can be
-calculated analytically. Therefore, one has to approximately solve the reduced
-moment problem, since the density function is not completely defined.
-In this case the $2r$ moments are
-
-\begin{equation}
-  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,...,2r-1
-\end{equation}
+\chapter{Continuum Properties from $\mathcal{L}^2$-Functions}
 
 
+\section{Normalization of Bound and Continuum States}
+Before we describe the decay of a metastable state, we have to remember,
+that both bound and continuum states are involved in such a process.
+Bound states are very localized and in quantum mechanics
+represented by square integrable
+functions of the $\mathcal{L}^2$ Hilbert space. Their boundary conditions
+lead to a quantized energy spectrum and the functions of the bound states
+are normalized
+to represent one particle each. Unperturbed bound states are stationary
+and can therefore conveniently be described using the time-independent
+Schroedinger equation.
+In contrast to the bound states the
+continuum states are very delocalized, are not $\mathcal{L}^2$
+integrable and are hence not accessible for a probabilistic interpretation.
+Their energy spectrum is continuous and the functions are normalized to
+their respective energy.
 
+In decay processes
+where bound and continuum states interact, it is obliged to find a way to
+properly represent bound states in an energy normalization or continuum states
+in an $\mathcal{L}^2$ normalization.
+Since quantum chemical programme packages are based on $\mathcal{L}^2$ functions,
+it is most convenient to go for the latter approach.
+
+After an explanation of Gaussian quadrature we are going to show how
+the discrete spectrum of a Hamiltonian in $\mathcal{L}^2$ representation
+can be motivated to contain information of the continuum using Gaussian quadrature
+based on the discussion of \cite{Reinhardt79}.
+Then we are going to explain, how the decay width can be obtained from a
+discrete pseudo-spectrum by mapping ...
+
+%
+%For simple models it can be shown, that the positive energy eigenstates
+%of the Hamiltonian correspond to one continuum eigenstate each. The only
+%difference is a factor stemming from the renormalization.
+%
+%blablub
+%
 
 
 \subsection{Gaussian Quadrature}
@@ -79,6 +85,7 @@ the interval $[-1,1]$ can be integrated as
 \begin{equation}
   \int\limits_{-1}^1 h(x) dx = \int\limits_{-1}^1 \omega(x) \sqrt{1-x^2} h(x) dx
   \approx \frac \pi n \sum\limits_{i_1}^n h(x_i) \sqrt{1-x_i^2}
+
 \end{equation}
 
 \begin{figure}[h]
@@ -101,6 +108,43 @@ well describes a weight function or probability density function of interest,
 the corresponding probability density function can be obtained, if on some basis,
 Chebyshev polynomials
 can be constructed.
+
+
+\subsection{Moment Problem}
+
+The moments $S(k)$ of a real and continuous function $f(\omega)$ are defined
+as
+
+\begin{equation}
+  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,\dots  .
+\end{equation}
+
+In case of $f(\omega)$ being a probability density function, it is connected
+to the probability distribution function $F(\omega)$ via
+\begin{equation}
+  F(\omega) = f(\omega){d\omega} .
+\end{equation}
+
+The probability density function is completely determined by the manifold
+of moments. Therefore, when all moments are known, the probability density
+function can be calculated from the moments. In the present case $f(\omega)$
+is the decay width $\Gamma(E)$, but the theory is also applicable and very often
+used for the description of cross sections. Its pseudo-spectrum has the same
+mathematical properties as the pseuso-spectrum of the decay width. Therefore,
+the knowledge obtained in the description of cross sections can be adopted to
+the description for the decay widths.
+
+In practice, all moments are never available unless the moments can be
+calculated analytically. Therefore, one has to approximately solve the reduced
+moment problem, since the density function is not completely defined.
+In this case the $2r$ moments are
+
+\begin{equation}
+  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,...,2r-1
+\end{equation}
+
+
+
 
 
 \subsection{Combination of Moment Theory with Gaussian Quadrature}
