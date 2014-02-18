@@ -1,41 +1,42 @@
-\subsection{Moment Problem}
-
-The moments $S(k)$ of a real and continuous function $f(\omega)$ are defined
-as
-
-\begin{equation}
-  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,\dots  .
-\end{equation}
-
-In case of $f(\omega)$ being a probability density function, it is connected
-to the probability distribution function $F(\omega)$ via
-\begin{equation}
-  F(\omega) = f(\omega){d\omega} .
-\end{equation}
-
-The probability density function is completely determined by the manifold
-of moments. Therefore, when all moments are known, the probability density
-function can be calculated from the moments. In the present case $f(\omega)$
-is the decay width $\Gamma(E)$, but the theory is also applicable and very often
-used for the description of cross sections. Its pseudo-spectrum has the same
-mathematical properties as the pseuso-spectrum of the decay width. Therefore,
-the knowledge obtained in the description of cross sections can be adopted to
-the description for the decay widths.
-
-In practice, all moments are never available unless the moments can be
-calculated analytically. Therefore, one has to approximately solve the reduced
-moment problem, since the density function is not completely defined.
-In this case the $2r$ moments are
-
-\begin{equation}
-  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,...,2r-1
-\end{equation}
+\chapter{Obtaining Continuum Properties from $\mathcal{L}^2$-Functions}
 
 
+\section{Bound and Continuum States}
+Before we describe the decay of a metastable state, we have to remember,
+that both bound and continuum states are involved in such a process.
+Bound states are very localized and in quantum mechanics
+represented by square integrable
+functions of the $\mathcal{L}^2$ Hilbert space. Their boundary conditions
+lead to a quantized energy spectrum and the functions of the bound states
+are normalized
+to represent one particle each. Unperturbed bound states are stationary
+and can therefore conveniently be described using the time-independent
+Schroedinger equation.
+In contrast to the bound states the
+continuum states are very delocalized, are not $\mathcal{L}^2$
+integrable and are hence not accessible for a probabilistic interpretation.
+Their energy spectrum is continuous and the functions are normalized to
+their respective energy.
+
+In decay processes
+where bound and continuum states interact, it is obliged to find a way to
+properly represent bound states in an energy normalization or continuum states
+in an $\mathcal{L}^2$ normalization.
+Since quantum chemical programme packages are based on $\mathcal{L}^2$ functions,
+it is most convenient to go for the latter approach.
+
+After an explanation of Gaussian quadrature we are going to show how
+the discrete spectrum of a Hamiltonian in $\mathcal{L}^2$ representation
+can be motivated to contain information of the continuum using Gaussian quadrature
+based on the discussion of \cite{Reinhardt79}.
+Then we are going to show, how the decay width can be obtained from a
+discrete pseudo-spectrum by using Stieltjes imaging \cite{Stieltjes}.
+Finally we are going to introduce the FanoADC approach for the creation of
+states in the $\mathcal{L^2}$ \ac{ISR} basis.
 
 
 
-\subsection{Gaussian Quadrature}
+\section{Gaussian Quadrature}
 The gaussian quadrature is a numerical method for integration. By approximating
 the function to be integrated $g(x) = \rho(x) f(x)$ to be a product of a
 positive definite weight
@@ -52,8 +53,9 @@ analytically, if possible, or otherwise in an optimal way. This leads the abciss
 to be unequally spaced unlike in the basic
 integration schemes using the trapezoidal rule.
 
-$f(x)$ can be expressed as a polynomial. For certain weight functions and boundaries
-of integration, the
+The function $f(x)$ can be expressed as a polynomial.
+For certain weight functions and boundaries
+of integration, these
 polynomials can be determined analytically.
 It can furthermore be shown, that the roots (zeros) of the highest order polynomial
 describing $f(x)$ give the optimal abcissae $x_i$.
@@ -73,15 +75,7 @@ the solution to the polynomials are the so-called Chebyshev polynomials, with
   \quad\quad \omega_{i,n} = \frac \pi n .
 \end{equation}
 
-This means, that the integration of an arbitrary function $h(x)$ within
-the interval $[-1,1]$ can be integrated as
-
-\begin{equation}
-  \int\limits_{-1}^1 h(x) dx = \int\limits_{-1}^1 \omega(x) \sqrt{1-x^2} h(x) dx
-  \approx \frac \pi n \sum\limits_{i_1}^n h(x_i) \sqrt{1-x_i^2}
-\end{equation}
-
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \input{pics/gaussian_quadrature}
   \caption{Integration by Gauss-Chebyshev quadrature of the function
@@ -91,21 +85,171 @@ the interval $[-1,1]$ can be integrated as
   \label{figure:gaussian_quadrature}
 \end{figure}
 
+This means, that the integration of an arbitrary function $h(x)$ within
+the interval $[-1,1]$ can be integrated as
+
+\begin{equation}
+  \int\limits_{-1}^1 h(x) dx = \int\limits_{-1}^1 \omega(x) \sqrt{1-x^2} h(x) dx
+  \approx \frac \pi n \sum\limits_{i_1}^n h(x_i) \sqrt{1-x_i^2}
+\end{equation}
+
 An example for such an integration is shown in figure \ref{figure:gaussian_quadrature}
 for $h(x) = x^3 + 1$. The dark blue curve shows $h(x)$, the points are the
 calculated $f_i$ at the abcissae $x_i$ and the light blue hatched areas are the
 approximations to the integral for the certain areas.
 
-Vice versa this means, that if $\omega(x) = \frac {1}{\sqrt{1-x^2}}$ reasonably
-well describes a weight function or probability density function of interest,
-the corresponding probability density function can be obtained, if on some basis,
-Chebyshev polynomials
-can be constructed.
+For an unknown weight function, the integral can be obtained by solving the so-called
+moment problem.
 
 
-\subsection{Combination of Moment Theory with Gaussian Quadrature}
+
+
+\section{Expressing the Continuum Properties in Terms of Gaussian Quadrature}
+The Hamiltonian can be expressed in terms of a complete set of eigenfunctions
+
+\begin{equation} \label{equation:complete_hamniltonian}
+  H = \sum\limits_i \ket{\phi_i} E_i \bra{\phi_i}
+     + \int\limits_0^\infty \mathrm{d}E \ket{\phi(E)} E \bra{\phi(E)}  ,
+\end{equation}
+where the manifold of $\phi_i$ denote the bound state eigenfunctions being orthonormal
+in the sense of the probabilistic picture $\braket{\phi_j|\phi_i} = \delta_{ij}$.
+The continuum functions $\phi(E)$ also form an orthonormal set of basis functions
+but are normalized with respect to their energy.
+
+\begin{equation}
+  \braket{\phi(E) | \phi(E')} = \delta(E-E')
+\end{equation}
+
+In a calculation using a finite $\mathcal{L}^2$ basis, the diagonalization of the
+Hamiltonian yields an approximative set of eigenfunctions $\chi_i$ with corresponding
+eigenvalues $\tilde{E}_i$ such that
+
+\begin{equation}
+  \tilde{H} \ket{\chi_i} = \tilde{E}_i \ket{\chi_i} \quad\quad  \,
+  \braket{\chi_j|\chi_i} = \delta_{ij} .
+\end{equation}
+
+If we now rewrite the approximative Hamiltonian in terms of these $\mathcal{L}^2$
+functions, we obtain
+
+\begin{equation}
+  \tilde{H} = \sum\limits_{E_i<0} \ket{\chi_i} \tilde{E}_i \bra{\chi_i}
+            + \sum\limits_{E_j>0} \ket{\chi_j} \tilde{E}_j \bra{\chi_j}   ,
+\end{equation}
+where the first part with eigenvalues smaller than 0 corresponding to the
+bound states and the second part with energies higher than 0 containing to
+the continuum. In this representation the continuum is not described explicitely,
+but in a discretized representation.
+
+The eigenfunctions and eigenvalues of the positive energy solutions have no physical
+meaning, because for more and more complete bases, the energies will approach zero
+and the eigenfunctions will be arbitrarily diffuse. Still, they inhibit a useful
+mathematical meaning if the continuum part is interpreted in terms of
+a numerical quadrature.
+In the case of integrating the continuum part of equation
+\ref{equation:complete_hamniltonian} for evaluation of the energy expectation
+value $\braket{\Psi| H | \Psi}$
+with first gaussian quadrature and second the discrete positive energy
+eigenfunctions, the continuum part of the expectation value reads as
+
+
+\begin{align}
+  \int\limits_0^\infty \mathrm{d}E \braket{\Psi|\phi(E)} E \braket{\phi(E)|\Psi}
+  &\simeq \sum\limits_j \omega_j \braket{\Psi|\phi(E_j)} E_j \braket{\phi(E_j)|\Psi}
+\end{align}
+
+
+
+\begin{equation}
+  \int\limits_0^\infty \mathrm{d}E \braket{\Psi|\phi(E)} E \braket{\phi(E)|\Psi}
+  \simeq \sum\limits_{E_j}  \braket{\Psi|\chi} \tilde{E}_j \braket{\chi|\Psi}   .
+\end{equation}
+
+In both cases, the integral is approximated by a sum and in some special cases, where
+the analytic continuum functions are known, it can be shown from the results,
+that there seems to be a one-to-one corespondence between each $\mathcal{L}^2$
+eigenfunction of the positive energy part and the continuum function evaluated
+at the energy $\tilde{E}_j$. The equivalent quadrature weight connects the discrete and
+the continuum function for the given energy and acts by renormalization.
+
+\begin{equation}
+  \ket{\chi_j} = \sqrt{\omega_j^{Eq}} \ket{\phi(\tilde{E}_j)}
+\end{equation}
+
+In the following, we are going to assume, that this equivalence between $\mathcal{L}^2$
+and continuum functions with the integral interpreted as Gaussian quadrature
+is true for all our systems under investigation.
+
+If we for a moment assume, that we knew the appropriate equivalent quadrature
+weigths, we could calculate the decay width from a continuous representation as
+
+\begin{equation}
+  \Gamma = \frac 1{\omega_{j}^{Eq}} \left| \braket{\Phi_s|H-E|\chi_j} \right|^2
+\end{equation}
+
+Since unfortunately in most cases, the weigth function is unknown, we are going
+to calculate the weigth function by solving the moment problem, since the moments
+
+\begin{equation}
+  \Gamma^k = 2\pi \sum\limits_i \left| \braket{ \Psi | H-E | \chi_i } \right| ^2
+\end{equation}
+of the discrete representation are well defined and accessible,
+with $\Psi$ being the wave function of the initial state.
+
+
+
+\subsection{Moment Problem}
+
+The moments $S(k)$ of a real and continuous function $f(\omega)$ are defined
+as
+
+\begin{equation}
+  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,\dots  .
+\end{equation}
+
+In case of $f(\omega)$ being a probability density function, it is connected
+to the probability distribution function $F(\omega)$ via
+\begin{equation}
+  F(\omega) = f(\omega){d\omega} .
+\end{equation}
+
+The probability density function is completely determined by the manifold
+of moments. Therefore, when all moments are known, the probability density
+function  (weight function) can be calculated from the moments.
+In the present case $f(\omega)$
+is the decay width $\Gamma(E)$, but the theory is also applicable and very often
+used for the description of cross sections. Its pseudo-spectrum has the same
+mathematical properties as the pseuso-spectrum of the decay width. Therefore,
+the knowledge obtained in the description of cross sections can be adopted to
+the description for the decay widths.
+
+In practice, all moments are never available unless the moments can be
+calculated analytically. Therefore, one has to approximately solve the reduced
+moment problem, since the density function is not completely defined.
+In this case the $2r$ moments are
+
+\begin{equation}
+  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,...,2r-1
+\end{equation}
+
+In principle the moment problem can be solved by requiring the abscissae and
+weights to reproduce a minimum number of moment. Unfortunately, this determination
+is ill conditioned and therfore, one expresses the moments by orthogonal
+polynomials of some known weight function. In this case, then the
+transformation to the polynomials is ill conditioned, but the abscissae
+and weights can be obtained by a well conditioned problem. The latter approach
+of so-called modeified moments has shown to be useful in the case of
+properties such as the ionization
+cross section and decay width.
+
+
+
+
+
+\subsection{Finding the Gaussian Quadrature Abscissae and Weights from Modified Moments}
+
 The procedure for the calculation of cross sections combining moment
-theory and gaussian quadrature has been investigated thoroughly. In this section
+theory and Gaussian quadrature has been investigated thoroughly. In this section
 we follow the argumentation of Müller-Plathe \cite{}, from which the
 \verb|stieltjes| routine has been written by Averbukh and which is used in
 combination with the FanoADC implemented in Dirac.
@@ -119,9 +263,11 @@ instead.
   S(-k) = \int\limits_a^b \left( \frac{1}{\omega} \right) ^k f(\omega) d\omega
 \end{equation}
 
-Each order of moment can be assigned to a set of Chebyshev polynomials
+For each \emph{order of Stieltjes} $r$, a set of
+Chebyshev polynomials
 $Q_n (1/\omega) = \sum\limits_{i=0}^n Q_n^{i}\left( \frac{1}{\omega} \right)^{i}$,
-of order $0$ -- $r$. They are orthogonal with respect to the weight function
+of order $0-r$ can be assigned, using $2r-1$ moments.
+They are orthogonal with respect to the weight function
 to be determined $f(\omega)$.
 
 \begin{equation}
@@ -163,7 +309,7 @@ pseudo-spectrum.
   a_n     &= \frac{1}{b_0b_1\cdots b_{n-1}}
              \sum\limits_{i=1}^N
                (1/\bar{\omega}_i)^n Q_{n-1}(1/\bar{\omega_i}) \bar{f}_i
-             - \sum\limits_{l=1}^{n-1} a_l \label{equation:an_dist}\\
+             - \sum\limits_{l=1}^{n-1} a_l \label{equation:an_disc}\\
   b_{n-1} &= \frac{1}{b_0b_1\cdots b_{n-2}}
              \sum\limits_{i=1}^N
                (1/\bar{\omega}_i)^{n-1} Q_{n-1}(1/\bar{\omega}_i) \bar{f}_i
@@ -284,7 +430,7 @@ for the weights.
 \subsection{Stieltjes Imaging}
 Having obtained the abcissae and weights, the probability distribution function
 $F(\omega)$ can be approximated. For this purpose the so-called Stieltjes imaging
-employed, where
+is employed, where
 
 \begin{equation}
   F^{(n)} (\omega) =
@@ -328,6 +474,11 @@ two values normally is a very good approximation to the exact value.
                        + F^{(n)} (\omega_i+0) \right]
 \end{equation}
 
+Since we evaluated the integral,
+which was the equaling quantity for both the Gaussian quadrature ansatz
+in equation \ref{equation:} and the discrete spectrum in equation
+\ref{equation:}, the distribution function obtained from the
+discrete pseudo-spectrum is normalized correctly.
 This distribution function is then numerically differenciated via
 
 \begin{equation}
@@ -340,7 +491,8 @@ This distribution function is then numerically differenciated via
   \end{cases}
 \end{equation}
 
-to give points of the desired density function $f(\omega)$, which are
+to give  $r-1$ non-zero points of the desired
+density function $f(\omega)$, which are
 subsequently interpolated. In the routine of Averbukh, a spline interpolation
 is used for this purpose. Afterwards the interpolated density function is evaluated
 for the energy of interest, which is the resonance energy $E_r$ in case of the
@@ -398,4 +550,4 @@ description might still be feasible. In case of strong oscillations, the validit
 of the results are highly questionable. The interpolation can be smoothed
 by taking only stable orders of stieltjes into account or in other words
 reduce the allowed threshold of allowed non-orthogonality or to give points
-stemming from lower orders of stieltjes higher wieghts in the interpolation.
+stemming from lower orders of Stieltjes higher weights in the interpolation.
