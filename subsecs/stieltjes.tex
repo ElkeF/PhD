@@ -1,4 +1,4 @@
-\chapter{Continuum Properties from $\mathcal{L}^2$-Functions}
+\chapter{Obtaining Continuum Properties from $\mathcal{L}^2$-Functions}
 
 
 \section{Bound and Continuum States}
@@ -36,7 +36,7 @@ states in the $\mathcal{L^2}$ \ac{ISR} basis.
 
 
 
-\subsection{Gaussian Quadrature}
+\section{Gaussian Quadrature}
 The gaussian quadrature is a numerical method for integration. By approximating
 the function to be integrated $g(x) = \rho(x) f(x)$ to be a product of a
 positive definite weight
@@ -101,6 +101,60 @@ approximations to the integral for the certain areas.
 
 For an unknown weight function, the integral can be obtained by solving the so-called
 moment problem.
+
+
+
+
+\section{Expressing the Continuum Properties in Terms of Gaussian Quadrature}
+The Hamiltonian can be expressed in terms of a complete set of eigenfunctions
+
+\begin{equation}
+  H = \sum\limits_i \ket{\phi_i} E_i \bra{\phi_i}
+     + \int\limits_0^\infty \mathrm{d}E \ket{\phi(E)} E \bra{\phi(E)}  ,
+\end{equation}
+where the manifold of $\phi_i$ denote the bound state eigenfunctions being orthonormal
+in the sense of the probabilistic picture $\braket{\phi_j|\phi_i} = \delta_{ij}$.
+The continuum functions $\phi(E)$ also form an orthonormal set of basis functions
+but are normalized with respect to their energy.
+
+\begin{equation}
+  \braket{\phi(E) | \phi(E')} = \delta(E-E')
+\end{equation}
+
+In a calculation using a finite $\mathcal{L}^2$ basis, the diagonalization of the
+Hamiltonian yields an approximative set of eigenfunctions $\chi_i$ with corresponding
+eigenvalues $\tilde{E}_i$ such that
+
+\begin{equation}
+  \tilde{H} \ket{chi} = \tilde{E}_i \ket{chi} \quad\quad \text{with} \,
+  \braket{\chi_j|\chi_i} = \delta_{ij} .
+\end{equation}
+
+If we now rewrite the approximative Hamiltonian in terms of these $\mathcal{L}^2$
+functions, we obtain
+
+\begin{equation}
+  \tilde{H} = \sum\limits_{E_i<0} \ket{\chi_i} \tilde{E}_i \bra{\chi_i}
+            + \sum\limits_{E_j>0} \ket{\chi_j} \tilde{E}_j \bra{\chi_j}   ,
+\end{equation}
+where the first part with eigenvalues smaller than 0 corresponding to the
+bound states and the second part with energies higher than 0 containing to
+the continuum. In this representation the continuum is not described explicitely,
+but in a discretized representation.
+
+The eigenfunctions and eigenvalues of the positive energy solutions have no physical
+meaning, because for more and more complete bases, the energies will approach zero
+and the eigenfunctions will be arbitraily diffuse. Still, thez inhibit a useful
+mathematical meaning if the continuum part is interpreted in terms of
+a numerical quadrature.
+
+%\begin{equation}
+%\end{equation}
+%
+%
+%\begin{equation}
+%\end{equation}
+
 
 
 
