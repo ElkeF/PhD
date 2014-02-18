@@ -1,7 +1,7 @@
 \chapter{Continuum Properties from $\mathcal{L}^2$-Functions}
 
 
-\section{Normalization of Bound and Continuum States}
+\section{Bound and Continuum States}
 Before we describe the decay of a metastable state, we have to remember,
 that both bound and continuum states are involved in such a process.
 Bound states are very localized and in quantum mechanics
@@ -29,16 +29,11 @@ After an explanation of Gaussian quadrature we are going to show how
 the discrete spectrum of a Hamiltonian in $\mathcal{L}^2$ representation
 can be motivated to contain information of the continuum using Gaussian quadrature
 based on the discussion of \cite{Reinhardt79}.
-Then we are going to explain, how the decay width can be obtained from a
-discrete pseudo-spectrum by mapping ...
+Then we are going to show, how the decay width can be obtained from a
+discrete pseudo-spectrum by using Stieltjes imaging \cite{Stieltjes}.
+Finally we are going to introduce the FanoADC approach for the creation of
+states in the $\mathcal{L^2}$ \ac{ISR} basis.
 
-%
-%For simple models it can be shown, that the positive energy eigenstates
-%of the Hamiltonian correspond to one continuum eigenstate each. The only
-%difference is a factor stemming from the renormalization.
-%
-%blablub
-%
 
 
 \subsection{Gaussian Quadrature}
@@ -58,8 +53,9 @@ analytically, if possible, or otherwise in an optimal way. This leads the abciss
 to be unequally spaced unlike in the basic
 integration schemes using the trapezoidal rule.
 
-$f(x)$ can be expressed as a polynomial. For certain weight functions and boundaries
-of integration, the
+The function $f(x)$ can be expressed as a polynomial.
+For certain weight functions and boundaries
+of integration, these
 polynomials can be determined analytically.
 It can furthermore be shown, that the roots (zeros) of the highest order polynomial
 describing $f(x)$ give the optimal abcissae $x_i$.
@@ -103,11 +99,9 @@ for $h(x) = x^3 + 1$. The dark blue curve shows $h(x)$, the points are the
 calculated $f_i$ at the abcissae $x_i$ and the light blue hatched areas are the
 approximations to the integral for the certain areas.
 
-Vice versa this means, that if $\omega(x) = \frac {1}{\sqrt{1-x^2}}$ reasonably
-well describes a weight function or probability density function of interest,
-the corresponding probability density function can be obtained, if on some basis,
-Chebyshev polynomials
-can be constructed.
+For an unknown weight function, the integral can be obtained by solving the so-called
+moment problem.
+
 
 
 \subsection{Moment Problem}
@@ -127,7 +121,8 @@ to the probability distribution function $F(\omega)$ via
 
 The probability density function is completely determined by the manifold
 of moments. Therefore, when all moments are known, the probability density
-function can be calculated from the moments. In the present case $f(\omega)$
+function  (weight function) can be calculated from the moments.
+In the present case $f(\omega)$
 is the decay width $\Gamma(E)$, but the theory is also applicable and very often
 used for the description of cross sections. Its pseudo-spectrum has the same
 mathematical properties as the pseuso-spectrum of the decay width. Therefore,
