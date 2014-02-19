@@ -22,17 +22,26 @@ In decay processes
 where bound and continuum states interact, it is obliged to find a way to
 properly represent bound states in an energy normalization or continuum states
 in an $\mathcal{L}^2$ normalization.
-Since quantum chemical programme packages are based on $\mathcal{L}^2$ functions,
+Since most quantum chemical programme packages are based
+on $\mathcal{L}^2$ functions,
 it is most convenient to go for the latter approach.
+Especially for properties like decay widths or ionization cross sections, one
+possibility is to interprete the evaluation of an expectation value
+including the continuuum in either the initial or the final state as
+Gaussian quadrature and compare them to analogous expressions for the
+expectation value in a discrete set of eigenstates. The given equivalence
+allows to use the machinery of Gaussian quadrature combined with an imaging
+procedure, both known in the literature,
+for the determination of the required entity. \cite{Reinhardt79}
 
 After an explanation of Gaussian quadrature we are going to show how
 the discrete spectrum of a Hamiltonian in $\mathcal{L}^2$ representation
 can be motivated to contain information of the continuum using Gaussian quadrature
 based on the discussion of \cite{Reinhardt79}.
 Then we are going to show, how the decay width can be obtained from a
-discrete pseudo-spectrum by using Stieltjes imaging \cite{Stieltjes}.
+discrete pseudo-spectrum by using Stieltjes imaging \cite{Langhoff76,Corcoran77}.
 Finally we are going to introduce the FanoADC approach for the creation of
-states in the $\mathcal{L^2}$ \ac{ISR} basis.
+states in the $\mathcal{L}^2$ \ac{ISR} basis.
 
 
 
@@ -40,15 +49,14 @@ states in the $\mathcal{L^2}$ \ac{ISR} basis.
 The gaussian quadrature is a numerical method for integration. By approximating
 the function to be integrated $g(x) = \rho(x) f(x)$ to be a product of a
 positive definite weight
-function $\rho (x)$ and a continuous and bounded function $f(x)$.
-
+function $\rho (x)$ and a continuous and bounded function $f(x)$. \cite{Wikipedia_Gauss_Quadratur}
 The evaluation of the integral is then desired to be obtained as
 
 \begin{equation}
-  \int\limits_a^b \rho(x) f(x) dx \approx \sum\limits_{i=1}^n \omega_i f(x_i)
+  \int\limits_a^b \rho(x) f(x) dx \approx \sum\limits_{i=1}^n \omega_i f(x_i)  .
 \end{equation}
 
-, where the weigths $\omega_i$ and the abcissae $x_i$ are to be determined
+Here the weigths $\omega_i$ and the abcissae $x_i$ are to be determined
 analytically, if possible, or otherwise in an optimal way. This leads the abcissae
 to be unequally spaced unlike in the basic
 integration schemes using the trapezoidal rule.
@@ -58,17 +66,19 @@ For certain weight functions and boundaries
 of integration, these
 polynomials can be determined analytically.
 It can furthermore be shown, that the roots (zeros) of the highest order polynomial
-describing $f(x)$ give the optimal abcissae $x_i$.
-
-In case of
-$\omega(x)= \frac{1}{\sqrt{1-x^2}}$ and the condition
+describing the function $f(x)$ give the optimal abcissae $x_i$.
+These polynomials $Q_n$ are normalized with respect to the weight function as
 
 \begin{equation}
-  \int\limits_{-1}^{1} \rho(x) Q_n(x) Q_m(x) = N_n \delta_{nm}
+  \int\limits_{-1}^{1} \rho(x) Q_n(x) Q_m(x) = N_n \delta_{nm}  ,
 \end{equation}
+where $N_n$ denotes the normalization factor.
 
-, where $N_n$ denotes the normalization factor,
+
+In the special case of the weight function
+$\omega(x)= \frac{1}{\sqrt{1-x^2}}$ and the interval $[-1,+1]$
 the solution to the polynomials are the so-called Chebyshev polynomials, with
+the analytical abscissae and weights
 
 \begin{equation}
   x_{i,n} = \cos \left( \frac{2i-1}{2n} \pi \right)
@@ -79,9 +89,9 @@ the solution to the polynomials are the so-called Chebyshev polynomials, with
   \centering
   \input{pics/gaussian_quadrature}
   \caption{Integration by Gauss-Chebyshev quadrature of the function
-           $f(x)=x^3 + 1$ (dark blue) with $n=6$. The integral (light blue)
+           $h(x)=x^3 + 1$ (dark blue) with $n=6$. The integral (light blue)
            is approximately obtained by summation
-           over all product of optimal abcissae and weights $x_if(x_i)$ (circles).}
+           over all product of optimal abcissae and weights $x_ih(x_i)$ (circles).}
   \label{figure:gaussian_quadrature}
 \end{figure}
 
@@ -95,11 +105,14 @@ the interval $[-1,1]$ can be integrated as
 
 An example for such an integration is shown in figure \ref{figure:gaussian_quadrature}
 for $h(x) = x^3 + 1$. The dark blue curve shows $h(x)$, the points are the
-calculated $f_i$ at the abcissae $x_i$ and the light blue hatched areas are the
-approximations to the integral for the certain areas.
+calculated $h_i$ at the abcissae $x_i$ and the light blue hatched areas are the
+approximations to the integral for the certain areas. Obviously, the finer the
+grid for the integration is, the more precise is the the approximation to
+the analytical integral going to be.
 
+The above discussion holds for a known weight function.
 For an unknown weight function, the integral can be obtained by solving the so-called
-moment problem.
+moment problem. \cite{Reinhardt79}
 
 
 
@@ -136,8 +149,8 @@ functions, we obtain
   \tilde{H} = \sum\limits_{E_i<0} \ket{\chi_i} \tilde{E}_i \bra{\chi_i}
             + \sum\limits_{E_j>0} \ket{\chi_j} \tilde{E}_j \bra{\chi_j}   ,
 \end{equation}
-where the first part with eigenvalues smaller than 0 corresponding to the
-bound states and the second part with energies higher than 0 containing to
+where the first part with eigenvalues smaller than 0 corresponds to the
+bound states and the second part with energies higher than 0 corresponds to
 the continuum. In this representation the continuum is not described explicitely,
 but in a discretized representation.
 
@@ -148,16 +161,17 @@ mathematical meaning if the continuum part is interpreted in terms of
 a numerical quadrature.
 In the case of integrating the continuum part of equation
 \ref{equation:complete_hamniltonian} for evaluation of the energy expectation
-value $\braket{\Psi| H | \Psi}$
-with first gaussian quadrature and second the discrete positive energy
-eigenfunctions, the continuum part of the expectation value reads as
+value $\braket{\Psi| H | \Psi}$ in the full Hamiltonian or the discretized Hamiltonian
+$\braket{\Psi| \tilde{H} | \Psi}$
+with first gaussian quadrature 
 
 
 \begin{align}
   \int\limits_0^\infty \mathrm{d}E \braket{\Psi|\phi(E)} E \braket{\phi(E)|\Psi}
-  &\simeq \sum\limits_j \omega_j \braket{\Psi|\phi(E_j)} E_j \braket{\phi(E_j)|\Psi}
+  &\simeq \sum\limits_j \omega_j \braket{\Psi|\phi(E_j)} E_j \braket{\phi(E_j)|\Psi} ,
 \end{align}
-
+where  $\omega_j$ are the quadrature weights and second the discrete positive energy
+eigenfunctions, the continuum part of the expectation value reads as
 
 
 \begin{equation}
@@ -170,7 +184,7 @@ the analytic continuum functions are known, it can be shown from the results,
 that there seems to be a one-to-one corespondence between each $\mathcal{L}^2$
 eigenfunction of the positive energy part and the continuum function evaluated
 at the energy $\tilde{E}_j$. The equivalent quadrature weight connects the discrete and
-the continuum function for the given energy and acts by renormalization.
+the continuum function for the given energy and can be interpreted as a renormalization.
 
 \begin{equation}
   \ket{\chi_j} = \sqrt{\omega_j^{Eq}} \ket{\phi(\tilde{E}_j)}
@@ -182,16 +196,19 @@ is true for all our systems under investigation.
 
 If we for a moment assume, that we knew the appropriate equivalent quadrature
 weigths, we could calculate the decay width from a continuous representation as
+from equation \ref{equation:Gamma_HE}.
 
 \begin{equation}
-  \Gamma = \frac 1{\omega_{j}^{Eq}} \left| \braket{\Phi_s|H-E|\chi_j} \right|^2
+  \Gamma = \frac 1{\omega_{j}^{Eq}} \left| \braket{\Phi_s|\mathcal{H}'-E|\chi_j} \right|^2
+           \delta(E-E_i).
 \end{equation}
 
 Since unfortunately in most cases, the weigth function is unknown, we are going
 to calculate the weigth function by solving the moment problem, since the moments
 
 \begin{equation}
-  \Gamma^k = 2\pi \sum\limits_i \left| \braket{ \Psi | H-E | \chi_i } \right| ^2
+  \Gamma^k = 2\pi \sum\limits_i E_i \left| \braket{ \Psi |\mathcal{H}'-E | \chi_i } \right| ^2
+           \delta(E-E_i)
 \end{equation}
 of the discrete representation are well defined and accessible,
 with $\Psi$ being the wave function of the initial state.
@@ -201,19 +218,27 @@ with $\Psi$ being the wave function of the initial state.
 \subsection{Moment Problem}
 
 The moments $S(k)$ of a real and continuous function $f(\omega)$ are defined
-as
+as \cite{MuellerPlathe90}
 
 \begin{equation}
   S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,\dots  .
 \end{equation}
 
-In case of $f(\omega)$ being a probability density function, it is connected
+In case of $f(\omega)$ being a probability density function or a weight function
+in the nomenclature of Gaussian quadrature, it is connected
 to the probability distribution function $F(\omega)$ via
 \begin{equation}
   F(\omega) = f(\omega){d\omega} .
 \end{equation}
 
-The probability density function is completely determined by the manifold
+Note, that the standard assignment of variables in Gaussian quadrature and the
+formulation of the moment problem is confusing. The equivalent weight function
+and probability density is in Gaussian quadrature denoted by $\omega(x)$, while
+in moment theory it is written as $f(\omega)$. We are going to stick to the
+conventions of both fields, but it has to be taken care of, which notation
+is used while reading.
+
+The probability density function $f(\omega)$ is completely determined by the manifold
 of moments. Therefore, when all moments are known, the probability density
 function  (weight function) can be calculated from the moments.
 In the present case $f(\omega)$
@@ -229,7 +254,7 @@ moment problem, since the density function is not completely defined.
 In this case the $2r$ moments are
 
 \begin{equation}
-  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,...,2r-1
+  S(k) = \int\limits_a^b \omega^k f(\omega) d\omega \quad\quad k=0,1,...,2r-1   .
 \end{equation}
 
 In principle the moment problem can be solved by requiring the abscissae and
@@ -237,8 +262,9 @@ weights to reproduce a minimum number of moment. Unfortunately, this determinati
 is ill conditioned and therfore, one expresses the moments by orthogonal
 polynomials of some known weight function. In this case, then the
 transformation to the polynomials is ill conditioned, but the abscissae
-and weights can be obtained by a well conditioned problem. The latter approach
-of so-called modeified moments has shown to be useful in the case of
+and weights can be obtained by a well conditioned problem. \cite{Blumstein73}
+The latter approach
+of so-called modified moments has shown to be useful in the case of
 properties such as the ionization
 cross section and decay width.
 
@@ -250,9 +276,12 @@ cross section and decay width.
 
 The procedure for the calculation of cross sections combining moment
 theory and Gaussian quadrature has been investigated thoroughly. In this section
-we follow the argumentation of Müller-Plathe \cite{}, from which the
+we follow the argumentation of Müller-Plathe \cite{MuellerPlathe90}, from which the
 \verb|stieltjes| routine has been written by Averbukh and which is used in
-combination with the FanoADC implemented in Dirac.
+combination with the FanoADC implemented in Dirac. The routine covers 
+the construction of the polynomials, the calculation of abscissae and weights as well
+as the Stieltjes Imaging. These topics are normally discussed together in the
+literature \cite{MuellerPlathe89,Corcoran77,Langhoff76}.
 
 For the ionization cross sections it has been shown, that the moment with
 $k>2$ diverge and hence are useless for the evaluation of the probability
@@ -266,7 +295,7 @@ instead.
 For each \emph{order of Stieltjes} $r$, a set of
 Chebyshev polynomials
 $Q_n (1/\omega) = \sum\limits_{i=0}^n Q_n^{i}\left( \frac{1}{\omega} \right)^{i}$,
-of order $0-r$ can be assigned, using $2r-1$ moments.
+of order $0-r$ can be assigned, using $2r-1$ moments for their construction.
 They are orthogonal with respect to the weight function
 to be determined $f(\omega)$.
 
@@ -327,19 +356,19 @@ with
 \end{equation}
 as starting points of the determination of the polynomials.
 
-As discussed above in section \ref{section:}, given the weights, the polynomials
-can be calculated. In the Stieltjes imaging, starting from the polynomials
-defined by the discrete pseudo-spectrum, one wants to achieve the weight function.
-Also here the ideal abscissae are the roots of the highest order polynomial
-for each moment $k$
+We now want to find the ascissae and weights for the determination of the
+distribution function $F(\omega)$ from the modified moments.
+Also here the ideal abscissae ($\omega_i$) are the roots of the
+highest order polynomial
+for each order of Stieltjes $r$
 
 \begin{equation}
-  Q_n(1/\omega_i) = 0 \quad\quad i = 1,2,\dots ,n .
+  Q_r(1/\omega_i) = 0 \quad\quad i = 1,2,\dots ,r .
 \end{equation}
 
 The connection between the weights with the polynomials is given by
 
-\begin{equation}
+\begin{equation}a  \label{equation:poly_weights}
   f_i = \left[ \sum\limits_{m=0}^{n-1} \frac{Q_m^2(1/\omega_i)}{N_m} \right]^{-1} .
 \end{equation}
 
@@ -405,22 +434,22 @@ a_1        & -\sqrt{b_1}&            &                &             &          \
 
 Therefore the solution is simplyfied to a matrix diagonalization
 of the coefficients matrix. Its eigenvalues are the roots of the polynomial
-and hence the wanted abcissae. The eigenfunctions are normalized to 1 and therefore
-have to be renormalized according to
+and hence the wanted abcissae. The eigenfunctions are normalized to 1 and for the
+determination of the weights $f_i$ the following relation 
 
 \begin{equation}
   1 = f_i \sum\limits_{m=0}^{n-1} R_m^2 (1/\omega_i) = \mathbf{u_i} \cdot \mathbf{u_i}
 \end{equation}
-from equation \ref{} to give
+from equation \ref{equation:poly_weights} has to be employed to give
 
 \begin{equation}
-  f_i = N_0 u_{0i}^2
+  f_i = N_0 u_{0i}^2 .
 \end{equation}
 
-for the weights.
-
+Hence the negative moments are approximated by the abscissae $(1/\omega_i)$ and
+weights $f_i$ as
 \begin{equation}
-  S(-k) = \sum\limits_{i=1}^n f_i (1/\omega_i)^k \quad\quad k=0,1,\dots,2n-1
+  S(-k) \approx \sum\limits_{i=1}^n (1/\omega_i)^k  f_i \quad\quad k=0,1,\dots,2r-1  .
 \end{equation}
 
 
@@ -517,7 +546,7 @@ and weights for the interpolation is beneficial.
            the points lie on this curve, where points from different orders
            (different colours of the points) intersect each other. The interpolation
            gives the exact result. In reality (right panel) the
-           interpolations (even of each moment)
+           interpolations (even of one order of Stieltjes)
            are likely to show oscillations due to non-orthogonalities of
            Chebyshev polynomials in the higher orders and inaccurate descriptions
            due to a large gap between the lower and upper bounds for low
