@@ -1,15 +1,59 @@
 \section{FanoADC}
+In the FanoADC, we use the discrete ADC Hamiltonian in the \ac{ISR}
+basis for the construction of the pseudo-spectrum of the decay width
+$\Gamma$.
+Therefore
+Due to multiple possible final states, we employ the procedure
+of Feshbach using projection operators for the partitioning of the Hamiltonian
+into an initial and a final state subspace.
+The processes of our interest have a singly ionized initial state and a
+doubly charged final state with an additional electron in the continuum.
+Therefore, the final state configurations are chosen from
+the class of $2h1p$ states, where the $2h$ part is assumed to
+describe the doubly ionized final state and the particle maps the continuum electron.
+The initial state in a zeroth order approximation can be described as a $1h$ state.
+
+In the actual partitioning, all $2h1p$ with the $2h$ part corresponding to
+a final state configuration are chosen to be part of the final states.
+All $1h$ configurations and those $2h1p$ configurations not corresponding
+to a possible final state configuration are used for a better description
+of the initial state. This leads to a resorted \ac{ADC} matrix as shown in
+figure \ref{figure:fano_matsort}, where the subspace of the initial state
+is denoted by $\mathbf{M}$, the final state subspace by $\mathbf{N}$ and
+the interaction coupling those two subsets is named $\mathbf{W}$.
 
 \begin{figure}[h]
   \centering
   \input{pics/fano_matsort_pgf}
   \caption{}
-  \label{}
+  \label{figure:fano_matsort}
 \end{figure}
+
+The separate diagonalization of the initial and final state subspaces
+$\mathbf{M}$ and $\mathbf{N}$ yield
+the corresponding eigenvectors and eigenvalues on the diagonal of the
+matrices $\mathbf{\Lambda}$ and $\mathbf{\Omega}$
+
+\begin{align}
+  \mathbf{\Lambda} &= \mathbf{I}^T \mathbf{M} \mathbf{I}  \\
+  \mathbf{\Omega}  &= \mathbf{F}^T \mathbf{N} \mathbf{F} 
+\end{align}
+
+and the Hamiltonian is represented in the basis of their eigenstates
+as illustrated in
+figure \ref{figure:fano_bastrans} with $\mathbf{V} = \mathbf{I}^T \mathbf{W} \mathbf{F}$
+being the interaction part
+in this new basis.
 
 \begin{figure}[h]
   \centering
   \input{pics/fano_bastrans_pgf}
   \caption{}
-  \label{}
+  \label{figure:fano_bastrans}
 \end{figure}
+The desired pseudo-spectrum is then obtained from the final state energies
+$\bar{\omega}_\beta$ and the interaction part in the basis of the initial and
+final eigenstates for a specific initial state choice $i$ and possibly a choice
+of channel $\beta$
+$V_{i,\beta} = \braket{\phi |\hat{H}| \psi_{\beta, 2h1p}}$.
+
