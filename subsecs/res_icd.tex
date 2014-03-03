@@ -1,4 +1,4 @@
-\section{Character of Energy and Electron Transfer Illustrated Using Pairs
+\chapter{Character of Energy and Electron Transfer Illustrated Using Pairs
          and Triples of Atoms}
 %\chapter{Geometric Influence on ICD and ETMD3  Illustrated Using Pairs and Triples of Atoms}
 Approximating every system into pairs and triples of atoms is a very useful
@@ -13,18 +13,22 @@ present, atoms.
 
 In case of the electronic decay processes one is interested in the
 energies of the initial $E_{in}$ and the final states $E_{fin}$ of
-the corresponding processes. They can be approximated to be
+the corresponding processes in order to determine, whether a channel $\beta$
+is open, i.e. in coordance with energy conservation, or not. When the channel
+is open, the excess energy is carried away by the emitted electron $E_{sec}$
+in form of its kinetic energy. These energies can in the model
+of pairs and triples be approximated to be
 
 \begin{align}
- E_{in}  &= SIP(X_{in}^\beta) \label{equation:E_in}\\
- E_{fin} &= SIP(X_{fin1}^\beta) + SIP(X_{fin2}^\beta) + \frac 1d
+ E_{in}^\beta  &= SIP(X_{in}^\beta) \label{equation:E_in}\\
+ E_{fin}^\beta &= SIP(X_{fin1}^\beta) + SIP(X_{fin2}^\beta) + \frac 1d
            \label{equation:E_fin}\\
- E_{sec} &= E_{in} - E_{fin} \label{equation:E_sec}
+ E_{sec}^\beta &= E_{in} - E_{fin} \label{equation:E_sec}
 \end{align}
 where $X_{in}$ denotes the initially ionized atom and
 $X_{fin1}$ and $X_{fin2}$ describe the two ionized
-atoms in the final state. $/beta$ denotes the decay channel characterized
-by the total angular momenta of the ionized atoms in the pairs
+atoms in the final state. $\beta$ denotes the decay channel characterized
+by the quantum numbers of the ionized atoms in the pairs
 and triples and $d$ denotes the interatomic distance between the atoms
 $X_{fin1}$ and $X_{fin2}$. The initially ionized atom $X_{in}$ can
 coincide with one or both of
@@ -39,7 +43,11 @@ all ionized states are located on different atoms.
 In all considered autoionization processes a second electron
 is emitted with the kinetic energy $E_{sec}$. If $E_{sec}<0$, then
 the final state energy is higher than the initial state energy and the
-process is energetically not accessible.
+process is energetically not accessible and hence the corresponding channel
+is closed.
+
+This ad hoc approach easily allows to correct for energetic shifts of
+ionization potentials as observed in larger clusters.
 
 The decay widths of the pairs and triples can be estimated with
 different accuracy, but in general, the total decay width $\Gamma$ of
@@ -56,17 +64,22 @@ all possible pairs or triples $i$.
 \subsection{Geometry Dependence of the ICD Energies}
 In case of the \ac{ICD} process, the atoms $X_{in}$ and one of
 the finally ionized atoms $X_1$ and $X_2$ coincide. For the sake of simplicity
-it is now assumed, that this atom is $X_1$.
+it is now assumed, that this atom is $X_1$. $d$ is then the interatomic distance
+$R$ of $X_1$ and $X_2$.
 
 \begin{figure}[h]
  \centering
  \input{pics/ArXe_energy_curves_unshifted}
- \caption{}
+ \caption{Initial and final state energies of the ICD channels of ArXe in the
+          model of pairs. Both the four relativistic channels and
+          the non-relativistic estimate are shown. From the distance on, where
+          the final state energy is lower than the initial state energy, the
+          decay channel is open.}
  \label{figure:ArXe_energy_curves_unshifted}
 \end{figure}
 
 The ArXe dimer is chosen as an example for illustrating the distance
-dependency of the final states compared to the initial state using
+dependency of the final states compared to the initial state in the model of pairs using
 ionization energies of the corresponding atoms.
 In figure \ref{figure:ArXe_energy_curves_unshifted} the energy of
 the Ar3s$^{-1}$ initial
@@ -86,16 +99,35 @@ channels, respectively.
 The sum of the two ionization potentials of the
 Ar3p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channel are already higher than
 the initial state energy. Therefore this channel never opens.
-In the non-relativistic treatment, this opening distance would be
+In the non-relativistic treatment, the atomic ionization energies of the
+Ar3p and the Xe5p are estimated by the statistically weighted average of the
+p$_{3/2}$ and the p$_{3/2}$ ionization energies. The non-relativistic
+opening distance would then be
 \unit[16.84]{\AA}.
+
+In an experiment one would observe as many secondary electron peaks as
+energetically distinguishable channels are open. The non-relativistic
+treatment predicts one single peak, whereas the relativstic approach takes
+care of the different channels due to spin-orbit coupling and therefore is
+able to predict the correct number of peaks for a reasonable choice of initial
+and final state energies.
 
 Hence, for an ArXe dimer with an equilibrium distance of \unit[4.04]{\AA}
 all ICD channels are closed. As is to be seen in the discussion of mixed
 ArXe clusters, that in case of shifted curves, ICD channels might
-open at realistic atomic distances.
+open at atomic distances, where the decay widths are non-negligible.
 
 
 \subsection{Geometry Dependence of the ICD Decay Widths}
+
+The decay widths $\Gamma$ in the asymptotic description of equation
+\ref{equation:} shows a pure $R^{-6}$ behaviour.
+However, this does entail any information about, whether the channel is
+open and hence, whether such a process also is observable. Therefore,
+in figure \ref{figure:ArXe_gamma_unshifted} the decay width is plotted
+over $R$ with the additional condition, that the corresponding channel needs
+to be open at the distance of interest for both the relativistic treatment
+and the non-relativistic analogon.
 
 \begin{figure}[h]
   \centering
@@ -104,4 +136,30 @@ open at realistic atomic distances.
   \label{figure:ArXe_gamma_unshifted}
 \end{figure}
 
+In this double logarithmic plot, the decay width determined non-relativistically
+is a straight line starting
+from the opening distance of \unit[16.84]{\AA}.
+In contrast to this, the relativistic treatment shows a decay at much smaller
+distances, as was to be expected from the smaller opening distance of the
+Ar3p$_{3/2}^{-1}$Xe5p$_{3/2}^{-1}$ channel. Already from this point it
+can be seen, that the non-relativistic treatment is not sufficient for systems
+with a large spin-orbit coupling. In between \unit[12]{\AA} and
+\unit[13]{\AA} the relativistic decay width has a more then $R^{-6}$ behaviour.
+In this region, the second channel, Ar3p$_{1/2}^{-1}$Xe5p$_{3/2}^{-1}$, opens
+and its contribution to the decay is added to the decay width of the first
+decay channel. However, at distances where the non-relativistic channel is open,
+for the distances shown in this illustration, the non-relativistic decay width
+is higher than the total relativistic one. This observation stems from the fact,
+that in a first order approximation, when all channels are open in the relativistic
+treatment, the sum over their decay widths has to equal the non-relativistic one.
+In the case of the ArXe dimer and the distances shown in figure
+\ref{figure:ArXe_gamma_unshifted}, not all relativistic channels are open, and
+hence the non-relativistic treatment overestimates the decay width.
 
+The sum over the relativistic decay widths will for these calculations never
+exactly give the non-relativstic result, because even though a thorough
+partitioning of the lifetime $\tau$ and the ionization cross section
+$\sigma(\omega_{vp})$ are taken care of, the cross section as well as the decay
+width depend on the energy of the virtual photon $\omega_{vp}$ non-linearly and this
+energy differs for different ionization energies of the final state of the
+initially ionized atom.
