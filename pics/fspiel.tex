@@ -29,50 +29,97 @@
        color(1cm)=(diplom1);
        color(2cm)=(diplom2)}}
 
-\tikzset{font=\small,
-edge from parent fork down,
-level distance=1.75cm,
-every node/.style=
-    {top color=white,
-    bottom color=diplom2!25,
-    rectangle,rounded corners,
-    minimum height=8mm,
-    draw=diplom2!75,
-    very thick,
-    drop shadow,
-    align=center,
-    text depth = 0pt
-    },
-edge from parent/.style=
-    {draw=diplom2!50,
-    thick
-    }}
 
 \begin{document}
 
-\begin{tikzpicture}[scale=1.0]
+\begin{tikzpicture}[scale=1.5]
 
-\Tree [.Resonances
-        [.{reversible\\ processes}
-          [.{{interaction between}\\{bound states}}
-            [.{{electronic, vibrational,}\\{rotational excitations}}
-              [.{{Fermi's}\\{Golden Rule}}
-              ]
-            ]
-          ]
-         ] 
-        [.{irreversible\\processes}
-           [.{{interaction with/of}\\{continuum states}} 
-             [.{shape type}
-              ]
-             [.Feshbach-Fano
-               [.{Fano's\\{Golden Rule}}
-               ]
-              ]
-           ]
-         ]
-]
+\begin{loglogaxis}[%scale=1.5,
+             domain=3:30,
+             y domain=1E-8:10,
+             restrict expr to domain={y}{1E-8:15},
+             xlabel={R in \AA},
+             xtick={2,4,...,10,12,15,...,25},
+             xticklabels={2,4,6,8,10,12,15,20,25},
+             ylabel={$\Gamma(R)$ in \unit{eV}},
+             %title={Parameter Fitting of NeNe and NeAr Decay Widths}
+             ]
 
+\addplot[only marks,
+         mark=*,
+         thick,
+         diplom1
+        ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = \thisrowno{1}
+        ]
+        {../data/arxe_nrel.dat};
+        \addlegendentry{nrel FanoADC};
+	
+\addplot[%only marks,
+         mark=x,
+         thick,
+         diplom1
+        ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = \thisrowno{1}
+        ]
+        {../data/arxe_nrel_unshifted.dat};
+        \addlegendentry{nrel unshifted};
+	
+\addplot[%only marks,
+         mark=o,
+         thick,
+         diplom1
+        ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = \thisrowno{1}
+        ]
+        {../data/arxe_nrel_shifted.dat};
+        \addlegendentry{nrel shifted};
+
+\addplot[only marks,
+         mark=*,
+         thick,
+         diplom2
+        ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = \thisrowno{1}
+        ]
+        {../data/arxe_rel_total.dat};
+        \addlegendentry{rel FanoADC};
+	
+\addplot[%only marks,
+         mark=x,
+         thick,
+         diplom2
+        ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = \thisrowno{1}
+        ]
+        {../data/arxe_rel_unshifted.dat};
+        \addlegendentry{rel unshifted};
+	
+\addplot[%only marks,
+         mark=o,
+         thick,
+         diplom2
+        ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = \thisrowno{1}
+        ]
+        {../data/arxe_rel_shifted.dat};
+        \addlegendentry{rel shifted};
+
+		
+\end{loglogaxis}
 \end{tikzpicture}
+
 
 \end{document}
