@@ -1,254 +1,50 @@
 \chapter{Relativistic Effects in Autoionization Processes}
 
+For the auotionization processes, the influence of relativistic effects
+can be grouped into three different parts:
 
-\section{Dependence of the Decay Width on the Quantum Numbers}
+\begin{enumerate}
+  \item Spin-orbit coupling
+  \item Different selection rules for electronic transitions
+  \item scalar-relativistic effects.
+\end{enumerate}
 
-In the working equation of the asymptotic \ac{ICD} decay widths in the jj-coupling
-picture \ref{reltheolifetime_exp}
-\begin{align}
- \Gamma_\beta =& \frac{2\pi}{R^6} \sum\limits_{M_A'} \, B_{M_A'-M_A}^2 \, \left| \left(
-\begin{array}{ccc}
-J_A'  & 1        & J_A\\
--M_A' & M_A'-M_A & M_A
-\end{array}\right) \right|^2
- (2J_A+1)\frac{3c^4 \sigma^{(B)}(\omega_{vp})}{16\pi^2\omega_{vp}^4\tau_A} .
-\end{align}
+The spin-orbit coupling leads to an energetic splitting of non-relativistically
+degenerate states with the total quantum number $J= L \pm \frac 12$.
+For electronic decay processes with a defined initial state, the energies
+of the involved final state orbitals depend on these total angular momenta.
+For a doubly charged final state, two holes are involved. In the non-relativistic
+description each of them would have a definite energy. However, due to the
+spin-orbit splitting, each of those two different holes are energetically split
+to give in total up to four energetically differing final state configurations.
+These distinguishable channels will show as different peaks in a secondary electron
+spectrum.
+In case of an \ac{ICD} or \ac{ETMD}3, where the two charges in the final state are
+seperated by some distance, each of these channels will open at different
+geometries as will be shown in chapter \ref{chapter_geom}.
 
-the total angular momenta of the initial and final states enter explicitely.
-therefore the question arises, how the ratio between the decay widths behave
-both for the total angular momenta as well as their projections within the
-same total angular momentum. In the LS-coupling scheme only one L-state is possible,
-which is why an investigation of the behaviour of ratios is senseless in this
-case. However, the ratios of the different projections of this angular momentum
-can be obtained and have been shown to be \cite{Gokhberg10_1}
+The selections rules for electronic transitions in the $jj$-coupling scheme
+is $\Delta J = 0, \pm 1$. 
+In the non-relativistic
+formulation of $LS$-coupling, an electronic transition between two states
+of same parity, such as $s$ and $d$, would be forbidden,
+which is known as Laporte rule.
+Due to the spin-orbit coupling, an $s$-orbital
+has $J=0+\frac 12=\frac 12$. It is spherical symmetric. A $d$-orbital with
+$L=2$ can both have the
+total angular momentum $J=\frac 32$ and $J=\frac 52$. 
+While the probability density of the state with $J=\frac 52$
+more or less inhibits the shape of a
+non-relativistic $d$-orbital and hence gerade symmetry, the overall
+shape of the probability density of the $J=\frac 32$ state is closer to the
+shape of the probability density of a non-relativistic $p$-orbital with
+and inhibits ungerade symmetry. Hence the transition
+between an $s_{1/2}$ and a $d_{3/2}$ orbital is allowed.
 
-\begin{equation}
-  \frac{\Gamma_0}{\Gamma_{\pm 1}} = 4  .
-\end{equation}
-
-The orbital with $L=1$ and $M_L=0$ corresponds to a p-orbital aligned along
-the internuclear axis, whereas for $M_{\pm 1}$ the orbitals are aligned perpendicular
-to the internuclear axis. In the picture of a classical oscillating dipole it is
-to be expected to have a much more efficient induction of another dipole
-in direction of the oscillation. The ratio of the decay widths therefore
-corresponds with the expectations.
-
-In relativistic treatment including the jj-coupling scheme where the wavefunction
-is a four component spinor with the elements being linear combinations
-of LS-coupling functions and different density functions the behaviour is
-not evident a priori.
-
-\subsection{Total Angular Momentum}
-First we are going to assume a process
-from a non-degenerate initial state with $J=\frac 12$ into different
-p-type final state configurations
-in the initially ionized atom for an \ac{ICD} process. Afterwards we are going
-to assume different initial states of p-type orbitals with an s-type
-character in the final state of the initially ionized atom.
-However the classification is more accurate in terms of the order of
-ionization energies of the split states. In the discussion we assume
-$SIP_{3/2}<SIP_{1/2}$, which is not necessarily true for all atoms. E.g.
-the order of the ionization potentials of the calcium 3p orbitals are
-switched.
-
-In equation \ref{reltheolifetime_exp} most of the entities are independent
-of the total angular momenta and therefore the ratio between the decay widths
-reduces to
-
-\begin{align}
-  \frac{\Gamma_{1/2}}{\Gamma_{3/2}}
-  &= \frac{P_{1/2}}{P_{3/2}} \, \frac{\sigma^B(\omega_{vp1/2})}{\omega_{vp1/2}^4 \tau_{1/2}}
-     \,\frac{\omega_{vp3/2}^4 \tau_{3/2}}{\sigma^B(\omega_{vp3/2})}     
-     \, \frac{2J_{A1/2}+1}{2J_{A3/2}+1}     \\
-  &\approx \frac{P_{1/2}}{P_{3/2}} \,
-        \frac{\omega_{vp3/2}^5 \tau_{3/2}}{\omega_{vp1/2}^5 \tau_{1/2}}
-     \, \frac{2J_{A1/2}+1}{2J_{A3/2}+1}   \label{equation:GammaJ_ratio}\\
-  &= \frac{P_{1/2}}{P_{3/2}} \, \frac{\omega_{vp3/2}^5}{\omega_{vp1/2}^5}
-     \,  \frac{2J_{A1/2}+1}{2J_{A3/2}+1} \,\chi
-\end{align}
-where the sum of the products of the absolute square of
-Wigner's 3j-symbol and $B_{M_A'-M_A}$
-are grouped to the variable $P$.
-The ionization cross section is proportional to the inverse of the energy
-of the virtual photon $\sigma{\omega}\propto \frac 1 \omega$ and the ratio between
-the lifetimes of the two different total angular momenta $\chi$ is experimentally
-accessible for atoms.
+Scalar-relativistic effects play an important role in the absolute energies
+of the ionization potentials by increasing the ionization energy out of
+$d$- and $f$-orbitals and decreasing the ionization potential for $s$- and
+$p$-orbitals. This shift might lead to an opening or closing of some channel.
+However, until now such case is not known.
 
 
-\begin{table}[h]
- \centering
- \begin{tabular}{c|cccc}
-  \toprule
-  \backslashbox{$M_A$}{$M_A'$} & $\frac 32$             & $\frac 12$                   & $-\frac 12$            & $-\frac 32$\\
-  \midrule
-  $\frac 12$                   & $\frac 12\,\,\,^{(1)}$ & $-\sqrt{\frac 16}\,\,^{(0)}$ & $\sqrt{\frac 1{12}}\,\,^{(-1)}$ & --\\
-  $-\frac 12$                  & --                     & $-\sqrt{\frac 1{12}}\,\,^{(1)}$ & $\sqrt{\frac 16}\,\,^{(0)}$  & $-\frac 12\,\,\,^{(-1)}$\\
-  \bottomrule
- \end{tabular}
- \caption{Auswertung der Wignerschen $3j$-Symbole f?r $J=\frac 32$ im Argon-Xenon Dimer. In den Klammern ist die Differenz der beiden Projektionen $M_A'-M_A$ angegeben.}
- \label{table:wignerarxe3}
-\end{table}
-
-\begin{table}[h]
- \centering
- \begin{tabular}{c|cc}
-  \toprule
-  \backslashbox{$M_A$}{$M_A'$} & $\frac 12$                   & $-\frac 12$\\
-  \midrule
-  $\frac 12$                   & $\sqrt{\frac 16}\,\,^{(0)}$ & $-\sqrt{\frac 1{3}}\,\,^{(-1)}$\\
-  $-\frac 12$                  & $-\sqrt{\frac 1{3}}\,\,^{(1)}$ & $\sqrt{\frac 16}\,\,^{(0)}$\\
-  \bottomrule
- \end{tabular}
- \caption{Auswertung der Wignerschen $3j$-Symbole f?r $J=\frac 12$ im Argon-Xenon Dimer. In den Klammern ist die Differenz der beiden Projektionen $M_A'-M_A$ angegeben.}
- \label{table:wignerarxe1}
-\end{table}
-
-
-\subsubsection{One Initial State and Several Final States}
-For one given initial state the total angular momentum is defined and hence
-$J_{A3/2} = J_{A1/2}$. The energies of the virtual photon transferred between
-the units of the \ac{ICD} differ for the two final state configurations of
-the initially ionized atom as
-
-\begin{align}
-  \omega_{vp1/2} &= SIP_{in} - SIP_{fin1/2}  \\
-  \omega_{vp3/2} &= SIP_{in} - SIP_{fin3/2} .
-\end{align}
-
-In case of the \ac{SIP} of the $J=\frac 32$ state being lower than the \ac{SIP}
-of the $J=\frac 12$ state, the difference in energy of the two virtual
-photons is given by the positive spin-orbit coupling constant $a$.
-
-\begin{align}
-  \omega_{vp3/2} &= \omega_{vp1/2} + SIP_{fin1/2} - SIP_{fin3/2} \\
-  \omega_{vp3/2} &= \omega_{vp1/2} + a
-\end{align}
-
-$P$ is evaluated using the expressions for the 3j-symbols given in tables
-\ref{table:wignerarxe3} and \ref{table:wignerarxe1} and $B_0=-2$, $B_{\pm 1}=1$
-to give 1 in both cases.
-From these considerations it follows, that the ratio between the decay
-widths of $J_A'=\frac 32$ and $J_A'=\frac 12$ is given by
-
-
-\begin{align}
-  \frac{\Gamma_{1/2}}{\Gamma_{3/2}}
-  &= \frac{\omega_{vp3/2}^5}{\omega_{vp1/2}^5} \frac{2J_{A1/2}+1}{2J_{A3/2}+1} \,\chi\\
-  &= \frac{(\omega_{vp1/2} +a)^5 \chi}{\omega_{vp1/2}^5}
-\end{align}
-
-In the non-relativistic limit the spin-orbit coupling constant $a$ is zero and
-hence the ratio is given by the ratio of the two different lifetimes. Without
-relativistic effects this ratio $\chi$ is determined purely by the degeneracy
-of the states and therefore $\chi_{nrel} = 2$.
-In the relativistic case $a>0$ and a splitting additional to the degeneray of
-the final states configurations is to be observed. Furthermore $\chi$ varies
-with the strength of the spin-orbit coupling. For increasing spin-orbit coupling
-constant $\chi$ decreases.
-In the neighbourhood of other atoms, the spin-orbit coupling constant is not
-a real constant \cite{}. The latter minor differences will further not be taken
-into account.
-
-
-
-
-\subsubsection{Several Initial States and One Final State}
-Consider the initially ionized atom to be an alkaline earth metal atom
-being ionized from the
-p-level. In this case the initial state can both be $J_A = \frac 32$ and
-$J_A = 12$. The final configuration being a vacancy in the 4s shell is defined
-by $J_A'= \frac 12$.
-The virtual photon energies would then be defined as
-
-\begin{align}
-  \omega_{vp1/2} &= SIP_{in1/2} - SIP_{fin}  \\
-  \omega_{vp3/2} &= SIP_{in3/2} - SIP_{fin}  \\
-  \omega_{vp3/2} &= \omega_{vp1/2} + SIP_{fin3/2} - SIP_{fin1/2} \\
-  \omega_{vp3/2} &= \omega_{vp1/2} - a .
-\end{align}
-
-Notice, that in this case the sign in front of the spin-orbit coupling
-constant $a$ is different from the one for one specific initial state.
-The last of the above equations only hold in the case of
-$SIP_{fin1/2} > SIP_{fin3/2}$.
-
-Considering the degeneracies of the states
-$\frac{2J_{A1/2}+1}{2J_{A3/2}+1} = \frac 12$.
-The evaluation of $\frac{P_{1/2}}{P_{3/2}}$ is possible for all kinds
-of initial states with a specific value for the projection $M_A$, but
-since we in this chapter want to focus on the influence of the total
-angular momentum without the consideration of their projections, we
-for a moment define our channels with respect to $M_A'$ instead of
-$M_A$. In this case $\frac{P_{1/2}}{P_{3/2}} = 1$.
-Hence the ratio of the decay widths can be evaluated to be
-
-\begin{align}
-  \frac{\Gamma_{1/2}}{\Gamma_{3/2}}
-  &= \frac{P_{1/2}}{P_{3/2}}
-     \,\frac{\omega_{vp3/2}^5}{\omega_{vp1/2}^5}
-     \,\frac{2J_{A1/2}+1}{2J_{A3/2}+1} \,\chi\\
-  &= \frac 12 \frac{(\omega_{vp1/2} -a)^5 \chi}{\omega_{vp1/2}^5} .
-\end{align}
-
-
-\subsection{Projection of the Total Angular Momentum}
-We again consider the ICD from a deined initial state with $J_A=\frac 12$ and
-$M_A=\frac 12$. Within the final state specification of $J_A'=\frac 32$, several
-projections $M_A'= +\frac 32, +\frac 12, -\frac 12$ are possible. In the asymptotic
-picture, these three states are degenerate, obviously, described by the same
-total angular momentum and have the same radiation lifetimes.
-
-Hence, in equation \ref{equation:GammaJ_ratio} the only difference relies on $P$,
-which has to be remebered to be a sum over the different possible projections
-and orientation factors $B$. Evaluating the ratios for the different final state
-projections yield
-
-\begin{align}
-  \frac{\Gamma_{+1/2}}{\Gamma_{+3/2}} &= \frac{P_{+1/2}}{P_{+3/2}} = \frac 83  \\
-  \frac{\Gamma_{+1/2}}{\Gamma_{-1/2}} &= \frac{P_{+1/2}}{P_{-1/2}} = 8   .
-\end{align}
-
-In the non-relativistic investigation, the higher efficiency of the \ac{ICD} process
-from a $z$-orbital ($M_L=0$) was interpreted from the spacial orientation of the
-oscillating dipol along the internuclear axis.
-However, in the relativistic investigation above, the spacial orientation
-can not alone be responsible for the efficiency, because the relativistic
-probability density of both $M_A'= +\frac 12$ and $M_A'= -\frac 12$ are aligned
-along the internuclear axis. Still, the decay width into a final state characterized
-by $M_A'= \frac 12$ is eight times as fast as the decay into the final state
-with $M_A'= -\frac 12$. I therefore conclude, that additional to the spacial
-orientation of the dipole, the phase of the final state wavefunction is
-important as well.
-
-An analog treatment for the final state $J_A'=\frac 12$ with $M_A'= +\frac 12, -\frac 12$
-leads to
-\begin{equation}
-  \frac{\Gamma_{+1/2}}{\Gamma_{-1/2}} = \frac{P_{+1/2}}{P_{-1/2}} = 2  .
-\end{equation}
-Also in this case a difference is to be observed, even though both the initial
-and final states' probability density are spherical symmetric.
-
-%\begin{equation}
-%\end{equation}
-%
-%\begin{equation}
-%\end{equation}
-%
-%\begin{equation}
-%\end{equation}
-%
-%\begin{equation}
-%\end{equation}
-%
-%\begin{equation}
-%\end{equation}
-%
-%\begin{equation}
-%\end{equation}
-%
-%\begin{equation}
-%\end{equation}
-%
-%\begin{equation}
-%\end{equation}
-%
