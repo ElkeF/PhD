@@ -685,23 +685,24 @@ as a sum over the different open channel solutions for a given resonant initial 
 \begin{align}
   \Gamma_s & = 2 \pi \braket{\Phi_s|H_{QP}\delta(\mathscr{H}'-E)H_{PQ}|\Phi_s}   \label{equation:Gamma_HE}\\
            & = 2 \pi \sum\limits_r \left | \braket{\Phi_s|H_{QP}|\psi_r^{(-)}} \right|^2
-                \\
+                 \label{equation:Gamma_HQP}\\
            & = \sum\limits_r \Gamma_{sr}(E)
 \end{align}
 Here it has to be remembered, that $E$ is the energy of a final state, which means, that
 only such functions give a contribution, which have the same energy as those.
-Definitiv nochmal ansehen, intuitiv müsste hier ini,fin hin.
 
 This formulation is sufficient for all cases, we are going to discuss in this thesis.
-However, Howat \textit{et al.} have proposed a slightly different ansatz with
+However, Aaberg \textit{et al.} have proposed a slightly different ansatz with
 a different partitioning, where configurations can contribute both to the description
 of the initial and final state subspace. The expression for the decay width $\Gamma$
 is very similar to the above approach in equation \ref{equation:Gamma_HE}, with more
-complex conditions in the delta function.\cite{Howat78} This approach is not valid for exact
+complex conditions in the delta function.\cite{Aaberg82} This approach is not valid for exact
 eigenfunctions, but may be useful in case of mappings to $\mathcal{L}^2$ functions as
-e.g. \ac{CI}. The resulting expression reads as
+e.g. \ac{CI} used by Fano \cite{Fano61}. The resulting expression reads as
 
 \begin{equation}
   \Gamma_s = 2 \pi \left| \braket{\Phi_s|H-E|\psi_r^{(-)}} \right| ^2
 \end{equation}
-and is called \emph{Fano's Golden Rule}.
+and is called \emph{Fano's Golden Rule}. In the following, we will start from
+the latter but always choose a partitioning into orthogonal initial and final
+states, which means equation \ref{equation:Gamma_HQP}.
