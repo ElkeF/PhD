@@ -5,23 +5,143 @@
 
 
 \section{Xenon}
+From single and double ionization spectra and Auger spectroscopy
+it is known, that vacancies from the Xe4d and lower are energetically allowed to
+decay via Auger processes.
+I will in the following focus on two energetic initial state regions, namely
+the 4p and the 4d region.
+
+\subsection{Auger Decay from the Xe4p Region}
+The Xe4p is supposed to be split into 4p$_{1/2}$ and 4p$_{3/2}$ states with
+a spin-orbit splitting of few \unit{eV}. However, in experimental single
+ionization spectra only one peak in the expected 4p$_{3/2}$ region is observed.
+Where one would expect a second peak from the 4p$_{1/2}$, the spectrum shows
+a broad structure of lower intensity. This observation has been interpreted
+to originate from a very fast decay process, the \ac{SCK} process, where both the
+vacancy filling and the Auger electron stem from the same shell as the initial
+vacancy. In this case, this process would have a 4d$^{-2}$ final state.
+It is assumed to be much faster than the Auger process
+of the 4p$_{3/2}$. 
+
+The decay widths of the Auger process with a 4p$_{3/2}$ initial state have
+been thoroughly studied \cite{}, giving rise to decay widths of \unit[0.1]{eV} to
+\unit[0.6]{eV} for different satellite states using \ac{MCDF}. In the same publication
+it is stated, that the \ac{SCK} decay is expected to have decay widths of
+about \unit[10--100]{eV}. Which is used as explanation for the non-observation
+in the Auger electron spectra.
+
+In this thesis I present decay width calculations for both the 4p$_{1/2}$ and
+4p$_{3/2}$ initial states and decay width calculated disregarding relativistic
+effects. All calculations were performed with the FanoADC code implemented in
+Dirac \cite{DIRAC13} with a dyall cv4z basis set with five s, p and d
+and three additional diffuse basis functions
+of the \ac{KBJ} type \cite{Kaufmann89}. All calculations were performed with
+ADC(2x) accuracy.
+
+This setup gives the single ionization spectrum of the energetic region of
+interest between \unit[140]{eV} and \unit[170]{eV} shown in the left panel of
+figure
+\ref{figure:Xe4p_SIPs} for the full Hamiltonian without any partitioning
+into initial and final state subspaces.
+
 \begin{figure}[h]
   \centering
   \input{pics/Xe_SIPs}
-  \caption{Single ionization spectrum of the xenon atom in the 4p region
-           calculated with DC-ADC(2x). Anderer Basissatz Daten einfügen.}
-  \label{}
-\end{figure}
-
-\begin{figure}[h]
-  \centering
   \input{pics/Xe_SIPs_part}
-  \caption{Eigenvalues of the initial state subspace of the
-           xenon atom in the 4p region
+  \caption{Left panel: Single ionization spectrum of the xenon atom in the 4p region
+           calculated with DC-ADC(2x).
+           Right panel: Eigenvalues of the initial state subspace of the                 
+           xenon atom in the 4p region                                      
            calculated with DC-FanoADC(2x).}
-  \label{}
+  \label{figure:Xe4p_SIPs}
 \end{figure}
 
+Below \unit[150]{eV} fewer and higher peaks stem from the ionization of the
+4p$_{3/2}$. The main peaks are at \unit[146.98]{eV} and \unit[148.58]{eV}.
+At energies between \unit[150]{eV} and \unit[165]{eV} the broader
+distribution mainly originating from the 4p$_{1/2}$ can be seen with the largest
+peaks at \unit[154.89]{eV}, \unit[157.00]{eV} and \unit[160.69]{eV}. Both clearly
+show a breakdown of the one-particle picture.
+
+However, due to the underlying method of partitioning the Hamiltonian into
+initial and final state subspaces, the configurations shown in figure
+\ref{figure:Xe4p_SIPs} are not the intial states used in the FanoADC approach.
+All configurations characterized by $4d^{-1}5s^{-1}$, $4d^{-1}5p^{-1}$,
+$5s^{-2}$, $5s^{-1}5p^{-1}$ or $5p^{-1}5p^{-1}$ form the final state subspace.
+Therefore, the spectrum of the initial state subspace is the source for
+the description of the initial state instead. Its spectrum is shown in
+the right panel of figure \ref{figure:Xe4p_SIPs_part}.
+
+The partitioning causes a reduction of complexity of the initial state
+spectrum to a main state of the 4p$_{3/2}$ at \unit[147.57]{eV} and a
+reduced distribution for
+the 4p$_{1/2}$ with highest peaks at \unit[156.42]{eV}, \unit[158.16]{eV}
+and \unit[160.22]{eV}.
+Thereby an error of the initial state description is introduced.
+This error has never been investigated further, but has to be kept in mind.
+
+From the FanoADC, following Stieltjes calculation points of $\Gamma(E)$ are
+determined for each claculated order of Stieltjes. Such decay width profiles
+are shown in figures \ref{figure:Xe4p33_Gamma_profile},
+\ref{figure:Xe4p11_Gamma_profile} and \ref{figure:Xe4pnrel_Gamma_profile}
+for the 4p$_{3/2}$, 4p$_{nrel}$ and 4p$_{1/2}$, respectively.
+Their analysis is mandatory for the evaluation of the results' quality.
+
+In case of a 4p$_{3/2}$ initial state, the decay width profile for Stieltjes
+order between 5 and 37 shows a decay
+with a threshold at energies below $E_{ref}=0$, which leads to a fairly smooth
+curve at the energy of interest.
+At higher energies of about \unit[1.5]{a.u.} and
+\unit[4.5]{a.u.} additional peaks are observed, which can be explained with
+interactions of the initial state description with Rydberg states. These do not
+contribute to the decay and hence a smoothing of the total curve disregarding them
+is necessary.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=1.0]{pics/Xe4p_33_gammae.eps}
+  \caption{$\Gamma(E)$ of the relativistic FanoADC calculation from a 4p$_{3/2}$
+           initial state with both $\Gamma$ and $E$ given in atomic units.
+           }
+  \label{figure:Xe4p33_Gamma_profile}
+\end{figure}
+
+Contrary to this, the decay width profile for the non-relativistic calculation
+shown in figure \ref{figure:Xe4pnrel_Gamma_profile} illustrates several
+behaviours, which indicate a very bad description of the decay widths.
+The results are at this place only discussed, in order to show the necessity
+of a description using relativistic quantum chemistry. The \ac{SCK} channel
+is closed in this case, and therefore the channels are selected as for the
+4p$_{3/2}$ initial state.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[scale=1.0]{pics/Xe4p_nrel_gammae.eps}
+  \caption{$\Gamma(E)$ of the relativistic FanoADC calculation from a 4p$_{nrel}$
+           initial state with both $\Gamma$ and $E$ given in atomic units.
+           }
+  \label{figure:Xe4pnrel_Gamma_profile}
+\end{figure}
+
+The most prominent issue is, that the decay width at the energy of interest
+$E_{res}=0$ is not decreasing, but increasing. As illustrated in section
+\ref{section:}, this behaviour can both be caused by interaction of
+the initial state with Rydberg states, which do not contribute to the decay
+as observed in the decay width profile of the Xe4p$_{3/2}$ initial state.
+However, in this case the non-decreasing part ist not an additional feature
+of a decaying curve, but rather a complete channel, which is opened at energies
+above the threshold, which are included in the final state description. Such
+a behaviour has in principle the physical meaning of a channel opening.
+Unfortunately, the smoothing Stieltjes procedure, does not resemble a clear
+cut at some threshold energy, but gives a smeared out curve where, different
+orders of Stieltjes give results in a very wide range of decay widths.
+Normally higher Stieltjes orders, with a higher flexibility in the polynomials give
+a better approaximation than lower orders, but this can not be taken for granted.
+In this particular situation, all two hole configurations included in the
+final state subspace are valid final states judging from the single and
+double ionization spectra of the total Hamiltonian. Therefore, the
+non-relativistic results presented in table \ref{table:xe_auger_rest} can
+not be trusted.
 
 \begin{table}[h]
  \centering
@@ -36,7 +156,7 @@
                       & 4p$_{3/2,\pm 3/2}$ & 4p$_{3/2,\pm 1/2}$ & 4p$_{nrel,1}$  & 4p$_{nrel,2}$ \\
    \midrule                                                                                     
    energy [\unit{eV}] &   147.57           &    147.57          &  149.88        &   151.20    \\
-   polestrength       &     0.694          &      0.694         &    0.482       &     0.209   \\
+   pole strength       &     0.694          &      0.694         &    0.482       &     0.209   \\
    \midrule                                                                                    
    $4d^{-2}$          &      --            &        --          &       --       &     --        \\
    $4d^{-1}5s^{-1}$   & 1.31$\cdot10^{-1}$ & 1.44$\cdot10^{-1}$ & 2.30$\cdot10^{-1}$ & 6.60$\cdot10^{-2}$\\
@@ -51,6 +171,41 @@
  \label{table:xe_auger_rest}
 \end{table}
 
+Vergleich mit anderen Ergebnissen, auch relative Peakintensitäten einbeziehen.
+Zwei Tabellen?
+
+
+
+The Xe4p$_{1/2}$ initial state can, as already mentioned, not be described
+by a single 1h configuration and therefore, all states with a pole strength
+higher than 0.05 and a major contribution of the Xe4p$_{1/2}$ spinor are
+investigated. Hereby, also the $4d^{-2}$ configurations are sorted into the
+final state subspace in order to take care of a possible \ac{SCK} process.
+
+Figure \ref{figure:Xe4p11_Gamma_profile} shows the decay width profile
+of the lowest energy state investigated, which also inhibits the largest
+pole strength. It is a inice and smooth curve at energies above $E=0$.
+As can easily be seen, the \ac{SCK} decay channel opens directly
+in the energy region of interest at $E_{res}=0$. Since the Stieltjes procedure
+is not able to show a clear energy cut at the threshold and the initial state
+energies can be expected not to be completely exact due to errors introduced
+by the partitioning and additional errors from the ADC(2x) itself, an
+unambiguous conclusion, whether the \ac{SCK} channel is open or not, can not be drawn.
+This decission also determines the choice of which curve of the decay width
+profile to choose for the evaluation of the decay width. The results shown
+in table \ref{table:xe_auger_rel11} are the results for the lower curve excluding
+the opening channel from the interpolation. In weighing the higher order moments
+more than the lower order moments, the decay width would be about twice the numbers
+presented and hence in the order of $\Gamma_{max}\unit[2]{eV}$.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=1.0]{pics/Xe4p_11_gammae.eps}
+  \caption{$\Gamma(E)$ of the relativistic FanoADC calculation from a 4p$_{1/2}$
+           initial state with both $\Gamma$ and $E$ given in atomic units.
+           }
+  \label{figure:Xe4p11_Gamma_profile}
+\end{figure}
 
 
 \begin{table}[h]
@@ -60,7 +215,7 @@
  \begin{tabular}{lccccc}
    \toprule
    energy [\unit{eV}] & 156.42  & 158.16 & 160.22 & 177.77 & 186.31\\
-   polestrength       &   0.332 &   0.093&   0.123&   0.058&   0.068\\
+   pole strength       &   0.332 &   0.093&   0.123&   0.058&   0.068\\
    \midrule
    $4d^{-2}$          & 6.78$\cdot10^{-1}$ & 4.45$\cdot10^{-1}$ & 1.07$\cdot10^{-1}$ & 1.68$\cdot10^{-1}$ & 1.56$\cdot10^{-1}$\\
    $4d^{-1}5s^{-1}$   & 1.34$\cdot10^{-1}$ & 6.93$\cdot10^{-2}$ & 8.61$\cdot10^{-2}$ & 1.12$\cdot10^{-1}$ & 3.39$\cdot10^{-1}$\\
@@ -75,3 +230,8 @@
  \label{table:xe_auger_rel11}
 \end{table}
 
+However, this very fast \ac{SCK} decay does not inhibit a decay width of
+\unit[10--100]{eV} as estimated\cite{}. I therefore conclude, that the broad
+feature of the single ionization spectrum in the 4p$_{1/2}$ region is caused
+by both the breakdown of the single particle picture with additional fast decay
+of all corresponding satellite configurations.
