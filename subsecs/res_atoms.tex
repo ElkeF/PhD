@@ -1,15 +1,61 @@
 \chapter{Auger Decay of Noble Gas Atoms}
 \section{Neon}
-\section{Argon}
-\section{Krypton}
 
 
 \section{Xenon}
 From single and double ionization spectra and Auger spectroscopy
 it is known, that vacancies from the Xe4d and lower are energetically allowed to
-decay via Auger processes.
+decay via Auger processes. \cite{Siegbahn69}
 I will in the following focus on two energetic initial state regions, namely
 the 4p and the 4d region.
+
+The different open channels have to be determined by comparison of the single
+and double ionization spectra shown in figure \ref{figure:Xe_sdip}.
+These spectra have been calculated using the
+DC-ADC(2x) implemented in Dirac\cite{Pernpointner04_1,Pernpointner10_1,DIRAC13}.
+All calculations in this chapter were performed 
+Dyall cv4z basis set\cite{dyall5p06} with additional five s, p and d
+and three diffuse basis functions                       
+of the \ac{KBJ} type \cite{Kaufmann89}.
+
+\begin{figure}[h]
+  \centering
+  \input{pics/Xe_rel_sdip}
+  \input{pics/Xe_nrel_sdip}
+  \caption{Comparison of calculated single and double ionization spectra
+           for the determination of open channels in of the later decay
+           width calculation. Upper panel: relativistic description, lower
+           panel: non-relativistic description.
+           }
+  \label{figure:Xe_sdip}
+\end{figure}
+\afterpage{\clearpage}
+
+
+Therefore the channels shown in table \ref{table:Xe_open_channels} are
+open for the different initial states. For the decay width calculations, these
+results are the basement for the choice of the final state subspace.
+\begin{table}[h]
+  \centering
+  \caption{Open channels of the Auger processes for different initial states
+           on the xenon atom.}
+  \begin{tabular}{lcccccc}
+   \toprule
+                   & 4d$^{-2}$ & 4d$^{-1}$5s$^{-1}$ & 4d$^{-1}$5p$^{-1}$ & 5s$^{-2}$ & 5s$^{-1}$5p$^{-1}$ & 5p$^{-2}$ \\
+   \midrule
+   4d$_{5/2}^{-1}$ &      --   &       --           &        --          &     x     &     x              &     x     \\
+   4d$_{3/2}^{-1}$ &      --   &       --           &        --          &     x     &     x              &     x     \\
+   4p$_{3/2}^{-1}$ &      --   &        x           &         x          &     x     &     x              &     x     \\
+   4p$_{1/2}^{-1}$ &       x   &        x           &         x          &     x     &     x              &     x     \\
+   \midrule
+   4d$^{-1}_{nrel}$&      --   &       --           &        --          &     x     &     x              &     x     \\
+   4p$^{-1}_{nrel}$&      --   &        x           &         x          &     x     &     x              &     x     \\
+   \bottomrule
+  \end{tabular}
+  \label{table:Xe_open_channels}
+\end{table}
+
+
 
 \subsection{Auger Decay from the Xe4p Region}
 The Xe4p is supposed to be split into 4p$_{1/2}$ and 4p$_{3/2}$ states with
@@ -32,11 +78,9 @@ in the Auger electron spectra.
 
 In this thesis I present decay width calculations for both the 4p$_{1/2}$ and
 4p$_{3/2}$ initial states and decay width calculated disregarding relativistic
-effects. All calculations were performed with the FanoADC code implemented in
-Dirac \cite{DIRAC13} with a dyall cv4z basis set with five s, p and d
-and three additional diffuse basis functions
-of the \ac{KBJ} type \cite{Kaufmann89}. All calculations were performed with
-ADC(2x) accuracy.
+effects.
+All calculations were performed with the FanoADC code implemented in
+Dirac \cite{DIRAC13}.% with a dyall cv4z basis set with five s, p and d
 
 This setup gives the single ionization spectrum of the energetic region of
 interest between \unit[140]{eV} and \unit[170]{eV} shown in the left panel of
@@ -70,7 +114,7 @@ All configurations characterized by $4d^{-1}5s^{-1}$, $4d^{-1}5p^{-1}$,
 $5s^{-2}$, $5s^{-1}5p^{-1}$ or $5p^{-1}5p^{-1}$ form the final state subspace.
 Therefore, the spectrum of the initial state subspace is the source for
 the description of the initial state instead. Its spectrum is shown in
-the right panel of figure \ref{figure:Xe4p_SIPs_part}.
+the right panel of figure \ref{figure:Xe4p_SIPs}.
 
 The partitioning causes a reduction of complexity of the initial state
 spectrum to a main state of the 4p$_{3/2}$ at \unit[147.57]{eV} and a
@@ -87,16 +131,6 @@ are shown in figures \ref{figure:Xe4p33_Gamma_profile},
 for the 4p$_{3/2}$, 4p$_{nrel}$ and 4p$_{1/2}$, respectively.
 Their analysis is mandatory for the evaluation of the results' quality.
 
-In case of a 4p$_{3/2}$ initial state, the decay width profile for Stieltjes
-order between 5 and 37 shows a decay
-with a threshold at energies below $E_{ref}=0$, which leads to a fairly smooth
-curve at the energy of interest.
-At higher energies of about \unit[1.5]{a.u.} and
-\unit[4.5]{a.u.} additional peaks are observed, which can be explained with
-interactions of the initial state description with Rydberg states. These do not
-contribute to the decay and hence a smoothing of the total curve disregarding them
-is necessary.
-
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=1.0]{pics/Xe4p_33_gammae.eps}
@@ -105,6 +139,16 @@ is necessary.
            }
   \label{figure:Xe4p33_Gamma_profile}
 \end{figure}
+
+In case of a 4p$_{3/2}$ initial state, the decay width profile for Stieltjes
+orders between 5 and 37 shows a decay
+with a threshold at energies below $E_{ref}=0$, which leads to a fairly smooth
+curve at the energy of interest.
+At higher energies of about \unit[1.5]{a.u.} and
+\unit[4.5]{a.u.} additional peaks are observed, which can be explained with
+interactions of the initial state description with Rydberg states. These do not
+contribute to the decay and hence a smoothing of the total curve disregarding them
+is necessary.
 
 Contrary to this, the decay width profile for the non-relativistic calculation
 shown in figure \ref{figure:Xe4pnrel_Gamma_profile} illustrates several
@@ -235,3 +279,33 @@ However, this very fast \ac{SCK} decay does not inhibit a decay width of
 feature of the single ionization spectrum in the 4p$_{1/2}$ region is caused
 by both the breakdown of the single particle picture with additional fast decay
 of all corresponding satellite configurations.
+
+
+\subsection{Auger Decay from the Xe4d Region}
+
+
+\begin{table}[h]
+ \centering
+ \caption{Auger decay widths of the Xe4d$_{3/2}$ and the non-relativistic
+          4p. All widths are given in \unit{eV}. The non-relativistic
+          results have to be handled with care, since in the calculation
+          the sum over the partial decay widths is much larger, than the
+          total decay width, which is not seen in this table, because
+          partial widths are renormalized to the total width.}
+ \begin{tabular}{lccccc}
+   \toprule
+                      & 4d$_{5/2,\pm 5/2}$ & 4d$_{5/2,\pm 3/2}$ & 4d$_{3/2,\pm 3/2}$ & 4d$_{3/2,\pm 1/2}$& 4d$_{nrel}$ \\
+   \midrule                                                                                     
+   energy [\unit{eV}] &   147.57           &    147.57          &  149.88        &   151.20   & \\
+   pole strength      &     0.694          &      0.694         &    0.482       &     0.209  & \\
+   \midrule                                                                                    
+   $5s^{-2}$          & 6.27$\cdot10^{-4}$ & 6.29$\cdot10^{-4}$ & 3.83$\cdot10^{-4}$ & 8.65$\cdot10^{-5}$ & 6.27$\cdot10^{-4}$\\
+   $5s^{-1}5p^{-1}$   & 1.50$\cdot10^{-2}$ & 1.49$\cdot10^{-2}$ & 3.02$\cdot10^{-2}$ & 2.07$\cdot10^{-3}$ & 1.50$\cdot10^{-2}$\\
+   $5p^{-1}5p^{-1}$   & 3.21$\cdot10^{-2}$ & 2.90$\cdot10^{-2}$ & 5.62$\cdot10^{-3}$ & 1.42$\cdot10^{-2}$ & 3.21$\cdot10^{-2}$\\
+   \midrule
+   total              &   0.814            &   0.818            &  0.610         &   0.243    &\ \\
+   \bottomrule                                                                                 \
+ \end{tabular}                                                                                 \
+ \label{table:xe_auger_rest}
+\end{table}
+
