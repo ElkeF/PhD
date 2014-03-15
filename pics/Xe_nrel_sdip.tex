@@ -1,0 +1,80 @@
+\begin{tikzpicture}[scale=1.0]
+
+\begin{axis}[%scale=1.5,
+             domain=30:170,
+             %y domain=1E-8:10,
+             restrict expr to domain={x}{30:170},
+             xlabel={E in \unit{eV}},
+             xtick={30,50,...,170},
+             %xticklabels={2,4,6,8,10,12,15,20,25},
+             ytick={-1.0,-0.8,...,1.0},
+             yticklabels={1.0,0.8,0.6,0.4,0.2,0.0,0.2,0.4,0.6,0.8,1.0},
+             ylabel={pole strength},
+             scale only axis,
+             width=\textwidth-2cm,
+             height=7cm
+             %title={Parameter Fitting of NeNe and NeAr Decay Widths}
+             ]
+
+\draw[gray]
+  (axis cs:\pgfkeysvalueof{/pgfplots/xmin},0) --
+  (axis cs:\pgfkeysvalueof{/pgfplots/xmax},0);
+\addplot+[ycomb,
+         %no markers,
+         mark=.,
+         thick,
+         diplom1,
+         empty legend
+        ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = \thisrowno{1}
+        ]
+        {data/Xe_nrel_sips.dat};
+        \addlegendentry{SIPs(Xe)};
+\addplot+[ycomb,
+         %no markers,
+         mark=.,
+         thick,
+         diplom2,
+         empty legend
+        ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = -\thisrowno{1}
+        ]
+        {data/Xe_nrel_dips.dat};
+        \addlegendentry{DIPs(Xe)};
+
+\node[pin={[pin distance=0.2cm]10:{\tiny 4d$^{-1}$}}]
+     at (axis cs:69.06,0.6) {};
+\draw[] (axis cs:155,0.41) arc [radius=0.5cm,start angle=10,end angle=100];
+\node[pin={[pin distance=0.2cm]20:{\tiny 4p$^{-1}$}}]
+     at (axis cs:152.0,0.43) {};
+ 		
+%DIPs
+\draw[] (axis cs:39,-0.9) arc [radius=0.2cm,start angle=358,end angle=180];
+\node[pin={[pin distance=0.1cm]95:{\tiny 5p$^{-2}$}}]
+     at (axis cs:32,-0.75) {};
+
+\draw[] (axis cs:50,-0.70) arc [radius=0.2cm,start angle=358,end angle=180];
+\node[pin={[pin distance=0.05cm]280:{\tiny 5s$^{-1}$5p$^{-1}$}}]
+     at (axis cs:47,-0.75) {};
+
+\node[pin={[pin distance=0.1cm]350:{\tiny 5s$^{-2}$}}]
+     at (axis cs:55,-0.40) {};
+
+\draw[] (axis cs:100,-0.80) arc [radius=0.22cm,start angle=358,end angle=180];
+\node[pin={[pin distance=0.05cm]270:{\tiny 4d$^{-1}$5p$^{-1}$}}]
+     at (axis cs:94,-0.85) {};
+
+\draw[] (axis cs:111,-0.70) arc [radius=0.22cm,start angle=358,end angle=180];
+\node[pin={[pin distance=0.05cm]300:{\tiny 4d$^{-1}$5s$^{-1}$}}]
+     at (axis cs:107,-0.75) {};
+
+\draw[] (axis cs:170,-0.75) arc [radius=0.45cm,start angle=340,end angle=180];
+\node[pin={[pin distance=0.05cm]260:{\tiny 4d$^{-2}$}}]
+     at (axis cs:156,-0.80) {};
+
+\end{axis}
+\end{tikzpicture}
