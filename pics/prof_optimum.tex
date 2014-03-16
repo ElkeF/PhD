@@ -1,0 +1,27 @@
+\begin{tikzpicture}[scale=1.0]
+
+\begin{axis}[%scale=0.8,
+             domain=0.0:5.5,
+             samples = 200,
+             %ticks=none,
+             xtick={4},
+             xticklabels={$E_{r}$},
+             ytick=empty,
+             %legend style={anchor= north west}
+             xlabel={$E$},
+             ylabel={$\Gamma(E)$},
+             legend pos = north west,
+             ]
+
+  \node[anchor=west] at (axis cs:-0.7,4.3) {\small optimum};
+  \addplot+[mark = none,
+           thick,
+           diplom1,
+           domain=0:6
+           ]
+           {1.5/(x+0.7)^2 + 0.3};
+
+%  \draw[dashed] (axis cs:4,\pgfkeysvalueof{/pgfplots/ymin}) --
+%                 (axis cs:4,\pgfkeysvalueof{/pgfplots/ymax});
+\end{axis}
+\end{tikzpicture}

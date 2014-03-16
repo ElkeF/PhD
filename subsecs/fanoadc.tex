@@ -57,3 +57,101 @@ final eigenstates for a specific initial state choice $i$ and possibly a choice
 of channel $\beta$
 $V_{i,\beta} = \braket{\phi |\hat{H}| \psi_{\beta, 2h1p}}$.
 
+
+
+
+\section{How to Obtain Trustworthy Results}
+\subsection{Choice of Basis Set and Active Space}
+\subsection{Quality Check Using the Decay Width Profile}
+Errors and instabilities of the FanoADC-Stieltjes calculation can be observed
+in the energy dependence of the calculated decay width $\Gamma(E)$.
+As already shown in figure \ref{figure:stieltjes_density}, the optimum
+interpolation result is a smooth, monotonically decreasing function.
+The decay width for the given resonance energy $\Gamma(E_r)$ can in this case easy be
+evaluated.
+
+The error of the calculated decay width is estimated by the decay widths
+close to the resonance energy.
+There is no rigorous definition
+of how exactly to choose this energy range in the literature. 
+In general it is estimated
+by the quality of the initial state description in the initial
+state subspace compared to the one of the full Hamiltonian and the
+manual inspection of the density of points obtained
+from the FanoADC-Stieltjes calculation. If
+the obtained density function has a low curvature at the resonance energy,
+the error of the decay width is normally very small, while for resonance
+energies, where the decay width has a high curvature, the error can be of the same
+order as the obtained decay width.
+
+In addition to numerical instabilities introduced by the Stieltjes procedure
+discussed in section \ref{},
+two further characteristic pattern might be observed in a calculated
+decay width: channel openings and interactions of the initial state
+with Rydberg states.
+
+
+\begin{figure}[h]
+  \centering
+  \input{pics/prof_channel_opening}
+  \caption{}
+  \label{figure:prof_channel_opening}
+\end{figure}
+In case of channel openings, at low energies the decay width is decreasing, but
+at a certain energy another channel opens and the decay width of both are
+added as shown in figure \ref{figure:prof_channel_opening}. In case of the
+resonance energy being higher than all the channel opening energies as for
+$E_{r,2}$, the
+selection of the final state subspace can be expected to be correct
+and the initial
+and final state description of the partitioned Hamiltonian to be reasonable.
+
+In case of the resonance energy being lower than the highest channel
+opening energy like for $E_{r,1}$ a closed channel is treated as a final
+state. If such a result is obtained, one should carefully check the selection
+of the final state configurations. However, it is still possible that the
+partitioning of the Hamiltonian yields such descriptions of the initial and
+final states that the channel opening and closing is not reproduced in the
+decay width. In these cases, the results are not trustworthy.
+
+Rydberg states are bound states of the systems and hence do not contribute
+to the decay. However, an interaction of the initial state with those
+Rydberg states is possible and leads to a density function as shown in
+figure \ref{figure:prof_rydberg}.
+
+\begin{figure}[h]
+  \centering
+  \input{pics/prof_rydberg}
+  \caption{}
+  \label{figure:prof_rydberg}
+\end{figure}
+Here the density function is in principle a monotonically decreasing function,
+but has additional peaks at certain energies. They can be distinguished from
+channel openings by observing the behaviour after the peak. In case of
+interactions with Rydberg states, the decay width is the same as if the interaction
+would not take place, while in case of a channel opening, the decay widths
+of the two channels are added to give a total decay width.
+If the resonance energy coincides with the position of a Rydberg interaction,
+the Rydberg interaction is not to be taken into account in the determination
+of the decay width.
+
+In a real calculation, these two features are more diffuse than in the
+illustrations above in
+figures \ref{figure:prof_channel_opening}
+and \ref{figure:prof_rydberg}, because the Stieltjes procedure smoothes
+discontinuities as observed in the case of channel openings and sharp peaks
+as for the Rydberg states.
+In the Stieltjes procedure such density functions are more accurately described
+with higher order of Stieltjes being based on higher order polynomials
+with more degrees of freedom.
+An observed phenomenon related to this is
+a splitting of the decay width described by either low or high orders of Stieltjes.
+In these cases, one has to decide based on the knowledge of all other
+parameters, which of these two curves might be more trustworthy.
+
+Close to threshold, the determination of the decay width is difficult, since
+the resonance energies are approximations and not exact. Therefore, the
+energy range spans a wide distribution of different decay widths. Furthermore
+the broadened decay width being based on points obtained from the Stieltjes
+procedure might not cover the maximum of the peak and hence the theoretical
+maximum of the decay width.

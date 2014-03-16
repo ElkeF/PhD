@@ -1,0 +1,50 @@
+\begin{tikzpicture}[scale=1.0]
+
+\begin{axis}[%scale=0.8,
+             domain=0.0:5.5,
+             samples = 200,
+             %ticks=none,
+             xtick={3,7},
+             xticklabels={$E_{r,1}$,$E_{r,2}$},
+             ytick=empty,
+             %legend style={anchor= north west}
+             xlabel={$E$},
+             ylabel={$\Gamma(E)$},
+             legend pos = north west,
+             ]
+
+  \node[anchor=west] at (axis cs:-0.7,4.3) {\small channel opening};
+  \addplot+[mark = none,
+           thick,
+           diplom1,
+           domain=0:2
+           ]
+           {1.5/(x+0.7)^2 + 0.3};
+  \addplot+[mark = none,
+           thick,
+           diplom1,
+           domain=2:4
+           ]
+           {1.5/(x+0.7)^2 + 0.3 + 1.5/(x-1.3)^2 + 0.3};
+  \addplot+[mark = none,
+           thick,
+           diplom1,
+           domain=4:8
+           ]
+           {1.5/(x+0.7)^2 + 0.3 + 1.5/(x-1.3)^2 + 0.3 + 1.5/(x-3.3)^2 + 0.3};
+  \draw[diplom1,thick] (axis cs:2,0.5058) --
+                 (axis cs:2,3.8670);
+  \draw[diplom1,thick] (axis cs:4,0.8737) --
+                 (axis cs:4,4.2349);
+
+  \draw[dashed] (axis cs:3,\pgfkeysvalueof{/pgfplots/ymin}) --
+                 (axis cs:3,\pgfkeysvalueof{/pgfplots/ymax});
+%  \node[pin={[pin distance=0.2cm]180:{\small $E_{r,1}$}}]
+%     at (axis cs:3,4.3) {};
+
+  \draw[dashed] (axis cs:7,\pgfkeysvalueof{/pgfplots/ymin}) --
+                 (axis cs:7,\pgfkeysvalueof{/pgfplots/ymax});
+%  \node[pin={[pin distance=0.2cm]180:{\small $E_{r,2}$}}]
+%     at (axis cs:7,4.3) {};
+\end{axis}
+\end{tikzpicture}
