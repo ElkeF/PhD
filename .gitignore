@@ -5,6 +5,10 @@
 *.blg
 *.gz
 *.toc
+*.dvi
+*.nav
+*.out
+*.snm
 
 
 thesis.pdf
