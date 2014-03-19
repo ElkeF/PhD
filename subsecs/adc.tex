@@ -1,12 +1,25 @@
-\section{Ein-Teilchen-Greensfunktionen}\label{greensfkt}
+\chapter{\acl{ADC}}
+\section{One-Particle-Greensfunctions}\label{greensfkt}
 
-In der Zeitdomäne ist die kausale Ein-Teilchen-Greensfunktion für Fermionen nach Gleichung \ref{1pgf} definiert.
+Green's function methods are based on propagators, which contain information
+about the response of a system to a time-dependent perturbation.\cite{McWeenyxy}
+They are advantageous compared to other quantum chemical methods, because they
+allow the calculation of properties like energy differences without calculating
+the two different states but instead calculating their difference directly.
+
+In the time-domain, the propagator, also called the one particle Green's function
+for fermions is defined as
 
 \begin{equation}\label{1pgf}
 G_{pq}(t,t') = -i \bra{\Psi_0^N}c_p(t)c_q^\dagger(t')\ket{\Psi_0^N}\Theta(t-t') +i \bra{\Psi_0^N}c_q^\dagger(t')c_p(t)\ket{\Psi_0^N}\Theta(t'-t)
 \end{equation}
 
-Bei $\Theta(t-t')$ (Gleichung \ref{stufe}) handelt es sich um die Stufenfunktion, die durch den Zeitordnungsoperator in der allgemeinen kausalen Greensfunktion entsteht.
+UMSCHREIBEN
+
+Here, $\Theta(t-t')$ is the Heaviside step function eq. (\ref{stufe}),
+which ensures the causality of the described process. A system can only
+respond to a perturbation which occured in the past. Therefore, the Green's
+function is non-zero for times $t>t'$ and zero for all other times.
 
 \begin{equation}\label{stufe}
 \Theta(t-t') = \begin{cases}
@@ -17,87 +30,137 @@ Bei $\Theta(t-t')$ (Gleichung \ref{stufe}) handelt es sich um die Stufenfunktion
 
 Abhängig von den Zeiten $t$ und $t'$ ist höchstens einer der Summanden aus Gleichung \ref{1pgf} von null verschieden. Für den Fall, dass $t'>t$ trägt nur der zweite Summand zur Greensfunktion bei. Er beschreibt die Wahrscheinlichkeitsamplitude, dass sich ein zur Zeit $t$ im Orbital $\ket{\phi_p}$ erzeugter Lochzustand zur späteren Zeit $t'$ im Orbital $\ket{\phi_q}$ befindet. Analog beschreibt die Greensfunktion für $t>t'$ die Propagation eines Teilchens. Aufgrund dieser Eigenschaft wird die Greensfunktion häufig auch \emph{Propagator} genannt.\cite{nolting7}
 
-Aus dieser Betrachtungsweise ist auch ersichtlich, dass sich die Greensfunktion als Summe eines $N+1$- und eines $N-1$-Teils formulieren lässt:
+In the non-Dyson formulation \cite{Schirmer89} the Green's function can be
+written as the sum over the $N+1$ and the $N-1$ parts
 
 \begin{equation}
 G_{pq}(\omega) = G_{pq}^+(\omega) + G_{pq}^-(\omega)
 \end{equation}
 
-Die Greensfunktion \ref{1pgf} ist im Heisenbergbild gegeben, in dem die Operatoren zeitabhängig und die Zustände zeitunabhängig sind. Die Erzeugungs- und Vernichtungsoperatoren gehen damit über in $c_p(t) = \mathrm{e}^{-i\hamil t} c_p \mathrm{e}^{i\hamil t}$. Das Einfügen dieser zeitabhängigen Operatoren in die Greensfunktion des $N-1$-Teilchen-Systems und deren Wirken auf die Grundzustandswellenfunktion führt zu Gleichung \ref{g-hsb}.
+The Green's functions are formulated in the Heisenberg picture, where the
+operators are time-dependent and the states are time-independent.
+The annihilation and creation operators are therefore defined as
+$c_p(t) = \mathrm{e}^{-i\mathcal{H} t} c_p \mathrm{e}^{i\mathcal{H} t}$.
+Inserting these into the $N-1$ part of equation (\ref{1pgf}) yields
+
 
 \begin{equation}\label{g-hsb}
-G_{pq}^-(t',t) = i\Theta(t'-t) \mathrm{e}^{iE_0^N(t'-t)}\bra{\Psi_0^N}c_q^\dagger\mathrm{e}^{-i\hamil(t'-t)}c_p\ket{\Psi_0^N}
+G_{pq}^-(t',t) = i\Theta(t'-t) \mathrm{e}^{iE_0^N(t'-t)}\bra{\Psi_0^N}c_q^\dagger\mathrm{e}^{-i\mathcal{H}(t'-t)}c_p\ket{\Psi_0^N}
 \end{equation}
+For a time-independent Hamilton operator $\mathcal{H}$ the Green's function
+depends only on the time difference $t'-t$ and therefore $G_{pq}(t',t)$ is
+transformed into $G_{pq}(t'-t)$. The $N+1$ part is treated analogously.
 
-Mit einem zeitunabhängigen Hamiltonoperator $\hamil$ ist die Greensfunktion damit nur von der Zeitdifferenz $t'-t$ abhängig, $G_{pq}(t',t)$ geht also über in $G_{pq}(t'-t)$. Analog wird mit dem $N+1$-Teilchenteil verfahren.
-
-Nach Einschieben einer vollständigen $N+1$-Teilchenbasis in $G_{pq}^+$ bzw. $N-1$-Teilchenbasis in $G_{pq}^-$ wird die Greensfunktion mittels einer Fouriertransformation von der Zeit- in die Energiedomäne überführt. Um die Konvergenz der Transformation zu gewährleisten wird der Faktor $\mathrm{e}^{-\eta(t'-t)}$ bzw. $\mathrm{e}^{-\eta(t-t')}$ eingeführt, bei dem $\eta$ eine infinitesimal kleine, positive Größe ist. Dieses führt zur Spektraldarstellung der Greensfunktion (Gleichung \ref{spektraldst}).
+After insertion of a complete $N+1$ basis $\ket{\Psi_n^{N-1}}$ in
+$G_{pq}^+$ and $N-1$ basis $\ket{\Psi_n^{N-1}}$
+into $G_{pq}^-$ the Green's function is Fourier transformed from the time
+into the energy domain. To ensure the convergence, 
+$\mathrm{e}^{-\eta(t'-t)}$ or $\mathrm{e}^{-\eta(t-t')}$ are introduced,
+where $\eta$ is infinitesimal and positive.
+This yields the spectral representation
 
 \begin{equation}\label{spektraldst}
 G_{pq}(\omega) = \sum\limits_{n\in\{N+1\}}\frac{x_p^{(n)}x_q^{(n)*}}{\omega-e_n +i\eta} + \sum\limits_{n\in\{N-1\}}\frac{x_p^{(n)}x_q^{(n)*}}{\omega-e_n -i\eta}
 \end{equation}
 
-In dieser Darstellung wird der Zusammenhang mit den Ionisierungsspektren offensichtlich.  Die $e_n$ sind die Energiedifferenzen zwischen Anfangs- und Endzustand und korrespondieren somit mit den Ionisierungsenergien bzw. mit den Elektronenaffinitäten. Sie sind durch Auffinden der Polstellen der Greensfunktion ermittelbar. Die Polstärken $\left|x_p^{(n)}\right|^2$, die das Betragsquadrat der Übergangsamplituden $x_p^{(n)}=\bra{\Psi_n^{N-1}}c_p\ket{\Psi_0}$ sind, korrespondieren im zweiten Summanden mit der Wahrscheinlichkeit der entsprechenden Ionisierung.
+with $e_n$ being the energy differences between initial and final state. Hence,
+in case of the one particle propagator, the poles of the Green's function
+are the ionization energies and electron affinities.
+The pole strengths $\left|x_p^{(n)}\right|^2$ correspond to the transition
+probability and are the square of the transition amplitudes
+$x_p^{(n)}=\bra{\Psi_n^{N-1}}c_p\ket{\Psi_0}$.
 
 
-Es sei noch erwähnt, dass Gleichung
-\begin{equation}\label{fourier}
-\begin{split}
-G_{pq}(\omega) = \bra{\Psi_0^N}c_p(\omega+E_0^N-\hamil+i\eta)^{-1}c_q^\dagger\ket{\Psi_0^N} \\+ \bra{\Psi_0^N}c_q^\dagger(\omega-E_0^N+\hamil-i\eta)^{-1}c_p\ket{\Psi_0^N}
-\end{split}
-\end{equation}
-in der Literatur häufig für die Greensfunktion angegeben wird. Bei ihr handelt es sich um die darstellungsfreie Form der Spektraldarstellung (\ref{spektraldst}).
 
-
-\section{Zweiteilchen-Greensfunktion}
-Analog zur Einteilchen-Greensfunktion existiert auch eine Zweiteilchen-Greensfunktion $\mathbf{\Pi}(\omega)$, mit deren Hilfe sich die Energiedifferenz zwischen einem $N$- und einem $N\pm 2$-Teilchenzsutand durch Berechnen der Polstellen bestimmen lässt.
+\section{Two Particle Green's function}
+Analog to the the one particle Green's function, the two particle Green's
+function $\mathbf{\Pi}(\omega)$ describes the process of double ionization
+or electron attachment. Its poles again correspond to the ionization energies
+and electron affinities.
 
 \begin{equation}
 \mathbf{\Pi}_{\alpha\beta,\alpha'\beta'}(\omega) = \sum\limits_{m\in N+2} \frac{x^{(m)}_{\alpha\beta}x^{*(m)}_{\alpha'\beta'}}{\omega +E_0^N-E_n^{N+2}+i\eta} - \sum\limits_{m\in N-2} \frac{x^{(m)}_{\alpha\beta}x^{*(m)}_{\alpha'\beta'}}{\omega +E_m^{N-2}-E_0^{N}-i\eta}
 \end{equation}
 
-Hierin sind die Übergangsamplituden
+Here the transition amplitudes are given by
 \begin{equation}
 x^{(m)}_{\alpha\beta}=\begin{cases}
-\braket{\Psi_0^N|a_\alpha a_\beta|\Psi_n^{N+2}} & \text{für } m\in N+2\\
-\braket{\Psi_n^{N-2}|a_\alpha a_\beta|\Psi_0^{N}} & \text{für } m\in N-2,
+\braket{\Psi_0^N|a_\alpha a_\beta|\Psi_n^{N+2}} & \text{for } m\in N+2\\
+\braket{\Psi_n^{N-2}|a_\alpha a_\beta|\Psi_0^{N}} & \text{for } m\in N-2,
 \end{cases}
 \end{equation}
-wobei $a_\alpha$ und $a_\beta$ die Vernichtungsoperatoren für Ionisierungen aus den oder in die Orbitale $\alpha$ und $\beta$ sind. Wie auch beim Einteilchenpropagator sind die $N\pm 2$-Zustände $\ket{\Psi_m^{N\pm 2}}$ sowie die Energien $E_m^{N\pm 2}$ exakt. Durch Bestimmen der Polstellen des zweiten Summanden lassen sich dann die Doppelionisierungsenergien $E_m^{N-2}-E_0^N$ erhalten.\cite{Tarantelli89}
+
+where $a_\alpha$ and $a_\beta$ are the annihilation and creation operators of
+the orbitals $\alpha$ and $\beta$, respectively.
 
 
 
-\section{Algebraische Diagrammatische Konstruktion (ADC)}
-Ursprünglich wurde die komplette Greensfunktion über die störungstheoretische Betrachtung der Dyson-Gleichung näherungsweise bestimmt. Einfacher ist jedoch der \emph{non-Dyson}-Ansatz. Hierbei wird nur der Teil des Propagators betrachtet, der für die Beschreibung des gewünschten Prozesses, in dieser Arbeit die Ionisierung, relevant ist.\cite{Schirmer98} Der Ionisierungsteil $\mathbf{G^-}(\omega)$ wird zunächst transponiert, sodass $\tilde{G}_{pq}(\omega) = G^-_{qp}(\omega)$. Damit ergibt sich die kompakte Matrixform der Spektraldarstellung des Problems zu Gleichung \ref{matrixspec}.
+\section{\acl{ADC}}
+Originally the Green's function was formulated in the Dyson ansatz and
+determined using perturbation theory. This way both the ionization and the
+electron affinity part had to be included in the description. In the non-Dyson
+scheme those two are separable and hence the dimension of the problem is reduced
+when one is interested in either the $N+1$ or the $N-1$ part. \cite{Schirmer98}
+The ionization part $\mathbf{G^-}(\omega)$ is transposed to give
+$\tilde{G}_{pq}(\omega) = G^-_{qp}(\omega)$. From this, the compact matrix
+form can be deduced
 
 \begin{equation}\label{matrixspec}
 \mathbf{\tilde{G}}(\omega) = \mathbf{x}^\dagger(\omega-\mathbf{\Omega})^{-1}\mathbf{x}
 \end{equation}
 
-Dieses exakte Problem gilt es zu lösen. Dafür werden die exakten Vektoren der Übergangsamplituden in der Basis der \emph{intermediate states} entwickelt, wodurch sich Gleichung \ref{isradc} ergibt.\cite{Mertins96_1}
+To this point, the problem is exact. However, the exact wavefunctions are unknown
+and hence the basis of so-called intermediate states are introduced. These
+are formally constructed from \ac{CES} as they appear in a
+\ac{CI} expansion. These \ac{CES} are then grouped into excitation classes
+and these classes are orthogonalized with respect to each other. Afterwards,
+the states within each class are orthogonalized. 
+This approach has the advantage to be size-consistent and hence
+suitable for the description of larger systems. \cite{Mertins96_1}
 
+In this \ac{ISR} the Green's function can be written as
 \begin{equation}\label{isradc}
 \mathbf{\tilde{G}}(\omega) = \mathbf{f}^\dagger(\omega-\mathbf{K}-\mathbf{C})^{-1}\mathbf{f}
 \end{equation}
 
-Hierbei ist $\mathbf{K}$ die Diagonalmatrix der Hartree-Fock Ionisierungsenergien, sie stellt also die Ionisierungsenergien in nullter Ordnung Störungstheorie dar, und $\mathbf{C}$ enthält alle weiteren Beiträge zu den Ionisierungsenergien. Die ADC-Matrix ($\mathbf{K}+\mathbf{C}$) ist damit nicht diagonal. Um die Polstellen des Ionisierungsteils der Greensfunktion zu bestimmen, muss diese Matrix diagonalisiert werden. Das führt zum Eigenwertproblem \ref{adcewp}, wobei $\mathbf{\Omega}$ die Diagonalmatrix der Ionisierungsenergien darstellt.
+Here $\mathbf{K}$ is the diagonal matrix of Hartree Fock orbital energies, which
+corresponds to zeroth order of perturbation theory. The matrix $\mathbf{C}$
+contains all higher order contributions to the Hamiltonian.
+Hence, the ADC matrix $K+C$ is non-diagonal. This equation can be solved by
+solving the eigenvalue problem
 
 \begin{equation}\label{adcewp}
-(\mathbf{K}+\mathbf{C}) \mathbf{Y} = \mathbf{Y}\mathbf{\Omega} \quad\text{wobei } \mathbf{Y}^\dagger\mathbf{Y}=\mathbf{1}
+(\mathbf{K}+\mathbf{C}) \mathbf{Y} = \mathbf{Y}\mathbf{\Omega} \quad\text{where } \mathbf{Y}^\dagger\mathbf{Y}=\mathbf{1}
+\end{equation}
+where $\mathbf{\Omega}$ is the matrix of eigenvalues and hence the ionization
+energies and $\mathbf{Y}$ is the matrix of eigenvectors which connects the
+intermediate state representation with the exact $N-1$ solutions.
+
+\begin{equation}
+ Y = 
 \end{equation}
 
-Zur Konstruktion der ADC-Matrix ($\mathbf{K}+\mathbf{C}$) und der effektiven Übergangsmomente $\mathbf{f}$ werden $\mathbf{C}$ und $\mathbf{f}$ störungstheoretisch entwickelt (Gleichungen \ref{stC} und \ref{stf}) und in Gleichung \ref{isradc} eingesetzt.
+For the construction of the \ac{ADC} matrix ($\mathbf{K}+\mathbf{C}$) and the
+effective transitions moments $\mathbf{f}$, $\mathbf{C}$ and $\mathbf{f}$
+are expanded into different orders of pertubrations and inserted to equation
+(\ref{isradc}).
 
 \begin{eqnarray}
 \mathbf{C} &=& \mathbf{C}^{(1)} + \mathbf{C}^{(2)} + \mathbf{C}^{(3)} + \cdots\label{stC}\\
 \mathbf{f} &=& \mathbf{f}^{(0)} + \mathbf{f}^{(1)} + \mathbf{f}^{(2)} + \cdots\label{stf}
 \end{eqnarray}
 
-Dadurch ergeben sich Terme unterschiedlicher störungstheoretischer Ordnungen. Durch diagrammatischen Vergleich dieser Terme mit den aus den Goldstone-Diagrammen bekannten Ausdrücken wird die ADC-Matrix sukzessive aufgebaut. Lediglich die statische Selbstenergie wird iterativ berechnet und den restlichen Termen hinzugefügt. Letztenendes wird die ADC-Matrix diagonalisiert.
+From this, different orders of perturbation theory of the Hamiltonian can be
+constructed successively. The contributions to the different classes are shown
+in figure \ref{figure:adcmat_pgf} for the case of \ac{ADC}xy.
+The matrix elements are explicitiely given by
 
-Mit Hilfe dieser Methode lassen sich nun die zwei für Ionisierungsspektren relevanten Größen berechnen. Die Ionisierungsenergien werden aus der diagonalisierten ADC-Matrix $\mathbf{\Omega}$ erhalten und die Intensitäten aus den Polstärken der Greensfunktion mit den Übergangsamplituden $\mathbf{x}=\mathbf{Y}^\dagger\mathbf{f}$.
+HALLO
 
-Es lässt sich zeigen, dass ADC in der ISR eine kompakte und größenkonsistente Methode ist und sich daher sehr gut zur Berechnung schwach gebundener Systeme und Cluster eignet.\cite{Mertins96_1}
+
+
+
+
 
 
 \begin{figure}[h]
