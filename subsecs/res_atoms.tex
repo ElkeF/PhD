@@ -320,32 +320,40 @@ of all corresponding satellite configurations.
 
 \subsection{Auger Decay from the Xe4d Region}
 
+The Auger process from the Xe4d subshell has been experimentally
+measured to high accuracy and is used as a calibration standard. \cite{Carroll02}
+The decay widths have been measured e.g. Ausmees \textit{et al.}
+\cite{Ausmees99,Aksela94}
+Theoretically it has been investigated  by Mäntykenttä \cite{Maentykenttae93}
+and lately as a competing process for
+sequential double ionization using a free electron laser \cite{Fritzsche11}
+using \ac{MCDF}. 
+We are going to compare the experimental and theoretical findings with our 
+the results from our calculations presented in table \ref{table:xe_auger_4d_rates}.
 
-%\begin{table}[h]
-% \centering
-% \footnotesize
-% \caption{Auger decay widths of the Xe4d$_{3/2}$ and Xe4d$_{3/2}$
-%          and the non-relativistic
-%          4d compared to experimental values\cite{Ausmees99}.
-%          All widths are given in \unit{eV}.
-%          The partial widths are renormalized to the total width.}
-% \begin{tabular}{lccccccc}
-%   \toprule
-%                      & 4d$_{5/2,\pm 5/2}$ & 4d$_{5/2,\pm 3/2}$ & 4d$_{3/2,\pm 3/2}$ & 4d$_{3/2,\pm 1/2}$& 4d$_{nrel}$ & exp. 4d$_{5/2}$ & exp. 4d$_{3/2}$\\
-%   \midrule                                                                                     
-%   energy [\unit{eV}] &   66.87            &     66.87          &   68.91        &    68.91   &&& \\
-%   pole strength      &     0.879          &      0.879         &    0.879       &     0.879  &&& \\
-%   \midrule                                                                                    
-%   $5s^{-2}$          & 2.34$\cdot10^{-2}$ & 2.30$\cdot10^{-2}$ & 1.73$\cdot10^{-2}$ & 1.62$\cdot10^{-2}$ & 6.27$\cdot10^{-4}$ &&\\
-%   $5s^{-1}5p^{-1}$   & 5.40$\cdot10^{-2}$ & 5.34$\cdot10^{-2}$ & 3.35$\cdot10^{-2}$ & 3.21$\cdot10^{-2}$ & 1.50$\cdot10^{-2}$ &&\\
-%   $5p^{-1}5p^{-1}$   & 8.45$\cdot10^{-2}$ & 8.57$\cdot10^{-2}$ & 8.15$\cdot10^{-2}$ & 8.21$\cdot10^{-2}$ & 3.21$\cdot10^{-2}$ &&\\
-%   \midrule
-%   total              & 0.1619$\pm$0.1     &   0.1621$\pm$0.1   &  0.1323$\pm$0.1    &   0.1304$\pm$0.1   &       & 0.105--0.116       & 0.110--0.130\\
-%   \bottomrule                                                                                 
-% \end{tabular}                                                                                 
-% \label{table:xe_auger_4d_rates}
-%\end{table}
+From the single ionization spectrum of the full Hamiltonian, initial state
+energies of \unit[67.03]{eV} and \unit[69.04]{eV} were obtained. They deviate
+from the experimental values shown in \ref{table:xe_auger_4d_rates}
+by about \unit[0.5]{eV} and are very close to the values calculated with
+\ac{MCDF} \cite{Fritzsche11}. However, the spin-orbit splitting of
+$\Delta_{SO,calc}=\unit[2.01]{eV}$ is very close to the experimental value
+of $\Delta_{SO,exp}=\unit[1.99]{eV}$. Even though the initial state energies of the
+initial state subspace deviates from the experimental numbers, the spin-orbit
+splitting is well preserved to be $\Delta_{SO,part}=\unit[2.04]{eV}$.
 
+The open final state channels as summarized in table
+\ref{table:Xe_open_channels} are $5s^{-2}$, $5s^{-1}5p^{-1}$ and $5p^{-1}5p^{-1}$.
+
+
+In order to obtain the decay widths at the resonant energies,
+higher orders of Stieltjes (15 -- 38) were predominantely
+used for the interpolation to yield the approximate decay width function.
+It became necessary, because in the partitioned Hamiltonian the $5s^{-2}$ channel
+opens very close to threshold and hence the resonance energy at which the decay width
+function is evaluated is very steep. Therefore, for a reasonable description,
+the higher orders were needed. In such cases also the error of the evaluated decay width 
+is rather
+large compared to the decay widths themselves being $\Delta(\Gamma)=\unit[0.1]{eV}$.
 
 \begin{table}[h]
  \centering
@@ -364,9 +372,44 @@ of all corresponding satellite configurations.
      4d$_{3/2,\pm 3/2}$ &  68.91    &   0.879       & 1.73$\cdot10^{-2}$ & 3.35$\cdot10^{-2}$ & 8.15$\cdot10^{-2}$ & 0.1323 $\pm$ 0.1\\
      4d$_{3/2,\pm 1/2}$ &  68.91    &   0.879       & 1.62$\cdot10^{-2}$ & 3.21$\cdot10^{-2}$ & 8.21$\cdot10^{-2}$ & 0.1304 $\pm$ 0.1\\
      4d$_{nrel}$        &  70.68    &   0.878       & 1.15$\cdot10^{-2}$ & 0.84$\cdot10^{-2}$ & 3.02$\cdot10^{-2}$ & 0.0501 $\pm$ 0.1\\
-     exp. 4d$_{5/2}$    &  67.55    &               &                    &                    &                    & 0.110 -- 0.130  \\
-     exp. 4d$_{3/2}$    &  69.54    &               &                    &                    &                    & 0.105 -- 0.116  \\
+     \midrule
+     exp. 4d$_{5/2}$    &  67.55 \cite{King77}   &      &       &   &    & 0.110 -- 0.130 \cite{Ausmees99} \\
+     exp. 4d$_{3/2}$    &  69.54 \cite{King77}   &      &       &   &    & 0.105 -- 0.116 \cite{Ausmees99} \\
+     calc. 4d$_{5/2}$ \cite{Maentykenttae93} &67.55&    &       &   &    & 0.160  \\
+     calc. 4d$_{3/2}$ \cite{Maentykenttae93} &69.54&    &       &   &    & 0.143  \\
    \bottomrule                                                                                 
  \end{tabular}                                                                                 
  \label{table:xe_auger_4d_rates}
 \end{table}
+
+The total decay width obtained with the FanoADC Stieltjes method agree with
+both the experimental results and the \ac{MCDF} result within the error margins.
+Even though the error margins are large, the deviation of the results
+from the experimental findings are
+less than \unit[52]{meV} and hence much smaller than the error margin. 
+Compared to the \ac{MCDF} the deviations are much smaller, for the 4d$_{5/2}$
+the results are very close with a difference of \unit[2]{meV} and for the
+4d$_{3/2}$ with a difference of \unit[10]{meV}.
+
+
+As shown in figure \ref{figure:Xe_sdip}, some of the final state groups
+split into different terms which have been thoroughly analyzed by
+Pernpointner \textit{et al.} \cite{Pernpointner12_2}. From this analysis
+it can easily be seen that the terms are combinations of different $2h$
+configurations. Therefore a definition of the final state by $2h$
+configurations is unfortunately insufficient for a more detailed
+study of partial decay widths.
+However, the Auger process from the Xe4d region with an improved method
+would be worth investigating, since decay width and branching ratios have been
+measured experimentally. \cite{Aksela94}
+
+
+\section{Summary}
+From these examples we have shown that the FanoADC Stieltjes method implemented
+in Dirac is able to both reproduce results of the comparable non-relativstic
+code of Koloren\v{c}  and results from \ac{MCDF} calculations
+including relativistic effects in Auger processes as well as the corresponding
+experimental results.
+We therefore conclude that the relativistic FanoADC Stieltjes Code is able
+to predict unknown decay widths for larger systems such as dimers and small
+clusters.
