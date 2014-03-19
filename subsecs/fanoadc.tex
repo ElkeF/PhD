@@ -13,6 +13,15 @@ the class of $2h1p$ states, where the $2h$ part is assumed to
 describe the doubly ionized final state and the particle maps the continuum electron.
 The initial state in a zeroth order approximation can be described as a $1h$ state.
 
+For the partitioning two different methods are known in the literature:
+the selection by $2h$ contributions, which correspond to final states of
+the process\cite{Averbukh05}, or by energy\cite{}.
+The first is easy to implement while the second automatically
+enables the correct calculation of decay widths in system with lower than
+spherical symmetry, but which have inversion symmetry.
+
+
+\subsection{Partitioning by Population}
 In the actual partitioning, all $2h1p$ with the $2h$ part corresponding to
 a final state configuration are chosen to be part of the final states.
 All $1h$ configurations and those $2h1p$ configurations not corresponding
@@ -58,6 +67,24 @@ of channel $\beta$
 $V_{i,\beta} = \braket{\phi |\hat{H}| \psi_{\beta, 2h1p}}$.
 
 
+
+\subsection{Partitioning by Energy}
+A partitioning by energy requires first a calculation of the double ionization
+spectrum with the same conditions as regarded for the later decay width
+calculation. From the results, the number of open channel contributions
+for each symmetry are determined manually. Then, the satellite block
+of the \ac{ADC} matrix is constructed such, that for each particle a
+small $2h1p$ block is to be found on the diagonal. These blocks are diagonalized.
+It is assumed, that the resulting order of the $2h$ configurations is the
+same for all particles and equals the one from the former double ionization
+potential calculation. These \textit{precorrelated} final states are then
+partitioned with respect to energy into the the initial or the final state
+subspace. In practice, rather the coefficients which allow for the construction
+of the precorrelated final states from the uncorrelated matrix elements are stored.
+Finally the \ac{ADC} matrix is constructed using the precorrelated final states.
+
+From this point on, the calculation is the same as in the case of the partitioning
+based on population.
 
 
 \section{How to Obtain Trustworthy Results}
