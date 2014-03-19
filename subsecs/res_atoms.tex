@@ -215,9 +215,46 @@ not be trusted.
  \label{table:xe_auger_rest}
 \end{table}
 
-Vergleich mit anderen Ergebnissen, auch relative Peakintensitäten einbeziehen.
-Zwei Tabellen?
 
+\begin{table}[h]
+ \centering
+ \caption{Auger decay widths of the Xe4p$_{3/2}$ and the non-relativistic
+          partial widths are renormalized to the total width.}
+ \begin{tabular}{lcccc}
+   \toprule
+                        & exp   & calc\footnotemark[1] & calc\footnotemark[2] & calc\footnotemark[3] \\
+   \midrule                                                                         
+   energy [\unit{eV}]   & 145.6 &  145.0       &  145.0       &   147.57   \\
+   $\Gamma$ [\unit{eV}] &  0.54 &  1.80        &  0.3116      &  0.814\\
+   \bottomrule
+ \end{tabular}
+ \label{table:xe_auger_comp}
+\end{table}
+\footnotetext[1]{\ac{MCDF} calculation excluding final ionic state configuration
+                 interaction. \cite{Heinaesmaeki04}}
+\footnotetext[2]{\ac{MCDF} calculation including final ionic state configuration
+                 interaction. \cite{Heinaesmaeki04}}
+\footnotetext[3]{This work.}
+
+
+\begin{table}[h]
+  \centering
+  \caption{Intensity distribution for the Auger decay.}
+  \begin{tabular}{lccccc}
+   \toprule
+                   & 4d$^{-1}$5s$^{-1}$ & 4d$^{-1}$5p$^{-1}$ & 5s$^{-2}$ & 5s$^{-1}$5p$^{-1}$ & 5p$^{-2}$ \\
+   \midrule
+   Ref. [\cite{Heinaesmaeki04}]\footnotemark[1] & 77.7 & 20.7  &       0.5 &       --           & 1.1     \\
+   Ref. [\cite{Heinaesmaeki04}]\footnotemark[2] & 33.6 & 59.4  &       2.2 &       --           & 4.8     \\
+   This work       &      16.1          &       78.1         &    0.1    &     1.8            & 3.9    \\
+   \bottomrule
+  \end{tabular}
+  \label{table:Xe_auger_distr}
+\end{table}
+\footnotetext[1]{\ac{MCDF} calculation excluding final ionic state configuration
+                 interaction. \cite{Heinaesmaeki04}}
+\footnotetext[2]{\ac{MCDF} calculation including final ionic state configuration
+                 interaction. \cite{Heinaesmaeki04}}
 
 
 The Xe4p$_{1/2}$ initial state can, as already mentioned, not be described
@@ -284,28 +321,52 @@ of all corresponding satellite configurations.
 \subsection{Auger Decay from the Xe4d Region}
 
 
+%\begin{table}[h]
+% \centering
+% \footnotesize
+% \caption{Auger decay widths of the Xe4d$_{3/2}$ and Xe4d$_{3/2}$
+%          and the non-relativistic
+%          4d compared to experimental values\cite{Ausmees99}.
+%          All widths are given in \unit{eV}.
+%          The partial widths are renormalized to the total width.}
+% \begin{tabular}{lccccccc}
+%   \toprule
+%                      & 4d$_{5/2,\pm 5/2}$ & 4d$_{5/2,\pm 3/2}$ & 4d$_{3/2,\pm 3/2}$ & 4d$_{3/2,\pm 1/2}$& 4d$_{nrel}$ & exp. 4d$_{5/2}$ & exp. 4d$_{3/2}$\\
+%   \midrule                                                                                     
+%   energy [\unit{eV}] &   66.87            &     66.87          &   68.91        &    68.91   &&& \\
+%   pole strength      &     0.879          &      0.879         &    0.879       &     0.879  &&& \\
+%   \midrule                                                                                    
+%   $5s^{-2}$          & 2.34$\cdot10^{-2}$ & 2.30$\cdot10^{-2}$ & 1.73$\cdot10^{-2}$ & 1.62$\cdot10^{-2}$ & 6.27$\cdot10^{-4}$ &&\\
+%   $5s^{-1}5p^{-1}$   & 5.40$\cdot10^{-2}$ & 5.34$\cdot10^{-2}$ & 3.35$\cdot10^{-2}$ & 3.21$\cdot10^{-2}$ & 1.50$\cdot10^{-2}$ &&\\
+%   $5p^{-1}5p^{-1}$   & 8.45$\cdot10^{-2}$ & 8.57$\cdot10^{-2}$ & 8.15$\cdot10^{-2}$ & 8.21$\cdot10^{-2}$ & 3.21$\cdot10^{-2}$ &&\\
+%   \midrule
+%   total              & 0.1619$\pm$0.1     &   0.1621$\pm$0.1   &  0.1323$\pm$0.1    &   0.1304$\pm$0.1   &       & 0.105--0.116       & 0.110--0.130\\
+%   \bottomrule                                                                                 
+% \end{tabular}                                                                                 
+% \label{table:xe_auger_4d_rates}
+%\end{table}
+
+
 \begin{table}[h]
  \centering
- \caption{Auger decay widths of the Xe4d$_{3/2}$ and the non-relativistic
-          4p. All widths are given in \unit{eV}. The non-relativistic
-          results have to be handled with care, since in the calculation
-          the sum over the partial decay widths is much larger, than the
-          total decay width, which is not seen in this table, because
-          partial widths are renormalized to the total width.}
- \begin{tabular}{lccccc}
+ \footnotesize
+ \caption{Auger decay widths of the Xe4d$_{3/2}$ and Xe4d$_{3/2}$
+          and the non-relativistic
+          4d compared to experimental values\cite{Ausmees99}.
+          All widths are given in \unit{eV}.
+          The partial widths are renormalized to the total width.}
+ \begin{tabular}{lcccccc}
    \toprule
-                      & 4d$_{5/2,\pm 5/2}$ & 4d$_{5/2,\pm 3/2}$ & 4d$_{3/2,\pm 3/2}$ & 4d$_{3/2,\pm 1/2}$& 4d$_{nrel}$ \\
+               & energy [\unit{eV}] & pole strength & $5s^{-2}$          & $5s^{-1}5p^{-1}$   & $5p^{-1}5p^{-1}$   & total \\
    \midrule                                                                                     
-   energy [\unit{eV}] &   147.57           &    147.57          &  149.88        &   151.20   & \\
-   pole strength      &     0.694          &      0.694         &    0.482       &     0.209  & \\
-   \midrule                                                                                    
-   $5s^{-2}$          & 6.27$\cdot10^{-4}$ & 6.29$\cdot10^{-4}$ & 3.83$\cdot10^{-4}$ & 8.65$\cdot10^{-5}$ & 6.27$\cdot10^{-4}$\\
-   $5s^{-1}5p^{-1}$   & 1.50$\cdot10^{-2}$ & 1.49$\cdot10^{-2}$ & 3.02$\cdot10^{-2}$ & 2.07$\cdot10^{-3}$ & 1.50$\cdot10^{-2}$\\
-   $5p^{-1}5p^{-1}$   & 3.21$\cdot10^{-2}$ & 2.90$\cdot10^{-2}$ & 5.62$\cdot10^{-3}$ & 1.42$\cdot10^{-2}$ & 3.21$\cdot10^{-2}$\\
-   \midrule
-   total              &   0.814            &   0.818            &  0.610         &   0.243    &\ \\
-   \bottomrule                                                                                 \
- \end{tabular}                                                                                 \
- \label{table:xe_auger_rest}
+     4d$_{5/2,\pm 5/2}$ &  66.87    &   0.879       & 2.34$\cdot10^{-2}$ & 5.40$\cdot10^{-2}$ & 8.45$\cdot10^{-2}$ & 0.1619 $\pm$ 0.1\\
+     4d$_{5/2,\pm 3/2}$ &  66.87    &   0.879       & 2.30$\cdot10^{-2}$ & 5.34$\cdot10^{-2}$ & 8.57$\cdot10^{-2}$ & 0.1621 $\pm$ 0.1\\
+     4d$_{3/2,\pm 3/2}$ &  68.91    &   0.879       & 1.73$\cdot10^{-2}$ & 3.35$\cdot10^{-2}$ & 8.15$\cdot10^{-2}$ & 0.1323 $\pm$ 0.1\\
+     4d$_{3/2,\pm 1/2}$ &  68.91    &   0.879       & 1.62$\cdot10^{-2}$ & 3.21$\cdot10^{-2}$ & 8.21$\cdot10^{-2}$ & 0.1304 $\pm$ 0.1\\
+     4d$_{nrel}$        &  70.68    &   0.878       & 1.15$\cdot10^{-2}$ & 0.84$\cdot10^{-2}$ & 3.02$\cdot10^{-2}$ & 0.0501 $\pm$ 0.1\\
+     exp. 4d$_{5/2}$    &  67.55    &               &                    &                    &                    & 0.110 -- 0.130  \\
+     exp. 4d$_{3/2}$    &  69.54    &               &                    &                    &                    & 0.105 -- 0.116  \\
+   \bottomrule                                                                                 
+ \end{tabular}                                                                                 
+ \label{table:xe_auger_4d_rates}
 \end{table}
-
