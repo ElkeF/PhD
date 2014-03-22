@@ -7,6 +7,7 @@
 \usepackage{fancyhdr}
 \usepackage{units}
 \usepackage{graphicx}
+\usepackage{placeins}
 \usepackage{tikz,pgfplots}
 \usepackage{tikz-qtree}
 %\usepackage{pst-all}
@@ -41,6 +42,7 @@
 
 %pgf Bibliotheken
 \usetikzlibrary{patterns,shadows,trees}
+\usepgfplotslibrary{units}
 
 % pgfplots Legenden außerhalb von Plots
 \newenvironment{customlegend}[1][]{%
@@ -111,15 +113,14 @@
 
 \include{acronyms}
  
-%\include{intro}
-%\include{theory}
+\include{intro}
+\include{theory}
 \include{methodology}
-%\include{programmes}
 \include{results}
-%\include{summary}
-%\include{outlook}
-%
-%\include{appendix}
+\include{summary}
+\include{outlook}
+
+\include{appendix}
 
 \bibliographystyle{jcpsty_deutsch}
 \bibliography{theolit}
