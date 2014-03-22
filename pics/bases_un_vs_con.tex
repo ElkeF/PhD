@@ -1,0 +1,35 @@
+\begin{tikzpicture}[font=\footnotesize]
+
+\begin{axis}[
+             scale=1.0,
+             ytick={0,0.05,...,0.15},
+             yticklabels={0,0.05,...,0.15},
+             xlabel={Energy in a.u.},
+             ylabel=$\Gamma$ in a.u.,
+             title={Comparison of Contracted and Uncontracted cc-pVQZ}
+%             domain=1.72:1.76,
+%             y domain=1.16:1.20
+             ]
+
+	
+\addplot[color=diplom1,
+         mark=*,
+         ycomb
+        ]
+        table[
+        x expr=\thisrowno{0} - 31.88,
+        y expr=\thisrowno{1}*2*3.14159265359
+        ] {data/uncontract/cc-pVQZ};
+        \addlegendentry{uncontracted}
+\addplot[color=black,
+         mark=*,
+         ycomb
+        ]
+        table[
+        x expr=\thisrowno{0} -31.88,
+        y expr=\thisrowno{1}*2*3.14159265359
+        ] {data/contract/cc-pVQZ};
+        \addlegendentry{contracted}
+
+\end{axis}
+\end{tikzpicture}
