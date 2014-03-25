@@ -1,0 +1,72 @@
+    \begin{tikzpicture}
+
+        \begin{axis}[
+            use units,
+            x unit=eV,
+            y unit=a.u.,
+%            title={Spektrum},
+            xmin=0,
+            xmax=10.5,
+            axis x line=bottom,
+%            axis x discontinuity=parallel,
+            ymin=0,
+            ymax=3.4,
+            axis y line=left,
+            samples=1000,
+            scale=1.00,
+            legend style={draw=none},
+            legend cell align=center,
+            legend pos=outer north east
+            ]
+
+        \addplot[
+            mark=none,
+            color=black,
+            ]
+            table[
+            x expr=\thisrowno{0},
+            y expr=\thisrowno{1} * 25.4518
+            ]
+            {data/near_clusters/set1.sp};
+        \addplot[
+            mark=none,
+            color=green,
+            ]
+            table[
+            x expr=\thisrowno{0},
+            y expr=\thisrowno{1} * 27.0625
+            ]
+           {data/near_clusters/set2.sp};
+
+        \addplot[
+            mark=none,
+            color=blue,
+            ]
+            table[
+            x expr=\thisrowno{0},
+            y expr=\thisrowno{1} * 43.2460
+            ]
+            {data/near_clusters/set3.sp};
+
+        \addplot[
+            mark=none,
+            color=cyan,
+            ]
+            table[
+            x expr=\thisrowno{0},
+            y expr=\thisrowno{1} * 35.4689
+            ]
+            {data/near_clusters/set4.sp};
+
+        \addplot[
+            mark=none,
+            color=red,
+            ]
+            table[
+            x expr=\thisrowno{0},
+            y expr=\thisrowno{1} * 76.3945
+            ]
+            {data/near_clusters/set5.sp};
+        \end{axis}
+    \end{tikzpicture}
+

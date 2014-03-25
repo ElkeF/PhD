@@ -1,0 +1,44 @@
+\begin{tikzpicture}[font=\footnotesize]
+
+\begin{axis}[
+             scale=1.0,
+             %ytick={0,0.05,...,0.15},
+             %yticklabels={0,0.05,...,0.15},
+             xlabel={Energy in a.u.},
+             ylabel=$\Gamma$ in a.u.,
+             title={Pseudo-Spectra of Different Basis Set Groups}
+%             domain=1.72:1.76,
+%             y domain=1.16:1.20
+             ]
+
+	
+\addplot[color=diplom2,
+         mark=*,
+         ycomb
+        ]
+        table[
+        x expr=\thisrowno{0},
+        y expr=\thisrowno{1}*2*3.14159265359
+        ] {data/uncontract/cc-pCV6Z};
+        \addlegendentry{cc-pCV6Z}
+\addplot[color=diplom1,
+         mark=*,
+         ycomb
+        ]
+        table[
+        x expr=\thisrowno{0} -31.88,
+        y expr=\thisrowno{1}*2*3.14159265359
+        ] {data/uncontract/aug-cc-pV6Z};
+        \addlegendentry{aug-cc-pV6Z}
+\addplot[color=black,
+         mark=*,
+         ycomb
+        ]
+        table[
+        x expr=\thisrowno{0} - 31.88,
+        y expr=\thisrowno{1}*2*3.14159265359
+        ] {data/uncontract/cc-pV6Z};
+        \addlegendentry{cc-pV6Z}
+
+\end{axis}
+\end{tikzpicture}

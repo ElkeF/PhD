@@ -1,0 +1,38 @@
+
+                \begin{tikzpicture}%[scale=.55]
+                    \begin{axis}[
+                        use units,
+                        x unit=\%,
+                        y unit=\%,
+                        xmin=0,
+                        xmax=100,
+                        %axis x line=bottom,
+%                       axis x discontinuity=parallel,
+                        ymin=0,
+                        ymax=100,
+                        %axis y line=left,
+                        samples=1000,
+                        scale=0.55,
+                        legend style={draw=none},
+                        legend cell align=center,
+                        legend pos=south east,
+                        axis line style={-}
+                        ]
+                    \addplot[
+                        only marks,
+                        mark=10-pointed star,
+                        color=blue!50!black,
+                        error bars,
+                        y dir=both,
+                        y explicit
+                        ]
+                        table[
+                        x expr=\thisrowno{0},
+                        y expr=\thisrowno{1}
+                        %y error expr=\thisrowno{2}
+                        ]
+                        {data/near_clusters/schale02.csv};
+                        \addlegendentry{1 - 5 layers}
+                    \input{pics/near_clusters/exp-Daten-input}
+                    \end{axis}
+                \end{tikzpicture}

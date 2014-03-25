@@ -1,0 +1,67 @@
+                \begin{tikzpicture}%[scale=1]
+                    \begin{axis}[
+                        use units,
+                        x unit=\%,
+                        y unit=\%,
+                        xmin=0,
+                        xmax=100,
+                       % axis x line=bottom,
+                        %axis x discontinuity=parallel,
+                        ymin=0,
+                        ymax=100,
+                        %axis y line=left,
+                        samples=1000,
+                        scale=0.55,
+                        legend style={draw=none},
+                        legend cell align=center,
+                        legend pos=south east,
+                        axis line style={-}
+                        ]
+%                    \addplot[
+%                        only marks,
+%                        mark=10-pointed star,
+%                        color=cyan!65!black,
+%                        error bars,
+%                        y dir=both,
+%                        y explicit
+%                        ]
+%                        table[
+%                        x expr=\thisrowno{0},
+%                        y expr=\thisrowno{1}
+%                        %y error expr=\thisrowno{2}
+%                        ]
+%                        {data/near_clusters/random-core08.csv};
+%                        \addlegendentry{0 shells}
+%                    \addplot[
+%                        only marks,
+%                        mark=10-pointed star,
+%                        color=blue!40!black,
+%                        error bars,
+%                        y dir=both,
+%                        y explicit
+%                        ]
+%                        table[
+%                        x expr=\thisrowno{3},
+%                        y expr=\thisrowno{4},
+%                        %y error expr=\thisrowno{5}
+%                        ]
+%                        {data/near_clusters/random-core08.csv};
+%                        \addlegendentry{1 shell}
+                    \addplot[
+                        only marks,
+                        mark=10-pointed star,
+                        color=red!40!black,
+                        error bars,
+                        y dir=both,
+                        y explicit
+                        ]
+                        table[
+                        x expr=\thisrowno{6},
+                        y expr=\thisrowno{7},
+                        %y error expr=\thisrowno{8}
+                        ]
+                        {data/near_clusters/random-core08.csv};
+                        \addlegendentry{2 shells}
+                    \input{pics/near_clusters/exp-Daten-input}
+                \end{axis}
+            \end{tikzpicture}

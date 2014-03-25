@@ -1,0 +1,25 @@
+\filldraw [black,thin,opacity=0.15] (axis cs:37,56) rectangle (axis cs:57,70);
+\filldraw [green,thin,opacity=0.25] (axis cs:30,51) rectangle (axis cs:40,71);
+\filldraw [blue,thin,opacity=0.25] (axis cs:17,33) rectangle (axis cs:25,43);
+\filldraw [cyan,thin,opacity=0.15] (axis cs:16,47) rectangle (axis cs:24,59);
+\filldraw [red,thin,opacity=0.15] (axis cs:6,25) rectangle (axis cs:10,31);
+
+\addplot[
+            only marks,
+            mark=+,
+            clip mode=individual,
+            color=black,
+            error bars,
+            x dir=both,
+            x explicit,
+            y dir=both,
+            y explicit
+            ]
+            coordinates{
+            (47,63) +-  (10,7)
+            (35,61) +-  (5,10)
+            (21,38) +-  (4,5)
+            (20,53) +-  (4,6)
+            (8,28) +-  (2,3)
+            };
+            \addlegendentry{experimental data}

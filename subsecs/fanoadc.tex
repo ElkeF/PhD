@@ -13,6 +13,15 @@ the class of $2h1p$ states, where the $2h$ part is assumed to
 describe the doubly ionized final state and the particle maps the continuum electron.
 The initial state in a zeroth order approximation can be described as a $1h$ state.
 
+For the partitioning two different methods are known in the literature:
+the selection by $2h$ contributions, which correspond to final states of
+the process\cite{Averbukh05}, or by energy\cite{}.
+The first is easy to implement while the second automatically
+enables the correct calculation of decay widths in system with lower than
+spherical symmetry, but which have inversion symmetry.
+
+
+\subsection{Partitioning by Population}
 In the actual partitioning, all $2h1p$ with the $2h$ part corresponding to
 a final state configuration are chosen to be part of the final states.
 All $1h$ configurations and those $2h1p$ configurations not corresponding
@@ -59,9 +68,114 @@ $V_{i,\beta} = \braket{\phi |\hat{H}| \psi_{\beta, 2h1p}}$.
 
 
 
+\subsection{Partitioning by Energy}
+A partitioning by energy requires first a calculation of the double ionization
+spectrum with the same conditions as regarded for the later decay width
+calculation. From the results, the number of open channel contributions
+for each symmetry are determined manually. Then, the satellite block
+of the \ac{ADC} matrix is constructed such, that for each particle a
+small $2h1p$ block is to be found on the diagonal. These blocks are diagonalized.
+It is assumed, that the resulting order of the $2h$ configurations is the
+same for all particles and equals the one from the former double ionization
+potential calculation. These \textit{precorrelated} final states are then
+partitioned with respect to energy into the the initial or the final state
+subspace. In practice, rather the coefficients which allow for the construction
+of the precorrelated final states from the uncorrelated matrix elements are stored.
+Finally the \ac{ADC} matrix is constructed using the precorrelated final states.
+
+From this point on, the calculation is the same as in the case of the partitioning
+based on population.
+
 
 \section{How to Obtain Trustworthy Results}
 \subsection{Choice of Basis Set and Active Space}
+A good basis set for a decay width calculation has to both
+describe the initial state of the process reasonably well and to mimic
+the outgoing secondary electron. The first requires a correlated basis set, since
+the initial state is ionized in the inner- or subvalence region.
+The latter requires the basis set to be:
+
+
+\begin{enumerate}
+ \item of high density
+ \item including diffuse functions
+ \item uncontracted
+\end{enumerate}
+Since in the Stieltjes approach the Chebyshev polynomials are constructed from
+the pseudo-spectrum, the denser this pseudo-spectrum is, the better can the
+description of the decay width be expected to be. A Stieltjes calculation starting
+from a pseudo-spectrum with less than four points with a significant contribution
+in the energy range of interest can not be expected to give reasonable results.
+
+\begin{figure}[ht]
+  \centering
+  \input{pics/bases_un_vs_con}
+  \caption{Shifted pseudo-spectra for different basis sets with $E_r=0$
+           for the Auger process following an ionization of the neon 1s.
+           Comparison of contracted and uncontracted cc-pVQZ.}
+  \label{figure:bases_pseudospectra}
+\end{figure}
+
+A contraction of the basis set reduces its flexibility and optimizes the
+description of the electron cloud close to the nuclei. Since in the decay width
+calculation one aims to mimic the delocalized outgoing electron by
+$\mathcal{L}^2$ functions, a contraction leads to a very narrow pseudo-spectrum
+in energy regions which are of no interest and is therefore counterproductive.
+
+\begin{figure}[ht]
+  \centering
+  \input{pics/bases_classes}
+  \caption{Shifted pseudo-spectra for different basis sets with $E_r=0$
+           for the Auger process following an ionization of the neon 1s.
+           Different basis set classes.}
+  \label{figure:bases_pseudospectra}
+\end{figure}
+
+An example is given in figure \ref{figure:bases_pseudospectra} for some selected
+basis sets for the Auger following an ionization of the Ne1s. The resonance energy
+about \unit[32]{a.u.}. It can easily be seen, that the smaller double and
+quadruple zeta basis sets do not cover the range of the resonance energy in case
+of the contracted basis sets. Additionally it can be seen that the pseudo-spectrum
+of the uncontracted basis is much broader and more dense close to the resonance
+energy. The contracted cc-pV6Z basis set covers the energy range quite well, which
+is not to be expected in general.
+
+\begin{figure}[ht]
+  \centering
+  \input{pics/bases_jungen_classes}
+  \caption{Pseudo-spectra for the Auger process following the ionization
+           out of the Ne1s for the aug-cc-pV6Z basis set with additional
+           \ac{KBJ} basis functions of the s, p and d type.}
+  \label{figure:bases_jungen}
+\end{figure}
+
+In order to mimic the outgoing electron with $\mathcal{L}^2$ functions, the
+exponents of the basis set have to include the energy range of the expected
+kinetic energy of the electron. Preferably, the basis set is very dense in
+this energy region. Additionally, and especially for processes close to threshold
+with slow
+secondary electrons, the basis set should contain many diffuse and hence
+delocalized functions. They allow to cover the spacial range of the interaction
+region and hence states with the electron being disrupted from the nuclei.
+For this purpose additional basis functions of the \ac{KBJ}\cite{Kaufmann89}
+type are used at the atomic positions or in case of molecules on ghost atoms
+positioned between the atoms. Their effect on the density of the pseudo-spectrum
+is illustrated in figure \ref{figure:bases_jungen}. There, the contributions of the
+different anuglar momentum functions are shown. Each class adds some significant
+points to the pseudo-spectrum and hence, in combination, a good and dense
+pseudo-spectrum is created.
+
+Additionally the active space needs to include the orbitals of the initial state
+shell as well as a reasonably large number of positive energy solutions. These
+positive energy solutions describe the outgoing electron an hence the kinetic energy
+of the electron has to be included. Furthermore, since the Stieltjes procedure is
+based on an interpolation, energies higher than the kinetic energy of the outgoing
+electron are as well needed. From experience, the positive energy of the active
+space should at least cover the kinetic energy of the outgoing electron plus
+\unit[10]{a.u.}.
+
+
+
 \subsection{Quality Check Using the Decay Width Profile}
 Errors and instabilities of the FanoADC-Stieltjes calculation can be observed
 in the energy dependence of the calculated decay width $\Gamma(E)$.
@@ -94,7 +208,10 @@ with Rydberg states.
 \begin{figure}[h]
   \centering
   \input{pics/prof_channel_opening}
-  \caption{}
+  \caption{Schematic illustration of a decay width profile with three
+           channels. At the resonant energy $E_{r,1}$, the first two channels
+           are open and at the resonance energy $E_{r,2}$ all three channels
+           are open.}
   \label{figure:prof_channel_opening}
 \end{figure}
 In case of channel openings, at low energies the decay width is decreasing, but
@@ -122,7 +239,8 @@ figure \ref{figure:prof_rydberg}.
 \begin{figure}[h]
   \centering
   \input{pics/prof_rydberg}
-  \caption{}
+  \caption{Schematic illustration of a decay width profile with couplings
+           of the initial state to Rydberg states.}
   \label{figure:prof_rydberg}
 \end{figure}
 Here the density function is in principle a monotonically decreasing function,

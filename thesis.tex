@@ -7,6 +7,7 @@
 \usepackage{fancyhdr}
 \usepackage{units}
 \usepackage{graphicx}
+\usepackage{placeins}
 \usepackage{tikz,pgfplots}
 \usepackage{tikz-qtree}
 %\usepackage{pst-all}
@@ -18,28 +19,30 @@
 \usepackage{dsfont} % Einheitsmatrix
 \usepackage{mathrsfs} % geschwungenes H
 \usepackage[figuresright]{rotating}
-%\usepackage[erelpos=over,ediffsize=tiny,edifffam=rm,ediffshape=up,unit=kJ]{schemepst}
 \usepackage{braket} % setzt Bra-Ket-Schreibweise richtig
 \usepackage{lmodern,dsfont}
 \usepackage{booktabs}
 \usepackage{setspace}
 \usepackage{slashbox} % erm?glicht diagonale Linien in Tabellen
-\usepackage{lscape}
 \usepackage[toc,page]{appendix}
 \usepackage[printonlyused,withpage]{acronym}
 \usepackage{afterpage}
 \usepackage{listings}
+\usepackage{multirow}
 \lstset{numbers=left, numberstyle=\tiny, numbersep=5pt, basicstyle=\footnotesize }
 \makeatletter
 \lst@AddToHook{TextStyle}{\let\lst@basicstyle\normalsize}
 \makeatother
 
 %Formatierung der Tabellen- und Bildunterschriften
-\captionsetup[figure]{format=plain, justification=raggedright, singlelinecheck=false}
-\captionsetup[table]{position=top, format=plain, justification=raggedright, singlelinecheck=false}
+\captionsetup[figure]{format=plain, justification=raggedright, singlelinecheck=false,
+                      font=small, labelfont=bf}
+\captionsetup[table]{position=top, format=plain, justification=raggedright,
+                     singlelinecheck=false, font=small, labelfont=bf}
 
 %pgf Bibliotheken
 \usetikzlibrary{patterns,shadows,trees}
+\usepgfplotslibrary{units}
 
 % pgfplots Legenden außerhalb von Plots
 \newenvironment{customlegend}[1][]{%
@@ -110,15 +113,14 @@
 
 \include{acronyms}
  
-%\include{intro}
-%\include{theory}
+\include{intro}
+\include{theory}
 \include{methodology}
-%\include{programmes}
-%\include{results}
-%\include{summary}
-%\include{outlook}
-%
-%\include{appendix}
+\include{results}
+\include{summary}
+\include{outlook}
+
+\include{appendix}
 
 \bibliographystyle{jcpsty_deutsch}
 \bibliography{theolit}
