@@ -285,30 +285,62 @@ E'\Psi^L = \frac{c^2(\mathbf{\sigma}\cdot\hat{\mathbf{p}})^2}{E'+2mc^2}\,\Psi^L\
 \lim_{c\rightarrow\infty} E'\Psi^L = \frac{(\mathbf{\sigma}\cdot\hat{\mathbf{p}})^2}{2m} \qquad\text{with}\quad (\mathbf{\sigma}\cdot\hat{\mathbf{p}})^2=\hat{\mathbf{p}}^2\label{nonrelgr}
 \end{equation}
 
-Gleichung \ref{nonrelgr} ist offensichtlich das nicht-relativistische Eigenwertproblem eines freien Teilchens mit der gro?en Komponente als Eigenfunktion. Ihre beiden Komponenten k?nnen dabei mit den beiden m?glichen Spinzust?nden des Teilchens identifiziert werden.
+Obviously, equation (\ref{nonrelgr}) is equivalent to the non-relativistic
+eigenvalue problem with the large component of the wavefunction as eigenfunction.
+The two components can be identified with the two possible spin states.
 
-Die L?sung der Dirac-Gleichung f?hrt sowohl zu positiven als auch zu negativen Energien $E_+$ und $E_-$
+The solution of the Dirac equation leads to both positive and negative energy
+eigenvalues $E_+$ and $E_-$
+
 \begin{equation}
 E_\pm = \pm \sqrt{m^2c^4+p^2c^2}.
 \end{equation}
-Es gibt also ein kontinuierliches Spektrum an Energiezust?nden mit $mc^2\le E_+<\infty$ und $-\infty<E_-\le -mc^2$, mit einer Energiel?cke von $2mc^2$ zwischen den Kontinua. Es gilt nun, diese Energiezust?nde zu interpretieren. Ruhende Elektronen ($p=0$) haben immer mindestens die Energie $mc^2$, besitzen also positive Energien. Andererseits m?ssten die Elektronen bei m?glichen unbesetzen negativen Zust?nden spontan unter Abgabe elektromagnetischer Strahlung in diese negativen Zust?nde wechseln. Dieses unphysikalische Verhalten wurde von Dirac durch das Postulat, dass alle Zust?nde negativer Energie besetzt seien, behoben. Betrachtet man eine Anregung aus dem negativen Kontinuum zu den positiven Energien f?hrt das zu einem zus?tzlichen Elektron und einem verbleibenden Loch im negativen Kontinuum. Dieses Loch l?sst sich wie ein Teilchen beschreiben, das aufgrund der Ladungsneutralit?t des Gesamtsystems eine positive Ladung tr?gt, aber sonst die gleichen intrinsischen Eigenschaften hat wie das Elektron. Diese Positronen, denen die negativen Energien zugeordnet werden k?nnen, konnten 1933 erstmals experimentell nachgewiesen werden\cite{Anderson33} und f?hrten zu einer Verifizierung der Dirac-Gleichung. Die Theorie, die unter anderem die Paarerzeugung richtig beschreibt, ist die Quantenelektrodynamik, die hier nicht n?her erl?utert werden soll, die jedoch auch bei der Beschreibung der Wechselwirkung zwischen mehreren Elektronen relevant sein wird.
+
+Bild
+
+This means, that two continua of eigenvalues exist with an energy gap of $2mc^2$
+as shown in figure \ref{}.
+Particles at rest always have the energy $mc^2$ and hence positive energies.
+Such particles should normally deexcite to a state of lower energy and emit
+the excess energy as a photon. In order to take care of this unphysical behaviour
+Dirac postulated that all states of negative energies are occupied and hence
+inaccessible. An excitation of an electron from the negative energy region into
+the positive energy region would then correspond to a pair creation process yielding
+an electron and a hole. This hole needs to have the same mass and the opposite charge
+of the electron and was called positron. It was experimentally found and hence the
+theory was verified in 1933
+\cite{Anderson33}. However, it has to be noted that even though the Dirac equation
+allows for the description of such a pair creation process and motivated further
+theoretical investigation, the more rigorous
+description for all kinds of interactions between particles and electromagnetic
+fields is described by the \ac{QED}. The latter will also be important for the
+description of interaction between electrons in many particle systems.
 
 
-\subsubsection{L?sung der Diracgleichung f?r das Wasserstoffatom}\label{hatom}
-Im Wasserstoffatom bewegt sich das Elektron nicht mehr frei, sondern im Coulombfeld des Kerns. Dementsprechend muss das vierkomponentige Potential $A$ in der Dirac-Gleichung ber?cksichtigt werden. Da das durch den Kern verursachte Coulombfeld ein Zentralfeld ist, verschwindet das Vektorpotential ($\mathbf{A}=0$) und lediglich der skalare Anteil von $A$, der in diesem Fall die Form $\phi=\frac{eZ}r$ besitzt, ist relevant.
-Die zeitunabh?ngige Diracgleichung f?r ein Elektron im Zentralfeld ergibt sich damit zu
+
+\subsubsection{Solution of the Dirac Equation for the Hydrogen Atom}\label{hatom}
+The hydrogen atom is the most simple system of quantum chemistry. Its solutions
+are the basement for the description of any more complex system.
+In the hydrogen atom the electron is no longer moving freely but within the Coulomb
+field of the proton. The proton is assumed to be fixed in space and hence the
+potential in which the electron moves can be described by the scalar potential
+$\phi=\frac{eZ}r$ only. The other components of the four dimensional potential $A$
+are zero. Therefore the electronic part of the time-independent Dirac equation
+for one electron in the field of one positive charge reads as
 \begin{equation}
 \left(e\phi + c(\alpha\cdot\hat{\mathbf{p}})+\beta mc^2\right) \Psi = E \Psi.
 \end{equation}
 
-Im nicht-relativistischen Fall werden die L?sungen durch Separation der Wellenfunktion in einen Radialteil $R(r)$ und einen Winkelanteil $Y(\theta,\phi)$ erhalten.
+In non-relativistic quantum chemistry the solutions are separated into a radial
+$R(r)$ and an angular part $Y(\theta,\phi)$.
 
 \begin{equation}
 \Psi^{NR}(r,\theta,\phi) = \frac1r R_{nl}(r)Y^{ml}_l(\theta,\phi)
 \end{equation}
-Die L?sungen des Winkelanteils $Y_l^{m_l}(\theta,\phi)$ sind dabei die Kugelfl?chenfunktionen.
+Here the angular part are described by the spherical harmonics
+$Y_l^{m_l}(\theta,\phi)$.
 
-Analog scheint es sinnvoll, in der relativistischen Betrachtung ebenfalls einen Separationsansatz vorzunehmen, sodass sich aufgrund der Struktur des relativistischen Problems Gleichung \ref{seprel} ergibt.
+Analogously the relativistic wave functions are separated, which leads to
 
 \begin{equation}\label{seprel}
 \Psi(r,\theta,\phi,\tau) = \frac1r \left( \begin{array}{rl}
@@ -317,16 +349,26 @@ iQ_{n\kappa}(r) & \xi_{-\kappa,m}(\theta,\phi)
 \end{array}\right)
 \end{equation}
 
-Hierbei sind  $P_{n\kappa}(r)$ und $Q_{n\kappa}(r)$ die Radialteile der gro?en bzw. der kleinen Komponente des Spinors und $\xi_{\kappa,m}(\theta,\phi)$ sowie $\xi_{-\kappa,m}(\theta,\phi)$ zweikomponentige Spinoren, die den Winkelanteil beschreiben. Wie im nicht-relativistischen Fall sind die Radialanteile abh?ngig von der Hauptquantenzahl $n$ und die Winkelanteile von der magnetischen Quantenzahl $m_l$. Zur eindeutigen L?sung der relativistischen Winkelanteile muss noch die relativistische Quantenzahl $\kappa=\mp(j+\frac12)$ eingef?hrt werden, da sonst aufgrund der zwei m?glichen Spinzust?nde $s=\pm \frac12$ keine bijektive Abbildung zwischen einer gegebenen Drehimpulsquantenzahl $j=l+s$ und einer relativistischen Winkelfunktion existiert.
+Here, $P_{n\kappa}(r)$ and $Q_{n\kappa}(r)$ are the radial solutions of the
+large and small component of the spinor, respectively. $\xi_{\kappa,m}(\theta,\phi)$
+and $\xi_{-\kappa,m}(\theta,\phi)$ are two component spinors describing the
+angular distribution. As in the non-relativistic approach, the radial solutions
+depend on the principal quantum number $n$. Non-relativistically, the solutions
+of the angular wave function depend on the azimuthal and magnetic quantum numbers
+$l$ and $m_l$. However, another quantum number $\kappa=\mp(j+\frac12)$ needs to be
+introduced in order to allow for a bijective function between the wave function
+and the quantum number of the total angular momentum $j=l+s$.
+proper eigenvalues.
 
-Letzenendes ergeben sich die Winkelfunktionen f?r ein Teilchen mit Spin $\frac12$ zu
+The resulting angular wavefunction of a particle with a spin of $\frac12$ reads as
 
 \begin{equation}\begin{array}{rcll}
 \xi_{\kappa,m} &=& \frac1{\sqrt{2l+1}}\begin{pmatrix}\sqrt{l+m_l+1}Y_l^{m_l}\\\sqrt{l-m_l}Y_l^{m_l+1}\end{pmatrix} &\quad\text{f?r }\kappa<0\\\vphantom{\rule{0pt}{30pt}}
 \xi_{\kappa,m} &=& \frac1{\sqrt{2l+1}}\begin{pmatrix}-\sqrt{l-m_l}Y_l^{m_l}\\\sqrt{l+m_l+1}Y_l^{m_l+1}\end{pmatrix} &\quad\text{f?r }\kappa>0\\
 \end{array}\end{equation}
 
-In der folgenden Tabelle \ref{qzspinor} ist die eindeutige Zuordnung der Quantenzahlen zu den atomaren Spinoren illustriert.
+In table \ref{qzspinor} the non-ambiguous assignment of quantum numbers and atomic
+spinors is illustrated.
 
 \begin{table}[h]
 \centering
@@ -338,54 +380,88 @@ $j$     & $\frac12$    & $\frac12$   & $\frac32$    & $\frac32$    & $\frac52$  
 $\kappa$& -1           & 1           & -2           & 2            & -3           & 3            & -4\\
 \bottomrule
 \end{tabular}
-\caption{Die Zuordnung der atomaren Bezeichnungen der Spinoren zu den Quantenzahlen.\cite{dyallfaegri}}
+\caption{Assignment of the quantum numbers to two-component spinors.\cite{dyallfaegri}}
 \label{qzspinor}
 \end{table}
 
-Mit den obigen Betrachtungen kann dann ein Ausdruck f?r die Energie gebundener Zust?nde bestimmt werden.
+From the above considerations an expression for the energy of bound states can be
+determined
 \begin{equation}\label{HErel}
 E = mc^2 \left[1+\frac1{c^2}\left(\frac1{n-|\kappa|+\sqrt{\kappa^2-\frac1{c^2}}}\right)^2\right]^{\frac12}
 \end{equation}
-Die Energie eines Zustandes ist demnach von der Hauptquantenzahl $n$ und der relativistischen Quantenzahl $\kappa$ abh?ngig.
-Aus der Betrachtung der $\kappa$-Abh?ngigkeit von Gleichung \ref{HErel} l?sst sich schlie?en, dass f?r eine gegebene Drehimpulsquantenzahl $l$ bei einer Aufspaltung der Energieniveaus der Zustand mit dem kleineren Gesamtdrehimpuls $j$ immer die niedrigere Energie besitzt.
+Hence, the energy depends on the principal quantum number $n$ as well as the
+relativistic quantum number $\kappa$. From equation (\ref{HErel}) it can be seen
+that for a given azimuthal quantum number $l$ the splitting into states of quantum
+numbers $j$ is achieved such that the state with the lower total angular momentum
+has the lower energy.
 
-\subsection{Behandlung von Vielteilchensystemen in der relativistischen Quantenchemie}
+
+\subsection{Many Particle Systems in Relativistic Quantum Chemistry}
 \subsubsection{Dirac-Hartree-Fock}
-Bis hierher wurde lediglich die Wechselwirkung zwischen einem Elektron mit einer Ladung diskutiert. In den allermeisten Systemen liegen jedoch mehrere Elektronen vor, deren Wechselwirkung untereinander ebenfalls ber?cksichtigt werden muss. In der nicht-relativistischen Quantenmechanik wird die G?ltigkeit der Born-Oppenheimer-N?herung angenommen und f?r die L?sung des elektronischen Problems die Hartree-Fock-Methode herangezogen. Die Herleitung der Hartree-Fock-Gleichungen verwendet einen Hamilton-Operator eines $N$-Elektronen-Systems, der in einen Einteilchenteil, der die Elektronen im Coulombfeld des Kernes angibt, sowie einen Zweiteilchenteil $\mathbf{\hat{g}}_{ij}$, der die Wechselwirkung der Elektronen untereinander beschreibt und im nicht-relativistischen Fall durch $\frac1{r_{ij}}$ gegeben ist, unterteilt wird.
+Until now only the interaction of one electron with a static potential has been
+discussed. However, in chemistry most systems contain several electrons, whose
+interactions also have to be taken into account.
+In non-relativistic quantum chemistry it is assumed that the Born Oppenheimer
+approximation, which leads to a separation of electronic and nuclear solutions
+is reasonable and then the electronic solutions are obtained using the Hartree-Fock
+method. Here, a Hamiltonian of a $N$ electron system is applied, which contains
+of a one particle and a two particle part. The one particle operator $\hat{h}(i)$
+describe the kinetic energy of a single electron and its interaction with the
+static Coulomb field of the nuclei and the two particle part $\mathbf{\hat{g}}_{ij}$
+describes the interactions of the electrons amongst each other, which in the
+non-relativistic case is the Coulomb operator $\frac1{r_{ij}}$.
 
 \begin{equation}
 \mathcal{H}= \sum\limits_{i=1}^N \hat{h}(i) + \mathbf{\hat{g}}_{ij}
 \end{equation}
 
-Aus den Betrachtungen des Abschnittes \ref{hatom} ?ber das Wasserstoffatom ist der Operator des Einteilchenproblemes bekannt. Somit ergibt sich der relativistische Hamiltonoperator zu:
+From the solutions of the hydrogen atom the behaviour of an electron in a constant
+Coulomb field is known. Inserting it into the latter equation yields the
+relativistic Hamiltonian
 
 \begin{equation}
 \mathcal{H}_{D}= \sum\limits_{i=1}^N (-e \phi(r_i)+c(\hat{\alpha}^{i}\cdot\hat{\mathbf{p}}^{i})+mc^2) + \mathbf{\hat{g}}_{ij}
 \end{equation}
 
-F?r die Ableitung des Wechselwirkungstermes ist eine Betrachtung in der Quantenelektrodynamik n?tig. Durch Entwicklung des Ergebnisses nach Ordnungen der Sommerfeldschen Feinstrukturkonstante $\alpha=\frac1c$ und Abbrechen nach dem dem Term zweiter Ordnung in $\alpha$ ergibt den sogenannten Coulomb-Breit-Term $\hat{g}_{ij}^{CB}$, der sich additiv aus der nicht-relativistischen Coulomb-Absto?ung $\hat{g}_{ij}^C=\frac1{r_{ij}}$ und dem Breit-Term $\hat{g}_{ij}^B$ zusammensetzt.
+The electron-electron interaction term $\mathbf{\hat{g}}_{ij}$ can only be derived
+from \ac{QED}, where the interaction of two moving particles is investigated.
+The result is expanded in series of $\frac1c$ and truncated after the second
+order term. This yields the Coulomb Breit term $\hat{g}_{ij}^{CB}$, which
+contains the unretarded Coulomb interaction $\hat{g}_{ij}^C=\frac1{r_{ij}}$ and
+the Breit term $\hat{g}_{ij}^B$.
 
 \begin{equation}\begin{array}{rcl}
 \hat{g}_{ij}^{CB} &=& \hat{g}_{ij}^C + \hat{g}_{ij}^B\\
                 &=& \frac1{r_{ij}} - \frac1{r_{ij}}\left(\alpha_i\cdot\alpha_j+\frac{(\alpha_i\cdot r_{ij})(\alpha_j\cdot r_{ij})}{r^2_{ij}}\right)
 \end{array}\end{equation}
 
-Die Implementierung dieses Ansatzes ist schwierig, weshalb in erster N?herung statt des Breit-Operators der Gaunt-Operator $\hat{g}_{ij}^G$ Verwendung findet, dessen Beitrag zum Breit-Operator der gr??te ist.
+The latter can be divided into the Gaunt term
+$\hat{g}_{ij}^G = - \frac1{r_{ij}}\alpha_i\cdot\alpha_j$ describing the interaction
+with magnetic fields and a term purely containing retardation effects.
+Since the Gaunt term is the largest contribution in the Breit term and the
+implementation of the full Breit term is difficult, very often the Gaunt term only
+is considered in numerical calculations.
+However, the Breit term is damped by a factor of $\frac 1{c^2}$ hidden in the
+$\alpha$ operators. Therefore it is normally applied for high precision calculations
+only and the Dirac Coulomb operator $\mathcal{H}_{DC}$ is applied instead.
 
-\begin{equation}
-\hat{g}_{ij}^G = - \frac1{r_{ij}}\alpha_i\cdot\alpha_j
-\end{equation}
-
-Dieser Term beschreibt die magnetische Wechselwirkung zweier Elektronen. Ist diese f?r das betrachtete System oder den betrachtete Prozess nicht relevant, kann dieser Term ebenfalls vernachl?ssigt werden, wodurch sich der Dirac-Coulomb-Operator $\mathcal{H}_{DC}$ ergibt.
 \begin{equation}\label{DCHamil}
 \mathcal{H}_{DC} = \sum\limits_{i=1}^N (-e \phi(r_i)\mathds{1}+c\hat{\alpha}^{i}\cdot\hat{\mathbf{p}}^{i}+mc^2) + \sum\limits_{i>j}^N \frac1{r_{ij}}
 \end{equation}
 
 
+Since the Gaunt interaction has been shown to affect the ionization energies of
+TlH by no more than \unit[0.06]{eV} \cite{Pernpointner05} and the errors of the
+decay width calculations stemming from the use of $\mathcal{L}^2$ functions for
+the determination of continuum properties are by far larger than the effect of the
+Gaunt interaction, the Dirac Coulomb Hamiltonian is used throughout the thesis.
+Even though this Hamiltonian is not Lorentz invariant the description is good
+enough to cover all relevnt effects.
 
-Da gezeigt wurde, dass die Ionisierungsenergien der ?u?eren Valenz sich beim Weglassen des Gaunt-Terms beim TlH nur sehr gering um etwa \unit[0.06]{eV} ?ndern\cite{Pernpointner05}, wird angenommen, dass dieses auch f?r andere Systeme gilt und in dieser Arbeit der Dirac-Coulomb-Operator verwendet. Obwohl dieser Operator aufgrund der Form des Zweiteilchenoperators nicht lorentzinvariant ist, liefert er eine gen?gend genaue Beschreibung der Systeme.
-
-Vom Dirac-Coulomb-Operator (Gleichung \ref{DCHamil}) ausgehend wird analog zur nicht-relati\-vis\-tischen Quantenmechanik angenommen, dass sich die Wellenfunktion als Slaterdeterminante, also als antisymmetrisiertes Produkt von molekularen Einteilchenwellenfunktionen $\phi_i$ schreiben l?sst.
+Starting from the Dirac Coulomb operator of equation (\ref{DCHamil}) it is assumed
+that the wavefunction can be written as a anti-symmetrized product of one particle
+wavefunctions $\phi_i$ called a Slater determinant as in the
+non-relativistic quantum chemistry.
 
 \begin{eqnarray}
 \Psi &=& \mathcal{A} \left(\prod\limits_{i=1}^N\phi_i(r_i)\right)\\\vphantom{\rule{0pt}{50pt}}
@@ -397,14 +473,15 @@ Vom Dirac-Coulomb-Operator (Gleichung \ref{DCHamil}) ausgehend wird analog zur n
 \end{vmatrix}
 \end{eqnarray}
 
-Mit diesem Ansatz ergibt sich der Erwartungswert der Energie als Funktional:
+From this ansatz follows the energy as a functional:
 
 \begin{eqnarray}
   E &=& \braket{\Psi|\mathcal{H}_{DC}|\Psi}\\\vphantom{\rule{0pt}{30pt}}
   &=& \sum\limits_{i=1}^N\braket{\phi_i|\hat{h}_D(i)|\phi_i}  + \frac12 \sum\limits_{i,j}^N\left(\braket{\phi_i\phi_j|\frac1{r_{ij}}|\phi_i\phi_j} - \braket{\phi_i\phi_j|\frac1{r_{ij}}|\phi_j\phi_i}\right)
 \end{eqnarray}
 
-Nach einigen Umformungen werden die Dirac-Hartree-Fock-Gleichungen, die jedes Elektron in einem gemittelten Feld $v^{DHF}(i)$ beschreiben, das durch alle anderen Elektronen hervorgerufen wird, erhalten.
+From the latter expression the Dirac-Hartree-Fock equation is derived, which
+describes each electron in an averaged field of the other electrons $v^{DHF}(i)$.
 
 \begin{eqnarray}
 \mathbf{f}_i\ket{\phi_i} &=& \left(\mathbf{h}_D(i) + v^{DHF}(i)\right)\ket{\phi_i}\\
@@ -412,22 +489,43 @@ Nach einigen Umformungen werden die Dirac-Hartree-Fock-Gleichungen, die jedes El
                          &=& \varepsilon_i\ket{\phi_i}
 \end{eqnarray}
 
-Die Operatoren $\mathbf{J}_l$ und $\mathbf{K}_l$ sind dabei der Coulomb- und der Austausch-Term, die jeweils von den Einteilchenwellenfunktionen abh?ngen. Durch wissenschaftliches Raten einer Anfangsbasis wird der erste Fockoperator $\mathbf{F}$ konstruiert und dieser angewendet, wobei ein neuer Satz an Wellenfunktionen erzeugt wird, aus denen ein neuer Fockoperator aufgebaut wird. Dieses iterative Verfahren wird bis zur Selbstkonsistenz angewandt, weshalb man auch von einer \emph{self-consistent-field} Methode spricht.\cite{szabo}
+Here, the operators $\mathbf{J}_l$ and $\mathbf{K}_l$ both depend on the one
+particle wavefunctions and denote the Coulomb and the
+exchange term, respectively.
+Starting from a scientific guess of the one particle wavefunctions, the Fock operator
+$\mathbf{F}$ is constructed and applied to yield another set of one particle
+wavefunctions. This iterative procedure is carried out until the system is
+converged or \emph{self-consistent}, which is why the method is called a
+\ac{SCF} method. \cite{szabo}
 
-In der nicht-relativistischen Quantenmechanik liegt die so erhaltene Energie aufgrund des Variationsprinzips immer oberhalb der exakten Energie des Systems. Diese Eigenschaft ist bei der relativistischen Betrachtung nicht gegeben, da die niedrigste Energie, wie in Abschnitt \ref{freep} diskutiert, zu einem positronischen Zustand geh?rt. Um den sogenannten \emph{variational collapse} zu verhindern, bei dem eine positronische L?sung erhalten wird, muss die gew?hlte Basis gewissen Bedingungen unterliegen, auf die in Abschnitt \ref{basis} bei der Konstruktion von Basiss?tzen noch eingegangen wird.
+In non-relativistic quantum mechanics the variational principle ensures the
+lowest energy solution to be closest to the true energy and hence the wavefunction
+to be optimized. In relativistic quantum mechanics negative energy solutions
+are possible but unphysical. The variational principle would therefore lead to
+negative energy states. In order to prevent this so-called \emph{variational collapse},
+the basis has to underlie certain restrictions, which will be discussed later in
+section \ref{basis} about the construction of basis sets.
  
-Zur tats?chlichen Berechnung der Energien werden die Einteilchenwellenfunktion \{$\phi_i$\} des Gesamtsystems durch eine Linearkombination atomarer Wellenfunktionen erhalten. Diese wiederum werden in einen endlichen Satz von atomaren Basisfunktionen \{$\varphi_\mu$\} f?r die gro?e und die kleine Komponente entwickelt. F?r die molekulare Einteilchenwellenfunktion ergibt sich damit
+For the actual energy calculations the one particle wavefunctions \{$\phi_i$\}
+are constructed as a linear combination of atomic wavefunctions. The latter are
+expanded in a finite set of basis functions \{$\varphi_\mu$\} for the large and small
+component. The resulting molecular one particle wavefunction then reads as
 \begin{equation}
 \phi_i = \sum\limits_\mu^{N^L} c_{\mu\alpha}^{iL} \varphi_{\mu\alpha}^L +  \sum\limits_\mu^{N^L} c_{\mu\beta}^{iL} \varphi_{\mu\beta}^L + \sum\limits_\mu^{N^S} c_{\mu\alpha}^{iS} \varphi_{\mu\alpha}^S + \sum\limits_\mu^{N^S} c_{\mu\beta}^{iS} \varphi_{\mu\beta}^S.
 \end{equation}
 
-Hierbei sind $N^L$ sowie $N^S$ die Anzahl der Basisfunktionen der gro?en bzw. der kleinen Komponente, die nicht notwendigerweise gleich sein m?ssen. Die Energie ist also eine Funktion der Entwicklungskoeffizienten $c_{\mu s}^{iX}$, wobei $X=L,S$ die Komponente des Spinors beschreibt und $s$ den Spinzustand. Die resultierenden relativistischen Roothan-Gleichungen lassen sich in der Matrixschreibweise zu
+Here, $N^L$ and $N^S$ are the numbers of basis functions of the large and small
+component, respectively. This means that the energy depends on the expansion
+coefficients $c_{\mu s}^{iX}$, where $X=L,S$ denotes the compoent of the spinor and
+$s$ denotes the spin state. The resulting relativistic Roothan equations in matrix
+notation read as
 
 \begin{equation}
 \mathcal{FC} = \mathcal{SCE}
 \end{equation}
 
-zusammenfassen. Die Fockmatrix $\mathcal{F}$ und die ?berlappmatrix $\mathcal{S}$ bestehen dabei aus den in Gleichung \ref{roothanm} angegebenen Matrixelementen.
+The Fock matrix Fockmatrix $\mathcal{F}$ and the overlap matrix $\mathcal{S}$
+hereby consist of the matrix elements:
 
 \begin{equation}\begin{array}{rcl}\label{roothanm}
 F^{XY,sp}_{\mu\nu} &=& \braket{\varphi^X_{\mu s}|\mathbf{f}_i|\varphi_{\nu p}^Y}\\
@@ -435,94 +533,120 @@ S^{XY,sp}_{\mu\nu} &=& \braket{\varphi^X_{\mu s}|\varphi_{\nu p}^Y}
 \end{array}\end{equation}
 
 
-\subsection{Zweikomponentige Methoden}
-Wie bereits erw?hnt wurde, handelt es sich bei der Diracgleichung um ein System gekoppelter Differentialgleichungen, die hier noch einmal aufgef?hrt werden sollen.
+%\subsection{Zweikomponentige Methoden}
+%Wie bereits erw?hnt wurde, handelt es sich bei der Diracgleichung um ein System gekoppelter Differentialgleichungen, die hier noch einmal aufgef?hrt werden sollen.
+%
+%\begin{equation}\label{koppdirac}
+%\left(\begin{array}{ll}
+%V & c(\mathbf{\sigma}\cdot\hat{\mathbf{p}})\\
+%c(\mathbf{\sigma}\cdot\hat{\mathbf{p}}) & V -2mc^2\\\end{array}\right)
+%\begin{pmatrix}\Psi^L\\\Psi^S\end{pmatrix}
+%= \begin{pmatrix}\Psi^L\\\Psi^S\end{pmatrix} E
+%\end{equation}
+%
+%Dabei ist die kleine Komponente des Spinors an die gro?en Komponente gekoppelt, wobei der verkn?pfende Operator $\hat{R}$ sei.
+%\begin{equation}
+%\Psi^S = \hat{R}\Psi^L
+%\end{equation}
+%
+%Die Grundidee der zweikomponentigen Methoden ist, durch eine unit?re Transformation des Hamiltonoperators eine Entkopplung der L?sungen positiver und negativer Energien zu erlangen. Dadurch k?nnten nur die positiven Energien unter ausschlie?licher Verwendung der gro?en Komponente der Basis berechnet werden.
+%
+%\begin{equation}
+%\hat{U}^\dagger\left(\begin{array}{cc}
+%\hat{h}_{11} & \hat{h}_{12}\\
+%\hat{h}_{21} & \hat{h}_{22}\\\end{array}\right) \hat{U}=
+%\left(\begin{array}{cc}
+%\hat{h}_+ & 0 \\
+%0         & \hat{h}_-
+%\end{array}\right)
+%\end{equation}
+%
+%Dabei hat die Transformationsmatrix $\hat{U}$ folgende Struktur:
+%\begin{equation}
+%\hat{U} = \left(\begin{array}{cc}
+%\frac1{\sqrt{1+\hat{R}^\dagger\hat{R}}}          & \frac1{\sqrt{1+\hat{R}^\dagger\hat{R}}} \hat{R}^\dagger\\
+%-\frac1{\sqrt{1+\hat{R}\hat{R}^\dagger}} \hat{R} & \frac1{\sqrt{1+\hat{R}\hat{R}^\dagger}}
+%\end{array}\right)
+%\end{equation}
+%
+%Da die Nichtdiagonalelemente des transformierten Hamiltonoperators 0 sein m?ssen, ergibt sich die Bedingung
+%\begin{equation} \label{nondigbed}
+%2mc^2\hat{R} = c (\mathbf{\sigma}\cdot\hat{\mathbf{p}}) + \left[V,\hat{R}\right] - \hat{R}c(\mathbf{\sigma}\cdot\hat{\mathbf{p}})\hat{R}.
+%\end{equation}
+%Im nicht-relativistischen Grenzfall ist der Kopplungsoperator $\hat{R}=\frac{(\mathbf{\sigma}\cdot\hat{\mathbf{p}})}{2mc}$ bekannt. Bei dessen Wahl als Startpunkt f?r eine iterative L?sung der Gleichung \ref{nondigbed} wird ersichtlich, dass immer h?here Ableitungen von $\hat{R}$ auftreten. Der Operator muss also angen?hert werden, wobei die beiden etabliertesten Methoden die Foldy-Wouthuysen-Methode und die Douglas-Kroll-Methode sind, die unterschiedliche Herangehensweise w?hlen. W?hrend die Foldy-Wouthuysen-Methode einen st?rungstheoretischen Ansatz verwendet, verwendet die Douglas-Kroll-Methode einen variationellen.
+%
+%Ein neuerer Ansatz manipuliert nicht den Kopplungsoperator $\hat{R}$, sondern verwendet eine algebraische Herangehensweise. Unter einmaliger Verwendung des Kopplungsoperators im nicht-relativistischen Grenzfall wird zun?chst die Dirac-Gleichung \ref{koppdirac} gel?st, in der die komplette Transformation enthalten ist. Aus den L?sungen wird auf die komplette Kopplungsmatrixmatrix $\mathbf{R}$ zur?ckgeschlossen, mit deren Hilfe dann die entkoppelten Hamiltonoperatoren f?r die postivien und die negativen Energien $\hat{h}_+$ und $\hat{h}_-$ konstruiert werden k?nnen. Auf diese Weise werden Operatoren erhalten, die im Vergleich zu denen der st?rungstheoretischen Foldy-Wouthuysen-Methode f?r die gew?hlte Basis in unendlicher Ordnung genau sind, weshalb die Methode IOTC (\emph{infinite-order two-component})\cite{Ilias07} genannt wird.\\
+%Soll das IOTC nicht nur f?r die Beschreibung von Einteilchen-, sondern auch von Vielteilchensystemen verwendet werden, wird die sogenannte AMFI-Korrektur (\emph{atomic mean-field approximation to the spin-orbit interaction}) hinzugef?gt, die die Spin-Bahn-Kopp\-lung beschreibt und damit skalarrelativistische Ergebnisse um diesen Anteil korrigieren kann. Da bei der Berechnung der Korrektur nur die Integrale ?ber die Orbitale, die am selben Atom lokalisiert sind, ber?cksichtigt werden, sind f?r die Betrachtung von Molek?len geringe Abweichungen zum vierkomponentig ermittelten Resultat zu erwarten.\cite{Hess96}
+% 
 
-\begin{equation}\label{koppdirac}
-\left(\begin{array}{ll}
-V & c(\mathbf{\sigma}\cdot\hat{\mathbf{p}})\\
-c(\mathbf{\sigma}\cdot\hat{\mathbf{p}}) & V -2mc^2\\\end{array}\right)
-\begin{pmatrix}\Psi^L\\\Psi^S\end{pmatrix}
-= \begin{pmatrix}\Psi^L\\\Psi^S\end{pmatrix} E
-\end{equation}
-
-Dabei ist die kleine Komponente des Spinors an die gro?en Komponente gekoppelt, wobei der verkn?pfende Operator $\hat{R}$ sei.
-\begin{equation}
-\Psi^S = \hat{R}\Psi^L
-\end{equation}
-
-Die Grundidee der zweikomponentigen Methoden ist, durch eine unit?re Transformation des Hamiltonoperators eine Entkopplung der L?sungen positiver und negativer Energien zu erlangen. Dadurch k?nnten nur die positiven Energien unter ausschlie?licher Verwendung der gro?en Komponente der Basis berechnet werden.
-
-\begin{equation}
-\hat{U}^\dagger\left(\begin{array}{cc}
-\hat{h}_{11} & \hat{h}_{12}\\
-\hat{h}_{21} & \hat{h}_{22}\\\end{array}\right) \hat{U}=
-\left(\begin{array}{cc}
-\hat{h}_+ & 0 \\
-0         & \hat{h}_-
-\end{array}\right)
-\end{equation}
-
-Dabei hat die Transformationsmatrix $\hat{U}$ folgende Struktur:
-\begin{equation}
-\hat{U} = \left(\begin{array}{cc}
-\frac1{\sqrt{1+\hat{R}^\dagger\hat{R}}}          & \frac1{\sqrt{1+\hat{R}^\dagger\hat{R}}} \hat{R}^\dagger\\
--\frac1{\sqrt{1+\hat{R}\hat{R}^\dagger}} \hat{R} & \frac1{\sqrt{1+\hat{R}\hat{R}^\dagger}}
-\end{array}\right)
-\end{equation}
-
-Da die Nichtdiagonalelemente des transformierten Hamiltonoperators 0 sein m?ssen, ergibt sich die Bedingung
-\begin{equation} \label{nondigbed}
-2mc^2\hat{R} = c (\mathbf{\sigma}\cdot\hat{\mathbf{p}}) + \left[V,\hat{R}\right] - \hat{R}c(\mathbf{\sigma}\cdot\hat{\mathbf{p}})\hat{R}.
-\end{equation}
-Im nicht-relativistischen Grenzfall ist der Kopplungsoperator $\hat{R}=\frac{(\mathbf{\sigma}\cdot\hat{\mathbf{p}})}{2mc}$ bekannt. Bei dessen Wahl als Startpunkt f?r eine iterative L?sung der Gleichung \ref{nondigbed} wird ersichtlich, dass immer h?here Ableitungen von $\hat{R}$ auftreten. Der Operator muss also angen?hert werden, wobei die beiden etabliertesten Methoden die Foldy-Wouthuysen-Methode und die Douglas-Kroll-Methode sind, die unterschiedliche Herangehensweise w?hlen. W?hrend die Foldy-Wouthuysen-Methode einen st?rungstheoretischen Ansatz verwendet, verwendet die Douglas-Kroll-Methode einen variationellen.
-
-Ein neuerer Ansatz manipuliert nicht den Kopplungsoperator $\hat{R}$, sondern verwendet eine algebraische Herangehensweise. Unter einmaliger Verwendung des Kopplungsoperators im nicht-relativistischen Grenzfall wird zun?chst die Dirac-Gleichung \ref{koppdirac} gel?st, in der die komplette Transformation enthalten ist. Aus den L?sungen wird auf die komplette Kopplungsmatrixmatrix $\mathbf{R}$ zur?ckgeschlossen, mit deren Hilfe dann die entkoppelten Hamiltonoperatoren f?r die postivien und die negativen Energien $\hat{h}_+$ und $\hat{h}_-$ konstruiert werden k?nnen. Auf diese Weise werden Operatoren erhalten, die im Vergleich zu denen der st?rungstheoretischen Foldy-Wouthuysen-Methode f?r die gew?hlte Basis in unendlicher Ordnung genau sind, weshalb die Methode IOTC (\emph{infinite-order two-component})\cite{Ilias07} genannt wird.\\
-Soll das IOTC nicht nur f?r die Beschreibung von Einteilchen-, sondern auch von Vielteilchensystemen verwendet werden, wird die sogenannte AMFI-Korrektur (\emph{atomic mean-field approximation to the spin-orbit interaction}) hinzugef?gt, die die Spin-Bahn-Kopp\-lung beschreibt und damit skalarrelativistische Ergebnisse um diesen Anteil korrigieren kann. Da bei der Berechnung der Korrektur nur die Integrale ?ber die Orbitale, die am selben Atom lokalisiert sind, ber?cksichtigt werden, sind f?r die Betrachtung von Molek?len geringe Abweichungen zum vierkomponentig ermittelten Resultat zu erwarten.\cite{Hess96}
- 
 
 
-
-\subsection{Konstruktion einer Basis f?r die Beschreibung relativistischer Probleme}\label{basis}
-Wie bereits diskutiert, werden die vier Komponenten des Spinors in eine endlichdimensionale Basis atomarer Einteilchenfunktionen entwickelt. Dabei werden die Basiss?tze der gro?en und der kleinen Komponente getrennt behandelt.
+\subsection{Construction of a Basis for the Relativistic Treatment}\label{basis}
+As already discussed, the four components of a spinor are expanded into a finite
+set of one particle basis functions. Thereby the basis sets of the large and small
+component are treated separately.
 
 \begin{equation}\begin{array}{ccc}
 \phi_i^L = \begin{pmatrix}\phi^L_{i\alpha}\\\phi^L_{i\beta}\\0\\0\end{pmatrix} &\hspace{3em} &\phi_j^S = \begin{pmatrix}0\\0\\\phi^S_{j\alpha}\\\phi^S_{j\beta}\end{pmatrix}
 \end{array}\end{equation}
 
-Die einzelnen Komponenten werden als Linearkombination von skalaren atomaren Basisfunktionen $\varphi_\mu^X$ ausgedr?ckt, die durch die Entwicklungskoeffizienten $c_{\mu s}^{iX}$ gewichtet werden.
+The two components are expressed as linear combinations of scalar atomic
+basis functions $\varphi_\mu^X$, which are weighted by the expansion coefficients
+$c_{\mu s}^{iX}$.
 
 \begin{equation}\begin{array}{ccc}
 \phi^L_{is} = \sum\limits_{\mu=1}^{N^L} c_{\mu s}^{iL} \varphi_\mu^L &\hspace{3em}& \phi^S_{is} = \sum\limits_{\mu=1}^{N^S} c_{\mu s}^{iL} \varphi_\mu^S
 \end{array}\end{equation}
 
-Der Ausgangspunkt f?r die Konstruktion der Basisfunktionen sind die atomzentrierten L?sungen des Wasserstoffatoms, die die Form
+They are constructed starting from the solutions of the hydrogen atom centered
+at the corresponding atoms, which have the form
 \begin{equation}
 s_\tau^X = N_\tau^X r^{n-1}\mathrm{e}^{\alpha_\tau^X r}Y_l^{m_l}(\theta,\varphi)
 \end{equation}
-besitzen. Die analytische L?sung der Integrale, die bei Verwendung dieser \emph{slater-type-functions} in einer DHF-Rechnung auftreten, ist nicht m?glich, weshalb stattdessen Linearkombinationen primitiver Gau?funktionen $g_\tau^X$, die kontrahierte Gau?funktionen bilden, verwendet werden. Diese liefern zwar eine inkorrekte Beschreibung f?r das asymptotische Verhalten bei kleinen und gro?en Abst?nden ($r\rightarrow 0$, $r\rightarrow\infty$), erm?glichen jedoch die einfache analytische L?sung der Integrale. Sie sind in Kugelkoordinaten gegeben durch
+
+It is not possible to solve the associated integrals of the \emph{slater-type
+functions} analytically and therefore, they are expanded into a set of primitive
+Gauss functions $g_\tau^X$ yielding contracted Gauss functions.
+These contracted Gauss functions do not show the correct asymptotic behaviour for
+short and large distances ($r\rightarrow 0$, $r\rightarrow\infty$), but allow to
+solve the integrals analytically and thereby reducing the computational cost.
+In spherical coordinates they are given by
 \begin{equation}
 g_\tau^X = N_\tau^Xr^l\mathrm{e}^{-\alpha_\tau^Xr^2}Y_l^{m_l}(\theta,\varphi)
 \end{equation}
-bzw. in kartesischen Koordinaten durch
+and in cartesian coordinates by
 \begin{equation}
 g_\tau^X = N_\tau^X x^{n_x^X}y^{n_y^X}z^{n_z^X} \mathrm{e}^{-\alpha_\tau^Xr^2}.
 \end{equation}
-Dabei ist $N_\tau^X$ ein Normierungsfaktor und die Summe aus den Exponenten der Raumkoordinaten $n_i^X$ korrespondiert mit der Drehimpulsquantenzahl $l$.
+
+Here, $N_\tau^X$ denotes the normalization factor and the sum of the spacial
+coordinate exponents $n_i^X$ corresponds to the azimuthal quantum number $l$.
 \begin{equation}
 n_x^X+n_y^X+n_z^X=l
 \end{equation}
-Die Kontraktion liefert dann die endg?ltigen Basisfunktionen
+The final contraction then gives the basis functions
 \begin{equation}
 \varphi^X_\mu = \sum\limits_\tau d_{\mu\tau}^Xg_\tau^X,
 \end{equation}
-wobei der Faktor $d_{\mu\tau}^X$ die Beitr?ge der einzelnen primitiven Gau?funktionen zur kontrahierten Gau?funktion gewichtet.
+where the factor $d_{\mu\tau}^X$ weights the different primitive Gauss functions.
 
-Um zu verhindern, dass bei einer variationellen Rechnung L?sungen negativer Energien erhalten werden, wird die Bedingung der \emph{kinetic balance}
+In order to prevent the variational collapse, the basis sets underly the condition
+of the \emph{kinetic balance}, which is based on the non-relativistic limit of
+equation (\ref{zusklgr}). Since the energy $E$ of the electron is much smaller than
+$2mc^2$, the following relation between the coefficients
+of the large and small component functions has to be obeyed.
+
 \begin{equation}\label{kinbal}
 \phi_S = \frac1{2mc}(\sigma\cdot\hat{p})\,\phi_L
 \end{equation}
- bei der Konstruktion der kleinen Komponente verwendet. Diese entspricht dem nicht-relativistischen Grenzfall der Gleichung \ref{zusklgr}. F?r die Grenzwertbetrachtung wird die Energie um $mc^2$ verschoben. Da die Energie des Elektrons $E$ wesentlich kleiner als $2mc^2$ ist, wird diese vernachl?ssigt und somit Gleichung \ref{kinbal} erhalten.
-Das Einhalten dieser Beziehung zwischen gro?er und kleiner Komponente, die aus dem nicht-relativistischen Grenzfall resultiert, bewahrt bei einer Variationsrechnung vor dem \emph{variational collapse}.
 
-Der Operator der kinetischen Energie $\alpha\cdot\hat{\pi}$ kreiert aus einer Funktion der gro?en Komponente mit einem bestimmten $l$-Wert jeweils eine Funktion der kleinen Komponente mit $l-1$ bzw. $l+1$. Daraus folgt, dass die Basis der kleinen Komponente fast doppelt so gro? ist, wie die der gro?en Komponente und dass die Anzahl der Basisfunktionen einer relativistischen Rechnung wesentlich gr??er ist, als bei einer vergleichbaren nicht-relativistischen Rechnung. Aus diesem Grund bietet sich auch die Verwendung sogenannter dualer Basiss?tze an. Dabei werden f?r die Funktionen der gro?en Komponente gerader bzw. ungerader Drehimpulsquantenzahl jeweils gleiche Exponenten verwendet, aus denen die Funktionen der kleinen Komponente erzeugt werden. Hierdurch verkleinert sich die Basis f?r die kleine Komponente, wobei allerdings die Flexibilit?t der gro?en Basis eingeschr?nkt wird.
+Using such bases prevents a \emph{variational collapse} in calculation based on
+the variational principle.
+
+The kinetic energy operator $\alpha\cdot\hat{\pi}$ creates from a given basis
+function of the large component with a distinct $l$ value two functions of the small
+component with $l-1$ and $l+1$. This means that the basis of the small component
+contains almost twice as many basis functions as the basis of the large component.
+Hence the computational cost of a relativistic calculation is higher than the
+non-relativistic correspondence.
+
