@@ -1,0 +1,26 @@
+\begin{tikzpicture}[
+          scale=1.0,>=stealth
+        ]
+%     \tiny
+ % \draw[very thin,color=gray] (-0.1,-4.1) grid (10.9,4.9);
+ \draw [->, thick] (0,-3.5) -- (0,3) node [left]{$E$};
+ \draw [thick] (-0.1,-2) -- (9,-2);
+ \node at (-0.8,-2) {$-mc^2$};
+ \draw [thick] (-0.1,2) -- (9,2);
+ \node at (-0.8,2) {$mc^2$};
+ \draw [thick] (-0.1,0) -- (0.1,0);
+ \node at (-0.5,0) {0};
+
+ \shade [ball color=diplom1] (1.5,2.5) circle (0.15);
+ \node [align=center] at (1.5,-3) {freely moving\\electron};
+
+ \draw [thick] (3.5,1.7) -- (5.5,1.7);
+ \shade [ball color=diplom1] (4.5,1.7) circle (0.15);
+ \node [align=center] at (4.5,-3) {bound\\electron};
+
+ \shade [ball color=diplom1] (7.5,2.5) circle (0.15);
+ \draw [thick,diplom1] (7.5,-2.5) circle (0.15);
+ \draw [thick,->] (7.5,-2.35) -- (7.5,2.35);
+ \node [align=center] at (7.5,-3) {pair creation};
+
+\end{tikzpicture}
