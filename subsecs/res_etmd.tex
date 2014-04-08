@@ -1,18 +1,18 @@
 \section{Influence of the Geometry on ETMD3 processes}
 \subsection{Geometry Dependence of the ETMD3 Energies}
-Atomic triples are characterized by three coordinates which we for
-our discussion choose the Jacobi coordinates $R$, $Q$ and $\theta$ as illustrated
+Atomic triples are characterized by three coordinates which for this
+discussion are chosen to be the Jacobi coordinates
+$R$, $Q$ and $\theta$ as illustrated
 in figure \ref{}. Here $R$ and $\theta$ are chosen differently as in
 figure \ref{}. The choice of appropriate coordinates is not unambiguous,
 since it is unknown, which way the energy travels during its transfer
 between the subsystems. A more detailed discussion is to be found in 
-section \ref{}.
+section \ref{section:coord_choice}.
 
-The \ac{ETMD}3 is influenced both in the investigation of energetics
-as well as the efficiency of the decay.
 
 Energetically the geometry is crucial for the determination of open channels.
-Already in the first approximation of the final state energy of equation (\ref{})
+Already in the first approximation of the final state energy of equation
+(\ref{equation:E_fin})
 the final state energy $E_{fin}$ strongly depends on the distance between the
 two atoms $X_1$ and $X_2$ ionized in the final state. This dependence is explicitely to be
 formulated as
@@ -24,7 +24,7 @@ formulated as
 When this final state energy is higher than the intial state, the particular
 channel is closed. For the case of the ArXe$_2$ this relation is illustrated
 in figure \ref{figure:ArXe2_geom_energy} for the
-ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channel.
+ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channel and $Q=R_{eq}= \unit[4.04]{\AA}$.
 
 \begin{figure}[htb]
  \centering
@@ -48,7 +48,8 @@ channel closing due to the geometry are to be expected.
 \subsection{Geometry Dependence of the ETMD3 Decay Rates}
 %\subsubsection{Distance Dependencies of ETMD Decay Rates}
 The decay rate also crucially depends on the geometry of the triple.
-From eq. (\ref{}) the $R$ dependency is easily interpreted of being
+From eq. (\ref{reltheolifetimeetmd_exp}) the $R$ dependency is
+easily interpreted of being
 $\Gamma \propto R^{-6}$ corresponding to the energy transfer mainly being
 caused by a dipole-dipole interaction. The dependency of $Q$ is implicitely
 formulated in the transition dipole moments. These depend on the overlap
@@ -58,7 +59,8 @@ with $Q$.
 
 
 %\subsubsection{Angle Dependencies of ETMD Decay Rates}
-The angular part of equation (\ref{}) can be reformulated using
+The angular part of equation (\ref{reltheolifetimeetmd_exp}) can
+be reformulated using
 the equivalence of transitions in $\tilde{x}$ and $\tilde{y}$ direction to
 yield
 
@@ -69,7 +71,7 @@ yield
 
 which are shown in figure \ref{figure:etmd_angle_dir}, supposing
 $|<\tilde{D}_{z}>|^2 = |<\tilde{D}_x>|^2 = 1$.
-Obviously the two different transition types add up to give the full
+Obviously, the two different transition types add up to give the full
 angular dependence of a given trimer. It has to be remembered, that
 $|<\tilde{D}_{z}>|^2$ is about an order of magnitude larger than
 $|<\tilde{D}_{x}>|^2$.
@@ -128,13 +130,13 @@ to an atom on the same axis ($\alpha = 0,\pi$), corresponding
 to a linear arrangement, is preferred.
 
 The previous discussions are based on the decay of one specific atom
-begin the electron donor and another atom being the electron emitter.
+being the electron donor and another atom being the electron emitter.
 In reality both atoms can be donor als well as emitter while the energy
 of the resulting final state stays the same. For both bond lengths to the
 initially ionized atom being the same, both contribute the same decay rate
 to the total decay rate. With one of the atoms ionized in the final state
 being further apart, its probability in donating the vacancy filling electron
-decreases exponentially and can hence be negliged.
+decreases exponentially and can hence be neglected.
 
 %\afterpage{\clearpage}
 \begin{figure}[ht]
@@ -155,7 +157,8 @@ figure \ref{figure:ArXe2_etmd_geom_gamma}.
 Here the geometry dependence of the decay width for the case of the four ArXe$_2$
 channels is shown summing over all possible geometric combinations.
 The numbers were obtained by \ac{HARDRoC} using the
-asymptotic formula \ref{} with redefined $R$ and $\theta$. Here $Q$ is chosen constant
+asymptotic formula (\ref{reltheolifetimeetmd_exp}) with redefined
+$R$ and $\theta$. Here $Q$ is chosen constant
 to the internuclear distance of the neutral ArXe dimer and $R$ and $\theta$
 are varied. The plots exhibit the channel closing for very small Xe-Xe distances
 and the $R^{-6}$ behaviour as well as the expected angle dependence explicitely
@@ -188,16 +191,17 @@ ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channel being highest in energy
 is no longer energetically accessible. Bending further first the
 ArXe5p$_{3/2}^{-1}$Xe5p$_{1/2}^{-1}$ and the
 ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channels, being equal in energy,
-close and finally also the ArXe5p$_{3/2}^{-1}$Xe5p$_{3/2}^{-1}$
-channel.
+close. In the illustrated angle range the ArXe5p$_{3/2}^{-1}$Xe5p$_{3/2}^{-1}$
+channel does not close.
 
 
 \section{Influence of the Coordinate System Choice}
-In section \ref{} a coordinate system was chosen to describe the
+In section \ref{chapter:asymptotic} a coordinate
+system was chosen to describe the
 triatomic system. The distance $Q$ between the two atoms involved
 in the energy transfer is reasonably defined. However, where the
 center of the oscillating dipole moment of subsystem $S_1$ is, can
-not unambigously be defined without further investigation. Most
+not unambigously be defined. Most
 probable it is somwhere between the atoms $A$ and $B$. Therefore
 the center of mass was chosen to be the reference point for the
 distance $R$ and associated with it the angle $\alpha$.
