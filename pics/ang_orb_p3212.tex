@@ -1,0 +1,36 @@
+\begin{tikzpicture}[scale=0.8]
+    \begin{axis}[%
+        %colormap name = blues,
+        axis equal,
+        width=10cm,
+        height=10cm,
+        axis lines = center,
+        xlabel = {$x$},
+        ylabel = {$y$},
+        zlabel = {$z$},
+        ticks=none,
+        enlargelimits=0.3,
+        view/h=45,
+        scale uniformly strategy=units only,
+    ]
+    \addplot3[%
+        %opacity = 0.5,
+        %surf,
+        mesh,
+        draw=diplom2,
+        z buffer = sort,
+        %samples = 21,
+        variable = \u,
+        variable y = \v,
+        domain = 0:180,
+        y domain = 0:360,
+    ]
+    %({cos(u)*sin(v)}, {sin(u)*sin(v)}, {cos(v)});
+    ({( (cos(u))^2/2.0/pi + (sin(u))^2/8.0/pi) * cos(v)*sin(u)},
+     {( (cos(u))^2/2.0/pi + (sin(u))^2/8.0/pi) * sin(v)*sin(u)},
+     {( (cos(u))^2/2.0/pi + (sin(u))^2/8.0/pi) * cos(u)});
+    %({ (sin(u))^2/8.0/pi * cos(v)*sin(u)},
+    % { (sin(u))^2/8.0/pi * sin(v)*sin(u)},
+    % { (sin(u))^2/8.0/pi * cos(u)});
+    \end{axis}
+\end{tikzpicture}
