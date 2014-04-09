@@ -50,7 +50,7 @@ $SIP_{3/2}<SIP_{1/2}$, which is not necessarily true for all atoms. E.g.
 the order of the ionization potentials of the calcium 3p orbitals are
 switched.
 
-In equation \ref{reltheolifetime_exp} most of the entities are independent
+In equation (\ref{reltheolifetime_exp}) most of the entities are independent
 of the total angular momenta and therefore the ratio between the decay widths
 reduces to
 
@@ -71,7 +71,8 @@ are grouped to the variable $P$.
 The ionization cross section is proportional to the inverse of the energy
 of the virtual photon $\sigma{\omega}\propto \frac 1 \omega$ and the ratio between
 the lifetimes of the two different total angular momenta $\chi$ is experimentally
-accessible for atoms.
+accessible for atoms. Hence the ratio of the decay widths does not depend
+on properties of the atom $B$ explicetly.
 
 
 \begin{table}[h]
@@ -84,7 +85,9 @@ accessible for atoms.
   $-\frac 12$                  & --                     & $-\sqrt{\frac 1{12}}\,\,^{(1)}$ & $\sqrt{\frac 16}\,\,^{(0)}$  & $-\frac 12\,\,\,^{(-1)}$\\
   \bottomrule
  \end{tabular}
- \caption{Auswertung der Wignerschen $3j$-Symbole f?r $J=\frac 32$ im Argon-Xenon Dimer. In den Klammern ist die Differenz der beiden Projektionen $M_A'-M_A$ angegeben.}
+ \caption{Evaluation of Wigner $3j$-symbols for $J=\frac 32$ in the argon-xenon
+          dimer. The numbers in brackets denote the difference of the projections
+          of the angular momenta $M_A'-M_A$.}
  \label{table:wignerarxe3}
 \end{table}
 
@@ -98,7 +101,9 @@ accessible for atoms.
   $-\frac 12$                  & $-\sqrt{\frac 1{3}}\,\,^{(1)}$ & $\sqrt{\frac 16}\,\,^{(0)}$\\
   \bottomrule
  \end{tabular}
- \caption{Auswertung der Wignerschen $3j$-Symbole f?r $J=\frac 12$ im Argon-Xenon Dimer. In den Klammern ist die Differenz der beiden Projektionen $M_A'-M_A$ angegeben.}
+ \caption{Evaluation of Wigner $3j$-symbols for $J=\frac 12$ in the argon-xenon
+          dimer. The numbers in brackets denote the difference of the projections
+          of the total angular momenta $M_A'-M_A$.}
  \label{table:wignerarxe1}
 \end{table}
 
@@ -123,10 +128,11 @@ photons is given by the positive spin-orbit coupling constant $a$.
   \omega_{vp3/2} &= \omega_{vp1/2} + a
 \end{align}
 
-$P$ is evaluated using the expressions for the 3j-symbols given in tables
+$P_{1/2}$ and $P_{3/2}$ are evaluated using the
+expressions for the 3j-symbols given in tables
 \ref{table:wignerarxe3} and \ref{table:wignerarxe1} and $B_0=-2$, $B_{\pm 1}=1$
 to give 1 in both cases.
-From these considerations it follows, that the ratio between the decay
+From these considerations it follows that the ratio between the decay
 widths of $J_A'=\frac 32$ and $J_A'=\frac 12$ is given by
 
 
@@ -145,25 +151,31 @@ the final states configurations is to be observed. Furthermore $\chi$ varies
 with the strength of the spin-orbit coupling. For increasing spin-orbit coupling
 constant $\chi$ decreases.
 In the neighbourhood of other atoms, the spin-orbit coupling constant is not
-a real constant \cite{}. The latter minor differences will further not be taken
+a real constant \cite{Freudenberg_Forsch}. The latter minor differences will further not be taken
 into account.
 
 
 
 
 \subsection{Several Initial States and One Final State}
+Normally, the starting point for such gedankenexperiments is a given initial
+state. However, decay widths from different initial states with the same
+final state subspace can also be compared. It has to be kept in mind, that
+the sum of the resulting decay widths would not resemble a total decay width.
+
 Consider the initially ionized atom to be an alkaline earth metal atom
 being ionized from the
 p-level. In this case the initial state can both be $J_A = \frac 32$ and
-$J_A = 12$. The final configuration being a vacancy in the 4s shell is defined
-by $J_A'= \frac 12$.
+$J_A = \frac12$. The final state configuration being a vacancy in the
+4s shell is defined by $J_A'= \frac 12$. Hence, in this section the decay
+widths of two different initial states with the same final states are compared.
 The virtual photon energies would then be defined as
 
 \begin{align}
   \omega_{vp1/2} &= SIP_{in1/2} - SIP_{fin}  \\
   \omega_{vp3/2} &= SIP_{in3/2} - SIP_{fin}  \\
   \omega_{vp3/2} &= \omega_{vp1/2} + SIP_{fin3/2} - SIP_{fin1/2} \\
-  \omega_{vp3/2} &= \omega_{vp1/2} - a .
+  \omega_{vp3/2} &= \omega_{vp1/2} - a 
 \end{align}
 
 Notice, that in this case the sign in front of the spin-orbit coupling
@@ -175,9 +187,9 @@ Considering the degeneracies of the states
 $\frac{2J_{A1/2}+1}{2J_{A3/2}+1} = \frac 12$.
 The evaluation of $\frac{P_{1/2}}{P_{3/2}}$ is possible for all kinds
 of initial states with a specific value for the projection $M_A$, but
-since we in this chapter want to focus on the influence of the total
-angular momentum without the consideration of their projections, we
-for a moment define our channels with respect to $M_A'$ instead of
+the focus of this section lies on the influence of the total
+angular momentum without the consideration of their projections, here
+the channels are defined with respect to $M_A'$ instead of
 $M_A$. In this case $\frac{P_{1/2}}{P_{3/2}} = 1$.
 Hence the ratio of the decay widths can be evaluated to be
 
@@ -191,14 +203,14 @@ Hence the ratio of the decay widths can be evaluated to be
 
 
 \section{Projection of the Total Angular Momentum}
-We again consider the ICD from a deined initial state with $J_A=\frac 12$ and
+Again consider the ICD from a defined initial state with $J_A=\frac 12$ and
 $M_A=\frac 12$. Within the final state specification of $J_A'=\frac 32$, several
 projections $M_A'= +\frac 32, +\frac 12, -\frac 12$ are possible. In the asymptotic
 picture, these three states are degenerate, obviously, described by the same
 total angular momentum and have the same radiation lifetimes.
 
-Hence, in equation \ref{equation:GammaJ_ratio} the only difference relies on $P$,
-which has to be remebered to be a sum over the different possible projections
+Hence, in equation (\ref{equation:GammaJ_ratio}) the only difference relies on $P$,
+which has to be remembered to be a sum over the different possible projections
 and orientation factors $B$. Evaluating the ratios for the different final state
 projections yield
 
