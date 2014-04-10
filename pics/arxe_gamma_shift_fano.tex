@@ -23,18 +23,6 @@
         {data/arxe_nrel.dat};
         \addlegendentry{nrel FanoADC};
 	
-%\addplot[%only marks,
-%         mark=x,
-%         thick,
-%         diplom1
-%        ]
-%        table[
-%        x expr = \thisrowno{0},
-%        y expr = \thisrowno{1}
-%        ]
-%        {../data/arxe_nrel_unshifted.dat};
-%        \addlegendentry{nrel unshifted};
-	
 \addplot[%only marks,
          mark=o,
          thick,
@@ -44,8 +32,20 @@
         x expr = \thisrowno{0},
         y expr = \thisrowno{1}
         ]
-        {data/arxe_nrel_shifted.dat};
-        \addlegendentry{nrel shifted};
+        {data/arxe_nrel_unshifted.dat};
+        \addlegendentry{nrel unshifted};
+	
+%\addplot[%only marks,
+%         mark=o,
+%         thick,
+%         diplom1
+%        ]
+%        table[
+%        x expr = \thisrowno{0},
+%        y expr = \thisrowno{1}
+%        ]
+%        {data/arxe_nrel_shifted.dat};
+%        \addlegendentry{nrel shifted};
 
 \addplot[only marks,
          mark=*,
@@ -59,18 +59,6 @@
         {data/arxe_rel_total.dat};
         \addlegendentry{rel FanoADC};
 	
-%\addplot[%only marks,
-%         mark=x,
-%         thick,
-%         diplom2
-%        ]
-%        table[
-%        x expr = \thisrowno{0},
-%        y expr = \thisrowno{1}
-%        ]
-%        {../data/arxe_rel_unshifted.dat};
-%        \addlegendentry{rel unshifted};
-	
 \addplot[%only marks,
          mark=o,
          thick,
@@ -80,8 +68,20 @@
         x expr = \thisrowno{0},
         y expr = \thisrowno{1}
         ]
-        {data/arxe_rel_shifted.dat};
-        \addlegendentry{rel shifted};
+        {data/arxe_rel_unshifted.dat};
+        \addlegendentry{rel unshifted};
+	
+%\addplot[%only marks,
+%         mark=o,
+%         thick,
+%         diplom2
+%        ]
+%        table[
+%        x expr = \thisrowno{0},
+%        y expr = \thisrowno{1}
+%        ]
+%        {data/arxe_rel_shifted.dat};
+%        \addlegendentry{rel shifted};
 
 		
 \end{loglogaxis}

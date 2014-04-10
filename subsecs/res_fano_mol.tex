@@ -1,9 +1,171 @@
-\chapter{Fano Molecules}
+\chapter{\ac{ICD} Decay Widths of ArXe Obtained by the Relativistic FanoADC}
+\section{Computational Details}
+Both the relativistic and the non-relativistic decay widths were calculated by
+the FanoADC(2x) and Stieltjes routines implemented in Dirac \cite{DIRAC13}.
+The relativistic results were obtained using the
+Dirac-Coulomb Hamiltonian with an approximate treatment of the two-electron
+integrals over the small components (LVCORR)
+in four-component calculations.
+
+Both the relativistic and the non-relativistic calculations were performed
+with the cv4z basis set of Dyall \cite{} and additional \ac{KBJ} \cite{Kaufmann89}
+basis functions centered on the geometric mean between the argon and the xenon
+atom. For this purpose five $s$, $p$ and $d$ basis functions each were used.
+The active space included the valence shell the argon and the xenon atom and
+the virtual orbitals were included up to \unit[15.0]{a.u.}. 
+This lead to 420 and xyz active spinors in the relativistic and non-relativistic
+case, respectively.
+
+In all cases the channels are either closed or very close to threshold.
+Therefore, the pseudo-spectrum contains only very few points for energies
+lower than the resonance energy. Therefore the moments of the lower orders of
+Stieltjes might not cover the resonance energy. And the calculated decay width
+is then obtained from extrapolation of the interpolated curves for higher energies.
+In the subsets of the pseudo-spectrum for the
+calculation of the partial decay widths even less or no points are given at all,
+therefore the partial decay widths might be less reliable.
 
 
-\begin{figure}[h]
+\section{Results}
+In figure \ref{figure:arxe_gamma_shift_fano} the total decay widths obtained
+from the FanoADC calculations and the asymptotic approximations are shown.
+
+\begin{figure}[]
   \centering
   \input{pics/arxe_gamma_shift_fano}
-  \caption{}
-  \label{}
+  \caption{Distance dependence of the decay widths of the heteronuclear
+           ArXe dimer obtained from both relativistic and non-relativistic
+           calculations using the asymptotic approximation and the FanoADC
+           approach.}
+  \label{figure:arxe_gamma_shift_fano}
 \end{figure}
+
+The \textit{ab initio} results of the relativistic and the non-relativistic
+calculations are very close and differ by no more than a factor of 2.
+However, which decay width is higher is not to be determined, because the
+curves cross each other.
+Since the factor of 2 is the approximate error of the calculations,
+these findings are within the errors bars and no statement
+about whether relativistic effects influence the total decay width can be
+concluded in this case.
+They both approximately show an $R^{-6}$ behaviour at distances larger than
+$\approx 2R_{eq}$. Also for smaller distances the decay widths only differ
+significantly at distances below \unit[5]{\AA}.
+
+In comparison to the decay widths obtained from the asymptotic approximation the
+\textit{ab initio} decay widths are higher by a factor of about 6. This behaviour
+is to be expected, since the asymptotic approximation does not take any overlap
+effects into account. Additionally, it relies on the truncation of a series over
+$R$ and hence higher order terms are also neglected. However, the asymptotic
+approximation does serve as a lower bound to the decay width.
+
+Another feature is the channel opening and closing. The FanoADC-Stieltjes
+approach relies on an incomplete pseudo-spectrum from which points of the
+decay width are constructed and later interpolated and thereby the curves are
+smoothed. This smoothing prohibits the possibility to determine whether a channel
+is open or closed close to threshold. Additionally, even though the resonance energy
+calculated from the initial state subspace should not differ to strongly from the
+initial state single ionization potential, small errors might be introduced by
+the partitioning of the Hamiltonian. Additionally, the \ac{ADC}(2x) method as such
+is not exact and might contribute to the error. All these factors necessitate
+interpretation of the scientist.
+Possibilities to treat the channel opening and closing are to calculate the
+channel opening distances with the ad hoc approach of equations (\ref{equation:E_in}
+-- \ref{equation:E_sec}) or to determine the channel opening distance by a set of
+single and double ionization calculations.
+
+
+The total decay width of the relativistic FanoADC calculation can be devided
+into partial decay widths of the following channels already presented in
+section \ref{section:icd_geom}: Ar3p$_{3/2}^{-1}$Xe5p$_{3/2}^{-1}$,
+Ar3p$_{1/2}^{-1}$Xe5p$_{3/2}^{-1}$, Ar3p$_{3/2}^{-1}$Xe5p$_{1/2}^{-1}$ and
+Ar3p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$. The sum of the partial decay widths should
+equal the total decay width and from the calculations only small deviations
+of up to \unit[10]{\%} were observed. The calculated decay widths are renormalized
+to the total decay width and illustrated in
+figure \ref{figure:arxe_rel_fano_partial}. The actual decay width in ascending
+order are given by the channels above.
+
+\begin{figure}[]
+  \centering
+  \input{pics/arxe_rel_fano_partial}
+  \caption{Renormalized partial decay widths calculated with the relativistic
+           FanoADC of the ArXe dimer compared to each other and the total decay
+           width.}
+  \label{figure:arxe_rel_fano_partial}
+\end{figure}
+
+These findings can be explained by two factors already discussed in the preceeding
+section about the dependence of the decay with on the quantum numbers of the
+initial and final states. The ratios of the channels between different decay widths
+mainly depend on the ratio of the two different ionization cross sections
+$\sigma_{3/2}$ and $\sigma_{1/2}$ and the ratio between the radiative lifetimes
+$\chi = \frac{\tau_{1/2}}{\tau_{3/2}}$.
+
+The ratio $\frac{\sigma_{3/2}}{\sigma_{1/2}}=1.6$ can be measured experimentally
+\cite{} and for large distances the ratio of the partial decay widths should
+behave accordingly. The ratios of the decay widths obtained from the
+FanoADC-Stieltjes calculations are compared to the this experimental ratio in
+figure \ref{figure:arxe_rel_fano_ratios_sigma}.
+\begin{figure}[]
+  \centering
+  \input{pics/arxe_rel_fano_ratios_sigma}
+  \caption{Partial decay width ratios for decay channels of the same final
+           state on the initially ionized atom compared to the experimentally
+           oberserved ratio between the ionization cross sections of the xenon
+           atom. The latter value provides the asymptotic limit.}
+  \label{figure:arxe_rel_fano_ratios_sigma}
+\end{figure}
+
+The agreement of the decay width ratios to the ratios of the ionization cross
+sections are reasonable for distances between 5 and \unit[10]{\AA}. At shorter
+distances the ratio is much higher than expected. But especially at small distances
+overlap effects and higher order terms of the expansion over $R$ might play
+a non-negliable role. At larger distances the decay width ratios should converge
+to the asymptotic limit. However, they obviously do not and hence I conclude
+that these partial decay widths and perhaps also the total decay width calculations
+with the chosen technical parameters and the current implementation are not
+reliable.
+
+Equation (\ref{equation:gamma_ratio_arxetype}) serves the asymptotic limit
+for the ratios of the decay widths with different quantum numbers at the initially
+ionized atom. Approximated from the atomic ionization energies of argon and the
+experimentally determined value of $\chi = 2.05$ \cite{}
+the asymptotic ratio of these partial decay widths is given by
+$\frac{\Gamma_{1/2}}{\Gamma_{3/2}} = 0.52$. This number is compared to
+the results from the FanoADC calculation in figure \ref{arxe_rel_fano_ratios}.
+
+\begin{figure}[]
+  \centering
+  \input{pics/arxe_rel_fano_ratios}
+  \caption{Partial decay width ratios compared to the asymptotic limit provided
+           by equation (\ref{equation:gamma_ratio_arxetype}).}
+  \label{figure:arxe_rel_fano_ratios}
+\end{figure}
+
+As for the ratio between the ionization cross sections the ratios of the partial decay
+widths for medium interatomic distances between \unit[5]{\AA} and \unit[15]{\AA}
+seem to be reasonably well described. At shorter distances the ratio is higher
+than expected from the asymptotic limit. At larger distances the description
+should be expected to be better, but it is worse for the Xe5p$_{3/2}^{-1}$ case.
+
+Therefore, the partial decay width calculations in the range between distances
+up to \unit[10]{\AA} can be assumed to be trustworthy, while the
+partial decay widths for larger distances would need a more elaborate treatment.
+
+
+
+\section{Possible Improvements}
+The currently implemented projectors for the partial decay widths have already
+previously been shown not to be trustworthy in all cases. Therefore, a more elaborate
+definition of the channel projection operators might improve the results.
+Additionally, a larger basis set might improve the results. A further augmentation
+would increase the basis set size in the energy regions of the emitted electron
+and further ghost atoms located between the argon and the xenon atom might prevent
+the unexpected behaviour at distances larger than \unit[10]{\AA}, if the
+drawback of the current setup is the loss of overlap between the basis functions.
+However, at the current state of implementation the computational limit is reached
+and larger basis sets can not be investigated with the computer clusters of the
+group.
+
+
