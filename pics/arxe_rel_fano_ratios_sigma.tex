@@ -1,0 +1,41 @@
+\begin{tikzpicture}
+
+\begin{axis}[
+             domain=3:24,
+             restrict expr to domain={x}{3:24},
+             xlabel={R in \AA},
+             ylabel={$\frac{\Gamma(Ar_{1/2})}{\Gamma(Ar_{3/2})}$},
+             %xtick={2,4,...,24},
+             %xticklabels={2,4,6,8,10,15,20,25},
+             cycle list name = exotic
+            ]
+
+\addplot[
+         black,
+         no marks,
+         thick
+         ]
+        {1.6};
+        \addlegendentry{$\frac{\sigma_{3/2}}{\sigma_{1/2}}$};
+
+\addplot+[
+         ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = \thisrowno{1} / \thisrowno{3}
+        ]
+        {data/arxe_rel_partial.dat};
+        \addlegendentry{Ar3p$_{3/2}^{-1}$};
+
+\addplot+[
+         ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = \thisrowno{2} / \thisrowno{4}
+        ]
+        {data/arxe_rel_partial.dat};
+        \addlegendentry{Ar3p$_{1/2}^{-1}$};
+
+\end{axis}
+
+\end{tikzpicture}
