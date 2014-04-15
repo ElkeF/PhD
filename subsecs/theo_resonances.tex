@@ -6,65 +6,25 @@ system, in which energy is either transferred from
 one system to another or converted into a different kind of energy.
 In quantum mechanics analogously the maximum response 
 of two states (not necessarily eigenstates of the system) 
-bound or continuum states is referred to as a resonance.
-One has to distinguish between two major manifolds of resonances
-by being reversible or irreversible \cite{Cohen-Tannoudji_3_2}
-as illustrated in figure
-\ref{figure:overview_resonances}.
-In reversible resonances
-interaction of the enganged states can be mediated via an external field,
-which causes excitations
-into different electronic, vibrational and rotational states.
-Irreversible resonances on the other hand are observed in the case of
-metastable states decaying over time. We are going to focus on the theory of
-decaying metastable states describing electronic decay processes like the
-Auger process and the zoo of \ac{ICD} like processes. 
+bound or continuum states creating a meta-stable state is referred to as a resonance.
 
-Metastable states can be divided into shape resonances and Feshbach resonances,
-also called Fano resonances. In shape resonances the particle of investigation
-resides in
-a local minimum of the potential and decays via tunneling through some barrier.
-\cite{Klaiman12}
-In other words, it escapes from its former residence.
-In contrast to the shape resonances, in Feshbach-Fano resonances
-a bound state decays via coupling to continuum states. Such a situation might
-appear in scattering experiments, where we consider two particles $A$ and $B$.
-For simplicity we choose particle $B$ to be much more heavy than particle $A$ and
-hence to a good approximation to be fixed in space and particle $A$
-approaching it. At very large distances the two particles do not interact with
-each other. Each of them is in an eigenstate of both its own local system
-and the total system containing both particles. As $A$ approaches $B$, the two
-particles start feeling and influencing each other which consequently leads
-to changes in the eigenstates of the system and hence neither of the particles
-inhabiting one of them. A metastable state is formed. Inside this
-\emph{interaction region} the system
-rearranges electronically and decays in our case of interest. The decay
-products leave the interaction region and can subsequently be analyzed.
-Likewise the decay of metastable states can be described in processes
-where the reaction partners do not approach each other but the metastable
-state is created inside the interaction region. This means that the initial
-state is never unperturbed by the other particle. Here it is assumed, that
-the meta-stable state is quasi-bound and the decay rate is determined by
-the interaction of this initial state in a bound state description with
-states in the continuum.
+In a general scattering experiment the a particle $A$ apporaches another
+particle $B$. In the beginning they are freely moving particles and do not interact
+with each other. The closer these two particles get, the stronger is their interaction.
+At some time $t$ they form a meta-stable state. Then, the two particles fly apart
+either with the same energy distribution as before (elastic scattering) or with
+redistributed energies due to internal electronic rearrangements of the particles
+(inelastic scattering). The spacial region in which the scattering occurs and
+which describes the spacial region, where the particles are not able to move freely is
+called the interaction region.
 
-In the following sections we will start with 
-discussing properties of metastable states.
-We are going to get insight through the study of electron dynamics inside
-the interaction region
-and the description of their decay into several decay channels from an outside
-view, where what happens in detail inside the interaction region is of no
-concern and solely the initial and final states are taken into
-account. \cite{Gell-Mann53}
-
-
-\begin{figure}[h]
-  \centering
-  \input{pics/overview_resonances}
-  \caption{Schematic overview about different kinds of resonances and the
-           calculation of their respective lifetimes.}
-  \label{figure:overview_resonances}
-\end{figure}
+Particularly interesting to the auotionization processes are those resonances
+characterized by long-lived metastable states. They belong to the group of Feshbach
+resonances \cite{Feshbach58}, where the metastable state is characterized by an
+excitation and the direct decay channels are closed. Therefore, the meta-stable
+state either has to decay into the initial state or to rearrange electronically
+and decay via decay channels of lower energy. Autoionization processes are special
+cases of the latter.
 
 
 
@@ -91,7 +51,8 @@ $\ket{\phi ^{(+)}}$ and $\ket{\chi ^{(-)}}$.
 \end{align}
 Here "$+$" denotes outgoing and "$-$" denotes incoming boundary conditions.
 This means that the approaching particle has outgoing boundary conditions and the
-leaving particle has incoming boundary conditions.
+leaving particle has incoming boundary conditions. Introductions to the matter
+can be found in references \cite{nolting52,Gell-Mann53,Taylor87}.
 
 The Hamiltonian of the complete system including the interaction part
 is given by
@@ -106,19 +67,19 @@ operator mediating the interaction of the initial and final states.
 At asymptotic times the Schrödinger equation gives
 
 \begin{equation}
- H_0 \ket{E_n^{0}} = E_n^{0} \ket{E_n^{0}}
+ H_0 \ket{E_n^{(0)}} = E_n^{(0)} \ket{E_n^{(0)}}
 \end{equation}
-with the energy eigenvalues $E_n^{0}$ and eigenstates $\ket{E_n^{0}}$ with the
+with the energy eigenvalues $E_n^{(0)}$ and eigenstates $\ket{E_n^{0}}$ with the
 orthonormality conditions
 
 \begin{equation}
- \int \mathrm{d}n \, \ket{E_n^{0}} \bra{E_n^{0}} = \mathbf{1} \quad\quad
- \braket{E_m^{0} |E_n^{0}} = \delta_{mn}
+ \int \mathrm{d}n \, \ket{E_n^{(0)}} \bra{E_n^{(0)}} = \mathbf{1} \quad\quad
+ \braket{E_m^{(0)} |E_n^{(0)}} = \delta_{mn}
 \end{equation}
 
 Without any interaction the initial state at time $t$ can be described as
 \begin{equation}
- \ket{\phi_0(t)} = \int \mathrm{d}n \, \mathbf{\alpha}_n e^{iE_n^0t} \ket{E_n^0}
+ \ket{\phi_0(t)} = \int \mathrm{d}n \, \mathbf{\alpha}_n e^{iE_n^{(0)}t} \ket{E_n^{(0)}}
 \end{equation}
 where $\mathbf{\alpha}_n$ is the matrix of initial state population coefficients.
 Analogously the matrix $\mathbf{\beta}_n$ is described for the final states.
@@ -126,9 +87,9 @@ Their asymptotic time limits can be obtained from
 
 \begin{align}
  \lim_{t \to -\infty} \ket{\phi(t)} &= \lim_{t \to -\infty}
-       \int \mathrm{d}n \, \mathbf{\alpha}_n e^{iE_n^0t} \ket{E_n^0}   \\
+       \int \mathrm{d}n \, \mathbf{\alpha}_n e^{iE_n^{(0)}t} \ket{E_n^{(0)}}   \\
  \lim_{t \to +\infty} \ket{\phi(t)} &= \lim_{t \to +\infty}
-       \int \mathrm{d}n \, \mathbf{\beta}_n e^{iE_n^0t} \ket{E_n^0}   
+       \int \mathrm{d}n \, \mathbf{\beta}_n e^{iE_n^{(0)}t} \ket{E_n^{(0)}}   
 \end{align}
 
 Outside the interaction region at infinite times the description of the
@@ -318,14 +279,10 @@ the complex part of these resonance energies correspond to half the decay width.
 
 Its absolute square corresponds to the transition probability density
 which shows maxima at the resonance positions. They have a Lorentzian shape
-and the \ac{FWHM} is the decay width $\Gamma=\frac{\hbar}{\tau}$.
-
-Now, the task is to find the matrix elements of $\mathcal{T}$ given by
-\begin{equation}
- \mathcal{T} = \braket{E_m^{(-)}| V | E_n^{(0)}} = \braket{E_m^{(0)}| V |E_n^{(+)}}
-\end{equation}
-or their complex conjugates carrying the same information.
-
+and the \ac{FWHM} is the decay width $\Gamma=\frac{\hbar}{\tau}$. The Lorentz
+distribution is better as known as Cauchy distribution and its shape for some
+function $f$ is given to illustrate the decay width $\Gamma$ in figure
+\ref{figure:general_resonance}.
 
 
 \begin{figure}[h]
@@ -336,6 +293,13 @@ or their complex conjugates carrying the same information.
   \label{figure:general_resonance}
 \end{figure}
 
+Now, the task is to find the matrix elements of $\mathcal{T}$ given by
+\begin{equation}
+ \mathcal{T} = \braket{E_m^{(-)}| V | E_n^{(0)}} = \braket{E_m^{(0)}| V |E_n^{(+)}}
+\end{equation}
+or their complex conjugates carrying the same information \cite{Feshbach_book}.
+
+
 
 \section{Projection Method for the Evaluation of the $\mathcal{T}$ Matrix}
 
@@ -345,7 +309,7 @@ This difficulty is overcome by partitioning the Hilbert space into initial and f
 state subspaces and using the approriate eigenfunctions of these subspaces for the
 calculation of the decay widths. 
 Several theories had been used for the description of different nuclear reactions
-before they were first unified by Feshbach in 1958 \cite{Feshbach58,Feshbach62,Feshbach_book}.
+before they were first unified by Feshbach \cite{Feshbach58,Feshbach62,Feshbach_book}.
 In contrast to earlier approaches, it holds for all coupling schemes as well as
 all quantum numbers. They will be taken care of in the definition of the
 projection operators.
@@ -383,7 +347,7 @@ can easily be derived with
   H_{QP} & \equiv QHP & \quad\quad H_{QQ} & \equiv QHQ .
 \end{align*}
 
-It has to be noted, that the applied criteria for the seletion of
+It has to be noted that the applied criteria for the seletion of
 these subspaces affect the final results. The above selection scheme is the
 most common, but not the only possible partitioning.
 From equation \ref{se_QQ} a straigth-forward solution for the system excluding
@@ -606,7 +570,7 @@ as a sum over the different open channel solutions for a given resonant initial 
                  \label{equation:Gamma_HQP}\\
            & = \sum\limits_r \Gamma_{sr}(E)
 \end{align}
-Here it has to be remembered, that $E$ is the energy of a final state, which means, that
+Here it has to be remembered that $E$ is the energy of a final state, which means that
 only such functions give a contribution, which have the same energy as those.
 
 This formulation is sufficient for all cases, we are going to discuss in this thesis.
