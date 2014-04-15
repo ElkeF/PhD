@@ -81,30 +81,251 @@ of these time-independent states. In the case of resonances
 this will lead to so-called resonance states
 with a finite lifetime, a complex energy and the correct asymptotic behaviour.
 
-In a full-collision scattering experiment of two particles we choose
-one particle to be fixed in space and the other one to be scattered on it.
-This is a good approximation if the scattered particle's mass is much smaller
-than the target particle. The time of interaction is denoted by $t=0$.
-At times $t<<0$ the moving particle can be well approximated to behave like
-a free particle and hence a plane wave. As it approaches the target, it is
-perturbed and interacts with the target. Afterwards the particle leaves the target
-but might be inherently changed due to the interaction with the target particle.
-For large distances and times $t>>0$ it approaches the behaviour of a free
-particle again.
-
-The wavefunctions of the initial and final states $\ket{\phi}$
-and $\ket{\chi}$
-at the time of the interaction
-$t=0$ are obtained from their asymptotes $\ket{\phi ^{(+)}}$ 
-and $\ket{\chi ^{(-)}}$ as
+This means that the aim is to express the resonance with the initial and final
+states $\ket{\phi}$ and $\ket{\chi}$ in terms of their asymptotes
+$\ket{\phi ^{(+)}}$ and $\ket{\chi ^{(-)}}$.
 
 \begin{align}
-  \ket{\phi}  &\rightarrow  \ket{\phi ^{(+)}}\\
-  \ket{\chi}  &\rightarrow  \ket{\chi ^{(-)}}
+  t \rightarrow -\infty:  \ket{\phi}  &\rightarrow \ket{\phi ^{(+)}}\\
+  t \rightarrow \infty :  \ket{\chi}  &\rightarrow \ket{\chi ^{(-)}}
 \end{align}
-where $+$ denotes outgoing and $-$ denotes incoming boundary conditions.
-This means, that the approaching particle has outgoing boundary conditions and the
+Here "$+$" denotes outgoing and "$-$" denotes incoming boundary conditions.
+This means that the approaching particle has outgoing boundary conditions and the
 leaving particle has incoming boundary conditions.
+
+The Hamiltonian of the complete system including the interaction part
+is given by
+
+\begin{equation}
+  H = H_0 + V
+\end{equation}
+where $H_0$ denotes the Hamiltonian of the full system including
+bound and contiuous states excluding the interaction
+between the initial and final states at infinite times and $V$ denotes the
+operator mediating the interaction of the initial and final states.
+At asymptotic times the Schrödinger equation gives
+
+\begin{equation}
+ H_0 \ket{E_n^{0}} = E_n^{0} \ket{E_n^{0}}
+\end{equation}
+with the energy eigenvalues $E_n^{0}$ and eigenstates $\ket{E_n^{0}}$ with the
+orthonormality conditions
+
+\begin{equation}
+ \int \mathrm{d}n \, \ket{E_n^{0}} \bra{E_n^{0}} = \mathbf{1} \quad\quad
+ \braket{E_m^{0} |E_n^{0}} = \delta_{mn}
+\end{equation}
+
+Without any interaction the initial state at time $t$ can be described as
+\begin{equation}
+ \ket{\phi_0(t)} = \int \mathrm{d}n \, \mathbf{\alpha}_n e^{iE_n^0t} \ket{E_n^0}
+\end{equation}
+where $\mathbf{\alpha}_n$ is the matrix of initial state population coefficients.
+Analogously the matrix $\mathbf{\beta}_n$ is described for the final states.
+Their asymptotic time limits can be obtained from
+
+\begin{align}
+ \lim_{t \to -\infty} \ket{\phi(t)} &= \lim_{t \to -\infty}
+       \int \mathrm{d}n \, \mathbf{\alpha}_n e^{iE_n^0t} \ket{E_n^0}   \\
+ \lim_{t \to +\infty} \ket{\phi(t)} &= \lim_{t \to +\infty}
+       \int \mathrm{d}n \, \mathbf{\beta}_n e^{iE_n^0t} \ket{E_n^0}   
+\end{align}
+
+Outside the interaction region at infinite times the description of the
+time-dependence is most conviently expressed in the Dirac picture with both
+operators and wavefunctions being time-dependent, labelled by the subscript $D$
+
+\begin{equation}
+ \ket{\phi_D(t)} = e^{iH_0t} \ket{\phi(t)}
+\end{equation}
+
+Then the time evolution from one state at time $t'$ to another state at time
+$t$ can be written using the time evolution operator $U_D(t,t')$
+
+\begin{equation}
+ \ket{\phi_D(t)} = U_D(t,t')  \ket{\phi_D(t')}
+\end{equation}
+which in the Dirac picture for the complete system is given by
+
+\begin{equation}
+ U_D(t,t') = e^{iH_0t} e^{-iH(t-t')} e^{iH_0t'}
+\end{equation}
+and without the interaction, i.e. $H=H_0$ is the unity operator.
+
+Then the probability amplitude to find a particle prepared as $\ket{\phi_D(t')}$
+at time $t'$ in an unperturbed energy eigenstate $\ket{E_m^{(0)}}$ at a later
+time $t$ is written as
+\begin{align}
+ \braket{E_m^{(0)} | \phi_D(t)} &= \braket{E_m^{(0)}| U_D(t,t') | \phi_D(t')}\\
+  &= \int \mathrm{d} n \, \braket{E_m^{(0)}| U_D(t,t') |E_n^{(0)}}
+     \braket{E_n^{(0)}|\phi_D(t')}
+\end{align}
+
+These probability amplitudes are valid for any times $t$ and $t'$ and hence also
+for $t\rightarrow +\infty$ and $t' \rightarrow -\infty$
+\begin{align}
+ \lim_{t \to +\infty} \braket{E_m^{(0)} | \phi_D(t)} &= \mathbf{\beta}_m   \\
+ \lim_{t' \to -\infty} \braket{E_n^{(0)} | \phi_D(t)} &= \mathbf{\alpha}_n
+\end{align}
+
+From the latter equations an expression for the final state population coefficients
+from a given final state population can be derived as
+\begin{align}
+ \mathbf{\beta}_m = \int \mathrm{d} n \,
+     \braket{E_m^{(0)}| U_D(+\infty,-\infty) |E_n^{(0)}} \mathbf{\alpha}_n
+\end{align}
+
+This can be formulated in terms of the scattering matrix $S$ as
+
+\begin{equation}
+  \mathbf{\beta}_m = \int \mathrm{d} n \, S_{mn} \mathbf{\alpha}_n
+\end{equation}
+where the scattering matrix is given by
+
+\begin{equation}
+  S_{mn} = \braket{E_m^{(0)}| U_D(+\infty,-infty) |E_n^{(0)}}
+\end{equation}
+
+It mediates the transition probability amplitudes between the non-interacting
+initial and final states. A closer look on the scattering matrix reveals another
+formulation using the asymptotic limits of the initial and final states:
+
+\begin{equation}
+ S_{mn} = \lim_{t \to \infty} \lim_{t' \to -\infty}
+  \braket{E_m^{(0)}| e^{i(E_m^{(0)}-H)t} e^{-i(E_n^{(0)}-H)t'} |E_n^{(0)}}
+\end{equation}
+
+The asymptotic limit of some function $f(t)$ can be obtained by
+\begin{align}
+ \lim_{t \to +\infty} f(t) &= f(\infty) \int\limits_0^\infty \mathrm{d}x \, e^{-x}\\
+   &= \lim_{\eta \to 0^+} \int\limits_0^\infty \mathrm{d}x \, e^{-x}
+           f\left( \frac{x}{\eta}\right)    \\
+   &= \lim_{\eta \to 0^+} \eta \int\limits_0^\infty \mathrm{d}t' \, e^{-\eta t} f(t')
+\end{align}
+and the analog for $t \rightarrow -\infty$ with an integral from $-\infty$ to $0$
+a changed sign in the exponential function.
+Evaluating the asymptotic limit for $t\rightarrow +\infty$ yields
+
+\begin{align}
+ \lim_{t \to +\infty} e^{-i(E_m^{(0)}-H)t} \ket{E_m^{(0)}}
+ &= \lim_{t \to +\infty} \eta \int\limits_0^\infty \mathrm{d}t' \,
+    e^{-i(E_m^{(0)} -H -i\eta)t'} \ket{E_m^{(0)}}\\
+ &= \lim_{t \to +\infty} \frac{-\eta}{-i(E_m^{(0)}-H -i\eta)} \ket{E_m^{(0)}}\\
+ &= \frac{-i0^+}{E_m^{(0)}-H -i0^+}  \ket{E_m^{(0)}}
+\end{align}
+
+and hence general for both asymptotes
+\begin{equation} \label{equation:asymptot_wf_scattering}
+ \ket{E_n^{(\pm)}} = \lim_{t \to \mp\infty} e^{-i(E_n^{(0)}-H)t} \ket{E_n^{(0)}}
+   = \frac{\pm i0^+}{E_n^{(0)}-H -i0^+} \ket{E_n^{(0)}}
+\end{equation}
+
+These asymptotic wavefunctions are eigenfunctions of the Hamiltonian including
+the interaction operator $V$ and has the same energies as $H_0$
+
+\begin{equation}
+ H \ket{E_n^{(\pm)}} = E_n^{(0)} \ket{E_n^{(\pm)}}
+\end{equation}
+The are normalized according to
+\begin{equation}
+ \braket{E_m^{(\pm)} | E_n^{(\pm)}} = \delta_{mn}
+\end{equation}
+
+Cleverly adding zeros to equation (\ref{equation:asymptot_wf_scattering})
+yields
+\begin{align}
+ \ket{E_n^{(\pm)}} &= \frac{1}{E_n^{(0)}-H \pm i0^+}
+   \left[ \left( E_n^{(0)}-H \pm i0^+ \right) + \left( H_0 + V - E_n^{(0)} \right)
+        \right] \ket{E_n^{(0)}}   \\
+ &= \left[ \mathbf{1} + G_n^{(\pm)}V \right]  \ket{E_n^{(0)}}
+\end{align}
+where the Green's operator $G_n^{(\pm)} = \frac{1}{E_n^{(0)}-H \pm i0^+}$ is
+introduced. Upon these latter equations an alternative formulation
+of the Lippmann-Schwinger equation is achieved, which connects the eigenfunctions
+of $H_0$ to the asymptotic wavefunctions
+
+\begin{equation} \label{equation:LippmannSchwinger}
+ \ket{E_n^{(\pm)}} =  \ket{E_n^{(0)}} + G_n^{(\pm)}V \ket{E_n^{(0)}}
+\end{equation}
+
+Therefore, the scattering matrix can now be expressed in terms of the asymptotic
+wavefunctions as
+
+\begin{equation}
+ S_{mn} = \braket{E_n^{(-)} | E_n^{(+)}}
+\end{equation}
+
+Since the processes of interest are characterized by an escaping electron,
+which needs to be described with an asymptotic wavefunction, while the initial
+state is quasi-bound, the following discussion will focus on the time-evolution
+description of the final state.
+\begin{equation}
+ \bra{E_m^{(\pm)}} = \bra{E_m^{(0)}} + \bra{E_m^{(0)}} V G_n^{(\mp)}
+\end{equation}
+
+Using the definition in equation (\ref{equation:LippmannSchwinger})
+for the asymptotic limits for both $t\rightarrow \infty$ and
+$t' \rightarrow - \infty$ and and subtracting them leads to 
+
+\begin{align}
+  \bra{E_m^{(-)}} - \bra{E_m^{(+)}} &= \bra{E_m^{(0)}} V (G_n^{(+)} - G_n^{(-)} ) \\
+  S_{mn} &= \delta_{mn} - \braket{E_m^{(0)}| V (G_n^{(+)} - G_n^{(-)}) |E_n^{(+)}} 
+\end{align}
+
+Evaluating the action of the Green's function on $\ket{E_n^{(+)}}$ yields
+\begin{equation}
+ (G_n^{(+)} - G_n^{(-)}) \ket{E_n^{(+)}} 
+ = \frac{-2i0^+}{\left( E_m^{(0)} - E_n^{(0)} \right)^2 + (0^+)^2} \ket{E_n^{(+)}}
+\end{equation}
+
+
+The achieved prefactor has the form of a function, which approximates the delta
+function with a Lorentzian shape
+\begin{equation}
+ \delta(x) = \lim_{\eta \to 0^+} \frac{1}{\pi} \frac{\eta}{x^2 + \eta^2}
+\end{equation}
+
+and therefore, the scattering matrix is given by
+\begin{equation}
+ S_{mn} = \delta_{mn} - 2\pi i \delta \left(E_m^{(0)} - E_n^{(0)} \right)
+          \braket{E_m^{(0)}| V |E_n^{(+)}}
+\end{equation}
+It consists of two terms. The first describes the the possibility that no scattering
+occurs and hence both initial and final state are preserved. The second term
+describes the scattering process in terms of the asymptotic limits. However,
+the desired expression should describe the scattering process in terms of the
+eigenstates of $H_0$. This is achieved by defining the transition operator
+
+\begin{equation}
+ T^{(n)} \equiv V \left( \mathbf{1} + G_n^{(+)} V \right)
+\end{equation}
+
+Its action on $\ket{E_n^{(0)}}$ equals the action of $V$ on the asymptotic
+states $\ket{E_n^{(-)}}$
+\begin{equation}
+ V \ket{E_n^{(-)}} = T^{(n)} \ket{E_n^{(0)}}
+\end{equation}
+
+Hence, the scattering matrix reads as
+\begin{equation}
+ S_{mn} = \delta_{mn} - 2\pi i \delta \left(E_m^{(0)} - E_n^{(0)} \right)
+          \braket{E_m^{(0)}| T^{(n)} |E_n^{(0)}}
+\end{equation}
+
+The corresponding $\mathcal{T}$ matrix contains all information about the
+scattering process. Its poles correspond to the resonance energies and
+the complex part of these resonance energies correspond to half the decay width.
+
+Its absolute square corresponds to the transition probability density
+which shows maxima at the resonance positions. They have a Lorentzian shape
+and the \ac{FWHM} is the decay width $\Gamma=\frac{\hbar}{\tau}$.
+
+Now, the task is to find the matrix elements of $\mathcal{T}$ given by
+\begin{equation}
+ \mathcal{T} = \braket{E_m^{(-)}| V | E_n^{(0)}} = \braket{E_m^{(0)}| V |E_n^{(+)}}
+\end{equation}
+or their complex conjugates carrying the same information.
+
 
 
 \begin{figure}[h]
@@ -116,7 +337,7 @@ leaving particle has incoming boundary conditions.
 \end{figure}
 
 
-\section{Resonances in systems with more than two states}
+\section{Projection Method for the Evaluation of the $\mathcal{T}$ Matrix}
 
 In the case of a multistate system, the calculation of the decay width is more
 complex than in a system with only two states.
@@ -232,13 +453,15 @@ final state Hamiltonian of
   \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E-\varepsilon} \, H_{QP}
 \end{equation}
 
-which is useful to split into two parts: One describing the interaction with the
+which is useful to split into two parts: One describing the interaction
+$\mathcal{V}$ with the
 initial state $\Phi_s$ with its energy $\varepsilon_s$ being in resonance with
-the continuum and the rest
-$\mathscr{H}'$
+the continuum and the rest $\mathscr{H}'$
 
 \begin{equation}
-  \mathscr{H} = \mathscr{H}' + H_{PQ} \,\frac{\ket{\Phi_s}\bra{\Phi_s}}{E-\varepsilon_s}\, H_{QP}
+  \mathscr{H} = \mathscr{H}' +
+                H_{PQ} \,\frac{\ket{\Phi_s}\bra{\Phi_s}}{E-\varepsilon_s}\, H_{QP}
+              = \mathscr{H}' + \mathcal{V}
 \end{equation}
 
 with
@@ -247,7 +470,7 @@ with
   \sum\limits_{n\ne s} H_{PQ} \,\frac{\ket{\Phi_n}\bra{\Phi_n}}{E-\varepsilon_n}
   \, H_{QP} \,+\,
   \int \mathrm{d}\alpha \int\mathrm{d}E \,H_{PQ} \,
-  \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E-\varepsilon} \, H_{QP} .
+  \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E-\varepsilon} \, H_{QP}
 \end{equation}
 
 This reformulation leads to the following version of eq. \ref{se_ppsi}
@@ -263,16 +486,16 @@ the eigenfunctions of $\mathscr{H}'$ have to fulfill incoming boundary condition
 which is labelled by the superscript $(-)$
 
 \begin{equation}
-  (\mathscr{H}'-E) \psi_f^{(-)} = 0 \label{sol_outg} .
+  (E-\mathscr{H}') \psi_f^{(-)} = 0 \label{sol_outg} .
 \end{equation}
 
-This relation can the be utilized to find a solution for $\ket{P \Psi}$ analogous
-to the approach in equation (\ref{equation:in_state_0_approx}):
+This relation can the be utilized to find a solution for $\ket{P \Psi}$
+using the Lippmann Schwinger equation (\ref{equation:LippmannSchwinger}):
 
 \begin{equation}\label{sol_ppsi}
-  P \Psi = \psi_f^{(-)} + \frac{1}{\mathscr{H}' - E^{(-)}}
+  P \Psi = \psi_f^{(-)} + \frac{1}{E^{(-)} - \mathscr{H}'}
            \frac{H_{PQ}\ket{\Phi_s}
-           \braket{\Phi_s|H_{QP}|P\Psi}}{E - \varepsilon_s} .
+           \braket{\Phi_s|H_{QP}|P\Psi}}{E - \varepsilon_s} 
 \end{equation}
 
 $\ket{P \Psi}$ depends on itself and we want it to be expressed solely in terms
@@ -280,45 +503,46 @@ of $\Psi_f^{(-)}$. Therefore
 eq. \ref{sol_ppsi}
 is multiplied from the left with $\bra{\Phi_s|H_{QP}}$ to give:
 \begin{equation}
-  \braket{\Phi_s|H_{QP}|P\Psi} = \braket{\Phi_s|H_{QP}|\Psi_f^{(-)}} +
-  \frac{1}{\mathscr{H}' - E^{(-)}}
+  \braket{\Phi_s|H_{QP}|P\Psi} = \braket{\Phi_s|H_{QP}|\Psi_f^{(-)}} -
+  \frac{1}{E^{(-)} - \mathscr{H}'}
   \frac{\braket{\Phi_s|H_{QP}H_{PQ}|\Phi_s} \braket{\Phi_s|H_{QP}|P\Psi}}
-       {E - \varepsilon_s}  \label{s_ppsi} .
+       {E - \varepsilon_s}  \label{s_ppsi} 
 \end {equation}
 
 Defining the quantity
 
 \begin{equation}
-  W_{QQ} = H_{QP}\frac{1}{\mathscr{H}' - E^{(-)}}H_{PQ}
+  W_{QQ} = H_{QP}\frac{1}{E^{(-)} - \mathscr{H}'}H_{PQ}
 \end{equation}
 
 and solving eq. \ref{s_ppsi} for
 
 \begin{equation}
   \braket{\Phi_s|H_{QP}|P\Psi} = \frac{\braket{\Phi_s|H_{QP}|\Psi_f^{(-)}}(E-\varepsilon_s)}
-{E - \varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}}
+{E - \varepsilon_s + \braket{\Phi_s|W_{QQ}|\Phi_s}}
 \end{equation}
 
 yields the final state description
 \begin{equation}\label{}
-  P \Psi = \psi_f^{(-)} + \frac{1}{\mathscr{H}' - E^{(-)}}
+  P \Psi = \psi_f^{(-)} - \frac{1}{E^{(-)} - \mathscr{H}'}
            \frac{H_{PQ}\ket{\Phi_s}
            \braket{\Phi_s|H_{QP}|\psi_f^{(-)}}}
-           {E - \varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}} .
+           {E - \varepsilon_s + \braket{\Phi_s|W_{QQ}|\Phi_s}} .
 \end{equation}
 
 
 
-The above mentioned matrix of transition amplitudes $\mathcal{T}$
+The complex conjugate of the above mentioned matrix of transition
+amplitudes $\mathcal{T}$
 is in our case given by
 
 
 \begin{align}
-  \mathscr{T}_{if} &= \braket{\psi_i^{(+)} | P\Psi} \\
-                   &= \mathscr{T}_{if}^{(P)} + 
+  \mathscr{T}_{if}^* &= \braket{\psi_i^{(+)}| \mathcal{V} | P\Psi} \\
+                   &= \mathscr{T}_{if}^{(P)*} + 
                      \frac{\braket{\psi_i^{(+)}|H_{PQ}|\Phi_s}
                            \braket{\Phi_s|H_{QP}|\Psi_f^{(-)}}}
-                          {E-\varepsilon_s - \braket{\Phi_s|W_{QQ}|\Phi_s}}
+                          {E-\varepsilon_s + \braket{\Phi_s|W_{QQ}|\Phi_s}}
 \end{align}
 
 where $\psi_i^{(+)}$ in case of a full-collision process describes
@@ -329,7 +553,7 @@ boundary conditions
   (E - \mathscr{H}') \psi_i^{(+)} = 0 .                                       
 \end{equation}
 
-where $\mathscr{T}_{if}^{(P)}$ describes the transitions without any interaction
+where $\mathscr{T}_{if}^{(P)*}$ describes the transitions without any interaction
 between the initial and final states taken into account. Therefore, close to   
 the resonance, this part is expected to be small compared to the second part,which
 describes the transition
@@ -348,20 +572,20 @@ Dirac delta function. \cite{Cohen-Tannoudji_3_2}
 \begin{align}
   \braket{\Phi_s|W_{QQ}|\Phi_s} & = \Delta_s(E) - i \frac{\Gamma_s(E)}{2}\\
                                 & = \braket{\Phi_s|H_{QP}
-                                    \frac{1}{\mathscr{H}' - E^{(-)}}H_{PQ}|\Phi_s}\\
+                                    \frac{1}{E^{(-)} - \mathscr{H}'}H_{PQ}|\Phi_s}\\
                                 & = \braket{\Phi_s|H_{QP}
-                                    \frac{\mathcal{P}}{\mathscr{H}' - E}H_{PQ}|\Phi_s}
-                                    - i\pi \braket{\Phi_s|H_{QP}\delta(\mathscr{H}'-E)H_{PQ}
+                                    \frac{\mathcal{P}}{E - \mathscr{H}'}H_{PQ}|\Phi_s}
+                                    - i\pi \braket{\Phi_s|H_{QP}\delta(E-\mathscr{H}')H_{PQ}
                                     |\Phi_s} 
 \end{align}
 
 Inserting the latter expression into the transition matrix yields
 
 \begin{equation}
-  \mathscr{T}_{if} = \mathscr{T}_{if}^{(P)} + 
+  \mathscr{T}_{if}^* = \mathscr{T}_{if}^{(P)*} + 
                      \frac{\braket{\psi_i^{(+)}|H_{PQ}|\Phi_s}
                            \braket{\Phi_s|H_{QP}|\Psi_f^{(-)}}}
-                          {E-\varepsilon_s - \Delta_s + i \frac{\Gamma}{2}}
+                          {E-\varepsilon_s + \Delta_s - i \frac{\Gamma}{2}}
 \end{equation}
 
 from which now the real part of $\braket{\Phi_s|W_{QQ}|\Phi_s}$ can be interpreted 
@@ -376,7 +600,8 @@ of eigenfunctions with incoming boundary conditions as defined in
 eq. \ref{sol_outg} the decay width can be described
 as a sum over the different open channel solutions for a given resonant initial state.
 \begin{align}
-  \Gamma_s & = 2 \pi \braket{\Phi_s|H_{QP}\delta(\mathscr{H}'-E)H_{PQ}|\Phi_s}   \label{equation:Gamma_HE}\\
+  \Gamma_s & = 2 \pi \braket{\Phi_s|H_{QP}\delta(E - \mathscr{H}')H_{PQ}|\Phi_s}
+               \label{equation:Gamma_HE}\\
            & = 2 \pi \sum\limits_r \left | \braket{\Phi_s|H_{QP}|\psi_r^{(-)}} \right|^2
                  \label{equation:Gamma_HQP}\\
            & = \sum\limits_r \Gamma_{sr}(E)
