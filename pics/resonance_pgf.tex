@@ -9,11 +9,10 @@
         }]
 %     \tiny
 %  \draw[very thin,color=gray] (-0.1,-0.1) grid (4.9,4.9);
-  \draw[->,thick] (-0.2,0) -- (10.2,0) node[right] {$E$};
-  \draw[->,thick] (0,-0.2) -- (0,6.2) node[anchor=north east] {$\left. \frac{\mathrm{d}}{\mathrm{d}t}
-                                                   |f_{fi}|^2 \right|_{t=0}$};
+  \draw[->,thick] (-0.2,0) -- (10.2,0) node[right] {$x$};
+  \draw[->,thick] (0,-0.2) -- (0,6.2) node[anchor=north east] {$f(x)$};
   % add ticks
-  \draw [thick] (5,0) -- (5,-5pt) node [anchor=north] {$E_f$};
+  \draw [thick] (5,0) -- (5,-5pt) node [anchor=north] {$x_0$};
 
   \draw [color=black,domain=0:10,smooth,very thick]    plot
          (\x,{distrib(\x)});% node [anchor=south] {Cauchy distribution};
