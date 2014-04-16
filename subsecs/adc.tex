@@ -14,21 +14,17 @@ for fermions is defined as
 G_{pq}(t,t') = -i \bra{\Psi_0^N}c_p(t)c_q^\dagger(t')\ket{\Psi_0^N}\Theta(t-t') +i \bra{\Psi_0^N}c_q^\dagger(t')c_p(t)\ket{\Psi_0^N}\Theta(t'-t)
 \end{equation}
 
-UMSCHREIBEN
-
 Here, $\Theta(t-t')$ is the Heaviside step function eq. (\ref{stufe}),
 which ensures the causality of the described process. A system can only
 respond to a perturbation which occured in the past. Therefore, the Green's
-function is non-zero for times $t>t'$ and zero for all other times.
+function is non-zero for times $t>t'$ and zero for all other times. \cite{nolting7}
 
 \begin{equation}\label{stufe}
 \Theta(t-t') = \begin{cases}
-1 & \text{für } t>t'\\
-0 & \text{für } t<t'
+1 & \text{for } t>t'\\
+0 & \text{for } t<t'
 \end{cases}
 \end{equation}
-
-Abhängig von den Zeiten $t$ und $t'$ ist höchstens einer der Summanden aus Gleichung \ref{1pgf} von null verschieden. Für den Fall, dass $t'>t$ trägt nur der zweite Summand zur Greensfunktion bei. Er beschreibt die Wahrscheinlichkeitsamplitude, dass sich ein zur Zeit $t$ im Orbital $\ket{\phi_p}$ erzeugter Lochzustand zur späteren Zeit $t'$ im Orbital $\ket{\phi_q}$ befindet. Analog beschreibt die Greensfunktion für $t>t'$ die Propagation eines Teilchens. Aufgrund dieser Eigenschaft wird die Greensfunktion häufig auch \emph{Propagator} genannt.\cite{nolting7}
 
 In the non-Dyson formulation \cite{Schirmer89} the Green's function can be
 written as the sum over the $N+1$ and the $N-1$ parts
@@ -110,7 +106,7 @@ form can be deduced
 \end{equation}
 
 To this point, the problem is exact. However, the exact wavefunctions are unknown
-and hence the basis of so-called intermediate states are introduced. These
+and hence the basis of so-called \emph{intermediate states} are introduced. These
 are formally constructed from \ac{CES} as they appear in a
 \ac{CI} expansion. These \ac{CES} are then grouped into excitation classes
 and these classes are orthogonalized with respect to each other. Afterwards,
@@ -123,10 +119,11 @@ In this \ac{ISR} the Green's function can be written as
 \mathbf{\tilde{G}}(\omega) = \mathbf{f}^\dagger(\omega-\mathbf{K}-\mathbf{C})^{-1}\mathbf{f}
 \end{equation}
 
-Here $\mathbf{K}$ is the diagonal matrix of Hartree Fock orbital energies, which
+Here, $\mathbf{K}$ is the diagonal matrix of Hartree Fock orbital energies, which
 corresponds to zeroth order of perturbation theory. The matrix $\mathbf{C}$
 contains all higher order contributions to the Hamiltonian.
-Hence, the ADC matrix $K+C$ is non-diagonal. This equation can be solved by
+Hence, the ADC matrix $\mathbf{M} = \mathbf{K}+\mathbf{C}$ is non-diagonal.
+This equation can be solved by
 solving the eigenvalue problem
 
 \begin{equation}\label{adcewp}
@@ -137,12 +134,12 @@ energies and $\mathbf{Y}$ is the matrix of eigenvectors which connects the
 intermediate state representation with the exact $N-1$ solutions.
 
 \begin{equation}
- Y = 
+ \mathbf{x} = \mathbf{Y}^\dagger \mathbf{f}
 \end{equation}
 
 For the construction of the \ac{ADC} matrix ($\mathbf{K}+\mathbf{C}$) and the
 effective transitions moments $\mathbf{f}$, $\mathbf{C}$ and $\mathbf{f}$
-are expanded into different orders of pertubrations and inserted to equation
+are expanded into different orders of perturbations and inserted to equation
 (\ref{isradc}).
 
 \begin{eqnarray}
@@ -152,20 +149,47 @@ are expanded into different orders of pertubrations and inserted to equation
 
 From this, different orders of perturbation theory of the Hamiltonian can be
 constructed successively. The contributions to the different classes are shown
-in figure \ref{figure:adcmat_pgf} for the case of \ac{ADC}xy.
-The matrix elements are explicitiely given by
-
-HALLO
-
-
-
-
-
-
+in figure \ref{figure:adcmat_pgf} for the case of \ac{ADC}(2x).
 
 \begin{figure}[h]
   \centering
   \input{pics/adcmat_pgf}
-  \caption{}
-  \label{}
+  \caption{Schematic illustration of an \ac{ADC}(2x) matrix.}
+  \label{figure:adcmat_pgf}
 \end{figure}
+
+The matrix elements are explicitely given by
+\begin{itemize}
+ \item 1h/1h:
+   \begin{align}
+    M_{kk'}^{(0)} &= \varepsilon_k \delta_{kk'} \\
+    M_{kk'}^{(1)} &= 0 \\
+    M_{kk'}^{(2)} &= -\frac12 \sum\limits_{abl} V_{ab[kl]} V_{k'l[ab]} %\times
+                     \frac{\varepsilon_a+\varepsilon_b-\varepsilon_l
+                       -\frac12 \varepsilon_k-\frac12 \varepsilon_{k'}}
+                     {(\varepsilon_a+\varepsilon_b-\varepsilon_k-\varepsilon_l)
+                      (\varepsilon_a+\varepsilon_b-\varepsilon_{k'}-\varepsilon_l)}
+   \end{align}
+ \item 1h/2h1p:
+   \begin{equation}
+    M_{j,akl}^{(1)} = V_{kl[aj]}
+   \end{equation}
+ \item 2h1p/2h1p:
+   \begin{align}
+    M_{akl,a'k'l'}^{(0)} &= (-\varepsilon_a+\varepsilon_k+\varepsilon_l)
+                             \, \delta_{aa'}\delta_{kk'}\delta_{ll'} \\
+    M_{akl,a'k'l'}^{(1)} &= -\delta_{aa'} V_{k'l'[kl]} + \delta_{kk'} V_{al'[a'l]}
+                            +\delta_{ll'} V_{ak'[a'k]} - (k \leftrightarrow l)
+   \end{align}
+\end{itemize}
+
+Here, $\varepsilon$ denotes the Hartree Fock energy. The occupied states are labelled
+by $i,j,k,\dots$ and the unoccupied states are labelled by $a,b,c,\dots$. The
+two-electron integrals for any combination of occupied and unoccupied orbitals
+labelled by $p,q,r,s$ read as
+\begin{equation}
+ V_{pqrs} = \braket{\varphi_p(1)\varphi_q(2) |V(1,2)| \varphi_r(1)\varphi_s(2)}
+\end{equation}
+
+and $V_{pq[rs]} = V_{pqrs} - V_{pqsr}$.
+

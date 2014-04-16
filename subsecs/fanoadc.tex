@@ -1,16 +1,15 @@
 \section{FanoADC}
-In the FanoADC, we use the discrete ADC Hamiltonian in the \ac{ISR}
-basis for the construction of the pseudo-spectrum of the decay width
+In the FanoADC, the discrete ADC Hamiltonian in the \ac{ISR}
+basis is used for the construction of the pseudo-spectrum of the decay width
 $\Gamma$.
-Therefore
-Due to multiple possible final states, we employ the procedure
+Due to multiple possible final states, the procedure
 of Feshbach using projection operators for the partitioning of the Hamiltonian
-into an initial and a final state subspace.
-The processes of our interest have a singly ionized initial state and a
+into an initial and a final state subspace is employed.
+The processes of interest have a singly ionized initial state and a
 doubly charged final state with an additional electron in the continuum.
 Therefore, the final state configurations are chosen from
 the class of $2h1p$ states, where the $2h$ part is assumed to
-describe the doubly ionized final state and the particle maps the continuum electron.
+describe the doubly ionized final state and the particle resembles the continuum electron.
 The initial state in a zeroth order approximation can be described as a $1h$ state.
 
 For the partitioning two different methods are known in the literature:
@@ -18,14 +17,16 @@ the selection by $2h$ contributions, which correspond to final states of
 the process\cite{Averbukh05}, or by energy\cite{}.
 The first is easy to implement while the second automatically
 enables the correct calculation of decay widths in system with lower than
-spherical symmetry, but which have inversion symmetry.
+spherical symmetry, when the final state vacancies are distributed over two symmetry
+equivalent atoms.
 
 
 \subsection{Partitioning by Population}
-In the actual partitioning, all $2h1p$ with the $2h$ part corresponding to
+In the actual partitioning, all $2h1p$ configuration characteized by a $2h$
+part corresponding to
 a final state configuration are chosen to be part of the final states.
 All $1h$ configurations and those $2h1p$ configurations not corresponding
-to a possible final state configuration are used for a better description
+to a possible final state configuration are used for the description
 of the initial state. This leads to a resorted \ac{ADC} matrix as shown in
 figure \ref{figure:fano_matsort}, where the subspace of the initial state
 is denoted by $\mathbf{M}$, the final state subspace by $\mathbf{N}$ and
@@ -34,7 +35,9 @@ the interaction coupling those two subsets is named $\mathbf{W}$.
 \begin{figure}[h]
   \centering
   \input{pics/fano_matsort_pgf}
-  \caption{}
+  \caption{Schematic illustration of the partitioning of the \ac{ADC} matrix
+           according to the projection operators of the initial and final
+           states.}
   \label{figure:fano_matsort}
 \end{figure}
 
@@ -57,14 +60,17 @@ in this new basis.
 \begin{figure}[h]
   \centering
   \input{pics/fano_bastrans_pgf}
-  \caption{}
+  \caption{Schematic illustration of the basis transformation of the full \ac{ADC}
+           matrix into the basis of initial and final states. The pseudo-spectrum
+           is given by the manifold of $\bar{\omega}_q$ and
+           $V_{i,q} = \braket{\phi |\hat{H}| \psi_{q}^{2h1p}}$.}
   \label{figure:fano_bastrans}
 \end{figure}
-The desired pseudo-spectrum is then obtained from the final state energies
-$\bar{\omega}_\beta$ and the interaction part in the basis of the initial and
-final eigenstates for a specific initial state choice $i$ and possibly a choice
-of channel $\beta$
-$V_{i,\beta} = \braket{\phi |\hat{H}| \psi_{\beta, 2h1p}}$.
+The desired pseudo-spectrum which enters the Stieltjes calculation
+is then obtained from the final state energies
+$\bar{\omega}_q$ and the interaction part in the basis of the initial and
+final eigenstates for a specific initial state choice $i$
+$V_{i,q} = \braket{\phi |\hat{H}| \psi_{q}^{2h1p}}$.
 
 
 
@@ -85,6 +91,36 @@ Finally the \ac{ADC} matrix is constructed using the precorrelated final states.
 
 From this point on, the calculation is the same as in the case of the partitioning
 based on population.
+
+\subsection{Partial Decay Widths}
+Approximating the complete set of continuum basis functions is verfied for
+the determination of the total decay width only. However, an \emph{ad hoc} procedure
+for the determination of partial decay widths has been postulated \cite{Cacelli86},
+in which a subset of the determined coupling elements
+$V_{i,q} = \braket{\phi |\hat{H}| \psi_{q}^{2h1p}}$ is related to a specific channel
+$\beta$.
+
+\begin{equation}
+ \gamma_{q,\beta} = 2\pi \left| \braket{\phi| \hat{H} | \hat{P}_\beta \psi_{q}^{2h1p}} 
+                    \right|^2
+\end{equation}
+Here, $\hat{P}_\beta$ denotes the projection operator chosing the channel contributions.
+The pseudo-spectra of the channels are independently treated by the Stieltjes
+routine and partial decay widths $\tilde{\Gamma}_\beta$ are obtained.
+Afterwards, the partial decay widths are renormalized with respect to the total
+decay width $\Gamma$
+
+\begin{equation}
+ \Gamma_\beta = \frac{\tilde{\Gamma}_\beta}{\sum_\beta \tilde{\Gamma}_\beta} \Gamma
+\end{equation}
+
+The quality of the partial decay widths depends on the mixing between the different
+channels. For partitioning by population such mixing is completely neglected, whereas
+it is treated in the partitioning by energy in an approximative way. Therefore,
+the calculated partial decay widths require a critical analysis, especially when
+orbitals from lower than the outer valence are included in the final state subspace.
+
+
 
 
 \section{How to Obtain Trustworthy Results}
@@ -110,7 +146,7 @@ in the energy range of interest can not be expected to give reasonable results.
 \begin{figure}[ht]
   \centering
   \input{pics/bases_un_vs_con}
-  \caption{Shifted pseudo-spectra for different basis sets with $E_r=0$
+  \caption{Shifted pseudo-spectra with $E_r=0$
            for the Auger process following an ionization of the neon 1s.
            Comparison of contracted and uncontracted cc-pVQZ.}
   \label{figure:bases_pseudospectra}
@@ -131,14 +167,14 @@ in energy regions which are of no interest and is therefore counterproductive.
   \label{figure:bases_pseudospectra}
 \end{figure}
 
-An example is given in figure \ref{figure:bases_pseudospectra} for some selected
-basis sets for the Auger following an ionization of the Ne1s. The resonance energy
-about \unit[32]{a.u.}. It can easily be seen, that the smaller double and
-quadruple zeta basis sets do not cover the range of the resonance energy in case
-of the contracted basis sets. Additionally it can be seen that the pseudo-spectrum
-of the uncontracted basis is much broader and more dense close to the resonance
-energy. The contracted cc-pV6Z basis set covers the energy range quite well, which
-is not to be expected in general.
+An example is given in figure \ref{figure:bases_pseudospectra} for a cc-pVQZ
+basis set for the Auger following an ionization of the Ne1s.
+It can easily be seen that the pseudo-spectrum of the uncontracted basis set spans
+a wider energy range than the corresponding pseudo-spectrum of the calculation with
+the contracted basis set.
+However, the basis set is small and the density close to the resonance energy
+$E_R=0$ is sparse and hence will not give a good description of the outgoing
+electron.
 
 \begin{figure}[ht]
   \centering
@@ -152,17 +188,27 @@ is not to be expected in general.
 In order to mimic the outgoing electron with $\mathcal{L}^2$ functions, the
 exponents of the basis set have to include the energy range of the expected
 kinetic energy of the electron. Preferably, the basis set is very dense in
-this energy region. Additionally, and especially for processes close to threshold
-with slow
+this energy region. 
+An example of the pseudo-spectra obtained from calculations with three
+different basis sets in shown in figure \ref{figure:bases_pseudospectra}.
+The pseudo-spectrum of the smalles basis set cc-pV6Z is reasonably dense and
+the one for the aug-cc-pV6Z is comparably dense but shows points at shifted
+energies. However, compared to the pseudo-spectrum obtained with the cc-pCV6Z
+basis set including the correlationns between the neon core and the neon valence
+orbitals the couplings are rather small. However, close to the resonance energy
+the pseudo-spectrum is not very dense.
+Additionally, and especially for processes close to threshold     
+with slow                                                               
 secondary electrons, the basis set should contain many diffuse and hence
-delocalized functions. They allow to cover the spacial range of the interaction
+delocalized functions.
+They allow to cover the spacial range of the interaction
 region and hence states with the electron being disrupted from the nuclei.
 For this purpose additional basis functions of the \ac{KBJ}\cite{Kaufmann89}
 type are used at the atomic positions or in case of molecules on ghost atoms
 positioned between the atoms. Their effect on the density of the pseudo-spectrum
 is illustrated in figure \ref{figure:bases_jungen}. There, the contributions of the
 different anuglar momentum functions are shown. Each class adds some significant
-points to the pseudo-spectrum and hence, in combination, a good and dense
+points to the pseudo-spectrum and hence, in combination, a reasonably dense
 pseudo-spectrum is created.
 
 Additionally the active space needs to include the orbitals of the initial state
@@ -199,7 +245,7 @@ energies, where the decay width has a high curvature, the error can be of the sa
 order as the obtained decay width.
 
 In addition to numerical instabilities introduced by the Stieltjes procedure
-discussed in section \ref{},
+discussed in section \ref{section:quality_stieltjes},
 two further characteristic pattern might be observed in a calculated
 decay width: channel openings and interactions of the initial state
 with Rydberg states.
@@ -229,7 +275,7 @@ state. If such a result is obtained, one should carefully check the selection
 of the final state configurations. However, it is still possible that the
 partitioning of the Hamiltonian yields such descriptions of the initial and
 final states that the channel opening and closing is not reproduced in the
-decay width. In these cases, the results are not trustworthy.
+decay width. In these cases the obtained results need to be analyzed carefully.
 
 Rydberg states are bound states of the systems and hence do not contribute
 to the decay. However, an interaction of the initial state with those
@@ -267,9 +313,41 @@ a splitting of the decay width described by either low or high orders of Stieltj
 In these cases, one has to decide based on the knowledge of all other
 parameters, which of these two curves might be more trustworthy.
 
-Close to threshold, the determination of the decay width is difficult, since
+Close to channel opening, the determination of the decay width is difficult, since
 the resonance energies are approximations and not exact. Therefore, the
 energy range spans a wide distribution of different decay widths. Furthermore
 the broadened decay width being based on points obtained from the Stieltjes
 procedure might not cover the maximum of the peak and hence the theoretical
 maximum of the decay width.
+
+Additionally, when this channel opening is the first opening channel, i.e. the
+resonance is close to threshold, the pseudospectrum might not cover the resonance energy.
+In this case a Stieltjes calculation would make no sense. However, it is possible
+to obtain points with the Stieltjes routine, which do not cover the reonance energy.
+This is mostly observed for low orders of Stieltjes. In these cases, the points
+can be interpolated to give an estimation of the decay width at higher energies,
+but it would have to be evaluated at lower energies from an extrapolated function.
+
+Having obtained a reasonable pseudo-spectrum and employed the Stieltjes routine,
+the above discussions indicate that decay width calculations using the FanoADC-Stieltjes
+method is not a black box method and they lead to the
+following procedure for the decay width evaluation:
+\begin{enumerate}
+ \item Inspect the decay width profile and look for oscillations in the
+       points of each order. All orders above the lowest order showing oscillations as
+       illustrated in figure \ref{} have to be neglected in the further
+       procedure.
+ \item Are features connected to channel openings or coupling to Rydberg states
+       to be observed in the resonance energy region? In this case the higher
+       order polynomials are normally better to describe the curve and hence they
+       should be favoured for the interpolation. Otherwise the lower orders
+       normally give reasonable approximations.
+ \item Are two or more lines from different orders observed without channel
+       openings or coupling to Rydberg states in the decay width profile,
+       the decay width can be expected to be either represented by one or the
+       other. In this case, the lower order should be preferred, because
+       numerically instabilities should be less pronounced.
+ \item Interpolate the points obtained from the Stieltjes calculation including
+       those orders which seem to be
+       reasonable.
+\end{enumerate}
