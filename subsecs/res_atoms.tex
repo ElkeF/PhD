@@ -1,4 +1,17 @@
 \chapter{Auger Decay of Noble Gas Atoms}
+The decay widths of noble gas atoms have been thoroughly studied in the
+literature. Therefore, the main aim of this chapter is to prove the implementation
+of the FanoADC Stieltjes in the Dirac programme \cite{DIRAC13} to work
+reliably and reproduce results known in the literature. Both the neon atom is
+investigated, where reference data is available for a non-relativistic
+implementation of the same method, and the xenon atom, where relativistic effects
+play a major role, are studied.
+Finally I am going to conclude that the programm is able to predict
+the decay widths of autoionization processes. Other comparable relativistic methods
+rely on spherical symmetry and therefore, the FanoADC Stieltjes approach
+is well suited for the calculation of \ac{ICD} decay widths.
+
+
 \section{Neon}
 
 The Ne1s$^{-1}$ vacancy with an ionization energy of \unit[xxx]{eV} is
@@ -279,7 +292,7 @@ figure
 \ref{figure:Xe4p_SIPs} for the full Hamiltonian without any partitioning
 into initial and final state subspaces.
 
-\begin{figure}[h]
+\begin{figure}[]
   \centering
   \input{pics/Xe_SIPs}
   \input{pics/Xe_SIPs_part}
@@ -448,7 +461,7 @@ the opening channel from the interpolation. In weighing the higher order moments
 more than the lower order moments, the decay width would be about twice the numbers
 presented and hence in the order of $\Gamma_{max} \approx \unit[2]{eV}$.
 
-\begin{figure}[h]
+\begin{figure}[]
   \centering
   \includegraphics[scale=1.0]{pics/Xe4p_11_gammae.eps}
   \caption{$\Gamma(E)$ of the relativistic FanoADC calculation from a 4p$_{1/2}$
