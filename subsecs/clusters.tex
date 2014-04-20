@@ -12,7 +12,8 @@ on a cluster turns into a macroscopic solid.
 Very often this question is answered by the number of involved atoms or molecules
 defining a cluster to consist of 2--50000 constituents \cite{Bjorneholm09}.
 However, already cluster can exhibit properties of macroscopic solid
-state matter. For example they do have an ordered structure, which for the same
+state matter (see e.g. \cite{Foerstel10}).
+For example they do have an ordered structure, which for the same
 compound may differ between small and large clusters. In small clusters a
 comparatively large number of constituents is not completely surrounded
 by other constituents. These so-called surface atoms or molecules therefore
@@ -117,28 +118,48 @@ Its repulsive part takes care of the description of the
 Pauli repulsion due to overlapping orbitals at short distances. The
 $R^{-12}$ dependency is theoretically not justified but convenient
 for an analytic description.
-For the different noble gases the Lennard-Jones parameters are given in
+For some noble gas dimers the Lennard-Jones parameters are given in
 table \ref{table:LJ_parameter} and the potentials are shown in
 figure \ref{figure:LJ_Ar2}.
 
 \begin{table}[htb]
  \caption{Lennard-Jones parameters for noble gas dimers used in this
-          thesis.}
+          thesis \cite{PhDFoerstel,Lindblad11}.}
  \centering
  \begin{tabular}{lcc}
    \toprule
    Atom type & $\sigma$ [\unit{\AA}] & $\varepsilon$ [\unit{meV}]\\
    \midrule
-   Ne-Ne     & &\\
-   Ne-Ar     &&\\
-   Ar-Ar     &                 3.404 & 12.4\\
+   %Ne-Ne     &                 2.82  &  5.5\\
+   %Ne-Ar     &                 2.89  &  6.2\\
+   Ar-Ar     &                 3.40  & 12.4\\
    Ar-Xe     &                 3.72  & 14.4\\
-   Xe-Xe     &                 3.961 & 23.1\\
+   Xe-Xe     &                 3.96  & 23.1\\
    \bottomrule
  \end{tabular}
  \label{table:LJ_parameter}
 \end{table}
 
+The Lennard-Jones potentials describe the interaction between two atoms.
+Another characteristic entity is the van der Waals radius obtained from
+the interatomic distances in crystals. The values for the noble gases
+are displayed in table \ref{table:vdWaalsradii}.
+
+\begin{table}
+ \caption{Van der Waals radii of the noble gas atoms \cite{Bondi64}.}
+ \centering
+ \begin{tabular}{lc}
+  \toprule
+                & $R_{vdW}$ [\AA] \\
+  \midrule
+    Ne          & 1.54 \\
+    Ar          & 1.88 \\
+    Kr          & 2.02 \\
+    Xe          & 2.16 \\
+  \bottomrule
+ \end{tabular}
+ \label{table:vdWaalsradii}
+\end{table}
 
 To a first approximation homonuclear noble gas clusters are spheres
 because in order to minimize
@@ -301,7 +322,7 @@ of the nozzle and $d_{eq}$ is the equivalent nozzle diameter for conical
 nozzles. $K_{ch}$ is a constant depending on the material and can be
 calculated by the means of Hagena \cite{Hagena87}. The values for the rare gases for
 the experimental setup, which will be compared to in this work are
-$K_ch(Ne)=185$, $K_ch(Ar)=1646$, $K_ch(Kr)=2980$ and $K_ch(Xe)=5554$
+$K_{ch}(Ne)=185$, $K_{ch}(Ar)=1646$, $K_{ch}(Kr)=2980$ and $K_{ch}(Xe)=5554$
 \cite{PhDFoerstel}.
 
 From the scaling parameter the mean cluster size $\bar{N}$ 
@@ -349,8 +370,8 @@ Their different working principles are illustrated in figure
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=1.0]{pics/overview_spectroscopies.jpeg}
-  \caption{Elsevier Schematic overview over the physical mechanisms of different
+  \input{pics/overview_spectroscopies}
+  \caption{Schematic overview over the physical mechanisms of different
            spectroscopic methods \cite{Bjorneholm09}.}
   \label{figure:overview_spectroscopies}
 \end{figure}
@@ -389,7 +410,8 @@ electron-electron spectra.
   \includegraphics[]{pics/exp_setup_overview.pdf}
   \caption{Schematic view of the experimental setup of a electron-electron
            coincidence measurement. The synchrotron radiation axis
-           is perpendicular to the plane of the diagram \cite{PhDFoerstel}.}
+           is perpendicular to the plane of the diagram.
+           Reprinted with permission from \cite{PhDFoerstel}. }
   \label{figure:exp_setup_overview}
 \end{figure}
 
