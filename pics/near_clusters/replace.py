@@ -23,7 +23,7 @@ for filename in glob.glob("*.tex"):
    outfile = open('tmpfile', 'w')
 
    
-   replacements = {'input{':'input{pics/near_clusters/', '   {':'   {data/near_clusters/', 'scale=1.5':'scale=0.55'}
+   replacements = {'iny':'tiny'}
 
    for line in infile:
       if 'section' not in line and 'figure' not in line and 'centerin' not in line and 'label' not in line and 'caption' not in line:

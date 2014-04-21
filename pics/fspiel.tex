@@ -62,88 +62,18 @@
 \addplot+[ycomb,
          mark=.,
          very thick,
-         Green,
-         forget plot
-        ]
-        table[
-        x expr = \thisrowno{0},
-        y expr = \thisrowno{4}
-        ]
-        {../data/exp_309ico_icd_arxe.dat};
-        \addlegendimage{line legend, Green, very thick};
-        \addlegendentry{Ar$_{3/2}$ Xe$_{3/2}$};
-
-\addplot+[ycomb,
-         mark=.,
-         very thick,
-         Goldenrod,
-         forget plot
-        ]
-        table[
-        x expr = \thisrowno{0},
-        y expr = \thisrowno{2}
-        ]
-        {../data/exp_309ico_icd_arxe.dat};
-        \addlegendimage{line legend, Goldenrod, very thick};
-        \addlegendentry{Ar$_{1/2}$ Xe$_{3/2}$};
-
-\addplot+[ycomb,
-         mark=.,
-         very thick,
-         LimeGreen,
-         forget plot
-        ]
-        table[
-        x expr = \thisrowno{0},
-        y expr = \thisrowno{3}
-        ]
-        {../data/exp_309ico_icd_arxe.dat};
-        \addlegendimage{line legend, LimeGreen, very thick};
-        \addlegendentry{Ar$_{3/2}$ Xe$_{1/2}$};
-
-\addplot+[ycomb,
-         mark=.,
-         very thick,
-         Fuchsia,
+         diplom1,
          forget plot
         ]
         table[
         x expr = \thisrowno{0},
         y expr = \thisrowno{1}
         ]
-        {../data/exp_309ico_icd_arxe.dat};
-        \addlegendimage{line legend, Fuchsia, very thick};
-        \addlegendentry{Ar$_{1/2}$ Xe$_{1/2}$};
+        {../data/arxe_model_icd_rel.dat};
+        \addlegendimage{line legend, diplom1, very thick};
+        \addlegendentry{ICD};
 
 %ETMD
-\addplot+[ycomb,
-         mark=.,
-         very thick,
-         diplom1,
-         forget plot
-        ]
-        table[
-        x expr = \thisrowno{0},
-        y expr = \thisrowno{4}
-        ]
-        {../data/exp_309ico_etmd_arxe.dat};
-        \addlegendimage{line legend, diplom1, very thick};
-        \addlegendentry{Xe$_{3/2}$ Xe$_{3/2}$};
-
-\addplot+[ycomb,
-         mark=.,
-         very thick,
-         orange,
-         forget plot
-        ]
-        table[
-        x expr = \thisrowno{0},
-        y expr = \thisrowno{2}
-        ]
-        {../data/exp_309ico_etmd_arxe.dat};
-        \addlegendimage{line legend, orange, very thick};
-        \addlegendentry{Xe$_{1/2}$ Xe$_{3/2}$};
-
 \addplot+[ycomb,
          mark=.,
          very thick,
@@ -152,64 +82,53 @@
         ]
         table[
         x expr = \thisrowno{0},
-        y expr = \thisrowno{3}
-        ]
-        {../data/exp_309ico_etmd_arxe.dat};
-        \addlegendimage{line legend, diplom2, very thick};
-        \addlegendentry{Xe$_{3/2}$ Xe$_{1/2}$};
-
-\addplot+[ycomb,
-         mark=.,
-         very thick,
-         diplom3,
-         forget plot
-        ]
-        table[
-        x expr = \thisrowno{0},
         y expr = \thisrowno{1}
         ]
-        {../data/exp_309ico_etmd_arxe.dat};
-        \addlegendimage{line legend, diplom3, very thick};
-        \addlegendentry{Xe$_{1/2}$ Xe$_{1/2}$};
+        {../data/arxe_model_etmd_rel.dat};
+        \addlegendimage{line legend, diplom2, very thick};
+        \addlegendentry{ETMD};
+
 
 %Folded
 \addplot[
          mark=none,
          color=gray,
-         dotted
+         dotted,
+         thick
          ]
          table[
          x expr=\thisrowno{0},
          y expr=\thisrowno{1}
          ]
-         {../data/exp_309ico_icd_arxe_spec.dat};
+         {../data/arxe_model_icd_rel.sp};
          \addlegendentry{ICD spectrum};
 
 \addplot[
          mark=none,
          color=gray,
-         dashed
+         dashed,
+         thick
          ]
          table[
          x expr=\thisrowno{0},
          y expr=\thisrowno{1}
          ]
-         {../data/exp_309ico_etmd_arxe_spec.dat};
+         {../data/arxe_model_etmd_rel.sp};
          \addlegendentry{ETMD spectrum};
 
 \addplot[
          mark=none,
          color=gray,
+         thick
          ]
          table[
          x expr=\thisrowno{0},
          y expr=\thisrowno{1}
          ]
-         {../data/exp_309ico_kombi_arxe_spec.dat};
+         {../data/arxe_model_kombi_rel.sp};
          \addlegendentry{full spectrum};
 
 
-%\fill [red] (axis cs:0,1.1E-4) rectangle (axis cs:0.5,1.3E-4);
 
 \end{axis}
 \end{tikzpicture}
