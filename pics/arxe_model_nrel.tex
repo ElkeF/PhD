@@ -1,0 +1,92 @@
+\begin{tikzpicture}[scale=1.0]
+
+\begin{axis}[%scale=1.5,
+             domain=0:7,
+             restrict expr to domain={x}{0:7},
+             %restrict expr to domain={y}{1.0E-12:7},
+             xlabel={E [eV]},
+             %xtick={30,50,...,170},
+             %xticklabels={2,4,6,8,10,12,15,20,25},
+             %ytick={-1.0,-0.8,...,1.0},
+             %yticklabels={1.0,0.8,0.6,0.4,0.2,0.0,0.2,0.4,0.6,0.8,1.0},
+             ylabel={$\Gamma$ [eV]},
+             scale only axis,
+             width=\textwidth-1.5cm,
+             height=8cm,
+             %ybar stacked
+             ]
+
+%ICD
+\addplot+[ycomb,
+         mark=.,
+         very thick,
+         diplom1,
+         forget plot
+        ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = \thisrowno{1}
+        ]
+        {data/arxe_model_icd_nrel.dat};
+        \addlegendimage{line legend, diplom1, very thick};
+        \addlegendentry{ICD};
+
+%ETMD
+\addplot+[ycomb,
+         mark=.,
+         very thick,
+         diplom2,
+         forget plot
+        ]
+        table[
+        x expr = \thisrowno{0},
+        y expr = \thisrowno{1}
+        ]
+        {data/arxe_model_etmd_nrel.dat};
+        \addlegendimage{line legend, diplom2, very thick};
+        \addlegendentry{ETMD};
+
+
+%Folded
+\addplot[
+         mark=none,
+         color=gray,
+         dotted,
+         thick
+         ]
+         table[
+         x expr=\thisrowno{0},
+         y expr=\thisrowno{1}
+         ]
+         {data/arxe_model_icd_nrel.sp};
+         \addlegendentry{ICD spectrum};
+
+\addplot[
+         mark=none,
+         color=gray,
+         dashed,
+         thick
+         ]
+         table[
+         x expr=\thisrowno{0},
+         y expr=\thisrowno{1}
+         ]
+         {data/arxe_model_etmd_nrel.sp};
+         \addlegendentry{ETMD spectrum};
+
+\addplot[
+         mark=none,
+         color=gray,
+         thick
+         ]
+         table[
+         x expr=\thisrowno{0},
+         y expr=\thisrowno{1}
+         ]
+         {data/arxe_model_kombi_nrel.sp};
+         \addlegendentry{full spectrum};
+
+
+
+\end{axis}
+\end{tikzpicture}
