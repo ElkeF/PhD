@@ -1,14 +1,48 @@
 \chapter{ICD and ETMD in Heteroatomar Noble Gas Clusters}
-\section{NeAr-Clusters}
+\label{chapter_NeArclusters}
 
-\begin{figure}[h]
- \centering
- \input{pics/NeArfit_pgf}
- \caption{}
- \label{}
-\end{figure}
+The modelling of secondary electron spectra stemming from \ac{ICD}
+and \ac{ETMD}3 processes are carried out using the programme
+HARDRoC \cite{HARDRoC}, which is based on the model of pairs and
+triples and is applied to a given cluster structure. The obtained
+normalized sum over decay widths of different channels
+and pairs as well as triples can be compared to experiment, because the
+experimental spectra are obtained from a multitude of distinct measurements.
+Hence, for a reasonable large number of measurements, a distribution with the
+same statistical behaviour as for the model of pairs and triples is achieved.
 
-\input{subsecs/near_clusters}
+For the actual calculation the energies of the secondary electrons are obtained
+from equation \ref{equation:E_sec}. The single ionization energies
+can be obtained in two different ways. They can be
+approximated by the atomic ionization energies in table
+\ref{table:noble_atom_properties} corrected by energetic shifts
+given in table \ref{table:cluster_shifts} in order to take
+the effect of the cluster environment into account. 
+Alternatively, they can be taken from the single ionization spectrum
+measured at the same time and the same conditions as the electron-electron
+coincidence experiment. The latter is to be preferred, since the energy shifts
+of table \ref{table:cluster_shifts} are obtained from homonuclear clusters and
+hence give only a first approximation to the real energetic shift in
+heteronuclear cluster. Since both the \ac{ICD} and even more clearly the
+\ac{ETMD}3 occur at the interfaces, it is crucial for a good modelling to
+describe the ionization energies of these atoms as accurate as possible.
+
+The decay widths $\Gamma$ can either be obtained from the asymptotic expressions
+in equations (\ref{reltheolifetime_exp}) and (\ref{reltheolifetimeetmd_exp})
+using the atomic properties given in table \ref{table:noble_atom_properties}
+or from a fit to decay widths obtained from FanoADC Stieltjes calculations.
+
+In the following sections two different heteronuclear clusters are investigated
+illustrating different effects on the secondary electron spectra.
+In the case of NeAr clusters I will focus on the bidirectional dependence of
+the ICD spectra of the competing NeNe-ICD and NeAr-ICD processes and
+different cluster structures. 
+In the case of ArXe clusters I will focus on the effects of spin-orbit coupling
+on the secondary electron spectra. Furthermore, I will investigate the influence
+of the basic structure of the cluster and show the difference of the spectra
+obtained from clusters having an icosahedral
+and \ac{fcc} structure.
+
 
 \section{ArXe-Clusters}
 
@@ -20,3 +54,7 @@
 \end{figure}
 
 \input{subsecs/arxe_clusters}
+
+
+\input{subsecs/near_clusters}
+
