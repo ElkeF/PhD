@@ -1,5 +1,176 @@
+\section{NeAr-Clusters}
+
+In general, the structure determination of heteronuclear noble gas
+clusters is an unsolved problem. However, the maximization of the cohesive
+energy suggests a core of argon atoms surrounded by neon atoms.
+Electron-electron coincidence experiments proved their existence by the
+presence ICD electron from NeAr-ICD processes \cite{}.
+
+The clusters consist of neon and argon atoms. Since an inner-valence vacancy in
+the Ne2s can decay both via NeNe-ICD and NeAr-ICD, both competing processes
+are expected to be observed in an experiment. In the literature most
+investigations focussed on the NeAr-ICD, because it until recently it was not
+possible to measure the NeNe-ICD as well \cite{Fasshauer14_1}.
+From these studies, large NeAr clusters established by coexpansion and
+consisting of an argon core with
+approximately 1000 atoms were determined to have a core-shell structure
+\cite{xyz06,Lundwall07,Barth_diss}
+and to have a temperature of \unit[40 -- 50]{K} \cite{Barth_diss}.
+In his PhD thesis, Barth suggested the possibility to gain information about
+the cluster structure from the efficiency of the NeAr-ICD compared to the
+total decay of the Ne2s ionization. This was proposed to be possible, since
+the sum over the NeNe-ICD and NeAr-ICD previously had been shown to
+cause almost the total decay of the Ne2s vacancy \cite{Marburgerxy}.
+The results indicated an increasing NeAr-ICD efficiency with increasing
+cluster size and hence a smaller surface-to-bulk ratio.
+
+This structure determination, as is going to be shown, is indeed possible
+because the decay widths of the competing NeNe-ICD and NeAr-ICD processes
+are of the same order
+of magnitude and therefore both signals are observable. Additionally, as shown
+in the preceeding section about ArXe clusters, the secondary electron spectrum
+crucially depends on the underlying structure.
+
+Recently, the NeNe-ICD in NeAr clusters could be measured. Therefore, I will
+present the structure determination of NeAr clusters from ICD electron
+spectra by comparison of experimental spectra with theoretical calculations.
+
+The chapter is structured as follows: First, the experimental results are
+presented and the computational details for the simulation of the ICD
+electron spectra are demonstrated. Afterwards, the manifold of different 
+hypothetical cluster structures are introduced. Finally the comparison
+between the experimental findings and theoretical predictions will be used
+for the determination of mean cluster structures.
+
+
+\subsection{Experimental Results}
+Recently, it was possible to measure the full secondary electron spectrum
+of NeAr clusters under different experimental conditions as shown in figure
+\ref{figure:NeAr_exp_spectrum} and table \ref{table:expansion_conditions}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=1.7]{pics/exp_near_coinc_sets.eps}
+  \caption{Electron-electron coincidence spectra for NeAr clusters
+           showing both NeNeICD and NeArICD signals \cite{Fasshauer14_1}.}
+  \label{figure:NeAr_exp_spectrum}
+\end{figure}
+
+\begin{table}[!h]
+ \centering
+ \caption{Assignment and expansion parameters of the five different
+          cluster ensembles. Included are also the resulting mean
+          cluster sizes calculated for the homogeneous species according
+          to the formalism intruduced by Hagena \it{et al.}
+          \cite{Hagena72}}
+  \begin{tabular}{c c c c c c}
+          \toprule
+           designation    &       Ar content in   & expansion & nozzle & $\langle N\rangle _{Ne}$ & $\langle N\rangle _{Ar}$ \\
+                                          &       initial mixture &  pressure & temperature & &  \\
+          \midrule
+          Set 1   &       \unit[1.7]{\%}  &       \unit[0.26]{bar}        &       \unit[63]{K}    &       \unit[5]        &       \unit[520]      \\
+          Set 2   &       \unit[7.4]{\%}  &       \unit[0.40]{bar}        &       \unit[60]{K}    &       \unit[17]       &       \unit[1850] \\
+          Set 3   &       \unit[1.7]{\%}  &       \unit[0.25]{bar}        &       \unit[57]{K}    &       \unit[7]        &       \unit[810]  \\
+          Set 4   &       \unit[7.4]{\%}  &       \unit[0.24]{bar}        &       \unit[58]{K}    &       \unit[6]        &       \unit[670]  \\
+          Set 5   &       \unit[1.0]{\%}  &       \unit[0.16]{bar}        &       \unit[54]{K}    &       \unit[3]        &       \unit[380]  \\
+          \bottomrule
+  \end{tabular}
+\label{table:expansion_conditions}
+\end{table}
+
+The spectra have been normalized to the peak height of the NeAr-ICD signal.
+It can clearly be seen that for different experimental conditions the
+size of the NeNe-ICD peak varies compared to the NeAr-ICD peak as explicitely
+listed in table \ref{table:clustervalues}. This can be
+explained both by different cluster sizes and by different cluster structures
+as I am going to show in this thesis. Both the main NeNe-ICD and the NeAr-ICD peak
+have a shoulder at higher energies. For NeAr dimers such a structure has
+been proposed to potentially stem from vibrations. However, such bound vibrational
+states above the ground state do not exist in neon dimers. I am going to show
+that this peak structure is related to \ac{ICD} processes with next nearest
+neighbours. Still, excitations to higher vibrational states might contribute
+to the peak structure as well.
+
+\begin{table}[!h]                                                                                                                                       
+ \centering                                                                                                                                      
+ \caption{Experimental results. Percentaged values are contributions to the
+          respective total values. The cluster band onsets are given
+          at half the peak height of the respective feature.}
+   \begin{tabular}{c c c c c}                                                                                                              
+           \toprule
+            designation    &       Ar content in   & onset Ar3p                    & onset Ne2p            & Ne-Ar ICD     \\
+                                           &       final cluster   &   cluster band                & cluster band          & contribution  \\
+           \midrule
+           Set 1   &       \unit[47 $\pm$ 10]{\%}  &       \unit[14.7$\pm$ 0.1]{eV}        &       \unit[20.93$\pm$ 0.08]{eV}      &       \unit[63 $\pm$ 7]{\%}   \\
+           Set 2   &       \unit[35 $\pm$ 5]{\%}   &       \unit[14.6$\pm$ 0.1]{eV}        &       \unit[20.86$\pm$ 0.08]{eV}      &       \unit[61 $\pm$ 10]{\%}  \\
+           Set 3   &       \unit[21 $\pm$ 4]{\%}   &       \unit[14.8$\pm$ 0.1]{eV}        &       \unit[20.86$\pm$ 0.08]{eV}      &       \unit[38 $\pm$ 5]{\%}    \\
+           Set 4   &       \unit[20 $\pm$ 4]{\%}   &       \unit[14.8$\pm$ 0.1]{eV}        &       \unit[20.86$\pm$ 0.08]{eV}      &       \unit[53 $\pm$ 6]{\%}    \\
+           Set 5   &       \unit[8 $\pm$ 2]{\%}    &       \unit[15.0$\pm$ 0.1]{eV}        &       \unit[20.89$\pm$ 0.08]{eV}      &       \unit[28 $\pm$ 3]{\%}    \\
+           \bottomrule
+   \end{tabular}
+\label{table:clustervalues}                                    
+\end{table}
+
+
+
+
+\subsection{Computational Details}
+The energies of the secondary electron were calculated using the
+experimentally obtained ionization energies given in table \ref{exp_input}.
+
+\begin{table}[h]
+ \caption{Experimental values used for the estimation of the decay widths.}
+ \label{exp_input}
+ \centering
+ \begin{tabular}{lc}
+  \toprule
+  indicator            &  value \\
+  \midrule
+  SIP(Ne2s)            &  \unit[47.75]{eV} \footnotemark[1]\\
+  SIP(Ne2p)            &  \unit[21.10]{eV} \footnotemark[1]\\
+  SIP(Ar3p)$_{c<3}$    &  \unit[15.40]{eV} \footnotemark[1]\\
+  SIP(Ar3p)$_{c\ge 3}$ &  \unit[15.20]{eV} \footnotemark[1]\\
+  \bottomrule
+ \end{tabular}
+\end{table}
+\footnotetext[1]{This work.}   
+
+The distance dependence of the NeAr dimer was non-relativistically calculated with
+the Fano-Stieltjes procedure implemented in Dirac \cite{DIRAC13,Fasshauer14_2}
+with an aug-cc-pV6Z basis set on both atoms. Five additional basis functions each
+of s,p and d orbitals of the
+KBJ type \cite{Kaufmann89} were introduced on a ghost atom in the
+geometric center of the dimer.
+
+Since inversion symmetry is until now not treated correctly,
+for the neon dimer decay widths data from the literature is used, which was
+obtained with the same method and a comparable basis set \cite{Averbukh06_1}.
+The resulting decay widths are shown in figure \ref{figure:fitted_NeAr_widths}.
+
+For each structure defined in the following section the NeNe-ICD and NeAr-ICD
+spectra were calculated using the programme HARDRoC \cite{HARDRoC}.
+
+
+\begin{figure}[h]
+ \centering
+ \input{pics/NeArfit_pgf}
+ \caption{}
+ \label{figure:fitted_NeAr_widths}
+\end{figure}
+
+
+\begin{table}
+ \centering
+ \caption{\ac{ICD} decay widths of the NeAr dimer at the equilibrium
+          distance given in eV.}
+ \begin{tabular}{lcccc}
+ \end{tabular}
+ \label{table:compare_gamma_near}
+\end{table}
+
+
+
 \subsection{Hypothetical, idealized structures of the NeAr clusters}
-\label{chapter_NeArclusters}
 
 It is known that small noble gas clusters preferably form icosahedral structures,
 while with increasing cluster size a fcc structure becomes more favorable. This transition
@@ -27,10 +198,11 @@ The experiment of Lundwall et al. \cite{Lundwall07} was interpreted to
 show clusters consisting of an argon core with distinct, complete neon
 shells around it, which is plausible, since according to the sum of van-der-Waals
 energies, this should be the most stable kind of clusters.
-Therefore we take this as a starting point for our considerations of the
-average structure of the clusters.
+Therefore this structure is chosen as a starting point for the considerations
+about the average structure of the clusters.
 
-In all structures considered throughout this paper we start from an icosahedral
+In all structures considered throughout this thesis the core is build as
+ an icosahedral
 structure of argon atoms as shown in figure \ref{figure:Ar_pure}.
 In this example, it has an edge length
 of $c=\unit[4]{atoms}$ and consists of $n_{Ar}=\unit[147]{atoms}$, which can be
@@ -40,17 +212,17 @@ calculated as \cite{Martin96}
   n_{atoms} = \frac{10}{3} c^3 - 5 c^2 + \frac{11}{3} c -1 .
 \end{equation}
 
-For the construction of the structure we assume the minimum
+For the construction of the structure the minimum
 distance between two argon
-atoms to be twice the van-der-Waals
+atoms is assumed to be twice the van-der-Waals
 radius of argon $r_{Ar}=$ \unit[1.88]{\AA} \cite{Bondi64}. In order to abide by this
 minimum distance in the case of two atoms in a surface position in different
 shells, the distance of two atoms in the edges is slightly increased.
 
-As we are going to see in the discussion, the outcome of the experiment
+As is going to be seen in the discussion, the outcome of the experiment
 can not completely be explained by an argon core surrounded by complete neon shells.
-This leads us to consider other structures with an argon core somehow surrounded
-by neon atoms. These we divide into three types, so that, in total, we have four
+This leads to considerations of other structures with an argon core somehow surrounded
+by neon atoms. These are divided into three types, so that, in total, we have four
 different classes of cluster structures as shown in figure \ref{figure:structures}:
 
 \begin{enumerate}
@@ -60,7 +232,7 @@ different classes of cluster structures as shown in figure \ref{figure:structure
  \item randomly arranged neon atoms around complete shells
 \end{enumerate}
 
-\begin{figure}[!h]
+\begin{figure}[h!]
  \centering
  \includegraphics[scale=0.9]{pics/NeAr_structures1.eps}
  \caption{Structure classes considered in our calculations.\\
@@ -120,7 +292,7 @@ the decay widths. As has been shown for NeAr \cite{Scheit06}, the ICD processes
 are faster than dynamical rearrangements, caused by Coulombic attraction
 after the initiating ionization, or vibrations. In case of the neon dimer, the
 ICD lifetime is of comparable size to the rearrangement time and hence
-influences the ICD electron spectra /cite{Scheit03}. However, in clusters, the
+influences the ICD electron spectra \cite{Scheit03}. However, in clusters, the
 initially ionized atom interacts with more than one other atom, which leads
 to more neighbors it can undergo ICD with and hence the decay width increases
 to first approximation linearly with the number of nearest neighbors.
