@@ -41,38 +41,55 @@ not effect the value of the FWHM $2 \gamma$.
 
 \chapter{Properties of Noble Gas Atoms}
 
-\begin{table}[h]
- \caption{Atomic ionization energies, lifetimes and relative ionization
-          cross sections.}
+\begin{table}[h!]
+ \caption{Atomic, experimental ionization energies.
+          The non-relativistic ionization energies of the
+          $np$ were estimated by the weighted average of the experimental
+          ionization energies of the $np_{3/2}$ and $np_{1/2}$.}
  \centering
- \begin{tabular}{lcccccc}
+ \begin{tabular}{lcrcrcr}
   \bottomrule
-     & $SIP(np_{3/2})$    & $SIP(np_{1/2})$    & $SIP(ns_{1/2})$    & $\tau(ns_{1/2})$ & $\chi=\frac{\tau_{1/2}}{\tau_{3/2}}$ & $\frac{\sigma_{3/2}}{\sigma_{1/2}}$ \\
+     & \multicolumn{2}{c}{$SIP(np_{3/2})$} & \multicolumn{2}{c}{$SIP(np_{1/2})$} & \multicolumn{2}{c}{$SIP(ns_{1/2})$} \\
   \midrule
-   Ne& \unit[21.5645]{eV} & \unit[21.6613]{eV} & \unit[48.475]{eV} & \unit[1.429]{ns} & 2.04 & 2.0 \\
-   Ar& \unit[15.7596]{eV} & \unit[15.9371]{eV} & \unit[29.239]{eV} & \unit[4.684]{ns} & 2.05 & 1.875\\
-   Xe& \unit[12.1298]{eV} & \unit[13.4363]{eV} & \unit[xx.yyyy]{eV} & \unit[]{ns} &   & 1.6  \\
+   Ne& \unit[21.5645]{eV} & \cite{NIST2014} & \unit[21.6613]{eV} & \cite{NIST2014} & \unit[48.475]{eV} & \cite{NIST2014}\\
+   Ar& \unit[15.7596]{eV} & \cite{NIST2014} & \unit[15.9371]{eV} & \cite{NIST2014} & \unit[29.239]{eV} & \cite{NIST2014}\\
+   Xe& \unit[12.1298]{eV} & \cite{NIST2014} & \unit[13.4363]{eV} & \cite{NIST2014} & \unit[23.397]{eV} & \cite{Lauer99} \\
   \midrule
-   Ne$_{nrel}$ & \multicolumn{2}{c}{\unit[21.5968]{eV}} & \unit[48.475]{eV} & \unit[1.429]{ns} & -- & --\\
-   Ar$_{nrel}$ & \multicolumn{2}{c}{\unit[15.8188]{eV}} & \unit[29.239]{eV} & \unit[4.684]{ns} & -- & --\\
-   Xe$_{nrel}$ & \multicolumn{2}{c}{\unit[12.5652]{eV}} & \unit[xx.yyyy]{eV} & \unit[]{ns} & -- & --  \\
+   Ne$_{nrel}$ & \multicolumn{4}{c}{\unit[21.5968]{eV}} & \unit[48.475]{eV} &   \\
+   Ar$_{nrel}$ & \multicolumn{4}{c}{\unit[15.8188]{eV}} & \unit[29.239]{eV} &   \\
+   Xe$_{nrel}$ & \multicolumn{4}{c}{\unit[12.5652]{eV}} & \unit[23.397]{eV} &   \\
+  \bottomrule
+ \end{tabular}
+ \label{table:noble_atom_ionization}
+\end{table}
+
+\begin{table}[h!]
+ \caption{Lifetimes and relative ionization cross sections of
+          noble gas atoms.}
+ \centering
+ \begin{tabular}{lcrcrcr}
+  \toprule
+      & \multicolumn{2}{c}{$\tau(ns_{1/2})$} & \multicolumn{2}{c}{$\chi=\frac{\tau_{1/2}}{\tau_{3/2}}$} & \multicolumn{2}{c}{$\frac{\sigma_{3/2}}{\sigma_{1/2}}$} \\
+  \midrule
+   Ne & \unit[1.429]{ns} & \cite{Lauer99} & 2.04 & \cite{Jans97} & 2.0   & \\
+   Ar & \unit[4.684]{ns} & \cite{Lauer99} & 2.05 & \cite{Jans97} & 1.875 & \cite{Codling80} \\
+   Xe & \unit[35.93]{ns} & \cite{Lauer99} & 8.40 & \cite{Luyken72} & 1.6 & \cite{Krause81} \\
   \bottomrule
  \end{tabular}
  \label{table:noble_atom_properties}
 \end{table}
 
-\begin{table}[h]
- \caption{Shift of atomic ionization energies due to a cluster environment.
-          All values are given in eV.}
+\begin{table}[h!]
+ \caption{Shift of atomic ionization energies due to a cluster environment
+          \cite{Feifel04}. All values are given in eV.}
  \centering
- \begin{tabular}{lcccccc}
+ \begin{tabular}{lcccc}
   \toprule
-       & \multicolumn{2}{c}{$\Delta(np_{3/2})$} & \multicolumn{2}{c}{$\Delta(np_{1/2})$} & \multicolumn{2}{c}{$\Delta(ns_{1/2})$} \\
-       & bulk    & surface & bulk    & surface & bulk    & surface \\
+       & {$\Delta(np_{3/2})$} & {$\Delta(np_{1/2})$} & \multicolumn{2}{c}{$\Delta(ns_{1/2})$} \\
+       &         &         & bulk    & surface \\
   \midrule
-   Ne  &         &         &         &         &         &         \\
-   Ar  &         &         &         &         &         &         \\
-   Xe  &         &         &         &         &         &         \\
+   Ar  & -1.0    & -0.4 & -0.636  & -0.313  \\
+   Xe  & -1.3    & -0.9 & -0.756  & -0.346  \\
   \bottomrule
  \end{tabular}
  \label{table:cluster_shifts}
