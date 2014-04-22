@@ -145,43 +145,43 @@ geometric center of the dimer.
 Since inversion symmetry is until now not treated correctly,
 for the neon dimer decay widths data from the literature is used, which was
 obtained with the same method and a comparable basis set \cite{Averbukh06_1}.
-The resulting decay widths are shown in figure \ref{figure:fitted_NeAr_widths}.
+The resulting decay widths are shown in figure \ref{figure:fitted_NeAr_widths}
+and the corresponding lifetimes are in table \ref{table:NeAr_gammas} compared
+to other values from the literature.
 
-\begin{table}
+\begin{table}[htb]
  \centering
  \caption{Decay widths of the NeNe-ICD obtained using different theoretical
           methods and from experiment.}
- \begin{tabular}{lcc}
+ \begin{tabular}{lcrcrcr}
   \toprule
-        & Theory used     & Theory Comp.  & Experiment \\
+        & \multicolumn{2}{c}{Theory used} & \multicolumn{2}{c}{Theory Comp.} & \multicolumn{2}{c}{Experiment} \\
   \midrule
-   NeNe & \unit[60.4]{fs} \cite{Averbukh06} & \unit[92]{fs} \cite{Vaval07} & \unit[$150\pm 50$]{fs} \cite{Schnorr13}\\
-   NeAr & \unit[44.2]{fs} & \unit[36]{fs} \cite{Scheit06} &  -- \\
+   NeNe & \unit[60.4]{fs} & \cite{Averbukh06_1} & \unit[92]{fs} & \cite{Vaval07} & \unit[$150\pm 50$]{fs} & \cite{Schnorr13}\\
+   NeAr & \unit[44.2]{fs} & & \unit[36]{fs} & \cite{Scheit06} &  --  &\\
   \bottomrule
  \end{tabular}
  \label{table:NeAr_gammas}
 \end{table}
 
-For each structure defined in the following section the NeNe-ICD and NeAr-ICD
-spectra were calculated using the programme HARDRoC \cite{HARDRoC}.
-
+The NeAr-ICD has a higher decay width than the NeNe-ICD, but since the
+actual value of decay widths strongly depend on the method and basis set
+used for its description, larger discrepancies are normal. For the decay
+width estimation of the NeAr clusters the values of the first column were
+chosen, because they were both calculated using the FanoADC Stieltjes approach
+with comparable basis set size.
 
 \begin{figure}[h]
  \centering
  \input{pics/NeArfit_pgf}
- \caption{}
+ \caption{Decay widths of the NeNe-ICD and NeAr-ICD processes fitted to
+          curves for the decay width estimation of the NeAr clusters.}
  \label{figure:fitted_NeAr_widths}
 \end{figure}
 
+For each structure defined in the following section the NeNe-ICD and NeAr-ICD
+spectra were calculated using the programme HARDRoC \cite{HARDRoC}.
 
-\begin{table}
- \centering
- \caption{\ac{ICD} decay widths of the NeAr dimer at the equilibrium
-          distance given in eV.}
- \begin{tabular}{lcccc}
- \end{tabular}
- \label{table:compare_gamma_near}
-\end{table}
 
 
 
