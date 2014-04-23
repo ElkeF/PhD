@@ -1,0 +1,50 @@
+\begin{tikzpicture}
+    \begin{axis}[domain=4.0:25,
+                 samples = 200,
+                 xtick={4.0,8.0,...,24},
+                 %xticklabels={$-\pi$,$-\frac \pi 2$,0,$\frac \pi 2$,$\pi$},
+                 cycle list name = exotic,
+                 legend style={anchor= north west},
+                 xlabel={$R$ [\AA]},
+                 ylabel={$E$ [eV]}
+                 ]
+      \addplot+[
+                mark = none,
+                black,
+                thick
+               ]
+               {29.239 - 0.636};
+      \addlegendentry{Ar3s$^{-1}$};
+      \addplot+[
+                mark = none,
+                thick
+               ]
+               {12.1298 - 1.3 + 12.1298 - 1.3 + 14.39964 / x};
+      \addlegendentry{Xe5p$_{3/2}^{-1}$Xe5p$_{3/2}^{-1}$};
+      \addplot+[
+                mark = none,
+                thick
+               ]
+               {13.4363 - 0.9 + 12.1298 -1.3 + 14.39964 / x};
+      \addlegendentry{Xe5p$_{1/2}^{-1}$Xe5p$_{3/2}^{-1}$};
+      \addplot+[
+                mark = none,
+                thick
+               ]
+               {12.1298 - 1.3 + 13.4363 -0.9 + 14.39964 / x};
+      \addlegendentry{Xe5p$_{3/2}^{-1}$Xe5p$_{1/2}^{-1}$};
+      \addplot+[
+                mark = none,
+                thick
+               ]
+               {13.4363 - 0.9 + 13.4363 - 0.9 + 14.39964 / x};
+      \addlegendentry{Xe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$};
+      \addplot+[
+                mark = none,
+                thick
+               ]
+               {12.5653 - 1.17 + 12.5653 - 1.17 + 14.39964 / x};
+      \addlegendentry{Xe5p$_{nrel}^{-1}$Xe5p$_{nrel}^{-1}$};
+
+    \end{axis}
+\end{tikzpicture}
