@@ -14,12 +14,13 @@ structures. Afterwards, cluster structures investigated and compared to experime
 
 
 \subsection{Model structures}
-In order to model the decay processes in clusters an Ausschnitt of an cluster
+In order to model the decay processes in clusters a cutout of an cluster
 is modelled by layers of xenon atoms in an \ac{fcc} structure. On these
 layers, one argon atom is placed in either a \ac{fcc} or an \ac{hcp} position
 as shown in figure \ref{figure:model_clusters}. The atomic distance are
 assumed to equal the sum of the corresponding van der Waals radii given in
-table \ref{table:vdWaalsradii}.
+table \ref{table:vdWaalsradii}. The results of this section were published
+in \cite{Fasshauer13}.
 
 \begin{figure}[htb]
  \centering
@@ -29,7 +30,7 @@ table \ref{table:vdWaalsradii}.
           Left panel: Argon atom placed
           in an \ac{fcc} position on xenon atom layers in \ac{fcc} structure.\\
           Right panel: Argon atom placed
-          in an \ac{fcc} position on xenon atom layers in \ac{fcc} structure.}
+          in an \ac{hcp} position on xenon atom layers in \ac{hcp} structure.}
  \label{figure:model_clusters}
 \end{figure}
 
@@ -106,38 +107,409 @@ of triples for each argon atoms is given by $N_{Xe}^2$. This means that
 the \ac{ETMD}3 is statistically favoured above the \ac{ICD} in clusters with
 xenon cores consisting of more than one xenon atom.
 
-\begin{figure}[ht]
+The decay widths of the \ac{ICD} and \ac{ETMD}3 process for the model
+structures were calculated using the model of pairs and triples introduced in
+chapter \ref{chapter_geom}. For this the model structures were decomposed
+into all possible pairs and triples. For each pair and triple with an energy
+transfer distance $R$ smaller than \unit[11]{\AA}, the decay width was evaluated
+using
+the asymptotic approximations of equations
+(\ref{reltheolifetime_exp}) and (\ref{reltheolifetimeetmd_exp}) and the
+experimentally obtained atomic properties of tables
+\ref{table:noble_atom_ionization}, \ref{table:noble_atom_properties} and
+\ref{table:cluster_shifts}, absolute ionization cross sections from
+\cite{West78}. For the energy transfer distance $R$ of the \ac{ETMD}3 process
+the Jacobi the reference point was chosen to be the center of mass of
+$S_1$. All later results were obtained using the position of the argon
+atom.
+Then, the decay widths were normalized to one initially ionized argon
+atom.
+
+\begin{figure}[]
  \centering
  \input{pics/arxe_model_rel}
  \input{pics/arxe_model_nrel}
- \caption{}
+ \caption{\ac{ICD} and \ac{ETMD}3 secondary electron spectra for the model
+          structures of figure \ref{figure:model_clusters}. To guide the
+          eye of the reader, the spectra
+          were folded with Gaussians of \unit[300]{meV} and \unit[600]{meV}
+          for the \ac{ICD} and \ac{ETMD}, respectively.\\
+          Upper panel: $jj$-coupling scheme. Lower panel: $LS$-coupling scheme.}
  \label{figure:arxe_model}
 \end{figure}
 
+The resulting secondary electron spectra of the \ac{ICD} and
+\ac{ETMD}3 processes are shown in figure \ref{figure:arxe_model} for the
+$jj$-coupling and the Russel-Saunders coupling scheme. The latter result is
+not non-relativistic, since the estimation is based on experimental values,
+which intrinsically contain scalar-relativistic effects.
+
+In the $jj$-coupling scheme (upper panel), the \ac{ETMD} causes three main
+peaks at \unit[0.243]{eV}, \unit[1.950]{eV} and \unit[3.656]{eV}
+corresponding to decay
+processes involving nearest neighbours. The peak at \unit[3.343]{eV} stems
+from the Xe5p$_{3/2}^{-1}$Xe5p$_{3/2}^{-1}$ channel, whereas the peak
+at \unit[1.637]{eV} originates from the sum of the energetically degenerate
+Xe5p$_{1/2}^{-1}$Xe5p$_{3/2}^{-1}$ and Xe5p$_{3/2}^{-1}$Xe5p$_{1/2}^{-1}$
+channels. The Xe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channel evokes the peak
+at \unit[0.243]{eV}.
+The \ac{ICD} process causes a multitude of smaller peaks at kinetic
+energies of the emitted electron below \unit[1.8]{eV}. These originate from the
+Ar3p$_{3/2}^{-1}$Xe5p$_{3/2}^{-1}$ and the Ar3p$_{1/2}^{-1}$Xe5p$_{3/2}^{-1}$
+channels of pairs characterized by different distances.
+The folded spectrum shows a large peak close to zero with two shoulders
+caused by the \ac{ETMD}3 process.
+
+In the Russel-Saunders coupling scheme (lower panel), the secondary
+electron spectrum shows only one main \ac{ETMD} peak at \unit[2.525]{eV}
+corresponding to the Xe5p$^{-1}$Xe5p$^{-1}$ channel.
+At energies \unit[<1.0]{eV} the \ac{ICD} peaks are shown. These correspond
+to the Ar3p${-1}$Xe5p$^{-1}$ channel only and hence stem from pairs of
+different distances.
+The combined, folded spectrum shows two distinct peaks for the \ac{ICD} and
+\ac{ETMD}3 process.
+
+The total calculated decay widths are shown in table
+\ref{table:arxe_widths_model}. From these numbers the spin-orbit coupled
+reults are not equal to the results obtained in the Russel-Saunders coupling,
+but similar, which can be explained by the multitude of channels, which
+open at different distances and therefore, the basis of pairs and triples
+included in the open channel calculations differ. In both coupling schemes
+the decay width of the \ac{ICD} is slightly larger than the one of the
+\ac{ETMD}3 process. Since all lifetimes are three orders of magnitude smaller
+than the radiative lifetime of the Ar3s vacancy, these processes dominate.
+Because of the comparable decay widths of \ac{ICD} and \ac{ETMD}3, both
+processes should be experimentally observable.
+
+\begin{table}[bt]
+ \centering
+ \caption{Decay widths of the ICD and ETMD processes of the model structures.}
+ \begin{tabular}{lcccc}
+  \toprule
+          & \multicolumn{2}{c}{$\Gamma$ [eV]} & \multicolumn{2}{c}{$\tau$ [ps]}\\
+          & $jj$               & $LS$               & $jj$ & $LS$ \\
+  \midrule
+   ICD    & $8.3\cdot 10^{-4}$ & $9.2\cdot 10^{-4}$ & 0.79 & 0.71\\
+   ETMD   & $7.2\cdot 10^{-4}$ & $5.6\cdot 10^{-4}$ & 0.92 & 1.18\\
+   total  & $15.5\cdot 10^{-4}$& $14.8\cdot 10^{-4}$& 0.43 & 0.44\\
+  \bottomrule
+ \end{tabular}
+ \label{table:arxe_widths_model}
+\end{table}
+
+\subsubsection{Conclusions}
+The above discussion embarked on the investigation and calculation of electron
+emission spectra of mixed ArXe clusters produced in electronic decay reactions
+following ionization of inner-valence electrons of Ar.
+Together with a suitable cluster model and including
+energy shifts due to the environment as well as statistical effects,
+individual and total electron emission spectra were generated. Due to the
+presence of xenon, spin-orbit coupling was shown to play a major role for an
+adequate description of energies, ICD and ETMD thresholds and total lifetimes
+of the individual processes and cannot be neglected. The  relativistic
+calculations of the ICD spectrum show that the ICD electrons are expected to
+have kinetic energies below \unit[2]{eV}. The corresponding ETMD peak is
+centered at \unit[2]{eV} and exhibits pronounced overlap with the ICD feature.
+These results are in stark contrast to the total spectrum in the
+$LS$-coupling scheme
+exhibiting two well separated structures. In the relativistic formulation,
+the ratio of the ETMD to ICD intensity is determined to be 0.87 underlying the
+importance of both decay processes in ArXe clusters.
+If several Ar layers surround the core of xenon atoms,
+this ratio is expected to decrease.
+This is due to the fact that ICD, an energy-transfer process, can happen
+anywhere in the bulk, while ETMD involves electron transfer and, therefore,
+proceeds exclusively at the argon-xenon interface. It should be noted that
+experimental peak positions and intensities can be slightly different due to
+a number of approximations inherent in the model such as a fixed geometry and
+the exclusion of dynamical processes.
+
+%Including the effect of temperature
+%and a dynamical modeling of cluster structures together with a more
+%elaborate \emph{ab initio} treatment of the initial and final states is
+%part of ongoing research.
+
+
+\subsection{Cluster Structures}
+In the following section, decay widths for complete shell cluster structures
+of \ac{fcc} and icosahedral structure are investigated. The structures were
+obtained from the scripts \verb|icoclus| and \verb|fccclus| described in
+the appendix \ref{icoclus} and \ref{fccclus}.
+
+\subsubsection{Dependence on Cluster Size and Number of Argon Layers}
+Consider a xenon cluster described by a complete icosahedral or dodecahedral
+structure with one additional layer of argon. With increasing cluster size,
+the \emph{surface-to-bulk} ratio decreases. Both the \ac{ICD} and \ac{ETMD}
+are interface
+effects and hence the decay widths per ionized argon atom can be expected
+first to increase and with even larger core sizes
+to converge to some value. However, for an \ac{ETMD} the electron donor atom
+needs to be in immediate vicinity in order to have a significant decay
+width. Therefore, the decay width increase of the two processes with increasing
+cluster size can be expected to be different.
+
+Additionally for a fixes size of the xenon core, different numbers of surrounding
+complete shells of argon atoms are possible. Since the \ac{ETMD} is a pure
+interface effect, its decay width per initially ionized atom can be expected to
+decrease with an increasing number of argon shells. The same behaviour
+is estimated for the \ac{ICD} process. However, since the process is also
+able to occur with next-nearest neighbours, the decrease of the decay width
+is expected to be less pronounced.
+
+\begin{table}
+ \centering
+ \caption{ICD and ETMD decay widths in eV for ArXe icosahedral clusters with
+          increasing core cluster size and 1 -- 4 layers of argon.
+          In the last part the percentage of ETMD compared to the
+          total decay is given.}
+ %\small
+ \begin{tabular}{clcccc}
+  \toprule
+   &  $c_{core}$ & 1 layer     & 2 layers             & 3 layers             & 4 layers \\
+  \midrule
+   \multirow{5}{*}{\rotatebox[origin=c]{90}{ICD}}  
+   & 2 & 1.880$\cdot 10^{-4}$ & 1.336$\cdot 10^{-4}$ & 7.211$\cdot 10^{-5}$ & 4.220$\cdot 10^{-5}$  \\
+   & 3 & 3.207$\cdot 10^{-4}$ & 2.219$\cdot 10^{-4}$ & 1.299$\cdot 10^{-4}$ & 8.117$\cdot 10^{-5}$  \\
+   & 4 & 4.004$\cdot 10^{-4}$ & 2.812$\cdot 10^{-4}$ & 1.733$\cdot 10^{-4}$ & 1.132$\cdot 10^{-4}$  \\
+   & 5 & 4.522$\cdot 10^{-4}$ & 3.230$\cdot 10^{-4}$ & 2.060$\cdot 10^{-4}$ & 1.388$\cdot 10^{-4}$  \\
+   & 6 & 4.879$\cdot 10^{-4}$ & 3.536$\cdot 10^{-4}$ & 2.311$\cdot 10^{-4}$ & 1.592$\cdot 10^{-4}$  \\
+  \midrule
+   \multirow{5}{*}{\rotatebox[origin=c]{90}{ETMD3}}  
+   & 2  &  1.187$\cdot 10^{-4}$  &  3.722$\cdot 10^{-5}$  &   1.685$\cdot 10^{-5}$  &  9.101$\cdot 10^{-6}$  \\
+   & 3  &  1.969$\cdot 10^{-4}$  &  7.133$\cdot 10^{-5}$  &   3.581$\cdot 10^{-5}$  &  2.087$\cdot 10^{-5}$  \\
+   & 4  &  2.429$\cdot 10^{-4}$  &  9.507$\cdot 10^{-5}$  &   5.072$\cdot 10^{-5}$  &  3.104$\cdot 10^{-5}$  \\
+   & 5  &  2.726$\cdot 10^{-4}$  &  1.119$\cdot 10^{-4}$  &   6.210$\cdot 10^{-5}$  &  3.929$\cdot 10^{-5}$  \\
+   & 6  &  2.931$\cdot 10^{-4}$  &  1.242$\cdot 10^{-4}$  &   7.092$\cdot 10^{-5}$  &  4.597$\cdot 10^{-5}$  \\
+  \midrule
+   \multirow{5}{*}{\rotatebox[origin=c]{90}{\% ETMD3}}  
+   & 2  &   38.71  &  21.79  &  18.94  &  17.74  \\
+   & 3  &   38.05  &  24.32  &  21.60  &  20.45  \\
+   & 4  &   37.76  &  25.27  &  22.64  &  21.52  \\
+   & 5  &   37.61  &  25.72  &  23.16  &  22.07  \\
+   & 6  &   37.53  &  26.00  &  23.48  &  22.41  \\
+  \bottomrule
+ \end{tabular}
+ \label{table:ico_size}
+\end{table}
+
+
+\begin{table}
+ \centering
+ \caption{ICD and ETMD decay widths in eV for ArXe dodecahedral clusters with
+          increasing core cluster size and 1 -- 4 layers of argon.
+          In the last part the percentage of ETMD compared to the
+          total decay is given.}
+ %\small
+ \begin{tabular}{clcccc}
+  \toprule
+   &  $c_{core}$ & 1 layer     & 2 layers             & 3 layers             & 4 layers \\
+  \midrule
+   \multirow{5}{*}{\rotatebox[origin=c]{90}{ICD}}  
+   & 2 &  1.856$\cdot 10^{-4}$  & 1.437$\cdot 10^{-4}$  &  7.877$\cdot 10^{-5}$  &  4.645$\cdot 10^{-5}$    \\
+   & 3 &  3.327$\cdot 10^{-4}$  & 2.418$\cdot 10^{-4}$  &  1.434$\cdot 10^{-4}$  &  9.023$\cdot 10^{-5}$    \\
+   & 4 &  4.227$\cdot 10^{-4}$  & 3.099$\cdot 10^{-4}$  &  1.933$\cdot 10^{-4}$  &               \\
+   & 5 &  4.815$\cdot 10^{-4}$  & 3.579$\cdot 10^{-4}$  &  2.309$\cdot 10^{-4}$  &  1.565$\cdot 10^{-4}$    \\
+   & 6 &  5.226$\cdot 10^{-4}$  & 3.931$\cdot 10^{-4}$  &  2.597$\cdot 10^{-4}$  &  1.800$\cdot 10^{-4}$    \\
+  \midrule
+   \multirow{5}{*}{\rotatebox[origin=c]{90}{ETMD}}  
+   & 2 &  1.727$\cdot 10^{-4}$ & 5.416$\cdot 10^{-5}$ &  2.452$\cdot 10^{-5}$  &  1.324$\cdot 10^{-5}$      \\
+   & 3 &  2.738$\cdot 10^{-4}$ & 9.920$\cdot 10^{-5}$ &  4.979$\cdot 10^{-5}$  &  2.903$\cdot 10^{-5}$      \\
+   & 4 &  3.318$\cdot 10^{-4}$ & 1.299$\cdot 10^{-4}$ &  6.928$\cdot 10^{-5}$  &  4.240$\cdot 10^{-5}$      \\
+   & 5 &  3.687$\cdot 10^{-4}$ & 1.514$\cdot 10^{-4}$ &  8.403$\cdot 10^{-5}$  &  5.317$\cdot 10^{-5}$      \\
+   & 6 &  3.941$\cdot 10^{-4}$ & 1.671$\cdot 10^{-4}$ &  9.539$\cdot 10^{-5}$  &  6.183$\cdot 10^{-5}$      \\
+  \midrule
+   \multirow{5}{*}{\rotatebox[origin=c]{90}{\% ETMD}}  
+   & 2 &  48.20 &    27.37 &   23.74 &     22.19  \\
+   & 3 &  45.14 &    29.09 &   25.77 &     24.34  \\
+   & 4 &  43.98 &    29.53 &   26.39 &            \\
+   & 5 &  43.37 &    29.72 &   26.68 &     25.36  \\
+   & 6 &  42.99 &    29.83 &   26.86 &     25.57  \\
+  \bottomrule
+ \end{tabular}
+ \label{table:fcc_size}
+\end{table}
+
+These two hypotheses are tested in this chapter for xenon core sizes
+with $c= 2-6$ and 1 -- 4 additional layers of argon atoms around it for
+both icosahedral and dodecahedral clusters.
+The calculations were performed using the programme \verb|HARDRoC|
+\cite{HARDRoC} and the same atomic data as in the preceding section
+given in tables \ref{table:noble_atom_ionization},
+\ref{table:noble_atom_properties} and \ref{table:cluster_shifts}.
+Here, the argon atom is chosen as the reference point for the energy
+transfer distance $R$.
+
+The results are shown in tables \ref{table:ico_size} and \ref{table:fcc}
+for the icosahedral and dodecahedral clusters, respectively.
+From this data the expected trend of increasing decay width with
+increasing cluster size for both \ac{ICD} and \ac{ETMD} processes and
+icosahedral and dodecahedral structures proven. The same holds for
+the decrease of the decay width per argon atom and the contribution of the \ac{ETMD}
+process to the total decay with increasing number
+of surrounding argon layers.
+However, the contribution of the \ac{ETMD} to the total decay with increasing
+xenon core size is unexpected on first sight. For one layer of argon atoms
+the ETMD contribution decreases with increasing cluster size, while it
+increases for more argon layers. Here, two contrarian effects play a role.
+On the one hand, the number of xenon atoms in the interface shell increases
+compared to the number of argon atoms in the interface layer. This statistically
+prefers the ETMD over the ICD. On the other hand for small xenon cores not all
+ICD channels are open for all pairs. With increasing cluster size for some
+atom pairs additional channels will be open compared to the smaller clusters.
+This favours the ICD over the ETMD, where all channels are open for each
+possible triple. The latter effect is most pronounced for small clusters and
+therefore, it dominates the trend for one layer of atoms, whereas for more
+argon layers the statistical effects benfit the ETMD over the ICD.
+
+Comparing the absolute decay width values for the icosahedral and dodecahedral
+cluster structures it can be seen that the ICD decay width are of comparable size
+for both skeletal structures and that the ETMD decay widths of the dodecahedral
+structures are larger than of the icosahedral structures. Hence, also the
+ETMD contribution to the total decay width is higher in the latter case.
+This feature can be explained by the distance of the next-nearest neighbours
+in these cluster structures. In icosahedral clusters the atomic distance
+within a shell is small compared to the interatomic distance of atoms
+of different shells, while the shortest interatomic distance
+in dodecahedral clusters
+is constant for atoms of the same and different shells. In case of the icosahedral
+clusters the atoms of the next shell do not contribute significantly, while
+they do for dodecahedral clusters. Therefore, the ETMD decay widths are larger
+in dodecahedral clusters than in icosahedral clusters.
 
 
 
+\subsubsection{Modelling Experimental Spectra}
+
+The secondary electron spectra of three ArXe cluster ensembles were measured by
+Förstel and Hergenhahn in 2012 (see figure \ref{figure:arxe_exp}).
+They had mean xenon core sizes
+of $\le100$, $\le300$ and $\le2057$ atoms. The number of additional argon
+layers is unknown.
+For the same experimental conditions the single ionization spectra were
+measured. Therefore, the results given in table \ref{table:exp_arxe_ionization}
+are going to be used for the modelling of the seondary electron spectra.
+It has to be noted that these numbers are average values of very broad
+distributions.
 
 \begin{figure}
  \centering
+ \includegraphics[scale=0.5]{pics/arxe_cluster_exp_groessenvergleich.eps}
+ \caption{Experimental secondary electron spectra of different ArXe
+          cluster ensembles.}
+ \label{figure:arxe_exp}
+\end{figure}
+
+\begin{table}
+ \centering
+ \caption{Experimental ionization energies inside the ArXe clusters
+          \cite{Foerstel_private}. These ionization energies are the
+          average values of broad distributions.}
+ \begin{tabular}{lcc}
+  \toprule
+             & SIP [eV]  & FWHM [eV] \\
+  \midrule
+   Xe5p$_{3/2}$ & 11.5   & 1.20 \\
+   Xe5p$_{1/2}$ & 13.0   & 0.40 \\
+   Ar3p         & 15.3   & 0.60 \\
+   Ar3s         & 28.7   & 0.35 \\
+  \bottomrule
+ \end{tabular}
+ \label{table:exp_arxe_ionization}
+\end{table}
+
+In the following the two larger cluster ensembles are going to be modelled
+by cluster structures characterized by a 309 and 923 xenon atom core surrounded
+by one additional layer of argon atoms. The latter was chosen, because the
+calculations evaluating the ETMD decay width were computationally
+too expensive for a xenon core of 2057 atoms in the current implementation.
+The cluster with a 309 xenon atoms core can be expected to have an icosahedral
+structure, while the larger cluster might be of dodecahedral shape. Therefore,
+in the latter case both the fcc and the icosahedral structure are investigated.
+
+The calculated spectrum of the 309 atom icosahedral model cluster is
+shown in figure \ref{figure:exp_309ico_arxe}. The spectra of the different
+channels are plotted independently and the peak heights are not added.
+
+\begin{figure}[t]
+ \centering
  \input{pics/exp_309ico_arxe}
- \caption{}
+ \caption{Calculated secondary electron spectrum of the icosahedral
+          309 xenon core cluster with one additional layer of argon
+          atoms. Due to usage of experimental ionization energies of
+          mixed clusters the peaks are shifted to lower energies compared
+          to the spectra in figure \ref{figure:arxe_model}.}
  \label{figure:exp_309ico_arxe}
 \end{figure}
 
+Compared to the spectra of the principle models in figure \ref{figure:arxe_model},
+the peak positions are shifted to lower kinetic energies of the emitted
+electron by $\approx$\unit[1]{eV}. This at the same time leads to
+channel closings especially for
+the \ac{ICD}. Therefore, the spectrum is dominated by the \ac{ETMD}.
 
 
-\begin{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The secondary electron spectra for the large cluster with a xenon
+core consisting of 923 atoms are shown in figure \ref{figure:exp_923_arxe}.
+In the upper panel, the spectrum of the icosahedral cluster is displayed.
+As shown in the previous section, the increased number of bulk atoms
+leads to ICD channel openings. Therefore, the ICD peak is more pronounced
+than for the smaller cluster.
+
+The spectrum of the dodecahedral cluster shape of fcc structure is shown in
+the lower panel of figure \ref{figure:exp_923_arxe}. As already qualitatively
+discussed in the preceding section, also next-nearest neighbours can
+significantly contribute to the total ETMD decay width. This property is
+not observed in the easiest model structures, due to the choice of 
+reference for the energy transfer distance in the ETMD calculations.
+In the earlier center of mass approach, the difference between nearest
+and next-nearest neighbours is larger than in the approach with the argon
+atom as reference point. Therefore, the relative contribution of the
+next-nearest neighbours is increased.
+
+Overall, the ICD dominates the secondary electron spectrum. However, this
+is caused by the ICD peaks being centered at around \unit[0.5]{eV}, while
+the ETMD peaks are spread over a large energy range. Additionally, dynamic
+effects are expected to have a larger impact on the ETMD spectra with three
+involved atoms than in the ICD spectra, which leads to an additional
+broadening estimated in the folding of the spetra.
+
+
+
+
+Since the ionization energies used for the modelling are mean values, they
+might not represent the involved atoms correctly. The argon atoms with the
+largest contributions to the ICD and ETMD decays are the atoms at the interface
+region. However, it is not evident that the core is surrounded by one argon
+layer only. Vacancies in the interface argon atoms might due to
+their interaction with the
+neighbouring xenon atoms be better stabilized than the average argon atom in the
+cluster in case of several layers. Additionally, vacancies in the interface
+xenon atoms might be less stabilized than in the average xenon atom.
+Lower ionization energies of the Ar3s initial state would shift the spectrum
+to lower kinetic energies, while lower ionization energies of the Ar3p
+would shift the \ac{ICD} spectrum to higher kinetic energies.
+Higher ionization energies of the Xe5p region would shift both the ICD and
+the ETMD spectra to lower kinetic energies. Hereby, the ETMD spectrum would
+have a larger shift. These contrary trends make it impossible to determine the
+accurate peak positions for the clusters without extensive ionization energy
+studies for different atomic positions inside the clusters.
+Comparison to the experimental spectrum in figure \ref{figure:arxe_exp}
+suggests a shift to lower kinetic energies.
+This might also be achieved by shorted interatomic distances in the cluster,
+which might be caused by rearrangements of the atoms due to the introduced
+vacancy.
+
+
+\begin{figure}[]
  \centering
  \input{pics/exp_923ico_arxe}
  \input{pics/exp_923fcc_arxe}
- \caption{}
- \label{figure:exp_923ico_arxe}
+ \caption{Secondary electron spectra of ArXe clusters with a xenon core
+          consisting of 923 atoms and one additional layer of argon atoms.\\
+          Upper panel: Icosahedral structure. Lower panel: Dodecahedral
+          clsuter with fcc structure.}
+ \label{figure:exp_923_arxe}
 \end{figure}
 
-%\begin{figure}
-% \centering
-% \input{pics/exp_923fcc_arxe}
-% \caption{}
-% \label{exp_923fcc_arxe}
-%\end{figure}
+
