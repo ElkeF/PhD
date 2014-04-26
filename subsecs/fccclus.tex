@@ -1,0 +1,48 @@
+\section{\textsc{fccclus}}
+
+Clusters with an \ac{fcc} structure have a dodecahedral shape. It consists
+of a central atom surrounded by shells of other atoms. All distances 
+between atoms and their nearest neighbours both within one shell and atoms
+of different shells are equal.
+
+They can be constructed starting from a central atom, which is surrounded by
+12 atoms. Of these 12 atoms, six are positioned in a regular hexagon around
+the central atom. Additional three are positioned in a triangle above the
+plane defined by the hexagon and three below. Thereby, the triangles are rotated
+by \unit[30]{\degree} with respect to the hexagon and \unit[60]{\degree}
+with respect to each other.
+
+Hence, the positions of the corners of every shell are with $i=0,1,\dots 6$
+and $j=0,1,2$ given by
+
+\begin{equation}
+ \begin{pmatrix}
+  a \cos \left(\frac\pi3 i \right)\\
+  a \sin \left(\frac\pi3 i \right)\\
+  0
+ \end{pmatrix}
+ \quad\quad
+ \begin{pmatrix}
+  -\frac{a}{\sqrt{3}} \sin \left(\frac{2\pi}{3} j \right)\\
+   \frac{a}{\sqrt{3}} \cos \left(\frac{2\pi}{3} j \right)\\
+  \sqrt{\frac23} a
+ \end{pmatrix}
+ \quad\quad
+ \begin{pmatrix}
+   \frac{a}{\sqrt{3}} \sin \left(\frac{2\pi}{3} j \right)\\
+  -\frac{a}{\sqrt{3}} \cos \left(\frac{2\pi}{3} j \right)\\
+  -\sqrt{\frac23} a
+ \end{pmatrix}
+\end{equation}
+
+for the hexagon, the three atoms above and the three atoms below the plane.
+Here, $a$ denotes the length of an edge, and at the same time from the central
+atom to the vertex, defined by the sum of van der Waals
+radii.
+
+From the positions of these vertices, the atomic positions of atoms in the
+edges and together with the latter, the coordinates of atoms in the triangular
+and square planes are constructed.
+
+For heteronuclear clusters $a$ ist determined by the sum over the van der Waals
+radii in seen from the central atom to the vertex to be contructed.

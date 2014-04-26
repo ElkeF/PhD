@@ -1,0 +1,97 @@
+\section{HARDRoC --- Hunting Asymptotic Relativistic Decay Rates of Clusters}
+
+The programme calculates the \ac{ICD} and \ac{ETMD}3 decay widths
+of given cluster structures. Thereby, it is possible to choose between
+the evaluation of the asymptotic expressions of equations
+(\ref{reltheolifetime_exp}) and (\ref{reltheolifetimeetmd_exp}) using
+atomic data and the evaluation of a function obtained from fitting
+\emph{ab initio} results to $\Gamma(R) = c_{pre} e^{-c_{exp}} + \frac{c_6}{R^6}$
+for the ICD.
+
+The required input information is:
+\begin{itemize}
+ \item xyz-file
+ \item desired decay process(es)
+ \item evaluation type
+ \item ICD based in atomic properties:
+       \begin{itemize}
+        \item \ac{SIP}s of the initial and final state atoms for each channel and
+              eventual energetic shifts caused by the cluster environment
+        \item radiative lifetime $\tau$ of the initially ionized state
+        \item optionally, the ratio $\chi=\frac{\tau_{1/2}}{\tau_{3/2}}$
+        \item ratio of ionization cross sections
+       \end{itemize}
+ \item ICD based on \emph{ab initio} results:
+       \begin{itemize}
+        \item \ac{SIP}s of the initial and final state atoms for each channel and
+              eventual energetic shifts caused by the cluster environment
+        \item parameters of the function fitted to the decay width $c_pre$,
+              $c_{exp}$ and $c_6$
+       \end{itemize}
+ \item ETMD: 
+       \begin{itemize}
+        \item \ac{SIP}s of the initial and final state atoms for each channel and
+              eventual energetic shifts caused by the cluster environment
+        \item ratio of ionization cross sections
+       \end{itemize}
+\end{itemize}
+
+Additionally the total ionization cross section is required. Since it is
+energy dependent, the experimental data of references \cite{}
+parameters of the function
+$\sigma(\omega) = a\omega^2 + b\omega + c + \frac{d}{\omega}$ were fitted
+to the experimental data of references \cite{West76,West78}
+for the noble gases and incorporated in the programme. This function is evaluated
+when needed.
+
+The transition dipole moments required for the ETMD3 calculation were
+calculated with Dirac using a zyx basis set. Since, they depend on the
+internuclear distance, they were fitted to a function and the coresponding
+parameters were incoprporated in the programme and are evaluated for the
+different distances.
+
+The algorithm proceeds in the following way:
+\begin{enumerate}
+ \item decompose the cluster structure into pairs or triples depending
+       on the required decay process
+ \item create statistics of equivalent pair or triple geometries
+ \item for each decay channel and for each non-equivalent geometry
+       determine energetic accessibility of the decay channel
+ \item evaluate the corresponding decay width in case of energetic accessibility
+ \item normalize the decay width to one initially ionized atom and multiply
+       it by the occurence of the pair or triple geometry of the cluster
+ \item for each channel write the geometry parameters, secondary electron energies
+       and the decay widths to an output file
+ \item for each channel sum over the obtained decay widths
+ \item sum the decay widths of the different channels to give the total decay
+       width of all channels
+\end{enumerate}
+
+The computationally most expensive step in the above procedure is the
+sorting procedure in order to obtain a shorter array consisting of the
+non-equivalent geometries and the corresponding weights. It scales like
+$\frac{N(N_{neq}-1)}{2}$ with $N$ being the total number of pairs or triples
+and $N_{neq}$ being the number of non-equivalent pairs or triples of the cluster.
+In the worst case $N=N_{neq}$.
+For the \ac{ICD}, $N=N_{in}\cdot N_{fin}$, where $N_{in}$
+denotes the number of atoms of the atomtype, which is initially ionized
+and $N_{fin}$ denotes the number of potential decay partners. For the
+\ac{ETMD}3, $N=N_{in} \cdot N_{fin1} \cdot N_{fin2}$, where $N_{fin1,2}$
+denote the number of atoms of the atom type of electron donor and electron
+emitter. For clusters consisting of several hundrets or thousands of atoms, these
+numbers are huge, especially for the ETMD. Since the transition dipole moments
+in equation (\ref{reltheolifetimeetmd_exp}) decrease exponentially with the
+internuclear distance, triples with large $Q$ have a negligible contribution
+to the total decay width. Therefore, an additional parameter for the maximum
+allowed electron transfer distance $Q$ can be introduced,
+which reduces the number of triples before the sorting dramatically for large
+clusters.
+
+Despite its computational cost, this sorting step is highly regarded for
+all following steps.
+Since mostly, highly symmetric structures are investigated, the length of
+the array and hence the number of operations can be decreased up to a
+factor of about 50. Also the written output is shortened by the same factor
+and has an improved readability.
+
+The manual is to be found in reference \cite{HARDRoC}.

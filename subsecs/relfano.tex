@@ -1,0 +1,68 @@
+\section{Relativistic FanoADC}
+
+The FanoADC code used in this thesis is implemented in Dirac \cite{DIRAC13}
+and based on the symmetry handling and calculation of matrix elements of
+the relativistic \ac{ADC} and Lanczos code of Pernpointner
+\cite{Pernpointner04_1,Pernpointner04_2}.
+
+In this FanoADC code the partitioning by population is applied. Hence, the
+three subspace matrices of the initial states, the interaction and the final
+states can be obtained from resorting the available matrix elements. The
+selection of the final state subspace is based on manually chosen 2h
+configurations.
+Since the \ac{ADC} matrix can have dimensions
+of $10^5\times 10^5$, they are not kept
+in memory but stored to disk. A resorting from reading in these matrix elements
+would be inefficient and therefore, the matrices are build correctly
+sorted. The heart of the sorting is an array, in which the positions within
+a 2h1p vector are stored, which correspond to final state configurations
+of different channels called \verb|finalpos|.
+
+Due to the hermiticity of the \ac{ADC} matrix, it is sufficient to store the
+lower triangle and the diagonal, which are build separately. First, the
+1h/1h block is constructed as in the \verb|reladc| code, since all
+configurations contribute to the initial state subspace.
+
+As in the \verb|reladc| code, the matrix is build columnwise.
+In the
+coupling block, this leads to an easy sorting by leaving out all those matrix
+elements, for which the row index corresponds to a final state position within
+a column.
+At the end of the column, the skipped matrix elements are added to the
+interaction part.
+
+In the satellite block, both row and column indices can correspond to a
+final state position. Still, the FanoADC matrices are constructed using
+the column indices of the \verb|reladc| code. For those columns corresponding
+to the intial state subspace, the sorting is obtained as in the coupling block
+explained above. However, those matrix elements,
+which stem from a column, which corresponds to a final state configuration,
+those matrix elements, which mediate the interaction with the initial state
+subspace need to be correctly sorted into the interaction matrix. Thereby,
+the final state subspace matrix elements are left out. For the
+interaction matrix elements, the indices are first shifted correctly and
+then switched and the matrix elements are complex conjugated, due to the
+hermiticity of the \ac{ADC} matrix.
+
+The final state subspace of the satellite block is constructed calling
+those matrix elements, corresponding to the final state positions stored
+in \verb|finalpos|.
+
+After the contruction of the three matrices, the final state matrix is
+diagonalized by full diagonalization. Then, the initial state matrix
+is diagonalized using the Lanczos routine. After the first Lanczos run,
+a set of short eigenvectors with an overlap higher than a given threshold
+with the initial state spinor and those with the same energies
+is chosen for the calculation of long eigenvectors.
+After calculation of these long eigenvectors, they are merged into linearly
+independent vectors. From each of these long eigenvectors the interaction
+is calculated using the interaction matrix and the final state vectors.
+
+The pseudo-spectrum which afterwards enters the Stieltjes claculation
+is obtained from the final state eigenenergies and the corresponding interaction
+matrix elements.
+
+The manual can be found as part of the Dirac manual from the release of 2014
+on \cite{DIRAC13}.
+
+
