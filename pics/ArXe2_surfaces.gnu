@@ -27,7 +27,7 @@ set style line 3  linetype -1 linewidth 0.5
 set style fill  transparent solid 0.65 border
 
 set xlabel 'R in Angstrom' offset -1,-2.,1
-set ylabel 'theta in radians' offset 3,-1,0
+set ylabel '{/Symbol q} in radians' offset 3,-1,0
 set zlabel 'E in eV'
 set ztics 5
 
