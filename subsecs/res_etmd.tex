@@ -1,9 +1,9 @@
 \section{Influence of the Geometry on ETMD3 processes}
-\subsection{Geometry Dependence of the ETMD3 Energies}
+\subsection{Geometry Dependence of the ETMD3 Channel Openings and Closings}
 Atomic triples are characterized by three coordinates which for this
 discussion are chosen to be the Jacobi coordinates
 $R$, $Q$ and $\theta$ as illustrated
-in figure \ref{etmd_coord_pspic}.
+in figure \ref{etmd_geom_pspic}.
 However, the choice of appropriate coordinates is not unambiguous,
 since it is unknown, which way the energy travels during its transfer
 between the subsystems. A more detailed discussion is to be found in 
@@ -11,17 +11,17 @@ section \ref{section:coord_choice}.
 
 
 Energetically the geometry is crucial for the determination of open channels.
-Already in the first approximation of the final state energy of equation
-(\ref{equation:E_fin})
-the final state energy $E_{fin}$ strongly depends on the distance between the
-two atoms $X_1$ and $X_2$ ionized in the final state. This dependence is explicitely to be
-formulated as
+Already in the first approximation of the final state energy i$E_{fin}$ of equation
+(\ref{equation:E_fin}) it
+strongly depends on the distance between the
+two atoms $X_{fin1}$ and $X_{fin2}$ ionized in the final state.
+This dependence is explicitely formulated as
 
 \begin{equation}
   E_{fin} = SIP(X_1) + SIP(X_2) + \frac{1}{\sqrt{Q^2 - 2QR\cos\theta + R^2}} .
 \end{equation}
 
-When this final state energy is higher than the intial state, the particular
+When this final state energy is higher than the initial state, the particular
 channel is closed. For the case of the ArXe$_2$ this relation is illustrated
 in figure \ref{figure:ArXe2_geom_energy} for the
 ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channel and $Q=R_{eq}= \unit[4.04]{\AA}$
@@ -31,9 +31,9 @@ using the atomic values as given in table \ref{table:noble_atom_properties}.
  \centering
  \includegraphics[scale=0.8]{pics/ArXeXe12_12_surf.pdf}
  \caption{Energy hyper surface of the doubly ionized
-          ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ (light blue) and the ionization
+          ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ (light blue surface) and the ionization
           potential of the Ar3s$^{-1}$ initial state with \unit[29.2]{eV}
-          (dark blue). $Q$ is constant, whereas $R$ and the angle $\theta$
+          (dark blue grid). $Q$ is constant, whereas $R$ and the angle $\theta$
           (see figure \ref{}) are varied. This ETMD3 channel is open for
           structures where
           the final state energy is lower than the initial state energy.}
@@ -42,18 +42,18 @@ using the atomic values as given in table \ref{table:noble_atom_properties}.
 
 At a hypothetical very small angle $\theta$ and $R\approx Q$, the channel closes.
 In this example those geometries are mostly unrealistic, because the two xenon
-atoms would be closer than in a neutral Xe dimer, but in other systems the
-channel closing due to the geometry are to be expected.
+atoms would be closer than in a neutral Xe dimer, but in other systems
+channel closings due to the geometry are to be expected.
 
 
 \subsection{Geometry Dependence of the ETMD3 Decay Rates}
 %\subsubsection{Distance Dependencies of ETMD Decay Rates}
 The decay rate also crucially depends on the geometry of the triple.
 From eq. (\ref{reltheolifetimeetmd_exp}) the $R$ dependency is
-easily interpreted of being
+easily interpreted as being
 $\Gamma \propto R^{-6}$ corresponding to the energy transfer mainly being
 caused by a dipole-dipole interaction. The dependency of $Q$ is implicitely
-formulated in the transition dipole moments. These depend on the overlap
+included in the transition dipole moments. These depend on the overlap
 between the two atoms of the electron transfer, which decreases exponentially
 with $Q$.
 
@@ -70,10 +70,12 @@ yield
                            + |<\tilde{D}_x>|^2 (2+ \sin^2\alpha) \right)
 \end{equation}
 
-which are shown in figure \ref{figure:etmd_angle_dir}, supposing
+The decay widths corresponding to electron transfers from orbitals
+oriented along ($\tilde{z}$) and perpendicular to the internuclear axis ($\tilde{x}$)
+are illustrated separately in figure \ref{figure:etmd_angle_dir}, supposing
 $|<\tilde{D}_{z}>|^2 = |<\tilde{D}_x>|^2 = 1$.
 Obviously, the two different transition types add up to give the full
-angular dependence of a given trimer. It has to be remembered, that
+angular dependence of a given trimer. It has to be kept in mind that in reality
 $|<\tilde{D}_{z}>|^2$ is about an order of magnitude larger than
 $|<\tilde{D}_{x}>|^2$.
 
@@ -81,13 +83,13 @@ $|<\tilde{D}_{x}>|^2$.
  \centering
  \input{pics/etmd_angle_dir}
  \caption{Angle dependence of the ETMD3 decay widths for electron transfers
-          along the internuclear axis of subsystem $S_1$ $\tilde{z}$ and perpendicular
+          along the internuclear axis $\tilde{z}$ of subsystem $S_1$ and perpendicular
           to the internuclear axis $\tilde{x}$.}
  \label{figure:etmd_angle_dir}
 \end{figure}
 
 For a more realistic picture
-consider the distances $R$ and $Q$ as definded in figure \ref{etmd_geom_pspic}
+consider the distances $R$ and $Q$ as defined in figure \ref{etmd_geom_pspic}
 to be constant and the ratio between the transition dipole moments
 in the $\tilde{z}$ and the $\tilde{x}$ direction
 $q=\frac{|<\tilde{D}_x>|^2}{|<\tilde{D}_z>|^2}$ to be fixed to some number.
@@ -103,7 +105,7 @@ In this case the decay width for each $M_{AB}'$ has the angular dependence
 \begin{figure}[h]
  \centering
  \input{pics/etmd_angle}
- \caption{Angular dependence of the \ac{ETMD}3 decay width for electrons trasnfers
+ \caption{Angular dependence of the \ac{ETMD}3 decay width for electron transfers
           both along and perpendicular to the internuclear axis of subsystem $S_1$.
           Different values of $q=\frac{|<\tilde{D}_x>|^2}{|<\tilde{D}_z>|^2}$.}
  \label{figure:etmd_angle}
@@ -118,7 +120,7 @@ and minima at uneven multiples at $\frac \pi 2$ as shown in figure
 
 In a real system, an energy transfer between
 two dipoles is most efficient, if they are aligned in one direction.
-Wihtin a dimer the most efficient electron transfer results in a
+Within a dimer the most efficient electron transfer results in a
 dipole aligned along the bonding axis and hence $q<1$. A typical
 value of $q$ would be $\frac 1{10}$. In the 
 case of $q$ approaching 0, the angular part of
@@ -133,8 +135,9 @@ to a linear arrangement, is preferred.
 The previous discussions are based on the decay of one specific atom
 being the electron donor and another atom being the electron emitter.
 In reality both atoms can be donor als well as emitter while the energy
-of the resulting final state stays the same. For both bond lengths to the
-initially ionized atom being the same, both contribute the same decay rate
+of the resulting final state stays the same. For both bond lengths between the
+two atoms ionized in the final state and
+initially ionized atom being the same, both contribute the same amount
 to the total decay rate. With one of the atoms ionized in the final state
 being further apart, its probability in donating the vacancy filling electron
 decreases exponentially and can hence be neglected.
@@ -156,12 +159,13 @@ Combining both the view on the energetic accessibility of the decay
 channels and the decay widths results in the pictures in
 figure \ref{figure:ArXe2_etmd_geom_gamma}.
 Here the geometry dependence of the decay width for the case of the four ArXe$_2$
-channels is shown summing over all possible geometric combinations.
+channels is shown summing the decay widths of the two possible geometric combinations
+of the triple.
 The numbers were obtained by \ac{HARDRoC} using the
 asymptotic formula (\ref{reltheolifetimeetmd_exp}) with redefined
-$R$ and $\theta$. Here $Q$ is chosen constant
-to the internuclear distance of the neutral ArXe dimer and $R$ and $\theta$
-are varied. The plots exhibit the channel closing for very small Xe-Xe distances
+$R$ and $\theta$. Here $Q=\unit[4.04]{\AA}$ is chosen constant
+to the internuclear distance of the neutral ArXe dimer while $R$ and $\theta$
+are varied. The plots display the channel closing for very small Xe-Xe distances
 and the $R^{-6}$ behaviour as well as the expected angle dependence explicitely
 shown in figure \ref{figure:etmd_angle}. Implicitly the exponential decrease
 of the decay width is shown by one of the two triple combinations in the trimer
@@ -178,18 +182,18 @@ the total decay width of the ArXe$_2$ trimer as illustrated in figure
  \caption{Sum over the decay widths of all four channels, illustrated
           separately in figure \ref{figure:ArXe2_etmd_geom_gamma}.
           The opening of channels at different angles $\theta$ and
-          internuclear distances $R$ are to be seen at the "spikes".}
+          internuclear distances $R$ are to be seen at the spikes.}
  \label{figure:ArXe2_etmd_geom_gamma_total}
 \end{figure}
 
 Also here the $R^{-6}$ dependence is observed but the dependency
-of the angle $\theta$ looks spiky. These changes are due to the channel
+of the angle $\theta$ shows spikes. These changes are due to the channel
 closing. For a large angle $\theta$ all channels are open. Imagine a linear
 trimer, which now starts bending. The closer
 the two xenon atoms get, the more the two positive charges in the final
 state repell each other. At one point the atoms are so close, that the
 ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channel being highest in energy
-is no longer energetically accessible. Bending further first the
+is no longer energetically accessible. Bending further, first the
 ArXe5p$_{3/2}^{-1}$Xe5p$_{1/2}^{-1}$ and the
 ArXe5p$_{1/2}^{-1}$Xe5p$_{1/2}^{-1}$ channels, being equal in energy,
 close. In the illustrated angle range the ArXe5p$_{3/2}^{-1}$Xe5p$_{3/2}^{-1}$
@@ -199,12 +203,12 @@ channel does not close.
 \section{Influence of the Coordinate System Choice} \label{section:coord_choice}
 In figure \ref{etmd_geom_pspic} a coordinate
 system was chosen to describe the
-triatomic system. The distance $Q$ between the two atoms involved
-in the energy transfer is reasonably defined. However, where the
-center of the oscillating dipole moment of subsystem $S_1$ is, can
+triatomic system $ABC$. The distance $Q$ between the two atoms involved
+in the electron transfer is reasonably defined. However, where the
+center of the oscillating dipole moment of subsystem $S_1$ is located, can
 not unambigously be defined. Most
 probable it is somewhere between the atoms $A$ and $B$.
-The coordinates where chosen as illustrated in the left panel of figure
+The coordinates were chosen as illustrated in the left panel of figure
 \ref{figure:coord_etmd_comparison} with the distance $R$ of the energy transfer
 anchoraged at the initially ionized atom $A$. This choice is convenient for
 the calculation of the decay widths of large system, since for triples
@@ -218,7 +222,8 @@ illustrated in the right panel of figure \ref{figure:coord_etmd_comparison}.
  \includegraphics[scale=0.6]{pics/coord_etmd_alt_pspic.eps}
  \hfill
  \includegraphics[scale=0.6]{pics/coord_etmd_pspic.eps}
- \caption{Two different set of Jacobi coordinates for the description.
+ \caption{Two different set of Jacobi coordinates for the description of a triple
+          $ABC$ (compare figure \ref{etmd_geom_pspic}).
           In the left figure the distance of the energy transfer originates
           at the initially ionized atom $A$, while in the right panel the
           energy transfer distance is defined with respect to some
@@ -249,7 +254,7 @@ and $R_B = 2 R_{A} = 2Q$, respectively.
 \end{figure}
 
 \begin{equation}
-\text{minimum: } \frac{\Gamma_{A}}{\Gamma_B}= \frac{1}{64} \quad\quad
+\text{minimum: } \frac{\Gamma_{A}}{\Gamma_B}= \frac{1}{64} = \frac{1}{2^6} \quad ,\quad
 \text{maximum: } \frac{\Gamma_{A}}{\Gamma_B}= \frac{64}{1}
 \end{equation}
 
@@ -260,7 +265,7 @@ In reality these worst cases will rarely be observed, since it on
 the one hand is very unlikely to find two atoms at exactly the same place
 and on the other hand ETMD preferably occurs at interfaces, which leads
 to preferred angles higher than 0 and below $\pi$.
-Additionally the larger the difference between $Q$ and $R$ become, the
+Additionally the larger the difference between $Q$ and $R$ is, the
 smaller this effect is going to be.
 
 
