@@ -43,16 +43,16 @@
        \draw [] (2,0) rectangle (3,1);
        \draw [diplom1,opacity=0.5,ultra thick] (2,1.5) -- (3,1.5);
        \draw [diplom2,opacity=0.5,ultra thick] (2,1) -- (3,0);
-       \node at (1,2) {\textcolor{diplom1}{${\Lambda}$}};
-       \node at (2.5,0.5) {\textcolor{diplom2}{${\Omega}$}};
+       \node at (1,2) {\textcolor{diplom1}{${\mathbf{\Lambda}}$}};
+       \node at (2.5,0.5) {\textcolor{diplom2}{$\mathbf{{\Omega}}$}};
        \node at (1,0.5) {$\mathbf{V}^T $};
        \node at (2.5,2.0) {$\mathbf{V}$};
 
        \node (moments) at (6.2,1.5) []
-              {$\textcolor{diplom1}{\mathbf{V}_{i,\beta}}=
-              \braket{\phi|\hat{H}|\psi_{q}^{2h1p}}$};
+              {$\textcolor{diplom1}{\mathbf{V}_{i,q}}=
+              \braket{\phi_i|\hat{H}|\psi_{q}^{2h1p}}$};
        \node (energy) at (5.4,0.5) []
-              {$\textcolor{diplom2}{\bar{\omega}_{q}} =  E_{2h1p}$};
+              {$\textcolor{diplom2}{\bar{\omega}_{q}} =  E_q^{2h1p}$};
        \draw [->,ultra thick,gray] (3.2,1.5) -- (moments);
        \draw [->,ultra thick,gray] (3.2,0.5) -- (energy);
      \end{scope}
