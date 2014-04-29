@@ -6,7 +6,7 @@ Due to multiple possible final states, the procedure
 of Feshbach using projection operators for the partitioning of the Hamiltonian
 into an initial and a final state subspace is employed.
 The processes of interest have a singly ionized initial state and a
-doubly charged final state with an additional electron in the continuum.
+doubly ionized final state with an additional electron in the continuum.
 Therefore, the final state configurations are chosen from
 the class of $2h1p$ states, where the $2h$ part is assumed to
 describe the doubly ionized final state and the particle resembles the continuum electron.
@@ -14,7 +14,7 @@ The initial state in a zeroth order approximation can be described as a $1h$ sta
 
 For the partitioning two different methods are known in the literature:
 the selection by $2h$ contributions, which correspond to final states of
-the process\cite{Averbukh05}, or by energy\cite{}.
+the process or by energy \cite{Averbukh05}.
 The first is easy to implement while the second automatically
 enables the correct calculation of decay widths in system with lower than
 spherical symmetry, when the final state vacancies are distributed over two symmetry
@@ -22,14 +22,14 @@ equivalent atoms.
 
 
 \subsection{Partitioning by Population}
-In the actual partitioning, all $2h1p$ configuration characteized by a $2h$
+In the actual partitioning, all $2h1p$ configurations characterized by a $2h$
 part corresponding to
-a final state configuration are chosen to be part of the final states.
+a final state configuration are chosen to be part of the final state subspace.
 All $1h$ configurations and those $2h1p$ configurations not corresponding
 to a possible final state configuration are used for the description
 of the initial state. This leads to a resorted \ac{ADC} matrix as shown in
 figure \ref{figure:fano_matsort}, where the subspace of the initial state
-is denoted by $\mathbf{M}$, the final state subspace by $\mathbf{N}$ and
+is denoted by $\mathbf{M}$, the final state subspace by $\mathbf{N}$, and
 the interaction coupling those two subsets is named $\mathbf{W}$.
 
 \begin{figure}[h]
@@ -42,7 +42,7 @@ the interaction coupling those two subsets is named $\mathbf{W}$.
 \end{figure}
 
 The separate diagonalization of the initial and final state subspaces
-$\mathbf{M}$ and $\mathbf{N}$ yield
+$\mathbf{M}$ and $\mathbf{N}$ yields
 the corresponding eigenvectors and eigenvalues on the diagonal of the
 matrices $\mathbf{\Lambda}$ and $\mathbf{\Omega}$
 
@@ -63,14 +63,16 @@ in this new basis.
   \caption{Schematic illustration of the basis transformation of the full \ac{ADC}
            matrix into the basis of initial and final states. The pseudo-spectrum
            is given by the manifold of $\bar{\omega}_q$ and
-           $V_{i,q} = \braket{\phi |\hat{H}| \psi_{q}^{2h1p}}$.}
+           $V_{i,q} = \braket{\phi_i |\hat{H}| \psi_{q}^{2h1p}}$.}
   \label{figure:fano_bastrans}
 \end{figure}
 The desired pseudo-spectrum which enters the Stieltjes calculation
-is then obtained from the final state energies
-$\bar{\omega}_q$ and the interaction part in the basis of the initial and
-final eigenstates for a specific initial state choice $i$
-$V_{i,q} = \braket{\phi |\hat{H}| \psi_{q}^{2h1p}}$.
+is then for a specific initial state choice $i$ given by the
+manifold of final state energies
+$\bar{\omega}_q$ and the corresponding interaction part in the
+basis of the initial and
+final eigenstates 
+$V_{i,q} = \braket{\phi_i |\hat{H}| \psi_{q}^{2h1p}}$.
 
 
 
@@ -79,12 +81,14 @@ A partitioning by energy requires first a calculation of the double ionization
 spectrum with the same conditions as regarded for the later decay width
 calculation. From the results, the number of open channel contributions
 for each symmetry are determined manually. Then, the satellite block
-of the \ac{ADC} matrix is constructed such, that for each particle a
-small $2h1p$ block is to be found on the diagonal. These blocks are diagonalized.
-It is assumed, that the resulting order of the $2h$ configurations is the
+of the \ac{ADC} matrix is constructed such, that for each particle the
+corresponding
+small $2h1p$ block is to be found on the diagonal. These blocks are diagonalized
+separately.
+It is assumed that the resulting order of the $2h$ configurations is the
 same for all particles and equals the one from the former double ionization
 potential calculation. These \textit{precorrelated} final states are then
-partitioned with respect to energy into the the initial or the final state
+partitioned with respect to energy into the initial or the final state
 subspace. In practice, rather the coefficients which allow for the construction
 of the precorrelated final states from the uncorrelated matrix elements are stored.
 Finally the \ac{ADC} matrix is constructed using the precorrelated final states.
@@ -97,18 +101,18 @@ Approximating the complete set of continuum basis functions is verfied for
 the determination of the total decay width only. However, an \emph{ad hoc} procedure
 for the determination of partial decay widths has been postulated \cite{Cacelli86},
 in which a subset of the determined coupling elements
-$V_{i,q} = \braket{\phi |\hat{H}| \psi_{q}^{2h1p}}$ is related to a specific channel
-$\beta$.
+$V_{i,q} = \braket{\phi |\hat{H}| \psi_{q}^{2h1p}}$  and the corresponding
+$\bar{\omega}_q$ is related to a specific channel $\beta$.
 
 \begin{equation}
- \gamma_{q,\beta} = 2\pi \left| \braket{\phi| \hat{H} | \hat{P}_\beta \psi_{q}^{2h1p}} 
+ \gamma_{i,q}^{\beta} = 2\pi \left| \braket{\phi| \hat{H} | \hat{P}_\beta \psi_{q}^{2h1p}} 
                     \right|^2
 \end{equation}
 Here, $\hat{P}_\beta$ denotes the projection operator chosing the channel contributions.
 The pseudo-spectra of the channels are independently treated by the Stieltjes
-routine and partial decay widths $\tilde{\Gamma}_\beta$ are obtained.
-Afterwards, the partial decay widths are renormalized with respect to the total
-decay width $\Gamma$
+routine and primal partial decay widths $\tilde{\Gamma}_\beta$ are obtained.
+Afterwards, the primal partial decay widths
+are renormalized with respect to the total decay width $\Gamma$
 
 \begin{equation}
  \Gamma_\beta = \frac{\tilde{\Gamma}_\beta}{\sum_\beta \tilde{\Gamma}_\beta} \Gamma
@@ -123,7 +127,7 @@ orbitals from lower than the outer valence are included in the final state subsp
 
 
 
-\section{How to Obtain Trustworthy Results}
+\section{How to Obtain Reliable Results}
 \subsection{Choice of Basis Set and Active Space}
 A good basis set for a decay width calculation has to both
 describe the initial state of the process reasonably well and to mimic
