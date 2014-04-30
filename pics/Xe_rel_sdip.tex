@@ -24,26 +24,28 @@
          mark=.,
          thick,
          diplom1,
-         empty legend
+         forget plot
         ]
         table[
         x expr = \thisrowno{0},
         y expr = \thisrowno{1}
         ]
         {data/Xe_rel_sips.dat};
+        \addlegendimage{line legend, diplom1, thick};
         \addlegendentry{SIPs(Xe)};
 \addplot+[ycomb,
          %no markers,
          mark=.,
          thick,
          diplom2,
-         empty legend
+         forget plot
         ]
         table[
         x expr = \thisrowno{0},
         y expr = -\thisrowno{1}
         ]
         {data/Xe_rel_dips.dat};
+        \addlegendimage{line legend, diplom2, thick};
         \addlegendentry{DIPs(Xe)};
 
 \node[pin={[pin distance=0.2cm]170:{\tiny 4d$_{5/2}^{-1}$}}]
