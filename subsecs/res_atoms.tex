@@ -2,28 +2,32 @@
 The decay widths of noble gas atoms have been thoroughly studied in the
 literature. Therefore, the main aim of this chapter is to prove the implementation
 of the FanoADC Stieltjes in the Dirac programme \cite{DIRAC13} to work
-reliably and reproduce results known in the literature. Both the neon atom is
-investigated, where reference data is available for a non-relativistic
-implementation of the same method, and the xenon atom, where relativistic effects
-play a major role, are studied.
-Finally I am going to conclude that the programm is able to predict
-the decay widths of autoionization processes. Other comparable relativistic programmes
-rely on spherical symmetry \cite{Tulkki92,Fritzsche12} and
-therefore, the FanoADC Stieltjes approach
-necessary for the calculation of \ac{ICD} decay widths.
+reliably and reproduce results known in the literature. Both, the neon atom
+and the xenon atom are investigated.
+The neon atom is chosen, because reference data is available
+obtained from a non-relativistic
+implementation of the same method. Then, the xenon atom is studied, due
+to the importance of relativistic effects in its description, which is
+the focus of this thesis.
+Finally, the results will be used to verify that the programme is
+able to predict the decay widths of autoionization processes.
+In contrast to other comparable relativistic programmes
+\cite{Tulkki92,Fritzsche12}, the FanoADC Stieltjes approach does not
+rely on spherical symmetry and is therefore capable of describing
+the decay widths of \ac{ICD} processes.
 
 
 \section{Neon}
 
 The Ne1s$^{-1}$ vacancy with an ionization energy of \unit[xxx]{eV} is
 the initial state of the Auger decay. The double ionization energies of
-the final states are shown in table \ref{table:Ne_dips}. Hence, the
+the final states are shown in Table \ref{table:Ne_dips}. Hence, the
 kinetic energy of the emitted electron lies between
 \unit[]{eV} and \unit[]{eV}.
 
 \begin{table}[h]
   \centering
-  \caption{Double ionization energies of the doubly ionized final states
+  \caption{Experimental ionization energies of the doubly ionized final states
            \cite{NIST2014}.}
   \begin{tabular}{llr}
    \toprule
@@ -48,25 +52,30 @@ kinetic energy of the emitted electron lies between
 
 \subsection{Computational Details}
 The decay width calculations were performed using the FanoADC Stieltjes approach
-implemented in Dirac \cite{DIRAC13}. A cc-pCV6Z basis set was employed with
+implemented in the programme package \verb|DIRAC| \cite{DIRAC13}.
+A cc-pCV6Z basis set was employed with
 additional $s$, $p$ and $d$ functions (5,5,6) of the \ac{KBJ} type \cite{Kaufmann89}.
 The active space covered an energy range of \unit[-33.0 -- 56.0]{a.u.}, and included
-376 spinors in both the relativistic and the non-relativistic calculation.
+376 spinors in both, the relativistic and the non-relativistic calculation.
 
 \subsection{Decay Widths}
-The calculated decay widths are to be found in table \ref{table:Ne_gammas}
-and compared to experimental and theoretical results.
+The calculated decay widths are outlined and compared to experimental
+results in Table \ref{table:Ne_gammas}. Hereby, the contributions to the
+total decay widths are given
+for the three groups 2p$^{-2}$, 2s$^{-1}$2p$^{-1}$ and 2s$^{-2}$ as well
+as for the different terms explicitely, as far as numbers are available.
 
 \begin{table}[h]
   \centering
-  \caption{Auger decay widths and percentages of the partial decay widths
-           for a initial vacancy in the Ne1s. The decay widths are given in
+  \caption{Auger decay widths and contributions of the different channels to
+           the total decay width in \% 
+           for an initial vacancy in the Ne1s. The decay widths are given in
            \unit[]{meV}.}
   \small
   \begin{tabular}{llr|rr|rr|rr|rr|rr}
    \toprule
-    & & \multicolumn{3}{c}{Present} & \multicolumn{2}{c}{Koloren\v{c}} & \multicolumn{2}{c}{Kelly} & \multicolumn{2}{c}{Yarzhemsky} & \multicolumn{2}{c}{exp.}\\
-   \multicolumn{2}{c}{Final states} & {rel.} & \multicolumn{2}{c}{nrel.} & \multicolumn{2}{c}{Ref.\cite{Kolorenc11}} & \multicolumn{2}{c}{Ref.\cite{Kelly75}} & \multicolumn{2}{c}{Ref.\cite{Yarzhemsky02}} & \multicolumn{2}{c}{Refs. \cite{Albiez90}, \cite{Avaldi95}}\\
+    & & \multicolumn{3}{c}{This work} & \multicolumn{2}{c}{Koloren\v{c}} & \multicolumn{2}{c}{Kelly} & \multicolumn{2}{c}{Yarzhemsky} & \multicolumn{2}{c}{exp.}\\
+   \multicolumn{2}{c}{Final states} & {rel.} & \multicolumn{2}{c|}{nrel.} & \multicolumn{2}{c|}{Ref.\cite{Kolorenc11}} & \multicolumn{2}{c|}{Ref.\cite{Kelly75}} & \multicolumn{2}{c|}{Ref.\cite{Yarzhemsky02}} & \multicolumn{2}{c}{Refs. \cite{Albiez90}, \cite{Avaldi95}}\\
    \midrule
    \multirow{3}{*}{2p$^{-2}$} & $^3P$   & \multirow{3}{*}{53.9} & 0.0 & \multirow{3}{*}{81.6} &  0.0 & \multirow{3}{*}{60.0} &  0.0 & \multirow{3}{*}{70.8} &  0.0 & \multirow{3}{*}{68.4} &  --  & \multirow{3}{*}{70.4}\\
                               & $^1D$      & & \multirow{2}{*}{81.6} & & 50.5 & & 61.2 & & 58.2 & & 60.9&\\
@@ -77,36 +86,38 @@ and compared to experimental and theoretical results.
    \midrule
       2s$^{-2}$               & $^1S$ &       8.1 & 10.4 & 10.4 &  9.9 & 9.9 &  6.1 & 6.1 &  5.5 & 5.5 &  6.1& 6.1\\
    \midrule
-   $\Gamma$  & & {344}  & \multicolumn{2}{c}{268} & \multicolumn{2}{c}{251} & \multicolumn{2}{c}{219} & \multicolumn{2}{c}{242} & \multicolumn{2}{c}{220 $\pm$ 30}\\
+   $\Gamma$  & & {344}  & \multicolumn{2}{c|}{268} & \multicolumn{2}{c|}{251} & \multicolumn{2}{c|}{219} & \multicolumn{2}{c|}{242} & \multicolumn{2}{c}{220 $\pm$ 30}\\
    \bottomrule
   \end{tabular}
   \label{table:Ne_gammas}
 \end{table}
 
-The results of Koloren\v{c} \textit{et al.} \cite{Kolorenc11} were obtained using
-the FanoADC Stieltjes method in the non-relativistic regime using an
-energy based partitioning and the same basis set.
-Focussing on the total decay width first, the non-relativitstic decay width
-of this thesis has the same order of magnitude as both the experimental result
+The results of this work were obtained using the FanoADC Stieltjes method and
+the same basis set as in the work of  Koloren\v{c} \textit{et al.}
+\cite{Kolorenc11}. However, the latter non-relativistic description uses an
+energy based partitioning.
+Focussing on the total decay width, the non-relativistic decay width
+obtained in this thesis is of the same order of magnitude
+as both the experimental result
 and the other theoretical predictions, while the relativistic result
 overestimates the experimental decay width by \unit[56]{\%}. However, this
-discrepancy is still inside the error margins og the FanoADC Stieltjes method.
+discrepancy is still inside the error margins of the FanoADC Stieltjes method.
 
 The branching ratios obtained from the partial decay widths of the present
 results have the correct order of magnitude in the relativistic calculation, but
-deviate from the values from the literature. In the non-relativistic case
-the 2s$^{-1}$2p$^{-1}$ channel's contribution is crucially underestimated.
-It is known in the literature \cite{Aaberg82} that
+deviate from the values found in the literature. In the non-relativistic case
+the 2s$^{-1}$2p$^{-1}$ channel's contribution is substantially underestimated.
+It is known from the literature \cite{Aaberg82} that taking into account
 the coupling of the 2s and the 2p orbitals is crucial in order to obtain
 reliable values for the decay width. Since this coupling is neglected
-in the current projection scheme, these branching ratios can not be reproduced.
+in the current projection scheme, these branching ratios cannot be reproduced.
 The partial decay width of the 2p$^{-2}$ $^3P$ channel is forbidden by symmetry.
 In an Auger decay the angular momentum and the spin need to be conserved
 in the Russel-Saunders coupling scheme, i.e. $\Delta L = \Delta S = 0$.
-The initial state is characterized by $L_i = 0$, $S_i= \frac12$ and has $g$
-symmetry under inversion. The
+The initial state is characterized by $L_i = 0$, $S_i= \frac12$ and
+has $g$ symmetry. The
 2p$^{-2}$ $^3P$ final state without the electron is characterized by $L_f=1$
-and $S_f = 1$ and is an $g$ state. In order to conserve the momenta, the
+and $S_f = 1$ and is a $g$ state. In order to conserve the momenta, the
 outgoing electron would have to be characterized by $L_e=1$ and $S_e=\frac12$.
 However, this outgoing electron would have ungerade symmetry. Since the coupling
 operator is the gerade Coulomb operator, the corresponding matrix elements
@@ -121,21 +132,26 @@ FanoADC.
 From single and double ionization spectra and Auger spectroscopy
 it is known that vacancies from the Xe4d and lower are energetically allowed to
 decay via Auger processes. \cite{Siegbahn69}
-I will in the following focus on two energetic initial state regions, namely
+In the following, I will focus on two energetic initial state regions, namely
 the 4p and the 4d region.
 
-The different open channels have to be determined by comparison of the single
-and double ionization spectra shown in figure \ref{figure:Xe_sdip}.
-These spectra have been calculated using the
-DC-ADC(2x) implemented in Dirac\cite{Pernpointner04_1,Pernpointner10_1,DIRAC13}.
-All calculations in this chapter were performed using the
-Dyall cv4z basis set\cite{dyall5p06} with additional five s, p and d
+\subsection{Computational Details}
+All calculations in this chapter, including the decay width calculations,
+were performed using the
+Dyall cv4z basis set \cite{dyall5p06} with additional five s, p and d
 and three diffuse basis functions                       
 of the \ac{KBJ} type \cite{Kaufmann89}. The active space was chosen to include the
 the fourth shell completely and the positive energies to be limited by
 \unit[40.0]{a.u.}.
 
-\begin{figure}[h]
+\subsection{Open Channels}
+The different open channels are to be determined by comparison of the single
+and double ionization spectra shown in Figure \ref{figure:Xe_sdip}.
+These spectra have been calculated using the
+DC-ADC(2x) method implemented in \verb|DIRAC|
+\cite{Pernpointner04_1,Pernpointner10_1,DIRAC13}.
+
+\begin{figure}[]
   \centering
   \input{pics/Xe_rel_sdip}
   \input{pics/Xe_nrel_sdip}
@@ -146,18 +162,20 @@ the fourth shell completely and the positive energies to be limited by
            }
   \label{figure:Xe_sdip}
 \end{figure}
-\afterpage{\clearpage}
+%\afterpage{\clearpage}
 
 
 From the calculated single and double ionization spectra the open channels
-for different initial states can be determined as shown in 
-table \ref{table:Xe_open_channels}
-These results are the basement for the choice of the final state subspace
-in the dcay width calculations.
+for different singly ionized initial states can be determined as shown in 
+Table \ref{table:Xe_open_channels} and doubly ionized final states.
+These results are the basis for the choice of the final state subspace
+in the decay width calculations.
 \begin{table}[h]
   \centering
-  \caption{Open channels of the Auger processes for different initial states
-           on the xenon atom.}
+  \caption{Channels of the Auger processes for different singly ionized
+           initial states and doubly ionized final states
+           of the xenon atom. Open channels are marked by "x", while closed
+           channels are marked by "--".}
   \begin{tabular}{lcccccc}
    \toprule
                    & 4d$^{-2}$ & 4d$^{-1}$5s$^{-1}$ & 4d$^{-1}$5p$^{-1}$ & 5s$^{-2}$ & 5s$^{-1}$5p$^{-1}$ & 5p$^{-2}$ \\
@@ -180,46 +198,50 @@ in the dcay width calculations.
 \subsection{Auger Decay from the Xe4d Region}
 
 The Auger process from the Xe4d subshell has been experimentally
-measured to high accuracy and is used as a calibration standard. \cite{Carroll02}
-The decay widths have been measured  by e.g. Ausmees \textit{et al.}
-\cite{Ausmees99,Aksela94}
-Theoretically it has been investigated  by Mäntykenttä \cite{Maentykenttae93}
-and lately as a competing process for
-sequential double ionization using a free electron laser \cite{Fritzsche11}
-using \ac{MCDF}. 
-I am going to compare the experimental and theoretical findings with our 
-the results from our calculations presented in table \ref{table:xe_auger_4d_rates}.
+measured to high accuracy \cite{Carroll02} and is used as a calibration standard.
+The corresponding decay widths have among others been measured by Ausmees
+\textit{et al.} \cite{Ausmees99,Aksela94}.
+Theoretically they have been investigated by Mäntykenttä \cite{Maentykenttae93}
+using \ac{MCDF} \cite{Fritzsche11}. 
+The experimental and theoretical findings are compared to 
+the results of the present calculations using the relativistic FanoADC Stieltjes
+method presented in Table \ref{table:xe_auger_4d_rates}.
 
 From the single ionization spectrum of the full Hamiltonian, initial state
 energies of \unit[67.03]{eV} and \unit[69.04]{eV} were obtained. They deviate
-from the experimental values shown in \ref{table:xe_auger_4d_rates}
+from the experimental values shown in Table \ref{table:xe_auger_4d_rates}
 by about \unit[0.5]{eV} and are very close to the values calculated with
-\ac{MCDF} \cite{Fritzsche11}. However, the spin-orbit splitting of
+\ac{MCDF} \cite{Fritzsche11}. The spin-orbit splitting of
 $\Delta_{SO,calc}=\unit[2.01]{eV}$ is very close to the experimental value
-of $\Delta_{SO,exp}=\unit[1.99]{eV}$. Even though the initial state energies of the
-initial state subspace deviates from the experimental numbers, the spin-orbit
-splitting is well preserved to be $\Delta_{SO,part}=\unit[2.04]{eV}$.
+of $\Delta_{SO,exp}=\unit[1.99]{eV}$. Even though the initial state energies 
+obtained from the initial state subspace
+deviate from the experimental numbers, the spin-orbit
+splitting is well predicted to be $\Delta_{SO,part}=\unit[2.04]{eV}$.
 
-According to table \ref{table:Xe_open_channels} the open channels are characterized
+According to Table \ref{table:Xe_open_channels} the open channels are characterized
 by the two hole configurations $5s^{-2}$, $5s^{-1}5p^{-1}$
-and $5p^{-1}5p^{-1}$.
+and $5p^{-1}5p^{-1}$, which in the following are utilized for the construction
+of the final state subspace.
 
 In order to obtain the decay widths at the resonance energies,
 higher orders of Stieltjes were predominantely
 used for the interpolation to yield the approximate decay width function.
-It became necessary, because in the partitioned Hamiltonian the $5s^{-2}$ channel
+This choice became necessary, because in the partitioned
+Hamiltonian the $5s^{-2}$ channel
 opens very close to threshold and hence the resonance energy at which the decay width
 function is evaluated is very steep. Therefore, for a reasonable description
-the higher orders were needed. In such cases also the error of the evaluated
+the higher orders polynomials were needed. In such cases the
+error $\Delta(\Gamma)=\unit[0.1]{eV}$ of the evaluated
 decay width is rather
-large compared to the decay widths themselves being $\Delta(\Gamma)=\unit[0.1]{eV}$.
+large compared to the decay widths themselves.
 
 \begin{table}[h]
  \centering
  \small
  \caption{Auger decay widths of the Xe4d$_{5/2}$ and Xe4d$_{3/2}$
           and the non-relativistic
-          4d compared to experimental values\cite{Ausmees99}.
+          4d initial states with the doubly ionized final states
+          compared to experimental values \cite{Ausmees99}.
           All widths are given in \unit{eV}.
           The partial widths are renormalized to the total width.}
  \begin{tabular}{lcccccc}
@@ -242,43 +264,47 @@ large compared to the decay widths themselves being $\Delta(\Gamma)=\unit[0.1]{e
  \label{table:xe_auger_4d_rates}
 \end{table}
 
-The total relaitivistic decay width obtained with the FanoADC
+The total relativistic decay width obtained with the FanoADC
 Stieltjes method agree with
 both the experimental results and the \ac{MCDF} result within the error margins.
 Even though the error margins are large, the deviation of the results
 from the experimental findings are
 less than \unit[52]{meV} and hence much smaller than the error margin. 
-Compared to the \ac{MCDF} the deviations are much smaller, for the 4d$_{5/2}$
+Comparing the results of this thesis to the results of the \ac{MCDF} calculations
+the deviations are much smaller. For the 4d$_{5/2}$
 the results are very close with a difference of \unit[2]{meV} and for the
 4d$_{3/2}$ with a difference of \unit[10]{meV}.
 
-Compared to the relativistic results the non-relativistic results are smaller
-by a factor of two, while the spinfree calculation yields a decay width
+The results of the non-realtivistic calculation are smaller than the
+results of the relativistic calculations by a factor of two,
+while the spinfree calculation yields a decay width
 of the same order as the relativistic calculation. This means that the higher
 decay width is not a consequence of spin-orbit coupling but rather of scalar-
 relativistic effects. Non-relativistically, the distance expectation value
+of the electron cloud distribution
 from the nucleus of the 5s and 5p is larger than the one for the 4d orbital. Due to
 the scalar-relativistic effects the 5s and 5p orbitals is contracted while the 4d
-orbital is decontracted. Therefore, the overlap between those orbitals is higher
-as is their possible interaction and hence the decay width including both
+orbital is decontracted. Therefore, the overlap between those orbitals is larger
+as is their possible interaction. Hence, the decay width including both
 kinds of vacancies is increased.
 
-As shown in figure \ref{figure:Xe_sdip}, some of the final state groups
-split into different terms which have been thoroughly analyzed by
+As shown in Figure \ref{figure:Xe_sdip}, some of the final state groups
+in reality consist of
+different terms which have been thoroughly analyzed by
 Pernpointner \textit{et al.} \cite{Pernpointner12_2}. From this analysis
-it can easily be seen that the terms are combinations of different $2h$
+it can be seen that the terms are combinations of different $2h$
 configurations. Therefore a definition of the final state by $2h$
 configurations is unfortunately insufficient for a more detailed
 study of partial decay widths.
 However, the Auger process from the Xe4d region with an improved method
-would be worth investigating, since decay width and branching ratios have been
+would be worth investigating, since decay widths and branching ratios have been
 measured experimentally. \cite{Aksela94}
 
 
 
 
 \subsection{Auger Decay from the Xe4p Region}
-The Xe4p is supposed to be split into 4p$_{1/2}$ and 4p$_{3/2}$ states with
+The Xe4p is expected to be split into 4p$_{1/2}$ and 4p$_{3/2}$ states with
 a spin-orbit splitting of few \unit{eV}. However, in experimental single
 ionization spectra only one peak in the expected 4p$_{3/2}$ region is observed.
 Where one would expect a second peak from the 4p$_{1/2}$, the spectrum shows
@@ -290,16 +316,15 @@ It is assumed to be much faster than the Auger process
 of the 4p$_{3/2}$. 
 
 The decay widths of the Auger process with a 4p$_{3/2}$ initial state have
-been thoroughly studied \cite{Heinaesmaeki04}, giving rise
+been thoroughly studied \cite{Heinaesmaeki04}, leading
 to decay widths of \unit[0.1]{eV} to
 \unit[0.6]{eV} for different satellite states using \ac{MCDF}. In the same publication
 it is stated, that the \ac{SCK} decay is expected to have decay widths of
 about \unit[10--100]{eV}. The latter is used as explanation for the non-observation
 in the Auger electron spectra.
 
-In this thesis I present decay width calculations for both the 4p$_{1/2}$ and
-4p$_{3/2}$ initial states and decay width calculated including relativistic
-effects.
+%In this thesis I present decay width calculations for both the 4p$_{1/2}$ and
+%4p$_{3/2}$ initial states including relativistic effects.
 
 This setup gives the single ionization spectrum of the energetic region of
 interest between \unit[140]{eV} and \unit[170]{eV} shown in the left panel of
@@ -327,25 +352,25 @@ peaks at \unit[154.89]{eV}, \unit[157.00]{eV} and \unit[160.69]{eV}. Both clearl
 show a breakdown of the one-particle picture.
 
 However, due to the underlying method of partitioning the Hamiltonian into
-initial and final state subspaces, the configurations shown in the left panel of figure
+initial and final state subspaces, the configurations shown in the left panel of Figure
 \ref{figure:Xe4p_SIPs} are not the intial states used in the FanoADC approach.
 All configurations characterized by $4d^{-1}5s^{-1}$, $4d^{-1}5p^{-1}$,
 $5s^{-2}$, $5s^{-1}5p^{-1}$ or $5p^{-1}5p^{-1}$ form the final state subspace.
 Therefore, the spectrum of the initial state subspace is the source for
-the description of the initial state instead. Its spectrum is shown in
-the right panel of figure \ref{figure:Xe4p_SIPs}.
+the description of the initial state vector instead. Its spectrum is shown in
+the right panel of Figure \ref{figure:Xe4p_SIPs}.
 
 The partitioning causes a reduction of complexity of the initial state
 spectrum to a main state of the 4p$_{3/2}$ at \unit[147.57]{eV} and a
 reduced distribution for
 the 4p$_{1/2}$ with highest peaks at \unit[156.42]{eV}, \unit[158.16]{eV}
 and \unit[160.22]{eV}.
-Thereby an error of the initial state description is introduced.
-This error has never been investigated further, but has to be kept in mind.
+This causes an error of the initial state description is introduced,
+which is normally neglected.
 
-From the FanoADC and a following Stieltjes calculation points of $\Gamma(E)$ are
+From the FanoADC and a following Stieltjes calculation points along $\Gamma(E)$ are
 determined for each calculated order of Stieltjes. Such decay width profiles
-are shown in figures \ref{figure:Xe4p33_Gamma_profile},
+are shown in Figures \ref{figure:Xe4p33_Gamma_profile},
 and \ref{figure:Xe4p11_Gamma_profile}
 for the 4p$_{3/2}$ and 4p$_{1/2}$, respectively.
 Their analysis is mandatory for the evaluation of the results' quality.
@@ -353,10 +378,13 @@ Their analysis is mandatory for the evaluation of the results' quality.
 \begin{figure}[htb]
   \centering
   \includegraphics[scale=1.15]{pics/Xe4p_33_gammae.eps}
-  \caption{Shifted $\Gamma(E)$ of the relativistic FanoADC calculation from
+  \caption{Shifted Stieltjes profile of $\Gamma(E)$ obtained from the
+           relativistic FanoADC calculation from
            a 4p$_{3/2}$
            initial state with both $\Gamma$ and $E$ given in atomic units.
-           The resonance energy is $E_{res}=0$. The smooth curve shows two
+           The resonance energy is $E_{res}=0$ and the resulting points
+           of the different orders of Stieltjes are plotted separately.
+           The smooth curve shows two
            additional peaks realted to interactions with Rydberg states as
            discussed in section \ref{section:Stieltjes_profile_properties}.
            }
@@ -376,7 +404,9 @@ is necessary.
 
 \begin{table}[h]
  \centering
- \caption{Auger decay widths of the Xe4p$_{3/2}$
+ \caption{Auger decay widths of the Xe4p$_{3/2}$ initial states with
+          different $M_J$ values and different doubly ionized final
+          states.
           All widths are given in \unit{eV}.}
  \begin{tabular}{lcc}
    \toprule
@@ -420,7 +450,7 @@ is necessary.
 \footnotetext[3]{This work.}
 
 The total and partial decay widths for the 4p$_{3/2}$ initial state
-are shown in table \ref{table:xe_auger_rest}. The projection of the
+are shown in Table \ref{table:xe_auger_rest}. The projection of the
 angular total angular momentum of the initial state does not influence
 the results, which can be deduced from the almost equal results for the
 4p$_{3/2,\pm 3/2}$ and 4p$_{3/2,\pm 1/2}$ initial state. It can easily be seen that
@@ -428,20 +458,22 @@ the \ac{CK} processes characterized by the 4d$^{-1}$5s$^{-1}$ and
 4d$^{-1}$5p$^{-1}$ final states dominate the decay.
 
 The total decay widths are compared
-to experimental results and the results obtained using \ac{MCDF} in
-table \ref{table:xe_auger_comp}. All decay wdiths are in the order of \unit[1]{eV}.
+to experimental values and the results obtained using \ac{MCDF} in
+Table \ref{table:xe_auger_comp}. All decay widths are in the order of \unit[1]{eV}.
 While the calculation excluding the final ionic state configuration interaction
 underestimates
 the experimental decay width by \unit[0.23]{eV}, the calculation including the
 final ionic state configuration interaction overestimates the experimental value
 by \unit[1.26]{eV}. 
-The decay width of this work overestimates the experimental decay width
+The decay width obtained in this work overestimates the experimental decay width
 by \unit[0.27]{eV}. 
 The FanoADC-Stieltjes approach intrinsically contains configuration interaction
 inside the final state subspace. However, only those states characterized by
 certain 2h configurations imaging the final state configuration are taken
 into account. In contrast to this, in the \ac{MCDF} calculation further hand-picked
 satellite contributions are added to the final state description.
+Hence, the final state description of the \ac{MCDF} can be more precise
+than the one of the FanoADC method.
 
 Considering the large errors of both decay width calculations
 their experimental determination, the total decay widths
@@ -450,7 +482,8 @@ the other calculations.
 
 \begin{table}[]
   \centering
-  \caption{Intensity distribution for the Auger decay.}
+  \caption{Contributions of the different channels to the total
+           decay width for the Auger decay of Xe4p$_{3/2}$ in \%.}
   \begin{tabular}{lccccc}
    \toprule
                    & 4d$^{-1}$5s$^{-1}$ & 4d$^{-1}$5p$^{-1}$ & 5s$^{-2}$ & 5s$^{-1}$5p$^{-1}$ & 5p$^{-2}$ \\
@@ -471,31 +504,33 @@ As discussed in section \ref{section:partial}, the obtained partial decay
 widths might suffer from interchannel mixing, which is mainly observed in
 the subvalence region. According to this, the intensity distribution
 of this work is differs from the ones of reference \cite{Heinaesmaeki04} as
-shown in table \ref{table:Xe_auger_distr}. However, the dominance of the
+shown in Table \ref{table:Xe_auger_distr}. However, the dominance of the
 \ac{CK} process is qualitatively observed in accordance with the other
 calculations.
 
 
 The Xe4p$_{1/2}$ initial state can, as already mentioned, not be described
 by a single 1h configuration and therefore, all states with a pole strength
-higher than 0.05 and a major contribution of the Xe4p$_{1/2}$ spinor are
+larger than 0.05 and a major contribution of the Xe4p$_{1/2}$ spinor are
 investigated. Hereby, also the $4d^{-2}$ configurations are sorted into the
-final state subspace in order to take care of a possible \ac{SCK} process.
+final state subspace in order to take into account a possible \ac{SCK} process.
 
 Figure \ref{figure:Xe4p11_Gamma_profile} shows the decay width profile
-of the lowest energy state investigated, which also inhibits the largest
-pole strength. It is a nice and smooth curve at energies above $E=0$.
+of the lowest energy state investigated, which also inhabits the largest
+pole strength. It is a well-behaved and smooth curve at energies above $E=0$.
 As can easily be seen, the \ac{SCK} decay channel opens directly
 in the energy region of interest at $E_{res}=0$. Since the Stieltjes procedure
-is not able to show a clear energy cut at the threshold and the initial state
+is not able to produce a clear energy cut at the threshold and the initial state
 energies can be expected not to be completely exact due to errors introduced
 by the partitioning and additional errors from the ADC(2x) itself, an
-unambiguous conclusion, whether the \ac{SCK} channel is open or not, can not be drawn.
+unambiguous conclusion, whether the \ac{SCK} channel is open or not, cannot be drawn.
 This decission also determines the choice of which curve of the decay width
 profile to choose for the evaluation of the decay width. The results shown
-in table \ref{table:xe_auger_rel11} are the results for the lower curve excluding
+in Table \ref{table:xe_auger_rel11} are the numbers obtained from the
+lower curve excluding
 the opening channel from the interpolation. In weighing the higher order moments
-more than the lower order moments, the decay width would be about twice the numbers
+more than the lower order moments, the decay width would be about twice
+as large as the numbers
 presented and hence in the order of $\Gamma_{max} \approx \unit[2]{eV}$.
 
 \begin{figure}[]
@@ -530,9 +565,10 @@ presented and hence in the order of $\Gamma_{max} \approx \unit[2]{eV}$.
  \label{table:xe_auger_rel11}
 \end{table}
 
-However, this very fast \ac{SCK} decay does not inhibit a decay width of
-\unit[10--100]{eV} as estimated \cite{Heinaesmaeki04}. I therefore conclude
-that the broad
+Even though the FanoADC calculations imply the \ac{SCK} process to have
+a large decay width, the calculated value is smaller than the estimated
+value of \unit[10--100]{eV} \cite{Heinaesmaeki04}.
+I therefore conclude that the broad
 feature of the single ionization spectrum in the 4p$_{1/2}$ region is caused
 by both the breakdown of the single particle picture with additional fast decay
 of all corresponding satellite configurations.
@@ -544,7 +580,6 @@ in Dirac is able to both reproduce results of the comparable non-relativistic
 code of Koloren\v{c}  and results from \ac{MCDF} calculations
 including relativistic effects in Auger processes as well as the corresponding
 experimental results.
-I therefore conclude that the relativistic FanoADC Stieltjes Code is also able
+It is to be expected that the relativistic FanoADC Stieltjes Code is also able
 to predict unknown decay widths for larger systems such as dimers and small
-clusters, which the \ac{MCDF} programmes are not able to calculate, because they rely
-on spherical symmetry.
+clusters, since it is able to treat lower than spherical symmetries.
