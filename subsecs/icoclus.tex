@@ -1,27 +1,31 @@
 \section{\textsc{icoclus}}
 \label{icoclus}
 
-Icoclus is a selection of python scripts creating xyz-coordinate
+\verb|icoclus| is a selection of python scripts creating xyz-coordinate
 files for idealized heteronuclear clusters with a basic
 icosahedral structure.
 All structures contain an icosahedral core of one atom type
 surrounded by atoms of the second atom type in different ways.
-Hereby it has to be mentioned, that these cluster structures are not
+Hereby, it has to be mentioned that these cluster structures are not
 energetically optimized but build using the scientific guess
-that the atomic distances of each pair of atoms in the clusters
+that the interatomic distances of each pair of atoms in the clusters
 can be described as the sum of the van der Waals
 radii.
 
 The newest version is currently available in a git repository in the local
-network of the Theoretical Chemistry group at the university of
+network of the Theoretical Chemistry group at the University of
 Heidelberg and can be cloned via
 \begin{verbatim}
  git clone /home/elke/pub/icoclus 
 \end{verbatim}
 
+In each script, the first line might need to be adjusted to hold
+the path to the favourite installation of python on the current machine.
+
 
 \subsection{Construction of the Core Icosahedral Cluster}
 The vertex coordinates of a regular icosahedron are given by
+\cite{wikipedia_ikosaeder}
 
 \begin{align}
   \left(  0 , \pm \frac a2 ,  \pm\frac a2 \varphi \right) \nonumber\\
@@ -37,21 +41,22 @@ central atom, a shell with $c=2$ is added, afterwards one with $c=3$
 and so on, until the desired cluster size is achieved.
 $a$ is determined by the approriate sum over v. d. Waals radii.
 
-Here one needs to consider, that in these packed icosahedral shells
+Here, one needs to consider that in these packed icosahedral shells
 the distance between the closest atoms within one shell is
 larger than the closest distance of two atoms of neighbouring shells.
 In order to achieve the overall minimum distance between two atoms
-to be the sum of their van der Waals radii, we scale our vertex
-distance $a$ such, that the distance between the surfaces is given by
+to be the sum of their van der Waals radii, the vertex
+distance $a$ is scaled such, that the distance between two atoms
+in neighbouring surfaces is given by
 the sum of the v. d. Waals radii.
 
 \begin{equation}
  a' = a \frac{2}{\sqrt{1+\varphi^2}}
 \end{equation}
 
-In each shell first the vertex atoms are created and then corresponding
-to the size of the shell atoms in the edges and in the end the atoms
-lying in the surfaces.
+In each shell first the vertex atoms are created and then, corresponding
+to the size of the shell, atoms in the edges and in the end the atoms
+lying in the triangular surfaces.
 
 \subsection{Complete Shells}
 Around the icosahedral core cluster more complete shells consisting
@@ -61,7 +66,7 @@ contributing v. d. Waals radii. and scaled as in the case of the core
 vertices.
 
 \subsubsection{Manual of \lstinline|icoclus.py|}
-In the header of the script \lstinline|icoclus.py| the following
+In the header of the script \verb|icoclus.py| the following
 controlling variables are defined.
 
 \begin{lstlisting}
@@ -90,7 +95,7 @@ It is also possible to generate incomplete shells around a core and
 eventually complete shells of the second atom type.
 
 \subsubsection{Manual of \lstinline|incompl_shells.py|}
-In the header of \lstinline|incompl_shells.py| the following section
+In the header of \verb|incompl_shells.py| the following section
 with the
 input variables is to be found.
 
@@ -110,10 +115,10 @@ input variables is to be found.
    no_surfaces = raw_input('How many surfaces do you want to be covered? ')
    no_surfaces = int(no_surfaces)
 \end{lstlisting}
-Here \lstinline|n_outer| declares the number of shells being
+Here, \verb|n_outer| declares the number of shells being
 partially filled. Changing it results in a different cluster class.
 A nicer way to accomplish structures of this other class is to use the
-script \lstinline|area_ico.py|.\\
+script \verb|area_ico.py|.\\
 It is important to notice, that the script is going to fail,
 if the number of covered triangular surfaces is 0. In the case of
 no additional incomplete shells covered being the desired structure,
@@ -123,10 +128,10 @@ one should consider using icoclus.py.
 \subsection{Triangular Surfaces Covered by Layers of Atoms}
 One might consider triangular surfaces covered by several layers of
 atoms of the second atom type, hereby creating subsets of complete
-shells as shown in Figure \ref{}.
+shells as shown in Figure \ref{figure:structures}.
 
 \subsubsection{Manual of \lstinline|area_ico.py|}
-In the header of \lstinline|area_ico.py| the following control section
+In the header of \verb|area_ico.py| the following control section
 is found with the variables to be adjusted.
 
 \begin{lstlisting}
@@ -147,20 +152,21 @@ is found with the variables to be adjusted.
 
 
 \subsection{Caps}
-One might think of a structure as shown in Figure \ref{}, where the
-surfaces of the core cluster are covered with caps.
+One might think of a structure as shown in Figure \ref{figure:structures},
+where the surfaces of the core cluster are covered with caps.
 
-In contrast to the incomplete shells here one might consider both different
+In contrast to the incomplete shells, here, one might consider both different
 numbers of caps as well as multiple arrangements of the caps on the surfaces.
 Within the script the 20 surfaces are numbered and hence a manifold of
 combination of structures for a given number of caps is possible.
 Since the calculation of all different combinations is tedious
 it is beneficial to be able to know which of these combinations are symmetry
 equivalent. This information can be obtained with the help of the script
-\lstinline|stat_caps.py|. For a given number of caps it prints for each
-symmetry equivalent structures of one combination of capped surfaces
+\verb|stat_caps.py|. For a given number of caps it prints one surface number
+combination for each group of
+symmetry equivalent structures
 and the number of possible realizations of it. Afterwards the structures
-can be constructed with \lstinline|scatter_cap_ico.py|.
+can be constructed with \verb|scatter_cap_ico.py|.
 
 \subsubsection{Manual of \lstinline|stat_caps.py|}
 \begin{lstlisting}
@@ -176,7 +182,7 @@ can be constructed with \lstinline|scatter_cap_ico.py|.
    
    n_caps  = 2    # number of caps
 \end{lstlisting}
-The only number to be adjusted is \lstinline|n_caps|, all other variables
+The only number to be adjusted is \verb|n_caps|, all other variables
 do not influence the result.
 
 
@@ -197,8 +203,8 @@ do not influence the result.
    caps   = [1,5]
    n_caps = len(caps)
 \end{lstlisting}
-\lstinline|caps| is a python list and here the combination of surface
-numbers obtained from \lstinline|stat_caps.py| is to be entered.
+\verb|caps| is a python list and here, the combination of surface
+numbers obtained from \verb|stat_caps.py| is to be entered.
 
 
 
