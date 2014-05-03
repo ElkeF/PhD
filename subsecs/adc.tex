@@ -1,102 +1,21 @@
 \chapter{Algebraic Diagrammatic Construction (ADC)}
-\section{One-Particle-Greensfunctions}\label{greensfkt}
 
-Green's function methods are based on propagators, which contain information
-about the response of a system to a time-dependent perturbation.\cite{McWeeny89}
-They are advantageous compared to other quantum chemical methods, because they
-allow the calculation of properties like energy differences without calculating
-the two different states but instead calculating their difference directly.
+The \ac{ADC} is a Green's function approach for the calculation of ionization
+nergies and electron affinities.
+Its advantage is the ability to determine the desired ionization energies
+without explicit calculation of the initial and final states, but instead
+obtaining their energy differences directly.
 
-In the time-domain, the propagator, also called the one particle Green's function
-for fermions is defined as
-
-\begin{equation}\label{1pgf}
-G_{pq}(t,t') = -i \bra{\Psi_0^N}c_p(t)c_q^\dagger(t')\ket{\Psi_0^N}\Theta(t-t') +i \bra{\Psi_0^N}c_q^\dagger(t')c_p(t)\ket{\Psi_0^N}\Theta(t'-t)
-\end{equation}
-
-Here, $\Theta(t-t')$ is the Heaviside step function eq. (\ref{stufe}),
-which ensures the causality of the described process. A system can only
-respond to a perturbation which occured in the past. Therefore, the Green's
-function is non-zero for times $t>t'$ and zero for all other times. \cite{nolting7}
-
-\begin{equation}\label{stufe}
-\Theta(t-t') = \begin{cases}
-1 & \text{for } t>t'\\
-0 & \text{for } t<t'
-\end{cases}
-\end{equation}
-
-In the non-Dyson formulation \cite{Schirmer89} the Green's function can be
-written as the sum over the $N+1$ and the $N-1$ parts
-
-\begin{equation}
-G_{pq}(\omega) = G_{pq}^+(\omega) + G_{pq}^-(\omega)
-\end{equation}
-
-The Green's functions are formulated in the Heisenberg picture, where the
-operators are time-dependent and the states are time-independent.
-The annihilation and creation operators are therefore defined as
-$c_p(t) = \mathrm{e}^{-i\mathcal{H} t} c_p \mathrm{e}^{i\mathcal{H} t}$.
-Inserting these into the $N-1$ part of equation (\ref{1pgf}) yields
-
-
-\begin{equation}\label{g-hsb}
-G_{pq}^-(t',t) = i\Theta(t'-t) \mathrm{e}^{iE_0^N(t'-t)}\bra{\Psi_0^N}c_q^\dagger\mathrm{e}^{-i\mathcal{H}(t'-t)}c_p\ket{\Psi_0^N}
-\end{equation}
-For a time-independent Hamilton operator $\mathcal{H}$ the Green's function
-depends only on the time difference $t'-t$ and therefore $G_{pq}(t',t)$ is
-transformed into $G_{pq}(t'-t)$. The $N+1$ part is treated analogously.
-
-After insertion of a complete $N+1$ basis $\ket{\Psi_n^{N-1}}$ in
-$G_{pq}^+$ and $N-1$ basis $\ket{\Psi_n^{N-1}}$
-into $G_{pq}^-$ the Green's function is Fourier transformed from the time
-into the energy domain. To ensure the convergence, 
-$\mathrm{e}^{-\eta(t'-t)}$ or $\mathrm{e}^{-\eta(t-t')}$ are introduced,
-where $\eta$ is infinitesimal and positive.
-This yields the spectral representation
-
-\begin{equation}\label{spektraldst}
-G_{pq}(\omega) = \sum\limits_{n\in\{N+1\}}\frac{x_p^{(n)}x_q^{(n)*}}{\omega-e_n +i\eta} + \sum\limits_{n\in\{N-1\}}\frac{x_p^{(n)}x_q^{(n)*}}{\omega-e_n -i\eta}
-\end{equation}
-
-with $e_n$ being the energy differences between initial and final state. Hence,
-in case of the one particle propagator, the poles of the Green's function
-are the ionization energies and electron affinities.
-The pole strengths $\left|x_p^{(n)}\right|^2$ correspond to the transition
-probability and are the square of the transition amplitudes
-$x_p^{(n)}=\bra{\Psi_n^{N-1}}c_p\ket{\Psi_0}$.
-
-
-
-\section{Two Particle Green's function}
-Analog to the the one particle Green's function, the two particle Green's
-function $\mathbf{\Pi}(\omega)$ describes the process of double ionization
-or electron attachment. Its poles again correspond to the ionization energies
-and electron affinities.
-
-\begin{equation}
-\mathbf{\Pi}_{\alpha\beta,\alpha'\beta'}(\omega) = \sum\limits_{m\in N+2} \frac{x^{(m)}_{\alpha\beta}x^{*(m)}_{\alpha'\beta'}}{\omega +E_0^N-E_n^{N+2}+i\eta} - \sum\limits_{m\in N-2} \frac{x^{(m)}_{\alpha\beta}x^{*(m)}_{\alpha'\beta'}}{\omega +E_m^{N-2}-E_0^{N}-i\eta}
-\end{equation}
-
-Here the transition amplitudes are given by
-\begin{equation}
-x^{(m)}_{\alpha\beta}=\begin{cases}
-\braket{\Psi_0^N|a_\alpha a_\beta|\Psi_n^{N+2}} & \text{for } m\in N+2\\
-\braket{\Psi_n^{N-2}|a_\alpha a_\beta|\Psi_0^{N}} & \text{for } m\in N-2,
-\end{cases}
-\end{equation}
-
-where $a_\alpha$ and $a_\beta$ are the annihilation and creation operators of
-the orbitals $\alpha$ and $\beta$, respectively.
-
-
-
-\section{\acl{ADC}}
-Originally the Green's function was formulated in the Dyson ansatz and
+Originally, the Green's function was formulated in the Dyson ansatz and
 determined using perturbation theory. This way both the ionization and the
 electron affinity part had to be included in the description. In the non-Dyson
 scheme those two are separable and hence the dimension of the problem is reduced
-when one is interested in either the $N+1$ or the $N-1$ part. \cite{Schirmer98}
+when one is interested in either the $N+1$ or the $N-1$ part \cite{Schirmer98}.
+
+\begin{equation}
+ G_{pq}(\omega) = G^+_{pq}(\omega) + G^-_{pq}(\omega)
+\end{equation}
+
 The ionization part $\mathbf{G^-}(\omega)$ is transposed to give
 $\tilde{G}_{pq}(\omega) = G^-_{qp}(\omega)$. From this, the compact matrix
 form can be deduced
@@ -105,8 +24,8 @@ form can be deduced
 \mathbf{\tilde{G}}(\omega) = \mathbf{x}^\dagger(\omega-\mathbf{\Omega})^{-1}\mathbf{x}
 \end{equation}
 
-To this point, the problem is exact. However, the exact wavefunctions are unknown
-and hence the basis of so-called \emph{intermediate states} are introduced. These
+To this point, the approach is exact. However, the exact wavefunctions are unknown
+and hence the basis of so-called \emph{intermediate states} is introduced. These
 are formally constructed from \ac{CES} as they appear in a
 \ac{CI} expansion. These \ac{CES} are then grouped into excitation classes
 and these classes are orthogonalized with respect to each other. Afterwards,
@@ -116,15 +35,12 @@ suiTable for the description of larger systems. \cite{Mertins96_1}
 
 In this \ac{ISR} the Green's function can be written as
 \begin{equation}\label{isradc}
-\mathbf{\tilde{G}}(\omega) = \mathbf{f}^\dagger(\omega-\mathbf{K}-\mathbf{C})^{-1}\mathbf{f}
+\mathbf{\tilde{G}}(\omega) = \mathbf{f}^\dagger(\omega-\mathbf{M})^{-1}\mathbf{f}
 \end{equation}
 
-Here, $\mathbf{K}$ is the diagonal matrix of Hartree Fock orbital energies, which
-corresponds to zeroth order of perturbation theory. The matrix $\mathbf{C}$
-contains all higher order contributions to the Hamiltonian.
-Hence, the ADC matrix $\mathbf{M} = \mathbf{K}+\mathbf{C}$ is non-diagonal.
+with the Hamiltonian $\mathbf{M}$.
 This equation can be solved by
-solving the eigenvalue problem
+considering the eigenvalue problem
 
 \begin{equation}\label{adcewp}
 (\mathbf{K}+\mathbf{C}) \mathbf{Y} = \mathbf{Y}\mathbf{\Omega} \quad\text{where } \mathbf{Y}^\dagger\mathbf{Y}=\mathbf{1}
@@ -137,28 +53,33 @@ intermediate state representation with the exact $N-1$ solutions.
  \mathbf{x} = \mathbf{Y}^\dagger \mathbf{f}
 \end{equation}
 
-For the construction of the \ac{ADC} matrix ($\mathbf{K}+\mathbf{C}$) and the
-effective transitions moments $\mathbf{f}$, $\mathbf{C}$ and $\mathbf{f}$
+For the construction of the \ac{ADC} matrix $\mathbf{M}$ and the
+effective transitions moments $\mathbf{f}$, $\mathbf{M}$ and $\mathbf{f}$
 are expanded into different orders of perturbations and inserted to equation
 (\ref{isradc}).
 
 \begin{eqnarray}
-\mathbf{C} &=& \mathbf{C}^{(1)} + \mathbf{C}^{(2)} + \mathbf{C}^{(3)} + \cdots\label{stC}\\
+\mathbf{M} &=& \mathbf{M}^{(0)} + \mathbf{M}^{(1)} + \mathbf{M}^{(2)} + \cdots\label{stf}\\
 \mathbf{f} &=& \mathbf{f}^{(0)} + \mathbf{f}^{(1)} + \mathbf{f}^{(2)} + \cdots\label{stf}
 \end{eqnarray}
 
 From this, different orders of perturbation theory of the Hamiltonian can be
-constructed successively. The contributions to the different classes are shown
-in Figure \ref{figure:adcmat_pgf} for the case of \ac{ADC}(2x).
+constructed successively. Hereby, the truncation after the $n$-th order leads
+to ADC($n$). The contributions to the different classes for different
+orders of \ac{ADC} are shown
+in Figure \ref{figure:adcmat_pgf}.
 
 \begin{figure}[h]
   \centering
   \input{pics/adcmat_pgf}
-  \caption{Schematic illustration of an \ac{ADC}(2x) matrix.}
+  \caption{Schematic illustration of an \ac{ADC}($n$) matrix for different orders
+           of perturbation for $n=0,1,2,2x,3$. ADC(2x) is an extended ADC(2)
+           including first
+           order contributions to the satellite block.}
   \label{figure:adcmat_pgf}
 \end{figure}
 
-The matrix elements are explicitely given by
+The matrix elements of ADC(2x) are explicitely given by
 \begin{itemize}
  \item 1h/1h (1h block):
    \begin{align}

@@ -129,7 +129,7 @@ orbitals from lower than the outer valence are included in the final state subsp
 
 \section{How to Obtain Reliable Results}
 \subsection{Choice of Basis Set and Active Space}
-A good basis set for a decay width calculation has to both
+A good basis set for a decay width calculation has to both,
 describe the initial state of the process reasonably well and to mimic
 the outgoing secondary electron. The first requires a correlated basis set, since
 the initial state is ionized in the inner- or subvalence region.
@@ -144,7 +144,7 @@ The latter requires the basis set to be:
 Since in the Stieltjes approach the Chebyshev polynomials are constructed from
 the pseudo-spectrum, the denser this pseudo-spectrum is, the better can the
 description of the decay width be expected to be. A Stieltjes calculation starting
-from a pseudo-spectrum with less than four points with a significant contribution
+from a pseudo-spectrum with less than four couplings with a significant contribution
 in the energy range of interest can not be expected to give reasonable results.
 
 \begin{figure}[ht]
@@ -175,7 +175,8 @@ An example is given in Figure \ref{figure:bases_pseudospectra} for a cc-pVQZ
 basis set for the Auger following an ionization of the Ne1s.
 It can easily be seen that the pseudo-spectrum of the uncontracted basis set spans
 a wider energy range than the corresponding pseudo-spectrum of the calculation with
-the contracted basis set.
+the contracted basis set. The pseudo-spectrum obtained using the contracted
+basis set would not even include the resonance energy.
 However, the basis set is small and the density close to the resonance energy
 $E_R=0$ is sparse and hence will not give a good description of the outgoing
 electron.
@@ -195,10 +196,10 @@ kinetic energy of the electron. Preferably, the basis set is very dense in
 this energy region. 
 An example of the pseudo-spectra obtained from calculations with three
 different basis sets in shown in Figure \ref{figure:bases_pseudospectra}.
-The pseudo-spectrum of the smalles basis set cc-pV6Z is reasonably dense and
+The pseudo-spectrum of the smallest basis set cc-pV6Z is reasonably dense and
 the one for the aug-cc-pV6Z is comparably dense but shows points at shifted
 energies. However, compared to the pseudo-spectrum obtained with the cc-pCV6Z
-basis set including the correlationns between the neon core and the neon valence
+basis set including the correlations between the neon core and the neon valence
 orbitals the couplings are rather small. However, close to the resonance energy
 the pseudo-spectrum is not very dense.
 Additionally, and especially for processes close to threshold     
@@ -211,8 +212,8 @@ For this purpose additional basis functions of the \ac{KBJ}\cite{Kaufmann89}
 type are used at the atomic positions or in case of molecules on ghost atoms
 positioned between the atoms. Their effect on the density of the pseudo-spectrum
 is illustrated in Figure \ref{figure:bases_jungen}. There, the contributions of the
-different anuglar momentum functions are shown. Each class adds some significant
-points to the pseudo-spectrum and hence, in combination, a reasonably dense
+different angular momentum functions are shown. Each class adds some significant
+couplings to the pseudo-spectrum and hence, in combination, a reasonably dense
 pseudo-spectrum is created.
 
 Additionally the active space needs to include the orbitals of the initial state
@@ -232,8 +233,8 @@ Errors and instabilities of the FanoADC-Stieltjes calculation can be observed
 in the energy dependence of the calculated decay width $\Gamma(E)$.
 As already shown in Figure \ref{figure:stieltjes_density}, the optimum
 interpolation result is a smooth, monotonically decreasing function.
-The decay width for the given resonance energy $\Gamma(E_r)$ can in this case easy be
-evaluated.
+The decay width for the given resonance energy $\Gamma(E_r)$ can in this case 
+easily be evaluated.
 
 The error of the calculated decay width is estimated by the decay widths
 close to the resonance energy.
@@ -245,13 +246,13 @@ state subspace compared to the one of the full Hamiltonian and the
 manual inspection of the density of points obtained
 from the FanoADC-Stieltjes calculation. If
 the obtained density function has a low curvature at the resonance energy,
-the error of the decay width is normally very small, while for resonance
+the error of the decay width is usually very small, while for resonance
 energies, where the decay width has a high curvature, the error can be of the same
 order as the obtained decay width.
 
 In addition to numerical instabilities introduced by the Stieltjes procedure
 discussed in section \ref{section:quality_stieltjes},
-two further characteristic pattern might be observed in a calculated
+two further characteristic patterns might be observed in a calculated
 decay width: channel openings and interactions of the initial state
 with Rydberg states.
 
@@ -265,7 +266,7 @@ with Rydberg states.
            are open.}
   \label{figure:prof_channel_opening}
 \end{figure}
-In case of channel openings, at low energies the decay width is decreasing, but
+In case of channel openings, the decay width is decreasing at low energies, but
 at a certain energy another channel opens and the decay width of both are
 added as shown in Figure \ref{figure:prof_channel_opening}. In case of the
 resonance energy being higher than all the channel opening energies as for
@@ -294,7 +295,7 @@ Figure \ref{figure:prof_rydberg}.
            of the initial state to Rydberg states.}
   \label{figure:prof_rydberg}
 \end{figure}
-Here the density function is in principle a monotonically decreasing function,
+Here, the density function is in principle a monotonically decreasing function
 but has additional peaks at certain energies. They can be distinguished from
 channel openings by observing the behaviour after the peak. In case of
 interactions with Rydberg states, the decay width is the same as if the interaction
@@ -335,23 +336,24 @@ but it would have to be evaluated at lower energies from an extrapolated functio
 
 Having obtained a reasonable pseudo-spectrum and employed the Stieltjes routine,
 the above discussions indicate that decay width calculations using the FanoADC-Stieltjes
-method is not a black box method and they lead to the
+method is not a black box method. Summarizing, they lead to the
 following procedure for the decay width evaluation:
 \begin{enumerate}
  \item Inspect the decay width profile and look for oscillations in the
        points of each order. All orders above the lowest order showing oscillations as
-       illustrated in Figure \ref{} have to be neglected in the further
+       illustrated in Figure \ref{figure:stieltjes_density}
+       have to be neglected in the further
        procedure.
- \item Are features connected to channel openings or coupling to Rydberg states
-       to be observed in the resonance energy region? In this case the higher
+ \item Are features connected to channel openings or couplings to Rydberg states
+       observable in the resonance energy region? In this case the higher
        order polynomials are normally better to describe the curve and hence they
        should be favoured for the interpolation. Otherwise the lower orders
        normally give reasonable approximations.
- \item Are two or more lines from different orders observed without channel
+ \item When two or more lines from different orders are observed without channel
        openings or coupling to Rydberg states in the decay width profile,
        the decay width can be expected to be either represented by one or the
        other. In this case, the lower order should be preferred, because
-       numerically instabilities should be less pronounced.
+       numerical instabilities should be less pronounced.
  \item Interpolate the points obtained from the Stieltjes calculation including
        those orders which seem to be
        reasonable.
