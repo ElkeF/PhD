@@ -38,6 +38,9 @@
 \lst@AddToHook{TextStyle}{\let\lst@basicstyle\normalsize}
 \makeatother
 
+%Formatierung der Kapitelüberschriften
+%\usepackage[Lenny]{fncychap}
+
 %Formatierung der Tabellen- und Bildunterschriften
 \captionsetup[figure]{format=plain, justification=raggedright, singlelinecheck=false,
                       font=small, labelfont=bf}
@@ -120,21 +123,22 @@
 \linenumbers 
 
 \include{intro}
-\include{theory}
-\include{methodology}
-%\include{results}
-\part{Results}
- \input{subsecs/res_rel}
- \input{subsecs/res_atoms}
+%\include{theory}
+%\part{Methodology}
+%\include{methodology}
+%%\include{results}
+%\part{Results}
+% \input{subsecs/res_rel}
+% \input{subsecs/res_atoms}
  \input{subsecs/res_icd}
- \input{subsecs/res_etmd}
- \input{subsecs/res_symmetry}
- \input{subsecs/res_fano_mol}
- \input{subsecs/res_clusters}
-\include{summary}
-\include{outlook}
-
-\include{appendix}
+% \input{subsecs/res_etmd}
+% \input{subsecs/res_symmetry}
+% \input{subsecs/res_fano_mol}
+% \input{subsecs/res_clusters}
+%\include{summary}
+%\include{outlook}
+%
+%\include{appendix}
 
 \bibliographystyle{jcpsty_deutsch}
 \bibliography{theolit}
