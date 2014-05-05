@@ -9,6 +9,8 @@
 *.nav
 *.out
 *.snm
+*.lof
+*.lot
 
 
 thesis.pdf
