@@ -1,7 +1,7 @@
 \chapter{Auger Decay of Noble Gas Atoms}
 The decay widths of noble gas atoms have been thoroughly studied in the
 literature. Therefore, the main aim of this chapter is to prove the implementation
-of the FanoADC Stieltjes in the Dirac programme \cite{DIRAC13} to work
+of the FanoADC-Stieltjes in the Dirac programme \cite{DIRAC13} to work
 reliably and reproduce results known in the literature. Both, the neon atom
 and the xenon atom are investigated.
 The neon atom is chosen, because reference data is available
@@ -12,7 +12,7 @@ the focus of this thesis.
 Finally, the results will be used to verify that the programme is
 able to predict the decay widths of autoionization processes.
 In contrast to other comparable relativistic programmes
-\cite{Tulkki92,Fritzsche12}, the FanoADC Stieltjes approach does not
+\cite{Tulkki92,Fritzsche12}, the FanoADC-Stieltjes approach does not
 rely on spherical symmetry and is therefore capable of describing
 the decay widths of \ac{ICD} processes.
 
@@ -52,7 +52,7 @@ kinetic energy of the emitted electron lies between
 \end{table}
 
 \subsection{Computational Details}
-The decay width calculations were performed using the FanoADC Stieltjes approach
+The decay width calculations were performed using the FanoADC-Stieltjes approach
 implemented in the programme package \verb|DIRAC| \cite{DIRAC13}.
 A cc-pCV6Z basis set was employed with
 additional $s$, $p$ and $d$ functions (5,5,6) of the \ac{KBJ} type \cite{Kaufmann89}.
@@ -93,7 +93,7 @@ as for the different terms explicitely, as far as numbers are available.
   \label{table:Ne_gammas}
 \end{table}
 
-The results of this work were obtained using the FanoADC Stieltjes method and
+The results of this work were obtained using the FanoADC-Stieltjes method and
 the same basis set as in the work of  Koloren\v{c} \textit{et al.}
 \cite{Kolorenc11}. However, the latter non-relativistic description uses an
 energy based partitioning.
@@ -102,7 +102,7 @@ obtained in this thesis is of the same order of magnitude
 as both the experimental result
 and the other theoretical predictions, while the relativistic result
 overestimates the experimental decay width by \unit[56]{\%}. However, this
-discrepancy is still inside the error margins of the FanoADC Stieltjes method.
+discrepancy is still inside the error margins of the FanoADC-Stieltjes method.
 
 The branching ratios obtained from the partial decay widths of the present
 results have the correct order of magnitude in the relativistic calculation, but
@@ -205,7 +205,7 @@ The corresponding decay widths have among others been measured by Ausmees
 Theoretically they have been investigated by Mäntykenttä \cite{Maentykenttae93}
 using \ac{MCDF} \cite{Fritzsche11}. 
 The experimental and theoretical findings are compared to 
-the results of the present calculations using the relativistic FanoADC Stieltjes
+the results of the present calculations using the relativistic FanoADC-Stieltjes
 method presented in Table \ref{table:xe_auger_4d_rates}.
 
 From the single ionization spectrum of the full Hamiltonian, initial state
@@ -576,11 +576,11 @@ of all corresponding satellite configurations.
 
 
 \section{Summary}
-From these examples I have shown that the FanoADC Stieltjes method implemented
+From these examples I have shown that the FanoADC-Stieltjes method implemented
 in Dirac is able to both reproduce results of the comparable non-relativistic
 code of Koloren\v{c}  and results from \ac{MCDF} calculations
 including relativistic effects in Auger processes as well as the corresponding
 experimental results.
-It is to be expected that the relativistic FanoADC Stieltjes Code is also able
+It is to be expected that the relativistic FanoADC-Stieltjes Code is also able
 to predict unknown decay widths for larger systems such as dimers and small
 clusters, since it is able to treat lower than spherical symmetries.
