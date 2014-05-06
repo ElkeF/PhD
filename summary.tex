@@ -8,18 +8,18 @@ and both, relativistic and non-relativstic asymptotic expressions for the ETMD3
 have been derived. Additionally, the non-relativistically known
 FanoADC-Stieltjes approach
 using a partitioning of the Hamiltonian by 2h configurations has been implemented
-in the relativistic programme package \verb|DIRAC| \cite{DIRAC13},
+in the relativistic programme package Dirac,
 which allows for the
 description of decay width including relativistic effects.
 In order to model the experimental secondary electron spectra of noble gas
 clusters, the model of pairs and triples was introduced and automatized in the
-programme \verb|HARDRoC| \cite{HARDRoC}. It enables the estimation of
+programme HARDRoC. It enables the estimation of
 decay widths of the total system from data of the compounds.
 
 In the studies of the atomic Auger process, scalar-relativistic effects were
 found to increase the decay width compared to the non-relativistic results
 due to larger orbital overlaps of the initial and final states. Especially
-in ETMD processes, whose decay width is governed by the orbital overlap
+in ETMD processes, whose decay widths are governed by the orbital overlap
 of the two units involved in the energy transfer, similiar significant
 decay width influences might be observed.
 
@@ -30,15 +30,15 @@ be explained using a non-relativistic methodology.
 If the decay channels are close to threshold, this energetic splitting
 can cause a non-relativistically closed decay channel to be partly open. On
 the other hand, not all relativistic channels corresponding to one specific
-open non-relativistic channel need to be open.
+open non-relativistic channel need to be energetically accessible.
 
 Additionally, geometry has a great impact on the opening and closing of channels
-in \ac{ICD}-like processes. The closer the atoms ionized in the final state are,
-the lower is the kinetic energy of the secondary electron and the channel
-closes at some internuclear distance.
+in \ac{ICD}-like processes. The closer the ionized atoms of the final state are,
+the lower is the kinetic energy of the secondary electron and at some
+internuclear distance the channel closes.
 
 In clusters, the additional effect of charge stabilization shifts the secondary
-electron as well. These shifts are treated by using experimentally obtained
+electron as well. These shifts were treated by using experimentally obtained
 ionization energies for exactly the same experimental conditions as for the
 secondary electron spectra.
 Furthermore, statistical effects were found to increase the decay width
@@ -66,8 +66,31 @@ for the case of the Auger effect following an ionization of the Xe4d.
 It might be worth implementing the FanoADC based on an energy partitioning in
 order to obtain partial decay width for the separate final states and to
 improve their accuracy.
+Furthermore, a more rigorous investigation of the couplings between the
+initial state and Rydberg states would be beneficial for the development
+of a method to exclude these couplings from the decay width calculation
+automatically.\\
+In the Stieltjes Imaging, the pseudo-spectra are currently shifted such,
+that the lowest energy has some predefined, small number. This number needs
+to be small in order to allow for numerical stability for as high order
+moments as possible. However, whether there is an optimal choice of this
+number and if it exists, what it depends on, is currently unknown.
+It would be worth investigating, because an improvement of the Stieltjes
+imaging procedure might lead in more reliable results or decay width profiles,
+which are easier to interprete, which might allow for a more automatized
+evaluation of the results.\\
+So far, no automatic error estimation is available in the FanoADC Stieltjes
+approach. However, it would be very helpful for the validation of the
+calculated decay widths.
 
 For the estimation of secondary electron spectra of clusters,
-the investigation of clusters with more complex
-constituents than noble gas atoms without spherical symmetry,
-e.g., water molecules, would be a challenging task.
+the investigation of cluster dynamics and their influence on the
+secondary electron spectra should be developed and included in
+HARDRoC. This would at the same time allow for an error estimation of
+the calculated decay widths.
+
+The investigated structures have so far been chosen by educated guesses.
+For a more detailed study, optimized cluster structures would be beneficial.
+Furthermore, it would be a challenging task to develop the possibility to
+treat clusters with constituents of lower than spherical symmetry, e.g.,
+water molecules.
