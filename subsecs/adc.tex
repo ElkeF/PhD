@@ -1,10 +1,13 @@
 \chapter{Algebraic Diagrammatic Construction (ADC)}
 
-The \acl{ADC} is a Green's function approach for the calculation of ionization
+The \acl{ADC} is a Green's function approach, which is a method for the
+calculation of ionization
 energies and electron affinities.
 Its advantage is the ability to determine the desired ionization energies
 without explicit calculation of the initial and final states, but instead
 obtaining their energy differences directly.
+This approach has the advantage to be size-consistent and is hence
+suitable for the description of larger systems. \cite{Mertins96_1}
 
 Originally, the Green's function was formulated in the Dyson ansatz and
 determined using perturbation theory. This way both the ionization and the
@@ -18,37 +21,44 @@ or the $N-1$ (ionization energy) part \cite{Schirmer98}.
 \end{equation}
 
 The ionization part $\mathbf{G^-}(\omega)$ is transposed to give
-$\tilde{G}_{pq}(\omega) = G^-_{qp}(\omega)$. From this, the compact matrix
+$\tilde{G}^-_{pq}(\omega) = G^-_{qp}(\omega)$. From this, the compact 
+and orthogonal matrix
 form can be deduced
 
 \begin{equation}\label{matrixspec}
-\mathbf{\tilde{G}}(\omega) = \mathbf{x}^\dagger(\omega-\mathbf{\Omega})^{-1}\mathbf{x}
+\mathbf{\tilde{G}}^-(\omega) = \mathbf{x}^\dagger
+                               (\omega\mathds{1}-\mathbf{\Omega})^{-1}\mathbf{x}
 \end{equation}
 
-To this point, the approach is exact. However, the exact wavefunctions are unknown
-and hence, the basis of so-called \emph{intermediate states} is introduced. These
-are formally constructed from \ac{CES} as they appear in a
-\ac{CI} expansion. These \ac{CES} are then grouped into excitation classes
-and these classes are orthogonalized with respect to each other. Afterwards,
-the states within each class are orthogonalized. 
-This approach has the advantage to be size-consistent and is hence
-suitable for the description of larger systems. \cite{Mertins96_1}
+where $\mathbf{x}$ are the spectroscopic amplitudes, $\mathbf{\Omega}$ is
+the diagonal matrix of energy eigenvalues and $\omega$ is the energy.
+This diagonal representation was reformulated using Goldstone diagrams
+into the non-diagonal expression
 
-In this \ac{ISR} the Green's function can be written as
 \begin{equation}\label{isradc}
-\mathbf{\tilde{G}}(\omega) = \mathbf{f}^\dagger(\omega-\mathbf{M})^{-1}\mathbf{f}
+\mathbf{\tilde{G}}(\omega) = \mathbf{f}^\dagger(\omega\mathds{1}-\mathbf{M})^{-1}\mathbf{f}
 \end{equation}
 
-with the Hamiltonian $\mathbf{M}$.
-This equation can be solved by
-considering the eigenvalue problem
+where $\mathbf{M}$ denotes the \ac{ADC} matrix and $\mathbf{f}$ denotes
+the effective transition moments.
+Later it was found that this transformation could alternatively be
+derived by inserting a set of so-called \emph{intermediate states}.
+These are formally constructed from \ac{CES}, which are constructed
+using the same kind of excitation operators as in an \ac{CI} expansion.
+In contrast to the \ac{CI} approach, the \ac{CES}
+are constructed from these operators
+acting on the exact and therefore correlated groundstate rather than the
+Hartree Fock ground state. These \ac{CES} are then
+grouped into excitation classes
+and these classes are orthogonalized with respect to each other. Afterwards,  
+the states within each class are orthogonalized \cite{Mertins96_1}.
 
+Equation (\ref{isradc}) can be solved by
+considering the eigenvalue problem
 \begin{equation}\label{adcewp}
 \mathbf{M} \mathbf{Y} = \mathbf{Y}\mathbf{\Omega} \quad\text{with } \mathbf{Y}^\dagger\mathbf{Y}=\mathbf{1}
 \end{equation}
-where $\mathbf{\Omega}$ is the matrix of eigenvalues and hence the ionization
-energies and $\mathbf{Y}$ is the matrix of eigenvectors which connects the
-intermediate state representation with the exact $N-1$ solutions.
+
 The spectroscopic amplitudes $\mathbf{x}$ can then be obtained from the
 effective transition moments $\mathbf{f}$ as
 
@@ -56,7 +66,8 @@ effective transition moments $\mathbf{f}$ as
  \mathbf{x} = \mathbf{Y}^\dagger \mathbf{f}
 \end{equation}
 
-For the construction of the \ac{ADC} matrix $\mathbf{M}$ and the
+To this point, the approach is exact.
+For the actual construction of the \ac{ADC} matrix $\mathbf{M}$ and the
 effective transitions moments $\mathbf{f}$, $\mathbf{M}$ and $\mathbf{f}$
 are expanded into different orders of perturbations and inserted to equation
 (\ref{isradc}).
@@ -83,7 +94,7 @@ in Figure \ref{figure:adcmat_pgf} \cite{Trofimov05}.
   \label{figure:adcmat_pgf}
 \end{figure}
 
-The matrix elements of ADC(2x) are explicitely given by
+The matrix elements of ADC(2x) are explicitly given by
 \begin{itemize}
  \item 1h/1h (1h block):
    \begin{align}
@@ -108,7 +119,8 @@ The matrix elements of ADC(2x) are explicitely given by
    \end{align}
 \end{itemize}
 
-Here, $\varepsilon$ denotes the Hartree Fock energy. The occupied states are labelled
+Here, $\varepsilon_r$ denotes the $r$-th Hartree Fock orbital energy.
+The occupied states are labelled
 by $i,j,k,\dots$ and the unoccupied states are labelled by $a,b,c,\dots$. The
 two-electron integrals for any combination of occupied and unoccupied orbitals
 labelled by $p,q,r,s$ read as
