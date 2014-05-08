@@ -1,16 +1,17 @@
 \chapter{Resonances}
+\label{chapter:resonances}
 
 \section{General Remarks}
 A short introduction to scattering theory is essential for the understanding
 of resonances in quantum mechanics \cite{nolting52,Gell-Mann53,Taylor87}.
 
-In a general scattering experiment a particle $A$ approaches another
-particle $B$. In the beginning they are freely moving particles and do not interact
+In a general scattering experiment a system $A$ approaches another
+system $B$. In the beginning they are freely moving particles and do not interact
 with each other. The closer these two particles get, the stronger is their interaction.
-At some time $t$ they form a meta-stable state, which can have a long lifetime.
+At some time $t$ they may form a compound system, which can have a long lifetime.
 This meta-stable state can decay via different channels characterized
 by internal degrees of freedom of the fragments. If the fragments are the
-same particles as before the scattering $A$ and $B$ have the same
+same system as before the scattering $A$ and $B$, have the same internal
 energies and no electronic rearrangement
 has occured, the process is called an elastic scattering process.
 Otherwise, the process is called an inelastic scattering process.
@@ -23,15 +24,16 @@ The total Hamiltonian of the system reads
 \begin{equation}
  H = H_0 + V
 \end{equation}
-where $V$ describes the interaction of the involved particles and
+where $V$ describes the interaction of the involved systems and
 $H_0$ is the Hamiltonian of the complete system without this interaction.
 
-The wavefunctions of both the incoming particles and the outgoing
+The wavefunctions of both the incoming systems and the outgoing
 fragments inside the so-called interaction region are unknown.
-However, their behaviour and characteristics at infinity times before
+However, their behaviour and characteristics at infinite times before
 and after the scattering process can easily be described.
-These functions fulfill outgoing and incoming boundary conditions
-denoted by the superscripts "+" and "-" for the initial and final states
+In the stationary description of the scattering prcess this requires
+the functions to fulfill outgoing and incoming boundary conditions
+denoted by the superscripts "+" and "-" for the initial and final states,
 respectively.
 These wavefunctions $\ket{E_i^{(+)}}$ and $\ket{E_f^{(-)}}$ with the correct
 asymptotic behaviour
@@ -59,7 +61,7 @@ is given by the absolute square of the corresponding matrix elements
 of the scattering matrix
 
 \begin{align}
- \mathcal{w}_{fi} &= \left | \braket{E_f^{(-)} | E_i^{(+)}} \right|^2\\
+ {w}_{fi} &= \left | \braket{E_f^{(-)} | E_i^{(+)}} \right|^2\\
                   &= |S_{fi}|^2
 \end{align}
 
@@ -69,7 +71,7 @@ These matrix elements are given by
           \braket{E_m^{(0)}| V |E_n^{(+)}}
 \end{equation}
 
-The delta-function describes the elastic scattering process and the second
+The Kronecker delta describes the elastic scattering process and the second
 part describes those scattering processes, in which electronic rearrangements
 are involved. This second parts has poles of different kinds. For energies,
 where the real part is positive and the imaginary part is negative, the poles
@@ -109,7 +111,7 @@ The corresponding $\mathcal{T}$ matrix contains all information about the
 inelastic scattering process and is going to be used in order
 to find an expression for the calculation of the decay width.
 It has poles at the resonance energies and its absolute square has the
-shape of a Lorentzian with a \ac{FWHM} of $20^+ = \Gamma$.
+shape of a Lorentzian with a \ac{FWHM} of $2\,0^+ = \Gamma$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -412,8 +414,8 @@ state subspaces and using the appropriate eigenfunctions of these subspaces for 
 calculation of the decay widths. 
 Several theories had been used for the description of different nuclear reactions
 before they were first unified by Feshbach \cite{Feshbach58,Feshbach62,Feshbach_book}.
-Shortly after,
-Fano amplified this ansatz to describe excitation spectra, which
+Somewhat later,
+Fano extended this ansatz to describe excitation spectra, which
 are inverse processes to Feshbach's nuclear reactions.\cite{Fano61}
 
 
@@ -447,7 +449,7 @@ can easily be derived with
   H_{QP} & \equiv QHP & \quad\quad H_{QQ} & \equiv QHQ .
 \end{align*}
 
-From equation \ref{se_QQ} a straigth-forward solution for the system excluding
+From equation (\ref{se_QQ}) a straigthforward solution for the system excluding
 the selected final states can be found.
 
 \begin{equation}
@@ -460,7 +462,7 @@ In case of selectively chosen open channels, which do not resemble the total
 space of open channels,
 $E$ is to be substituted by $E^{(-)}=E - i\eta$.
 
-After insertion of eq. \ref{feshbach_qpsi} into eq. \ref{se_PP} one arrives at
+After insertion of eq. (\ref{feshbach_qpsi}) into eq. (\ref{se_PP}) one arrives at
 
 \begin{equation}
   \mathscr{H} \,P \Psi = E \,P \Psi \label{se_ppsi}
@@ -475,10 +477,10 @@ In order to solve these expressions we define $\{\Phi_n\}$ to be the solutions
 of the Hamiltonian excluding the final state solutions (or the closed channels
 solutions in case of all open channels being defined as final states).
 These initial state functions are assumed to be bound and to fulfill the
-Schroedinger equation
+Schrödinger equation
 
 \begin{equation}
-  (\varepsilon_n - H_{QQ}) \Phi_n = 0 
+  (\varepsilon_n - H_{QQ}) \ket{\Phi_n} = 0 
 \end{equation}
 
 It has to be noted that these functions and energies are solutions to a stationary
@@ -506,13 +508,13 @@ in the index $\alpha$.
 \end{equation}
 
 Expanding eq. (\ref{se_ppsi}) into this complete set yields an effective
-final state Hamiltonian of
+final state Hamiltonian
 
 \begin{equation}
   \mathscr{H} = H_{PP}\, + \,
   \sum\limits_n H_{PQ} \,\frac{\ket{\Phi_n}\bra{\Phi_n}}{E-\varepsilon_n}\, H_{QP} \,+\,
-  \int \mathrm{d}\alpha \int\mathrm{d}E \,H_{PQ} \,
-  \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E-\varepsilon} \, H_{QP}
+  \int \mathrm{d}\alpha \int\mathrm{d}\varepsilon \,H_{PQ} \,
+  \frac{\ket{\Phi(\alpha,\varepsilon)}\bra{\Phi(\alpha,\varepsilon)}}{E-\varepsilon} \, H_{QP}
 \end{equation}
 
 which is useful to split into two parts: One describing the interaction
@@ -531,8 +533,8 @@ with
   \mathscr{H}' = H_{PP}\, + \,
   \sum\limits_{n\ne s} H_{PQ} \,\frac{\ket{\Phi_n}\bra{\Phi_n}}{E-\varepsilon_n}
   \, H_{QP} \,+\,
-  \int \mathrm{d}\alpha \int\mathrm{d}E \,H_{PQ} \,
-  \frac{\ket{\Phi(\alpha,E)}\bra{\Phi(\alpha,E)}}{E-\varepsilon} \, H_{QP}
+  \int \mathrm{d}\alpha \int\mathrm{d}\varepsilon \,H_{PQ} \,
+  \frac{\ket{\Phi(\alpha,\varepsilon)}\bra{\Phi(\alpha,\varepsilon)}}{E-\varepsilon} \, H_{QP}
 \end{equation}
 
 This reformulation leads to the following version of eq. (\ref{se_ppsi})
@@ -548,14 +550,14 @@ the eigenfunctions of $\mathscr{H}'$ have to fulfill incoming boundary condition
 which is labelled by the superscript $(-)$
 
 \begin{equation}
-  (E-\mathscr{H}') \psi_f^{(-)} = 0 \label{sol_outg} .
+  (E-\mathscr{H}') \ket{\psi_f^{(-)}} = 0 \label{sol_outg}
 \end{equation}
 
 This relation can the be utilized to find a solution for $\ket{P \Psi}$
 using the Lippmann-Schwinger equation (\ref{equation:LippmannSchwinger}):
 
 \begin{equation}\label{sol_ppsi}
-  P \Psi = \psi_f^{(-)} + \frac{1}{E^{(-)} - \mathscr{H}'}
+  \ket{P \Psi} = \ket{\psi_f^{(-)}} + \frac{1}{E^{(-)} - \mathscr{H}'}
            \frac{H_{PQ}\ket{\Phi_s}
            \braket{\Phi_s|H_{QP}|P\Psi}}{E - \varepsilon_s} 
 \end{equation}
@@ -585,7 +587,7 @@ and solving eq. (\ref{s_ppsi}) for
 
 yields the final state description
 \begin{equation}\label{}
-  P \Psi = \psi_f^{(-)} - \frac{1}{E^{(-)} - \mathscr{H}'}
+  \ket{P \Psi} = \ket{\psi_f^{(-)}} - \frac{1}{E^{(-)} - \mathscr{H}'}
            \frac{H_{PQ}\ket{\Phi_s}
            \braket{\Phi_s|H_{QP}|\psi_f^{(-)}}}
            {E - \varepsilon_s + \braket{\Phi_s|W_{QQ}|\Phi_s}} .
@@ -606,12 +608,12 @@ is therefore given by
                           {E-\varepsilon_s + \braket{\Phi_s|W_{QQ}|\Phi_s}}
 \end{align}
 
-where $\psi_i^{(+)}$ in case of a full-collision process describes
+where $\ket{\psi_i^{(+)}}$ in case of a full-collision process describes
 the solution of the Schrödinger with outgoing
 boundary conditions
 
 \begin{equation}                                                              
-  (E - \mathscr{H}') \psi_i^{(+)} = 0
+  (E - \mathscr{H}') \ket{\psi_i^{(+)}} = 0
 \end{equation}
 
 Here, $\mathscr{T}_{if}^{(P)*}$ describes the non-resonant transitions
@@ -641,7 +643,7 @@ Dirac delta function. \cite{Cohen-Tannoudji_3_2}
                                 & = \Delta_s(E) - i \frac{\Gamma_s(E)}{2}
 \end{align}
 
-It contains of a real part, which can be related to an energetic shift
+It consists of a real part, which can be related to an energetic shift
 of the resonance energy caused by the interaction, and an imaginary part,
 which is related to decay width $\Gamma$.
 Inserting the latter expression into the transition matrix yields
@@ -660,10 +662,11 @@ Inserting the latter expression into the transition matrix yields
 
 
 From the imaginary part of $\braket{\Phi_s|W_{QQ}|\Phi_s}$ the decay width can
-easily be concluded. Inserting a complete set
+easily be deduced. Inserting a complete set
 of eigenfunctions with incoming boundary conditions as defined in
 eq. (\ref{sol_outg}) the decay width can be described
-as a sum over the different open channel solutions for a given resonant initial state.
+as a sum over the different open channel solutions for a given resonant
+initial state:
 \begin{align}
   \Gamma_s & = 2 \pi \braket{\Phi_s|H_{QP}\delta(E - \mathscr{H}')H_{PQ}|\Phi_s}
                \label{equation:Gamma_HE}\\
@@ -674,7 +677,8 @@ as a sum over the different open channel solutions for a given resonant initial 
 Here it has to be remembered that $E$ is the energy of a final state, which means that
 only such functions give a contribution, which have the same energy as those.
 
-This formulation is sufficient for all cases, we are going to discuss in this thesis.
+This formulation is sufficient for all cases, which are going to be discussed
+in this thesis.
 However, {\AA}berg \textit{et al.} have proposed a slightly different ansatz with
 a different partitioning, where configurations can contribute both to the description
 of the initial and final state subspace. The expression for the decay width $\Gamma$
@@ -689,4 +693,4 @@ e.g., \ac{CI} used by Fano \cite{Fano61}. The resulting expression reads
 and is called \emph{Fano's Golden Rule}. In the following, the latter will be
 the starting point
 but a partitioning into orthogonal initial and final
-states is always chosen, which means equation (\ref{equation:Gamma_HQP}).
+states is always chosen, which means equation (\ref{equation:Gamma_HQP}) applies.
