@@ -24,7 +24,7 @@ In decay processes
 where bound and continuum states interact, it is necessary to find a way to
 properly represent bound states in an energy normalization or continuum states
 in an $\mathcal{L}^2$ normalization.
-Since most quantum chemical programme packages are based
+Since most quantum chemical program packages are based
 on $\mathcal{L}^2$ functions,
 it is most convenient to go for the latter approach.
 Especially for properties like decay widths or ionization cross sections, one
@@ -97,7 +97,7 @@ the analytical abscissae and weights
   \label{figure:gaussian_quadrature}
 \end{figure}
 
-This means, that the integration of an arbitrary function $h(x)$ within
+This means that the integration of an arbitrary function $h(x)$ within
 the interval $[-1,1]$ can be integrated as
 
 \begin{equation}
@@ -238,7 +238,7 @@ gives
      \braket{\chi_j|H|\Phi_s}
 \end{equation}
 
-The two seond terms approximately equal each other and additionally
+The two second terms approximately equal each other and additionally
 they are the moments of the decay width, exact in equation
 (\ref{equation:Gamma_mom_continuous})
 and approximately in equation (\ref{equation:Gamma_mom_discrete}).
@@ -271,7 +271,7 @@ to the probability distribution function $F(\omega)$ via
   F(\omega) = f(\omega){d\omega} .
 \end{equation}
 
-Note, that the standard assignment of variables in Gaussian quadrature and the
+Note that the standard assignment of variables in Gaussian quadrature and the
 formulation of the moment problem is confusing. The equivalent weight function
 and probability density is in Gaussian quadrature denoted by $\omega(x)$, while
 in moment theory it is written as $f(\omega)$. We are going to stick to the
@@ -298,10 +298,10 @@ In this case the $2r$ moments are
 
 In principle the moment problem can be solved by requiring the abscissae and
 weights to reproduce a minimum number of moments. Unfortunately, this determination
-is ill conditioned and, therfore one expresses the moments by orthogonal
+is ill-conditioned and, therfore one expresses the moments by orthogonal
 polynomials of some known weight function. Then the
-transformation to the polynomials is still ill conditioned, but the abscissae
-and weights can be obtained by a well conditioned problem. \cite{Blumstein73}
+transformation to the polynomials is still ill-conditioned, but the abscissae
+and weights can be obtained by a well-conditioned problem \cite{Blumstein73}.
 The latter approach
 of so-called modified moments has proved to be useful in the case of
 properties such as the ionization
@@ -406,7 +406,7 @@ The connection between the weights and the polynomials is given by
 \end{equation}
 
 In order to obtain the roots of the highest order polynomial, in principle
-any programm for root detection can be used. However, the problem can
+any program for root detection can be used. However, the problem can
 be reformulated in terms of general polynomials $R_n(1/\omega)$ connected
 to the obtained Chebyshev polynomials as
 \begin{equation}
@@ -537,12 +537,12 @@ two values usually is a very good approximation to the exact value:
                        + F^{(n)} (\omega_i+0) \right]
 \end{equation}
 
-Since the integral was evaluated
+Since the integral was evaluated,
 which was the equaling quantity for both the Gaussian quadrature ansatz
 in equation (\ref{equation:complete_hamniltonian}) and the discrete spectrum in equation
 (\ref{equation:discrete_hamiltonian}), the distribution function obtained from the
 discrete pseudo-spectrum is normalized correctly.
-This distribution function is then numerically differenciated via
+This distribution function is then numerically differentiated via
 
 \begin{equation}
   f^{(n)} (\omega) =
@@ -567,7 +567,7 @@ The abscissae of the polynomials constructed from different orders
 of moments alternate as is schematically shown in
 Figure \ref{figure:stieltjes_density}, where each colour of points corresponds
 to one order. Therefore, in an ideal world, where all these points exactly lie
-on the desired desity function, the combination of all abscissae
+on the desired density function, the combination of all abscissae
 and weights for the interpolation is beneficial.
 
 \begin{figure}[h]

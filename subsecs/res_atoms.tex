@@ -2,17 +2,17 @@
 \label{chapter:res_auger}
 The decay widths of noble gas atoms have been thoroughly studied in the
 literature. Therefore, the main aim of this chapter is to prove the implementation
-of the FanoADC-Stieltjes in the Dirac programme \cite{DIRAC13} to work
+of the FanoADC-Stieltjes in the Dirac program \cite{DIRAC13} to work
 reliably and reproduce results known in the literature. Both, the neon atom
 and the xenon atom are investigated.
-The neon atom is chosen, because reference data is available
+The neon atom is chosen because reference data is available
 obtained from a non-relativistic
 implementation of the same method. Then, the xenon atom is studied, due
 to the importance of relativistic effects in its description, which is
 the focus of this thesis.
-Finally, the results will be used to verify that the programme is
+Finally, the results will be used to verify that the program is
 able to predict the decay widths of autoionization processes.
-In contrast to other comparable relativistic programmes
+In contrast to other comparable relativistic programs
 \cite{Tulkki92,Fritzsche12}, the FanoADC-Stieltjes approach does not
 rely on spherical symmetry and is therefore capable of describing
 the decay widths of \ac{ICD} processes.
@@ -54,7 +54,7 @@ kinetic energy of the emitted electron lies between
 
 \subsection{Computational Details}
 The decay width calculations were performed using the FanoADC-Stieltjes approach
-implemented in the programme package Dirac \cite{DIRAC13}.
+implemented in the program package Dirac \cite{DIRAC13}.
 A cc-pCV6Z basis set was employed with
 additional $s$, $p$ and $d$ functions (5,5,6) of the \ac{KBJ} type \cite{Kaufmann89}.
 The active space covered an energy range of \unit[-33.0 -- 56.0]{a.u.}, and included
@@ -228,7 +228,7 @@ of the final state subspace.
 In order to obtain the decay widths at the resonance energies,
 higher orders of Stieltjes were predominantely
 used for the interpolation to yield the approximate decay width function.
-This choice became necessary, because in the partitioned
+This choice became necessary because in the partitioned
 Hamiltonian the $5s^{-2}$ channel
 opens very close to threshold and hence the resonance energy at which the decay width
 function is evaluated is very steep. Therefore, for a reasonable description
@@ -281,8 +281,8 @@ The results of the non-realtivistic calculation are smaller than the
 results of the relativistic calculations by a factor of two,
 while the spinfree calculation yields a decay width
 of the same order as the relativistic calculation. This means that the higher
-decay width is not a consequence of spin-orbit coupling but rather of scalar-
-relativistic effects. Non-relativistically, the distance expectation value
+decay width is not a consequence of spin-orbit coupling but rather of
+scalar-relativistic effects. Non-relativistically, the distance expectation value
 of the electron cloud distribution
 from the nucleus of the 5s and 5p is larger than the one for the 4d orbital. Due to
 the scalar-relativistic effects the 5s and 5p orbitals is contracted while the 4d
@@ -300,7 +300,7 @@ configurations is unfortunately insufficient for a more detailed
 study of partial decay widths.
 However, the Auger process from the Xe4d region with an improved method
 would be worth investigating, since decay widths and branching ratios have been
-measured experimentally. \cite{Aksela94}
+measured experimentally \cite{Aksela94}.
 
 
 
@@ -387,7 +387,7 @@ Their analysis is mandatory for the evaluation of the results' quality.
            The resonance energy is $E_{res}=0$ and the resulting points
            of the different orders of Stieltjes are plotted separately.
            The smooth curve shows two
-           additional peaks realted to interactions with Rydberg states as
+           additional peaks related to interactions with Rydberg states as
            discussed in section \ref{section:Stieltjes_profile_properties}.
            }
   \label{figure:Xe4p33_Gamma_profile}
@@ -505,7 +505,7 @@ the other calculations.
 As discussed in section \ref{section:partial}, the obtained partial decay
 widths might suffer from interchannel mixing, which is mainly observed in
 the subvalence region. According to this, the intensity distribution
-of this work is differs from the ones of reference \cite{Heinaesmaeki04} as
+of this work  differs from the ones of reference \cite{Heinaesmaeki04} as
 shown in Table \ref{table:Xe_auger_distr}. However, the dominance of the
 \ac{CK} process is qualitatively observed in accordance with the other
 calculations.
@@ -525,8 +525,9 @@ in the energy region of interest at $E_{res}=0$. Since the Stieltjes procedure
 is not able to produce a clear energy cut at the threshold and the initial state
 energies can be expected not to be completely exact due to errors introduced
 by the partitioning and additional errors from the ADC(2x) itself, an
-unambiguous conclusion, whether the \ac{SCK} channel is open or not, cannot be drawn.
-This decission also determines the choice of which curve of the decay width
+unambiguous conclusion, whether the \ac{SCK} channel is open or not,
+cannot be drawn.
+This decision also determines the choice of which curve of the decay width
 profile to choose for the evaluation of the decay width. The results shown
 in Table \ref{table:xe_auger_rel11} are the numbers obtained from the
 lower curve excluding
