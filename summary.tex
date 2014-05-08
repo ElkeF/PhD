@@ -1,17 +1,17 @@
 \chapter{Summary and Outlook}
 
-In this thesis, the importance of relativstic effects on autoionization
+In this thesis, the importance of relativistic effects in autoionization
 processes, especially \ac{ICD}-like
 processes, and cluster environments have been discussed.
 For this purpose, asymptotic expressions for the relativistic decay width of the ICD
-and both, relativistic and non-relativstic asymptotic expressions for the ETMD3
-have been derived. Additionally, the non-relativistically known
+and both, relativistic and non-relativistic asymptotic expressions for the ETMD3
+have been derived. Additionally, the non-relativistically well-established
 FanoADC-Stieltjes approach
-using a partitioning of the Hamiltonian by 2h configurations has been implemented
+using a partitioning by population has been implemented
 in the relativistic programme package Dirac,
 which allows for the
 description of decay width including relativistic effects.
-In order to model the experimental secondary electron spectra of noble gas
+In order to simulate the experimental secondary electron spectra of noble gas
 clusters, the model of pairs and triples was introduced and automatized in the
 programme HARDRoC. It enables the estimation of
 decay widths of the total system from data of the compounds.
@@ -20,7 +20,7 @@ In the studies of the atomic Auger process, scalar-relativistic effects were
 found to increase the decay width compared to the non-relativistic results
 due to larger orbital overlaps of the initial and final states. Especially
 in ETMD processes, whose decay widths are governed by the orbital overlap
-of the two units involved in the energy transfer, similiar significant
+of the two units involved in the electron transfer, similiar significant
 decay width influences might be observed.
 
 Throughout all systems containing heavy elements, the spin-orbit coupling
@@ -28,23 +28,34 @@ shows a pronounced effect on the secondary electron spectrum by increasing the
 number of possible channels and hence, the number of peaks. This feature cannot
 be explained using a non-relativistic methodology.
 If the decay channels are close to threshold, this energetic splitting
-can cause a non-relativistically closed decay channel to be partly open. On
+can for a non-relativistically closed decay channel cause some of the
+corresponding decay channels in the relativistic description to be open. On
 the other hand, not all relativistic channels corresponding to one specific
 open non-relativistic channel need to be energetically accessible.
 
 Additionally, geometry has a great impact on the opening and closing of channels
 in \ac{ICD}-like processes. The closer the ionized atoms of the final state are,
 the lower is the kinetic energy of the secondary electron and at some
-internuclear distance the channel closes.
+internuclear distance the decay channel closes. For the ICD, it is a channel
+closing internuclear distance and for the ETMD3 considering a fixed electron
+transfer distance, it is a curve along the intersection of the initial and final
+state hypersurfaces.
 
-In clusters, the additional effect of charge stabilization shifts the secondary
-electron as well. These shifts were treated by using experimentally obtained
+In larger clusters, the additional effect of charge stabilization
+shifts the kinetic energy of the secondary
+electron. These shifts were treated by using experimentally obtained
 ionization energies for exactly the same experimental conditions as for the
-secondary electron spectra.
+secondary electron spectra and by shifting the atomic ionization potentials
+by experimentally obtained shifts in homonuclear clusters.
+A more predictive way would be to simulate die influence of the surrounding
+atoms in order to obtain ionization energies for different positions in
+the cluster.
 Furthermore, statistical effects were found to increase the decay width
-for both the ICD and the ETMD. Since the ICD decay width scales with the number
-of nearest neighbours and the ETMD3 decay width scales with the number of nearest
-neighbours squared, the ETMD3 is statistically preferred and can therefore compete
+for both the ICD and the ETMD. Since the ICD decay width in the model of pairs
+considering nearest neighbours only scales linearly with the number
+of nearest neighbours $N$ and the ETMD3 decay width in the model of triples
+scales like $N(N-1)$
+the ETMD3 is statistically preferred and can therefore compete
 with the usually faster ICD.
 
 Based on the strong structure dependence of the secondary electron spectrum
@@ -55,23 +66,39 @@ independently, the comparison of the experimentally obtained cluster
 composition and relative peak intensities can be compared to theoretically
 modelled spectra for a large variety of structures. From the best agreement,
 the mean cluster structure can be deduced as was carried out for
-a set of experimentally created NeAr cluster manifolds.
+a set of experimentally created NeAr cluster manifolds. They were shown
+to have a shell structure with an argon core of different sizes surrounded
+by complete and incomplete shells of neon atoms.
 
 In the future, it would be worth investigating \ac{ICD} processes with electron
 transitions forbidden in the non-relativistic description.
 Additionally, for the ETMD3 the determination of a physically reasonable
 choice of the energy transfer distance $R$ would be beneficial.
-Furthermore, it should be investigated using the relativistic
+Furthermore, the ETMD3 should be investigated using the relativistic
 FanoADC-Stieltjes approach studying the scalar-relativistic effects observed
 for the case of the Auger effect following an ionization of the Xe4d.
 
-It might be worth implementing the FanoADC based on an energy partitioning in
-order to obtain partial decay width for the separate final states and to
-improve their accuracy.
+It might be worth implementing the FanoADC based on a partitioning by energy in
+order to obtain partial decay widths for the different terms stemming from the
+same 2h configuration of the final states and to
+improve their accuracy by including interchannel couplings. This approach
+would also automatically allow for the treatment of systems, where the
+atoms ionized in the final state can be generated by a symmetry operation
+of the system's point group.
 Furthermore, a more rigorous investigation of the couplings between the
 initial state and Rydberg states would be beneficial for the development
 of a method to exclude these couplings from the decay width calculation
-automatically.\\
+automatically.
+For decay width calculations for different interatomic distances,
+a rapid change is observed at distances of about \unit[10 -- 15]{\AA}.
+This behaviour is known for the non-relativistic treatment for all
+investigated systems as well,
+but the reason is so far unknown. It might be caused by insufficient
+basis sets and additional ghost centers between the atoms of the decay partners
+might shift this effect to larger distances. However, the reason for
+this behaviour should be investigated and the results should be taken
+into account in later studies.
+
 In the Stieltjes Imaging, the pseudo-spectra are currently shifted such,
 that the lowest energy has some predefined, small number. This number needs
 to be small in order to allow for numerical stability for as high order
@@ -80,20 +107,21 @@ number and if it exists, what it depends on, is currently unknown.
 It would be worth investigating, because an improvement of the Stieltjes
 imaging procedure might lead in more reliable results or decay width profiles,
 which are easier to interprete, which might allow for a more automatized
-evaluation of the results.\\
+evaluation of the results.
 So far, no automatic error estimation is available in the FanoADC-Stieltjes
 approach. However, it would be very helpful for the validation of the
 calculated decay widths.
-Due to the drawbacks of the FanoADC-Stieltjes method one might want
-to consider a completely different ansatz. It should be based on $\mathcal{L}^2$
-functions, it should be able to automatically choose and describe the final
-states for a given initial state and should provide accurate decay widths
-in an automatizable and unambiguos way.
+%Due to the drawbacks of the FanoADC-Stieltjes method one might want
+%to consider a completely different ansatz. It should be based on $\mathcal{L}^2$
+%functions, it should be able to automatically choose and describe the final
+%states for a given initial state and should provide accurate decay widths
+%in an automatizable and unambiguos way.
 
 For the estimation of secondary electron spectra of clusters,
 the investigation of cluster dynamics and their influence on the
 secondary electron spectra should be developed and included in
-HARDRoC. This would at the same time allow for an error estimation of
+HARDRoC. This knowledge about the oscialltions and their displacements
+would at the same time allow for an error estimation of
 the calculated decay widths.
 
 The investigated structures have so far been chosen by educated guesses.
