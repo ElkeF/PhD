@@ -6,7 +6,7 @@ energies and electron affinities.
 Its advantage is the ability to determine the desired ionization energies
 without explicit calculation of the initial and final states, but instead
 obtaining their energy differences directly.
-This approach has the advantage to be size-consistent and is hence
+Moreover, this approach is size-consistent and is hence
 suitable for the description of larger systems. \cite{Mertins96_1}
 
 Originally, the Green's function was formulated in the Dyson ansatz and
@@ -20,7 +20,8 @@ or the $N-1$ (ionization energy) part \cite{Schirmer98}.
  G_{pq}(\omega) = G^+_{pq}(\omega) + G^-_{pq}(\omega)
 \end{equation}
 
-The ionization part $\mathbf{G^-}(\omega)$ is transposed to give
+The ionization part $\mathbf{G^-}(\omega)$ is a function of the energy
+$\omega$ and is transposed to give
 $\tilde{G}^-_{pq}(\omega) = G^-_{qp}(\omega)$. From this, the compact 
 and orthogonal matrix
 form can be deduced
@@ -30,8 +31,8 @@ form can be deduced
                                (\omega\mathds{1}-\mathbf{\Omega})^{-1}\mathbf{x}
 \end{equation}
 
-where $\mathbf{x}$ are the spectroscopic amplitudes, $\mathbf{\Omega}$ is
-the diagonal matrix of energy eigenvalues and $\omega$ is the energy.
+where $\mathbf{x}$ are the spectroscopic amplitudes and $\mathbf{\Omega}$ is
+the diagonal matrix of energy eigenvalues.
 This diagonal representation was reformulated using Goldstone diagrams
 into the non-diagonal expression
 
@@ -42,7 +43,8 @@ into the non-diagonal expression
 where $\mathbf{M}$ denotes the \ac{ADC} matrix and $\mathbf{f}$ denotes
 the effective transition moments.
 Later it was found that this transformation could alternatively be
-derived by inserting a set of so-called \emph{intermediate states}.
+derived by inserting a set of so-called \emph{intermediate states}
+\cite{Schirmer91}.
 These are formally constructed from \ac{CES}, which are constructed
 using the same kind of excitation operators as in an \ac{CI} expansion.
 In contrast to the \ac{CI} approach, the \ac{CES}
@@ -69,8 +71,8 @@ effective transition moments $\mathbf{f}$ as
 To this point, the approach is exact.
 For the actual construction of the \ac{ADC} matrix $\mathbf{M}$ and the
 effective transitions moments $\mathbf{f}$, $\mathbf{M}$ and $\mathbf{f}$
-are expanded into different orders of perturbations and inserted to equation
-(\ref{isradc}).
+are expanded into different orders of perturbations based on the
+M{\o}ller-Plesset partitioned Hamiltonian.
 
 \begin{eqnarray}
 \mathbf{M} &=& \mathbf{M}^{(0)} + \mathbf{M}^{(1)} + \mathbf{M}^{(2)} + \cdots\label{stf}\\
