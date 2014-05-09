@@ -8,14 +8,14 @@ the relativistic \ac{ADC} and Lanczos code of Pernpointner
 In this FanoADC code the partitioning by population is applied. Hence, the
 three subspace matrices of the initial states, the interaction and the final
 states can be obtained from resorting the available matrix elements. The
-selection of the final state subspace is based on manually chosen 2h
+selection of the final state subspace is based on manually chosen $2h$
 configurations.
 Since the \ac{ADC} matrix can have dimensions
 of $10^5\times 10^5$, they are not kept
 in memory but stored to disk. A resorting from reading in these matrix elements
 would be inefficient and therefore, the matrices are build correctly
 sorted. The heart of the sorting is an array, in which the positions within
-a 2h1p vector are stored, which correspond to final state configurations
+a $2h1p$ vector are stored, which correspond to final state configurations
 of different channels called \verb|finalpos|.
 
 Due to the hermiticity of the \ac{ADC} matrix, it is sufficient to store the
