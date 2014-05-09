@@ -10,7 +10,7 @@ presence ICD electron from NeAr-ICD processes \cite{Lundwall07}.
 The clusters consist of neon and argon atoms. Since an inner-valence vacancy in
 the Ne2s can decay both via NeNe-ICD and NeAr-ICD, both competing processes
 are expected to be observed in an experiment. In the literature most
-investigations focussed on the NeAr-ICD, because it, until recently, was not
+investigations focussed on the NeAr-ICD because it, until recently, was not
 possible to measure the NeNe-ICD as well \cite{Fasshauer14_1}.
 From these studies, large NeAr clusters established by coexpansion and
 consisting of an argon core with
@@ -34,7 +34,7 @@ crucially depends on the underlying structure.
 
 Recently, the NeNe-ICD in NeAr clusters could be measured. Therefore, I will
 present the structure determination of NeAr clusters from ICD electron
-spectra by comparison of experimental spectra with theoretical calculations.
+spectra by comparison of experimental spectra to theoretical calculations.
 
 The chapter is structured as follows: First, the experimental results are
 presented and the computational details for the simulation of the ICD
@@ -144,8 +144,10 @@ KBJ type \cite{Kaufmann89} were introduced on a ghost atom in the
 geometric center of the dimer.
 
 Since inversion symmetry is until now not treated correctly,
-for the neon dimer decay width data from the literature is used, which was
-obtained with the same method and a comparable basis set \cite{Averbukh06_1}.
+decay width data from the literature is used
+for the neon dimer \cite{Averbukh06_1}, which was
+obtained with the same method and a comparable basis set as for the NeAr
+calculation.
 The resulting decay widths are shown in Figure \ref{figure:fitted_NeAr_widths}
 and the corresponding lifetimes are in Table \ref{table:NeAr_gammas} compared
 to other values from the literature.
@@ -220,7 +222,7 @@ energies, this should be the most stable kind of clusters.
 Therefore this structure is chosen as a starting point for the considerations
 about the average structure of the clusters.
 
-In all structures considered throughout this thesis the core is build as
+In all structures considered throughout this thesis, the core is build as
  an icosahedral
 structure of argon atoms as shown in Figure \ref{figure:Ar_pure}.
 In this example, it has an edge length
@@ -308,7 +310,7 @@ $n_{Ar}/n_{Ne}$ ratio is reached.
 All these structures are idealized and highly symmetric, which reduces
 the computational cost. They were constructed using the set of \verb|icoclus|
 scripts written for this purpose and explained in the
-Appendix \ref{section:icoclus}.
+Appendix \ref{icoclus}.
 Vibrations inside the clusters will change the interatomic
 distances and hence both the kinetic energies of the ICD electrons as well as
 the decay widths. As has been shown for NeAr \cite{Scheit06}, the ICD processes
@@ -317,7 +319,7 @@ after the initiating ionization, or vibrations. In case of the neon dimer, the
 ICD lifetime is of comparable size to the rearrangement time and hence
 influences the ICD electron spectra \cite{Scheit03}. However, in clusters, the
 initially ionized atom interacts with more than one other atom, which leads
-to more neighbours it can undergo ICD with. Hence, the decay width increases
+to more decay partners. Hence, the decay width increases
 to first approximation linearly with the number of nearest neighbours.
 At the same time, the larger number of neighbours stabilizes the position
 of the initially ionized atom in space compared to the dimer.
@@ -339,8 +341,9 @@ Throughout the thesis, the same
 colour coding as for the experimental spectra
 shown in Figure \ref{figure:NeAr_exp_spectrum} is used,
 for which the numbers are listed in Table \ref{table:clustervalues}.
-The results are going to be plotted as in Figure \ref{figure:incompl01_02_explain}.
-As an example, the results for clusters of the class of an
+The results are going to be plotted as in Figure \ref{figure:incompl01_02_explain}
+which is chosen as an example.
+The results for clusters of the class of an
 incompletely filled neon shell
 around an argon core with a an edge size of $c=2$
 surrounded by one complete shell of neon atoms are shown.
@@ -354,7 +357,8 @@ The higher the argon content is, the less of the 20 surfaces of the underlying
 complete shell is covered by either layer(s) or caps. The easiest way to interpret
 the graphs is to start from a complete shell and then covering one surface. This
 corresponds to the rightmost theoretical value within a group. Each step further
-to the left refers then to one more covered layer with either caps or layers.\\
+to the left refers then to one more covered triangular surface with
+either caps or layers.\\
 
 \begin{figure}[!h]
   \centering
@@ -540,6 +544,9 @@ with more and more atoms. If one is interested in clusters of $c\le2$ only, one
 should take care of a more detailed description of the different ionization
 potentials for different cluster sites.
 
+An analysis of the peaks creating the shoulders reveals them to originate
+from ICD processes involving next-nearest neighbours as decay partners.
+
 \begin{figure}[!ht]
   \centering
   \input{pics/near_clusters/spec-250meV}
@@ -561,8 +568,10 @@ potentials for different cluster sites.
 I have developed a method for the analysis of a mean cluster
 structure of noble gases utilizing the relative ICD decay widths
 of two competitive decay processes. This I have exploited onto
-five different cluster ensembles. I am able to explain the
-spectra by different underlying mean structures. From the results I conclude, that
+five different cluster ensembles. I am able to explain the five experimental
+spectra by different underlying mean structures. Furthermore, the peak structure
+was shown to originate from ICD processes involving next-nearest
+neighbours. From the results I conclude, that
 clusters formed in a supersonic beam most likely can be described
 by a core-shell structure with additional layers. In some limited cases,
 when only few additional neon atoms around complete shells are needed

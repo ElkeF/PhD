@@ -1,20 +1,20 @@
 \section{FanoADC}
-In the FanoADC, the discrete ADC Hamiltonian in the \ac{ISR}
-basis is used for the construction of the pseudo-spectrum of the decay width
+In the FanoADC, the discrete ADC Hamiltonian 
+is used for the construction of the pseudo-spectrum of the decay width
 $\Gamma$.
 Due to multiple possible final states, the procedure
 of Feshbach using projection operators for the partitioning of the Hamiltonian
 into an initial and a final state subspace is employed.
 The processes of interest have a singly ionized initial state and a
-doubly ionized final state with an additional electron in the continuum.
+doubly ionized final state with an addi\-tio\-nal electron in the continuum.
 Therefore, the final state configurations are chosen from
 the class of $2h1p$ states, where the $2h$ part is assumed to
 describe the doubly ionized final state and the particle resembles the continuum electron.
-The initial state in a zeroth order approximation can be described as a $1h$ state.
+The initial state can be described as a $1h$ state.
 
-For the partitioning two different methods are known in the literature:
+For the partitioning, two different methods are known in the literature:
 the selection by $2h$ contributions, which correspond to final states of
-the process or by energy \cite{Averbukh05}.
+the process, or by energy \cite{Averbukh05}.
 The first is easy to implement while the second automatically
 enables the correct calculation of decay widths in systems with lower than
 spherical symmetry, when the final state vacancies are distributed over two symmetry
@@ -22,9 +22,9 @@ equivalent atoms.
 
 
 \subsection{Partitioning by Population}
-In the actual partitioning, all $2h1p$ configurations characterized by a $2h$
-part corresponding to
-a final state configuration are chosen to be part of the final state subspace.
+In the partitioning, all $2h1p$ configurations characterized by a $2h$
+part corresponding to one of the
+final state configurations are chosen to be part of the final state subspace.
 All $1h$ configurations and those $2h1p$ configurations not corresponding
 to a possible final state configuration are used for the description
 of the initial state. This leads to a resorted \ac{ADC} matrix as shown in
@@ -97,11 +97,12 @@ From this point on, the calculation is the same as in the case of the partitioni
 based on population.
 
 \subsection{Partial Decay Widths} \label{section:partial}
-Approximating the complete set of continuum basis functions is verified for
+Approximating the complete set of continuum functions 
+by another set of complete basis functions is verified for
 the determination of the total decay width only. However, an \emph{ad hoc} procedure
 for the determination of partial decay widths has been postulated \cite{Cacelli86},
 in which a subset of the determined coupling elements
-$V_{i,q} = \braket{\phi |\hat{H}| \psi_{q}^{2h1p}}$  and the corresponding
+$V_{i,q} = \braket{\phi_i |\hat{H}| \psi_{q}^{2h1p}}$  and the corresponding
 $\bar{\omega}_q$ is related to a specific channel $\beta$.
 
 \begin{equation}
@@ -216,7 +217,7 @@ different angular momentum functions are shown. Each class adds some significant
 couplings to the pseudo-spectrum and hence, in combination, a reasonably dense
 pseudo-spectrum is created.
 
-Additionally the active space needs to include the orbitals of the initial state
+Additionally, the active space needs to include the orbitals of the initial state
 shell as well as a reasonably large number of positive energy solutions. These
 positive energy solutions describe the outgoing electron an hence the kinetic energy
 of the electron has to be included. Furthermore, since the Stieltjes procedure is
@@ -240,7 +241,7 @@ The error of the calculated decay width is estimated by the decay widths
 close to the resonance energy.
 There is no rigorous definition
 of how exactly to choose this energy range in the literature. 
-In general it is estimated
+In general, it is estimated
 by the quality of the initial state description in the initial
 state subspace compared to the one of the full Hamiltonian and the
 manual inspection of the density of points obtained
@@ -276,12 +277,13 @@ and the initial
 and final state description of the partitioned Hamiltonian to be reasonable.
 
 In case of the resonance energy being lower than the highest channel
-opening energy like for $E_{r,1}$ a closed channel is treated as a final
+opening energy, like for $E_{r,1}$, a closed channel is treated as a final
 state. If such a result is obtained, one should carefully check the selection
 of the final state configurations. However, it is still possible that the
 partitioning of the Hamiltonian yields such descriptions of the initial and
 final states that the channel opening and closing is not reproduced in the
-decay width. In these cases the obtained results need to be analyzed carefully.
+decay width. In these cases the obtained results need to be analyzed carefully
+and might not be meaningful at all.
 
 Rydberg states are bound states of the systems and hence do not contribute
 to the decay. However, an interaction of the initial state with those
@@ -312,14 +314,14 @@ and \ref{figure:prof_rydberg}, because the Stieltjes procedure smoothes
 discontinuities as observed in the case of channel openings and sharp peaks
 as for the Rydberg states.
 In the Stieltjes procedure such density functions are more accurately described
-with higher order of Stieltjes being based on higher order polynomials
+with higher orders of Stieltjes being based on higher order polynomials
 with more degrees of freedom.
 An observed phenomenon related to this is
 a splitting of the decay width described by either low or high orders of Stieltjes.
 In these cases, one has to decide based on the knowledge of all other
 parameters, which of these two curves might be more trustworthy.
 
-Close to channel opening, the determination of the decay width is difficult, since
+Close to channel openings, the determination of the decay width is difficult, since
 the resonance energies are approximations and not exact. Therefore, the
 energy range spans a wide distribution of different decay widths. Furthermore
 the broadened decay width being based on points obtained from the Stieltjes
@@ -327,7 +329,7 @@ procedure might not cover the maximum of the peak and hence the theoretical
 maximum of the decay width.
 
 Additionally, when this channel opening is the first opening channel, i.e. the
-resonance is close to threshold, the pseudospectrum might not cover the resonance energy.
+resonance is close to threshold, the pseudo-spectrum might not cover the resonance energy.
 In this case a Stieltjes calculation would make no sense. However, it is possible
 to obtain points with the Stieltjes routine, which do not cover the resonance
 energy.
@@ -336,7 +338,8 @@ can be interpolated to give an estimation of the decay width at higher energies,
 but it would have to be evaluated at lower energies from an extrapolated function.
 
 Having obtained a reasonable pseudo-spectrum and employed the Stieltjes routine,
-the above discussions indicate that decay width calculations using the FanoADC-Stieltjes
+the above discussions indicate that the decay width calculation
+ using the FanoADC-Stieltjes
 method is not a black box method. Summarizing, they lead to the
 following procedure for the decay width evaluation:
 \begin{enumerate}
@@ -346,14 +349,14 @@ following procedure for the decay width evaluation:
        have to be neglected in the further
        procedure.
  \item Are features connected to channel openings or couplings to Rydberg states
-       observable in the resonance energy region? In this case the higher
+       observable in the resonance energy region? In this case, the higher
        order polynomials are normally better to describe the curve and hence they
        should be favoured for the interpolation. Otherwise the lower orders
        normally give reasonable approximations.
  \item When two or more lines from different orders are observed without channel
        openings or coupling to Rydberg states in the decay width profile,
        the decay width can be expected to be either represented by one or the
-       other. In this case, the lower order should be preferred, because
+       other. In this case, the lower order result should be preferred, because
        numerical instabilities should be less pronounced.
  \item Interpolate the points obtained from the Stieltjes calculation including
        those orders which seem to be

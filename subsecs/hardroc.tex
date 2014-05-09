@@ -36,17 +36,25 @@ The required input information is:
        \end{itemize}
 \end{itemize}
 
-Additionally the total ionization cross section is required. Since it is
-energy dependent, the experimental data of references \cite{}
+Additionally, the total ionization cross section is required. Since it is
+energy dependent, 
 parameters of the function
 $\sigma(\omega) = a\omega^2 + b\omega + c + \frac{d}{\omega}$ were fitted
 to the experimental data of references \cite{West76,West78}
 for the noble gases and incorporated in the program. This function is evaluated
 when needed.
 
-The transition dipole moments required for the ETMD3 calculation were
-calculated with Dirac using a zyx basis set. Since, they depend on the
-internuclear distance, they were fitted to a function and the coresponding
+The transition dipole moments required for the ArXe ETMD3 calculation were
+calculated by means of the Kramers-restricted configuration interaction
+method \cite{Thyssen08, Fleig03, KnechtPHD} available in Dirac
+using dual basis sets of (26$s$21$p$16$d$4$f$) and
+(17$s$12$p$4$d$) for argon and xenon, respectively. The analogous
+non-relativistic transition dipole moments could conveniently be
+obtained by setting the value for the speed of light to
+$c=\unit[3000]{a.u.}$ which renders SO-coupling negligible
+(see e.g.. \cite{Saue11} for more details on relativistic calculations).
+Since, they depend on the
+internuclear distance, they were fitted to a function and the corresponding
 parameters were incoprporated in the program and are evaluated for the
 different distances.
 
