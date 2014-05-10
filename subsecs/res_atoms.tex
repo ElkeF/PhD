@@ -20,9 +20,9 @@ the decay widths of \ac{ICD} processes.
 
 \section{Neon}
 
-The Ne1s$^{-1}$ vacancy with an ionization energy of \unit[870]{eV}
+The Ne1s$^{-1}$ vacancy with a \ac{SIP} of \unit[870]{eV}
 \cite{Saethre84} is
-the initial state of the Auger decay. The double ionization energies of
+the initial state of the Auger decay. The \ac{DIP} of
 the final states are shown in Table \ref{table:Ne_dips}. Hence, the
 kinetic energy of the emitted electron lies between
 \unit[748]{eV} and \unit[808]{eV}.
@@ -79,12 +79,12 @@ as for the different terms explicitely, as far as numbers are available.
     & & \multicolumn{3}{c}{This work} & \multicolumn{2}{c}{Koloren\v{c}} & \multicolumn{2}{c}{Kelly} & \multicolumn{2}{c}{Yarzhemsky} & \multicolumn{2}{c}{exp.}\\
    \multicolumn{2}{c}{Final states} & {rel.} & \multicolumn{2}{c|}{nrel.} & \multicolumn{2}{c|}{Ref.\cite{Kolorenc11}} & \multicolumn{2}{c|}{Ref.\cite{Kelly75}} & \multicolumn{2}{c|}{Ref.\cite{Yarzhemsky02}} & \multicolumn{2}{c}{Refs. \cite{Albiez90}, \cite{Avaldi95}}\\
    \midrule
-   \multirow{3}{*}{2p$^{-2}$} & $^3P$   & \multirow{3}{*}{53.9} & 0.0 & \multirow{3}{*}{81.6} &  0.0 & \multirow{3}{*}{60.0} &  0.0 & \multirow{3}{*}{70.8} &  0.0 & \multirow{3}{*}{68.4} &  --  & \multirow{3}{*}{70.4}\\
+   \multirow{3}{*}{2p$^{-2}$} & $^3P$   & \multirow{3}{*}{53.9} & (0.0) & \multirow{3}{*}{(81.6)} &  0.0 & \multirow{3}{*}{60.0} &  0.0 & \multirow{3}{*}{70.8} &  0.0 & \multirow{3}{*}{68.4} &  --  & \multirow{3}{*}{70.4}\\
                               & $^1D$      & & \multirow{2}{*}{81.6} & & 50.5 & & 61.2 & & 58.2 & & 60.9&\\
                               & $^1S$      & &  & &  9.5 & &  9.6 & & 10.2 & &  9.5&\\
    \midrule
- \multirow{2}{*}{2s$^{-1}$2p$^{-1}$} & $^3P$     & \multirow{2}{*}{38.0} & 1.1 & \multirow{2}{*}{7.8} & 10.6 & \multirow{2}{*}{30.1} &  6.1 & \multirow{2}{*}{23.1} &  9.3 & \multirow{2}{*}{26.1} &  6.3 & \multirow{2}{*}{23.5}\\
-                              & $^1P$ &       &  6.8 & & 19.5 & & 17.0 & & 16.8 & & 17.2&\\
+ \multirow{2}{*}{2s$^{-1}$2p$^{-1}$} & $^3P$     & \multirow{2}{*}{38.0} & (1.1) & \multirow{2}{*}{7.8} & 10.6 & \multirow{2}{*}{30.1} &  6.1 & \multirow{2}{*}{23.1} &  9.3 & \multirow{2}{*}{26.1} &  6.3 & \multirow{2}{*}{23.5}\\
+                              & $^1P$ &       &  (6.8) & & 19.5 & & 17.0 & & 16.8 & & 17.2&\\
    \midrule
       2s$^{-2}$               & $^1S$ &       8.1 & 10.4 & 10.4 &  9.9 & 9.9 &  6.1 & 6.1 &  5.5 & 5.5 &  6.1& 6.1\\
    \midrule
@@ -124,9 +124,17 @@ outgoing electron would have to be characterized by $L_e=1$ and $S_e=\frac12$.
 However, this outgoing electron would have ungerade symmetry. Since the coupling
 operator is the gerade Coulomb operator, the corresponding matrix elements
 are zero.
-This property is correctly predicted by the current implementation of the
-FanoADC.
-
+In order to investigate the correct prediction of this feature, the $\alpha\alpha$
+and the $\beta\beta$ final states of the 2p$^{-2}$ and 2s$^{-1}$2p$^{-1}$ final
+state channel groups were treated separately as distinct channels. However,
+the third triplett wavefunction would have to be constructed from a linear
+combination, which is not possible in the current implementation of the
+FanoADC based on partitioning by population of $2h$ configurations. The numbers
+affected by this choice of channels are shown in brackets in Table
+\ref{table:Ne_gammas}.
+The chosen triplett final states of the 2p$^{-2}$ $^3P$ yield a decay width
+of zero and therefore predicts this property correctly up to the accuracy, which
+is accessible.
 
 
 

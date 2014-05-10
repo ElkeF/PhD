@@ -14,7 +14,7 @@ description of decay width including relativistic effects.
 In order to simulate the experimental secondary electron spectra of noble gas
 clusters, the model of pairs and triples was introduced and automatized in the
 program HARDRoC. It enables the estimation of
-decay widths of the total system from data of the compounds.
+decay widths of large systems like clusters from data of the compounds.
 
 In the studies of the atomic Auger process, scalar-relativistic effects were
 found to increase the decay width compared to the non-relativistic results
@@ -51,10 +51,10 @@ A more predictive way would be to simulate the influence of the surrounding
 atoms in order to obtain ionization energies for different positions in
 the cluster.
 Furthermore, statistical effects were found to increase the decay width
-for both the ICD and the ETMD. Since the ICD decay width in the model of pairs
-considering nearest neighbours only scales linearly with the number
+for both the ICD and the ETMD. Since the ICD decay width in the model of pairs,
+considering nearest neighbours only, scales linearly with the number
 of nearest neighbours $N$ and the ETMD3 decay width in the model of triples
-scales like $N(N-1)$
+scales like $N(N-1)$,
 the ETMD3 is statistically preferred and can therefore compete
 with the usually faster ICD.
 
@@ -77,6 +77,9 @@ choice of the energy transfer distance $R$ would be beneficial.
 Furthermore, the ETMD3 should be investigated using the relativistic
 FanoADC-Stieltjes approach studying the scalar-relativistic effects observed
 for the case of the Auger effect following an ionization of the Xe4d.
+An analytic investigation of the angular distribution of the emitted ICD
+electron would give further insights and could be compared to the experimental
+data available.
 
 It might be worth implementing the FanoADC based on a partitioning by energy in
 order to obtain partial decay widths for the different terms stemming from the
@@ -111,11 +114,15 @@ evaluation of the results.
 So far, no automatic error estimation is available in the FanoADC-Stieltjes
 approach. However, it would be very helpful for the validation of the
 calculated decay widths.
-%Due to the drawbacks of the FanoADC-Stieltjes method one might want
-%to consider a completely different ansatz. It should be based on $\mathcal{L}^2$
-%functions, it should be able to automatically choose and describe the final
-%states for a given initial state and should provide accurate decay widths
-%in an automatizable and unambiguos way.
+Further, the Stieltjes-Imaging applied to a combination of two or more
+pseudo-spectra of the same system calculated using different basis sets
+as shown in Ref. \cite{Reinhardt79} would be worth investigating.
+In this way, the density of the pseudo-spectrum would ideally increase in the
+energy region of interest. Therefore, a more accurate description of the
+decay widths might be possible. At the same time, this approach might enable
+decay width calculations of larger systems, where a huge basis set cannot be
+applied due to lacking computational resources required in the integral
+transformation step, which is the bottleneck of the calculations.
 
 For the estimation of secondary electron spectra of clusters,
 the investigation of cluster dynamics and their influence on the
