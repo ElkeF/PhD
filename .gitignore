@@ -11,7 +11,8 @@
 *.snm
 *.lof
 *.lot
-
+*.DS_Store*
+*/.DS_Store
 
 thesis.pdf
 *spiel.pdf
