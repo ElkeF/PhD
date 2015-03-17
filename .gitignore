@@ -13,9 +13,13 @@
 *.lot
 *.DS_Store*
 */.DS_Store
+*.auxlock
+*.bak
 
 thesis.pdf
 *spiel.pdf
+spiel-fig*
+
 
 pics/*eps-converted-to.pdf
 pics/replace.py
